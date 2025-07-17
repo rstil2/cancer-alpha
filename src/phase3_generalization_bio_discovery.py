@@ -243,26 +243,31 @@ class Phase3BiologicalDiscovery:
         print("Analyzing potential biomarkers...")
         
         # Load feature importance from Phase 2
-        importance_file = "results/phase2/feature_importance.csv"
+        importance_file = "results/phase2/feature_importance.json"
         if os.path.exists(importance_file):
-            importance_df = pd.read_csv(importance_file, index_col=0)
+            with open(importance_file, 'r') as f:
+                importance_data = json.load(f)
+            
+            # Convert to DataFrame for easier processing
+            importance_df = pd.DataFrame(list(importance_data.items()), columns=['feature', 'importance'])
+            importance_df = importance_df.sort_values('importance', ascending=False)
             
             # Identify top biomarkers
             top_biomarkers = importance_df.head(20)
             
             # Categorize biomarkers by type
             biomarker_categories = {
-                'methylation': [f for f in top_biomarkers.index if 'methylation' in f],
-                'mutation': [f for f in top_biomarkers.index if 'mutation' in f],
-                'cn_alteration': [f for f in top_biomarkers.index if 'cn_alteration' in f],
-                'fragmentomics': [f for f in top_biomarkers.index if 'fragmentomics' in f],
-                'clinical': [f for f in top_biomarkers.index if 'clinical' in f],
-                'icgc_argo': [f for f in top_biomarkers.index if 'icgc_argo' in f]
+                'methylation': [f for f in top_biomarkers['feature'] if 'methylation' in f],
+                'mutation': [f for f in top_biomarkers['feature'] if 'mutation' in f],
+                'cn_alteration': [f for f in top_biomarkers['feature'] if 'cn_alteration' in f],
+                'fragmentomics': [f for f in top_biomarkers['feature'] if 'fragmentomics' in f],
+                'clinical': [f for f in top_biomarkers['feature'] if 'clinical' in f],
+                'icgc_argo': [f for f in top_biomarkers['feature'] if 'icgc_argo' in f]
             }
             
             # Create biomarker analysis report
             biomarker_report = {
-                'top_biomarkers': top_biomarkers.to_dict(),
+                'top_biomarkers': dict(zip(top_biomarkers['feature'], top_biomarkers['importance'])),
                 'biomarker_categories': biomarker_categories,
                 'biological_implications': self.generate_biological_implications(biomarker_categories)
             }
@@ -280,7 +285,8 @@ class Phase3BiologicalDiscovery:
             return None
     
     def generate_biological_implications(self, biomarker_categories):
-        """Generate biological implications for discovered biomarkers"""
+        """Generate more robust biological implications for discovered biomarkers"""
+        print("Generating robust biological implications...")
         implications = {}
         
         # Methylation biomarkers
@@ -333,15 +339,38 @@ class Phase3BiologicalDiscovery:
         
         return implications
     
-    def create_clinical_decision_support_framework(self):
+    def create_clinical_decision_support_framework(self, generalization_results=None):
         """Create framework for clinical decision support tools"""
         print("Creating clinical decision support framework...")
         
+        # Get realistic performance metrics
+        if generalization_results:
+            avg_accuracy = np.mean([result['accuracy'] for result in generalization_results.values()])
+            best_model = max(generalization_results.items(), key=lambda x: x[1]['accuracy'])
+            best_accuracy = best_model[1]['accuracy']
+            
+            # Set realistic thresholds based on actual performance
+            if best_accuracy < 0.3:
+                deployment_status = 'NOT READY FOR CLINICAL USE'
+                accuracy_threshold = 'Current performance too low for clinical deployment'
+                confidence_requirements = 'Requires significant improvement before clinical consideration'
+            else:
+                deployment_status = 'READY FOR CLINICAL VALIDATION'
+                accuracy_threshold = f'Target: {best_accuracy * 1.5:.2f} (50% improvement needed)'
+                confidence_requirements = 'High confidence (>0.8) for clinical decisions'
+        else:
+            deployment_status = 'ASSESSMENT PENDING'
+            accuracy_threshold = 'TBD based on generalization testing'
+            confidence_requirements = 'TBD'
+            best_model = ('unknown', {})
+        
         framework = {
             'model_deployment': {
-                'best_performing_model': 'random_forest',
-                'accuracy_threshold': 0.95,
-                'confidence_requirements': 'High confidence (>0.8) for clinical decisions'
+                'deployment_status': deployment_status,
+                'best_performing_model': best_model[0],
+                'current_accuracy': best_accuracy if generalization_results else 'unknown',
+                'accuracy_threshold': accuracy_threshold,
+                'confidence_requirements': confidence_requirements
             },
             'clinical_workflow': {
                 'input_requirements': ['Genomic data', 'Clinical variables', 'Imaging features'],
@@ -383,9 +412,9 @@ class Phase3BiologicalDiscovery:
             'biomarker_discoveries': biomarker_report,
             'clinical_framework': framework,
             'key_findings': {
-                'model_generalization': 'Models show strong generalization to independent datasets',
-                'biomarker_potential': 'Multiple biomarker categories identified for further validation',
-                'clinical_readiness': 'Framework established for clinical translation'
+                'model_generalization': f'Models show poor generalization (avg accuracy: {avg_accuracy:.1%})',
+                'biomarker_potential': 'Biomarker categories identified but require validation',
+                'clinical_readiness': 'NOT READY - Significant improvements needed before clinical use'
             },
             'next_steps': {
                 'biological_validation': 'Collaborate with domain experts for biological validation',
@@ -495,7 +524,7 @@ Phase 3 successfully demonstrated the generalization capabilities of our models 
         
         # Create clinical decision support framework
         print("\n3. Creating Clinical Decision Support Framework...")
-        framework = self.create_clinical_decision_support_framework()
+        framework = self.create_clinical_decision_support_framework(generalization_results)
         
         # Generate comprehensive report
         print("\n4. Generating Comprehensive Report...")

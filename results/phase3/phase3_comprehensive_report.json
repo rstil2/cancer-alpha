@@ -1,5 +1,5 @@
 {
-  "timestamp": "2025-07-17T18:23:04.567401",
+  "timestamp": "2025-07-17T18:41:57.450329",
   "phase": "Phase 3 - Generalization and Biological Discovery",
   "generalization_performance": {
     "average_accuracy": 0.11364091273018415,
@@ -298,88 +298,77 @@
   },
   "biomarker_discoveries": {
     "top_biomarkers": {
-      "gradient_boosting": {
-        "feature_38": 0.0345146993310356,
-        "feature_26": 0.0365749730911419,
-        "feature_27": 0.0327928916410887,
-        "feature_25": 0.0323372497334194,
-        "feature_31": 0.0392549591200777,
-        "feature_41": 0.0359188927706308,
-        "feature_24": 0.0316686562204395,
-        "feature_30": 0.0329392327618846,
-        "feature_33": 0.0242571704633856,
-        "feature_20": 0.0254488168795099,
-        "feature_37": 0.0326211404776895,
-        "feature_36": 0.0262296498884685,
-        "feature_34": 0.0229269462124426,
-        "feature_32": 0.0323635277102314,
-        "feature_35": 0.0290784191509731,
-        "feature_29": 0.0250885161949788,
-        "feature_42": 0.0240692232864658,
-        "feature_21": 0.0272926001886247,
-        "feature_40": 0.0235039875084808,
-        "feature_23": 0.0232218510015908
-      },
-      "random_forest": {
-        "feature_38": 0.0397944873101361,
-        "feature_26": 0.0329198745317558,
-        "feature_27": 0.034794288915141,
-        "feature_25": 0.0350511832614659,
-        "feature_31": 0.0280893572485067,
-        "feature_41": 0.0299635106425461,
-        "feature_24": 0.0326186542685437,
-        "feature_30": 0.0295046814843503,
-        "feature_33": 0.0369198389761423,
-        "feature_20": 0.0332300407430231,
-        "feature_37": 0.0258775261167206,
-        "feature_36": 0.0313960317296002,
-        "feature_34": 0.0330327397275285,
-        "feature_32": 0.0234103368047651,
-        "feature_35": 0.0256748515437515,
-        "feature_29": 0.0289563530531728,
-        "feature_42": 0.0281092211222041,
-        "feature_21": 0.0237058288449736,
-        "feature_40": 0.0247986953520202,
-        "feature_23": 0.0249963982899726
-      },
-      "average": {
-        "feature_38": 0.0371545933205858,
-        "feature_26": 0.0347474238114488,
-        "feature_27": 0.0337935902781148,
-        "feature_25": 0.0336942164974427,
-        "feature_31": 0.0336721581842922,
-        "feature_41": 0.0329412017065884,
-        "feature_24": 0.0321436552444916,
-        "feature_30": 0.0312219571231174,
-        "feature_33": 0.0305885047197639,
-        "feature_20": 0.0293394288112665,
-        "feature_37": 0.029249333297205,
-        "feature_36": 0.0288128408090343,
-        "feature_34": 0.0279798429699856,
-        "feature_32": 0.0278869322574982,
-        "feature_35": 0.0273766353473623,
-        "feature_29": 0.0270224346240758,
-        "feature_42": 0.026089222204335,
-        "feature_21": 0.0254992145167992,
-        "feature_40": 0.0241513414302505,
-        "feature_23": 0.0241091246457817
-      }
+      "methylation_11": 0.03925495912007772,
+      "methylation_6": 0.0365749730911419,
+      "mutation_1": 0.035918892770630824,
+      "methylation_18": 0.034514699331035646,
+      "methylation_10": 0.03293923276188466,
+      "methylation_7": 0.032792891641088735,
+      "methylation_17": 0.032621140477689506,
+      "methylation_12": 0.032363527710231474,
+      "methylation_5": 0.03233724973341945,
+      "methylation_4": 0.03166865622043958,
+      "methylation_15": 0.029078419150973103,
+      "methylation_1": 0.027292600188624797,
+      "methylation_16": 0.026229649888468525,
+      "methylation_0": 0.025448816879509967,
+      "methylation_9": 0.025088516194978854,
+      "methylation_13": 0.024257170463385602,
+      "mutation_2": 0.024069223286465873,
+      "mutation_0": 0.02350398750848086,
+      "methylation_3": 0.02322185100159087,
+      "methylation_14": 0.02292694621244267
     },
     "biomarker_categories": {
-      "methylation": [],
-      "mutation": [],
+      "methylation": [
+        "methylation_11",
+        "methylation_6",
+        "methylation_18",
+        "methylation_10",
+        "methylation_7",
+        "methylation_17",
+        "methylation_12",
+        "methylation_5",
+        "methylation_4",
+        "methylation_15",
+        "methylation_1",
+        "methylation_16",
+        "methylation_0",
+        "methylation_9",
+        "methylation_13",
+        "methylation_3",
+        "methylation_14"
+      ],
+      "mutation": [
+        "mutation_1",
+        "mutation_2",
+        "mutation_0"
+      ],
       "cn_alteration": [],
       "fragmentomics": [],
       "clinical": [],
       "icgc_argo": []
     },
-    "biological_implications": {}
+    "biological_implications": {
+      "methylation": {
+        "description": "DNA methylation patterns in cancer",
+        "clinical_relevance": "Epigenetic modifications that could indicate cancer progression",
+        "therapeutic_potential": "Targets for epigenetic therapy drugs"
+      },
+      "mutation": {
+        "description": "Somatic mutations in cancer cells",
+        "clinical_relevance": "Diagnostic and prognostic markers",
+        "therapeutic_potential": "Targetable mutations for precision medicine"
+      }
+    }
   },
   "clinical_framework": {
     "model_deployment": {
-      "best_performing_model": "random_forest",
-      "accuracy_threshold": 0.95,
-      "confidence_requirements": "High confidence (>0.8) for clinical decisions"
+      "deployment_status": "NOT READY FOR CLINICAL USE",
+      "best_performing_model": "deep_neural_network",
+      "current_accuracy": 0.11709367493995196,
+      "accuracy_threshold": "Current performance too low for clinical deployment",
+      "confidence_requirements": "Requires significant improvement before clinical consideration"
     },
     "clinical_workflow": {
       "input_requirements": [
@@ -400,9 +389,9 @@
     }
   },
   "key_findings": {
-    "model_generalization": "Models show strong generalization to independent datasets",
-    "biomarker_potential": "Multiple biomarker categories identified for further validation",
-    "clinical_readiness": "Framework established for clinical translation"
+    "model_generalization": "Models show poor generalization (avg accuracy: 11.4%)",
+    "biomarker_potential": "Biomarker categories identified but require validation",
+    "clinical_readiness": "NOT READY - Significant improvements needed before clinical use"
   },
   "next_steps": {
     "biological_validation": "Collaborate with domain experts for biological validation",
