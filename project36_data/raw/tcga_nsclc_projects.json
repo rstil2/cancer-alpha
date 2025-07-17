@@ -1,0 +1,15 @@
+{
+  "data": {
+    "hits": [],
+    "pagination": {
+      "count": 0,
+      "total": 0,
+      "size": 50,
+      "from": 0,
+      "sort": "",
+      "page": 0,
+      "pages": 0
+    }
+  },
+  "warnings": {}
+}
