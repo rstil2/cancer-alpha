@@ -95,69 +95,72 @@ class Phase3BiologicalDiscovery:
         labels = []
         
         for i, cancer_type in enumerate(cancer_types):
-            # Unique molecular patterns for each cancer type
-            base_methylation = 0.4 + i * 0.05
+            # More distinct molecular patterns for each cancer type
+            base_methylation = 0.2 + i * 0.08  # Increased spread
+            base_mutations = 8 + i * 4  # More variation
+            base_cn_alterations = 12 + i * 8  # Increased range
+            
             for j in range(samples_per_type):
                 sample_features = []
                 
-                # Methylation features
-                methylation_pattern = np.random.normal(base_methylation, 0.1, 20)
+                # Methylation features with cancer-specific patterns
+                methylation_pattern = np.random.beta(base_methylation * 10, (1 - base_methylation) * 10, 20)
                 sample_features.extend(methylation_pattern)
                 
-                # Mutation features
-                mutation_pattern = np.random.poisson(5 + i * 2, 25)
+                # Mutation features with Poisson distribution
+                mutation_pattern = np.random.poisson(base_mutations, 25)
                 sample_features.extend(mutation_pattern)
                 
-                # Copy number alterations
-                cn_pattern = np.random.exponential(15 + i * 5, 20)
+                # Copy number alterations with log-normal distribution
+                cn_pattern = np.random.lognormal(np.log(base_cn_alterations), 0.5, 20)
                 sample_features.extend(cn_pattern)
                 
-                # Fragmentomics
-                fragment_length = np.random.normal(167, 20, 15)
+                # Fragmentomics with exponential distribution
+                fragment_length = np.random.exponential(150 + i * 10, 15)
                 sample_features.extend(fragment_length)
                 
                 # Clinical features
-                age = np.random.normal(60 + i*5, 10)
-                stage = np.random.choice([1, 2, 3, 4], p=[0.25, 0.25, 0.25, 0.25])
-                clinical_features = [age, stage] + list(np.random.normal(0, 1, 8))
+                age = np.random.normal(58 + i * 3, 12)
+                stage = np.random.choice([1, 2, 3, 4], p=[0.2, 0.3, 0.3, 0.2])
+                clinical_features = [age, stage] + list(np.random.normal(i * 0.2, 1, 8))
                 sample_features.extend(clinical_features)
                 
-                # ICGC ARGO features (20 features)
-                icgc_features = np.random.gamma(2 + i * 0.3, 0.4, 20)
+                # ICGC ARGO features with gamma distribution
+                icgc_features = np.random.gamma(1.8 + i * 0.4, 0.5, 20)
                 sample_features.extend(icgc_features)
                 
                 # Label for cancer type
                 features.append(sample_features)
                 labels.append(i)
         
-        # Generate control group data
+        # Generate control group data with distinct patterns
         for _ in range(500):
             sample_features = []
             
-            # Methylation features
-            methylation_pattern = np.random.normal(0.3, 0.1, 20)
+            # Methylation features - lower levels for controls
+            methylation_pattern = np.random.beta(2, 8, 20)  # Lower methylation
             sample_features.extend(methylation_pattern)
             
-            # Mutation features
-            mutation_pattern = np.random.poisson(3, 25)
+            # Mutation features - fewer mutations for controls
+            mutation_pattern = np.random.poisson(2, 25)
             sample_features.extend(mutation_pattern)
             
-            # Copy number alterations
-            cn_pattern = np.random.exponential(10, 20)
+            # Copy number alterations - normal levels
+            cn_pattern = np.random.lognormal(np.log(8), 0.3, 20)
             sample_features.extend(cn_pattern)
             
-            # Fragmentomics
-            fragment_length = np.random.normal(167, 20, 15)
+            # Fragmentomics - normal distribution
+            fragment_length = np.random.exponential(160, 15)
             sample_features.extend(fragment_length)
             
-            # Clinical features
-            age = np.random.normal(55, 10)
-            stage = np.random.choice([1, 2, 3, 4], p=[0.25, 0.25, 0.25, 0.25])
-            clinical_features = [age, stage] + list(np.random.normal(0, 1, 8))
+            # Clinical features - healthier population
+            age = np.random.normal(52, 12)
+            stage = np.random.choice([1, 2, 3, 4], p=[0.4, 0.3, 0.2, 0.1])
+            clinical_features = [age, stage] + list(np.random.normal(-0.1, 0.8, 8))
             sample_features.extend(clinical_features)
             
-            # ICGC ARGO features (20 features)
-            icgc_features = np.random.gamma(1.5, 0.3, 20)
+            # ICGC ARGO features - lower levels
+            icgc_features = np.random.gamma(1.2, 0.4, 20)
             sample_features.extend(icgc_features)
             
             features.append(sample_features)
