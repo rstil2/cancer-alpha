@@ -7,10 +7,14 @@ This script implements advanced multi-modal cancer genomics data integration
 moving beyond basic classification to precision oncology.
 
 Key innovations:
-- Real TCGA, GEO, and ENCODE data integration
+- Real TCGA, GEO, and ENCODE data integration (4th source ICGC ARGO pending)
 - Advanced feature engineering for multi-omics
 - Biologically-informed feature selection
 - Precision oncology-focused problem formulation
+
+Note: Originally designed for 4 sources (TCGA, GEO, ENCODE, ICGC ARGO)
+      Currently implementing 3 sources (ICGC data acquisition failed)
+      Phase 2 will add ICGC ARGO data integration
 """
 
 import pandas as pd
@@ -260,6 +264,13 @@ class MultiModalCancerIntegrator:
         print("\nAdvanced Features:")
         for key, value in report['advanced_features'].items():
             print(f"  {key}: {value}")
+            
+        print("\nData Source Status:")
+        print("  ✅ TCGA: Integrated (methylation + CNA)")
+        print("  ✅ GEO: Integrated (fragmentomics)")
+        print("  ✅ ENCODE: Integrated (chromatin accessibility)")
+        print("  ❌ ICGC ARGO: Missing (data acquisition failed)")
+        print("  📋 Next: Phase 2 will add ICGC ARGO integration")
             
         if hasattr(self, 'feature_importance') and not self.feature_importance.empty:
             print("\nTop Precision Oncology Biomarkers:")
