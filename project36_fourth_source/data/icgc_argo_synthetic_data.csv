@@ -1,0 +1,11 @@
+donor_id,project_code,primary_site,cancer_type,total_mutations,missense_mutations,nonsense_mutations,silent_mutations,indel_mutations,cn_amplifications,cn_deletions,cn_neutral_regions,sv_translocations,sv_inversions,sv_insertions,sv_deletions,tp53_pathway_mutations,kras_pathway_mutations,pi3k_pathway_mutations,rb_pathway_mutations,age_at_diagnosis,gender,smoking_status,stage,sample_type,label,mutation_burden,cn_instability,sv_burden
+ICGC_DONOR_000,LUAD-US,lung,adenocarcinoma,47,29,7,8,8,17,22,77,5,3,3,8,1,0,1,1,63,male,former,II,cancer,1,0.9611451942740287,39,19
+ICGC_DONOR_001,LUAD-US,lung,adenocarcinoma,55,25,2,19,6,15,16,82,3,2,1,5,0,1,1,1,64,female,former,III,cancer,1,1.1247443762781186,31,11
+ICGC_DONOR_002,LUAD-US,lung,adenocarcinoma,42,31,5,15,11,13,10,79,0,2,2,4,0,1,1,0,67,female,former,I,cancer,1,0.8588957055214724,23,8
+ICGC_DONOR_003,LUAD-US,lung,adenocarcinoma,52,32,5,21,6,8,20,74,4,1,2,5,1,1,0,1,68,female,never,I,cancer,1,1.0633946830265848,28,12
+ICGC_DONOR_004,LUAD-US,lung,adenocarcinoma,58,27,6,9,8,10,17,53,1,2,4,9,1,0,0,0,80,female,never,IV,cancer,1,1.1860940695296525,27,16
+ICGC_DONOR_005,LUSC-US,lung,squamous_cell_carcinoma,43,33,4,14,9,13,13,89,6,2,6,6,1,0,1,1,68,male,former,III,cancer,1,0.8793456032719836,26,20
+ICGC_DONOR_006,LUSC-US,lung,squamous_cell_carcinoma,46,22,6,20,11,18,15,68,3,0,7,3,1,1,1,1,61,female,current,III,cancer,1,0.9406952965235174,33,13
+ICGC_DONOR_007,LUSC-US,lung,squamous_cell_carcinoma,49,26,6,15,5,10,19,88,1,1,6,9,1,1,0,1,49,male,former,III,cancer,1,1.0020449897750512,29,17
+ICGC_DONOR_008,LUSC-US,lung,squamous_cell_carcinoma,52,27,1,11,9,16,17,83,1,3,2,5,1,0,0,0,51,female,current,III,cancer,1,1.0633946830265848,33,11
+ICGC_DONOR_009,LUSC-US,lung,squamous_cell_carcinoma,45,31,7,13,8,8,21,60,0,4,5,9,1,1,0,0,70,female,former,I,cancer,1,0.9202453987730062,29,18

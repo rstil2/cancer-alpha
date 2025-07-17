@@ -1,0 +1,11 @@
+{
+  "https://platform-api.icgc-argo.org/graphql": {
+    "error": "HTTPSConnectionPool(host='platform-api.icgc-argo.org', port=443): Max retries exceeded with url: /graphql (Caused by NameResolutionError(\"<urllib3.connection.HTTPSConnection object at 0x14771ba40>: Failed to resolve 'platform-api.icgc-argo.org' ([Errno 8] nodename nor servname provided, or not known)\"))"
+  },
+  "https://song-api.icgc-argo.org": {
+    "error": "HTTPSConnectionPool(host='song-api.icgc-argo.org', port=443): Max retries exceeded with url: / (Caused by NameResolutionError(\"<urllib3.connection.HTTPSConnection object at 0x157eed490>: Failed to resolve 'song-api.icgc-argo.org' ([Errno 8] nodename nor servname provided, or not known)\"))"
+  },
+  "https://clinical-api.icgc-argo.org": {
+    "error": "HTTPSConnectionPool(host='clinical-api.icgc-argo.org', port=443): Max retries exceeded with url: / (Caused by NameResolutionError(\"<urllib3.connection.HTTPSConnection object at 0x157eedfa0>: Failed to resolve 'clinical-api.icgc-argo.org' ([Errno 8] nodename nor servname provided, or not known)\"))"
+  }
+}
