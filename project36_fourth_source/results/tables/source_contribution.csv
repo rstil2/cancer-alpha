@@ -1,0 +1,6 @@
+source,sum,mean,count
+ENCODE_Chromatin,0.084,0.012,7
+GEO_Fragmentomics,0.1733,0.0124,14
+ICGC_ARGO,0.4007,0.0121,33
+TCGA_CopyNumber,0.0876,0.0125,7
+TCGA_Methylation,0.2543,0.0134,19

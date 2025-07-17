@@ -1,0 +1,23 @@
+{
+  "https://api.platform.icgc-argo.org/graphql": {
+    "status_code": 500,
+    "accessible": false,
+    "response_size": 115,
+    "content_type": "application/json; charset=utf-8"
+  },
+  "https://platform-api.icgc-argo.org/graphql": {
+    "status_code": null,
+    "accessible": false,
+    "error": "HTTPSConnectionPool(host='platform-api.icgc-argo.org', port=443): Max retries exceeded with url: /graphql (Caused by NameResolutionError(\"<urllib3.connection.HTTPSConnection object at 0x157eec8f0>: Failed to resolve 'platform-api.icgc-argo.org' ([Errno 8] nodename nor servname provided, or not known)\"))"
+  },
+  "https://song-api.icgc-argo.org": {
+    "status_code": null,
+    "accessible": false,
+    "error": "HTTPSConnectionPool(host='song-api.icgc-argo.org', port=443): Max retries exceeded with url: / (Caused by NameResolutionError(\"<urllib3.connection.HTTPSConnection object at 0x157eed4f0>: Failed to resolve 'song-api.icgc-argo.org' ([Errno 8] nodename nor servname provided, or not known)\"))"
+  },
+  "https://clinical-api.icgc-argo.org": {
+    "status_code": null,
+    "accessible": false,
+    "error": "HTTPSConnectionPool(host='clinical-api.icgc-argo.org', port=443): Max retries exceeded with url: / (Caused by NameResolutionError(\"<urllib3.connection.HTTPSConnection object at 0x157eed670>: Failed to resolve 'clinical-api.icgc-argo.org' ([Errno 8] nodename nor servname provided, or not known)\"))"
+  }
+}
