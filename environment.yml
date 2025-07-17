@@ -1,0 +1,22 @@
+name: cancer-alpha
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.10
+  - jupyterlab
+  - pandas
+  - numpy
+  - scikit-learn
+  - seaborn
+  - matplotlib
+  - shap
+  - xgboost
+  - lightgbm
+  - umap-learn
+  - openpyxl
+  - pip
+  - pip:
+      - wandb
+      - transformers
+      - pytorch-lightning
