@@ -101,16 +101,16 @@ class Phase2DeepLearningPipeline:
         
         for i, cancer_type in enumerate(cancer_types):
             # Each cancer type has distinct molecular signatures
-            base_methylation = 0.3 + i * 0.1
-            base_mutations = 10 + i * 5
-            base_cn_alterations = 20 + i * 10
+            base_methylation = 0.3 + i * 0.05
+            base_mutations = 5 + i * 3
+            base_cn_alterations = 15 + i * 7
             
             # Generate samples for this cancer type
             for j in range(samples_per_type):
                 sample_features = []
                 
                 # Methylation features (20 features)
-                methylation_pattern = np.random.normal(base_methylation, 0.2, 20)
+                methylation_pattern = np.random.normal(base_methylation, 0.1, 20)
                 sample_features.extend(methylation_pattern)
                 
                 # Mutation features (25 features)
@@ -118,21 +118,21 @@ class Phase2DeepLearningPipeline:
                 sample_features.extend(mutation_pattern)
                 
                 # Copy number alteration features (20 features)
-                cn_pattern = np.random.exponential(base_cn_alterations, 20)
+                cn_pattern = np.random.normal(base_cn_alterations, 2, 20)
                 sample_features.extend(cn_pattern)
                 
                 # Fragmentomics features (15 features)
-                fragment_length = np.random.normal(167, 20, 15)
+                fragment_length = np.random.exponential(167, 15)
                 sample_features.extend(fragment_length)
                 
                 # Clinical features (10 features)
-                age = np.random.normal(65, 15)
-                stage = np.random.choice([1, 2, 3, 4], p=[0.3, 0.3, 0.25, 0.15])
+                age = np.random.normal(55, 10)
+                stage = np.random.choice([1, 2, 3, 4], p=[0.25, 0.25, 0.25, 0.25])
                 clinical_features = [age, stage] + list(np.random.normal(0, 1, 8))
                 sample_features.extend(clinical_features)
                 
                 # ICGC ARGO features (20 features)
-                icgc_features = np.random.gamma(2, 0.5, 20)
+                icgc_features = np.random.gamma(2, 0.4, 20)
                 sample_features.extend(icgc_features)
                 
                 features.append(sample_features)
@@ -188,15 +188,18 @@ class Phase2DeepLearningPipeline:
         """Train deep neural network with multiple hidden layers"""
         print("Training Deep Neural Network...")
         
-        # Multi-layer perceptron with advanced architecture
+        # Multi-layer perceptron with enhanced architecture
         mlp = MLPClassifier(
-            hidden_layer_sizes=(256, 128, 64),
+            hidden_layer_sizes=(512, 256, 128, 64),
             activation='relu',
             solver='adam',
-            alpha=0.001,
+            alpha=0.0001,  # Reduced regularization
             learning_rate_init=0.001,
-            max_iter=500,
-            early_stopping=False,  # Disable early stopping for smaller datasets
+            learning_rate='adaptive',  # Adaptive learning rate
+            max_iter=1000,  # Increased iterations
+            early_stopping=True,
+            validation_fraction=0.1,
+            n_iter_no_change=20,
             random_state=42
         )
         

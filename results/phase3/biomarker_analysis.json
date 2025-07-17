@@ -1,66 +1,33 @@
 {
   "top_biomarkers": {
-    "methylation_11": 0.03925495912007772,
-    "methylation_6": 0.0365749730911419,
-    "mutation_1": 0.035918892770630824,
-    "methylation_18": 0.034514699331035646,
-    "methylation_10": 0.03293923276188466,
-    "methylation_7": 0.032792891641088735,
-    "methylation_17": 0.032621140477689506,
-    "methylation_12": 0.032363527710231474,
-    "methylation_5": 0.03233724973341945,
-    "methylation_4": 0.03166865622043958,
-    "methylation_15": 0.029078419150973103,
-    "methylation_1": 0.027292600188624797,
-    "methylation_16": 0.026229649888468525,
-    "methylation_0": 0.025448816879509967,
-    "methylation_9": 0.025088516194978854,
-    "methylation_13": 0.024257170463385602,
-    "mutation_2": 0.024069223286465873,
-    "mutation_0": 0.02350398750848086,
-    "methylation_3": 0.02322185100159087,
-    "methylation_14": 0.02292694621244267
+    "feature_49": 0.0659882823892983,
+    "feature_58": 0.0578177489376067,
+    "feature_64": 0.0554359999546155,
+    "feature_63": 0.0543302357666086,
+    "feature_59": 0.0513421013007212,
+    "feature_62": 0.0513234886081774,
+    "feature_51": 0.050510289826508,
+    "feature_53": 0.04978402784443,
+    "feature_52": 0.0493198716160447,
+    "feature_47": 0.0491473715986529,
+    "feature_50": 0.0471956448522667,
+    "feature_48": 0.0469413120939749,
+    "feature_60": 0.0453745735885625,
+    "feature_57": 0.0449572095802115,
+    "feature_54": 0.0411827969844483,
+    "feature_61": 0.0395701486335961,
+    "feature_45": 0.0385756264078453,
+    "feature_55": 0.0378095801001471,
+    "feature_56": 0.0363207591339087,
+    "feature_46": 0.0357811390259872
   },
   "biomarker_categories": {
-    "methylation": [
-      "methylation_11",
-      "methylation_6",
-      "methylation_18",
-      "methylation_10",
-      "methylation_7",
-      "methylation_17",
-      "methylation_12",
-      "methylation_5",
-      "methylation_4",
-      "methylation_15",
-      "methylation_1",
-      "methylation_16",
-      "methylation_0",
-      "methylation_9",
-      "methylation_13",
-      "methylation_3",
-      "methylation_14"
-    ],
-    "mutation": [
-      "mutation_1",
-      "mutation_2",
-      "mutation_0"
-    ],
+    "methylation": [],
+    "mutation": [],
     "cn_alteration": [],
     "fragmentomics": [],
     "clinical": [],
     "icgc_argo": []
   },
-  "biological_implications": {
-    "methylation": {
-      "description": "DNA methylation patterns in cancer",
-      "clinical_relevance": "Epigenetic modifications that could indicate cancer progression",
-      "therapeutic_potential": "Targets for epigenetic therapy drugs"
-    },
-    "mutation": {
-      "description": "Somatic mutations in cancer cells",
-      "clinical_relevance": "Diagnostic and prognostic markers",
-      "therapeutic_potential": "Targetable mutations for precision medicine"
-    }
-  }
+  "biological_implications": {}
 }

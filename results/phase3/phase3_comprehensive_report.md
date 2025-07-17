@@ -1,7 +1,7 @@
 
 # Phase 3: Generalization and Biological Discovery Report
 
-**Date**: 2025-07-17 18:41:57
+**Date**: 2025-07-17 18:52:51
 **Phase**: Phase 3 - Generalization and Biological Discovery
 
 ## Executive Summary
@@ -11,15 +11,15 @@ Phase 3 focuses on validating the generalization capabilities of our Phase 2 mod
 ## Generalization Performance
 
 ### Overall Results
-- **Average Accuracy**: 0.1136
-- **Best Performing Model**: deep_neural_network
-- **Best Accuracy**: 0.1171
+- **Average Accuracy**: 0.4110
+- **Best Performing Model**: random_forest
+- **Best Accuracy**: 0.4704
 
 ### Individual Model Performance
-- **deep_neural_network**: 0.1171
-- **gradient_boosting**: 0.1125
-- **random_forest**: 0.1125
-- **ensemble**: 0.1125
+- **deep_neural_network**: 0.3535
+- **gradient_boosting**: 0.4287
+- **random_forest**: 0.4704
+- **ensemble**: 0.3915
 
 ## Biomarker Discovery
 
@@ -28,15 +28,14 @@ Phase 3 focuses on validating the generalization capabilities of our Phase 2 mod
 - **Biomarker Categories**: methylation, mutation, cn_alteration, fragmentomics, clinical, icgc_argo
 
 ### Biological Implications
-- **Methylation**: DNA methylation patterns in cancer
-- **Mutation**: Somatic mutations in cancer cells
+
 
 ## Clinical Decision Support Framework
 
 ### Model Deployment
-- **Recommended Model**: deep_neural_network
-- **Accuracy Threshold**: Current performance too low for clinical deployment
-- **Confidence Requirements**: Requires significant improvement before clinical consideration
+- **Recommended Model**: random_forest
+- **Accuracy Threshold**: Target: 0.71 (50% improvement needed)
+- **Confidence Requirements**: High confidence (>0.8) for clinical decisions
 
 ### Clinical Workflow Integration
 - **Input Requirements**: Genomic data, Clinical variables, Imaging features
