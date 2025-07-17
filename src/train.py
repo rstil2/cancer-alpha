@@ -1,6 +1,6 @@
 import pandas as pd
 from sklearn.ensemble import RandomForestClassifier
-from sklearn.model_selection import train_test_split
+from sklearn.model_selection import train_test_split, cross_val_score, StratifiedKFold
 import joblib
 import argparse
 import yaml
@@ -20,17 +20,23 @@ X = data.drop("label", axis=1)
 y = data["label"]
 
 # Train model with configuration
-test_size = config['train']['test_size']
+k_folds = config['train']['k_folds']
 random_state = config['train']['random_state']
 n_estimators = config['model']['n_estimators']
 max_depth = config['model']['max_depth']
 
-X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=test_size, random_state=random_state)
+# K-Fold Cross-Validation
+cv = StratifiedKFold(n_splits=k_folds, shuffle=True, random_state=random_state)
 model = RandomForestClassifier(n_estimators=n_estimators, max_depth=max_depth, random_state=random_state)
-model.fit(X_train, y_train)
+cross_val_scores = cross_val_score(model, X, y, cv=cv, scoring='accuracy')
+
+print(f"Cross-Validation Scores: {cross_val_scores}")
+print(f"Mean CV Accuracy: {cross_val_scores.mean():.3f}, Std: {cross_val_scores.std():.3f}")
+
+# Train final model
+model.fit(X, y)
 
 # Save model
 joblib.dump(model, "models/latest.pkl")
 print(f"Model trained and saved to models/latest.pkl")
-print(f"Training accuracy: {model.score(X_train, y_train):.3f}")
-print(f"Test accuracy: {model.score(X_test, y_test):.3f}")
+print(f"Final model accuracy on full dataset: {model.score(X, y):.3f}")
