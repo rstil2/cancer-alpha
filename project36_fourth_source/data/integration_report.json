@@ -1,0 +1,28 @@
+{
+  "timestamp": "2025-07-15T15:48:46.910488",
+  "dataset_summary": {
+    "total_samples": 5,
+    "total_features": 80,
+    "feature_breakdown": {
+      "TCGA_methylation": 19,
+      "TCGA_copy_number": 7,
+      "GEO_fragmentomics": 14,
+      "ENCODE_chromatin": 7,
+      "ICGC_ARGO_mutations": 33
+    },
+    "cancer_types": {
+      "BRCA": 5
+    }
+  },
+  "integration_status": "SUCCESS",
+  "data_sources": {
+    "TCGA": "Methylation and Copy Number Alteration data",
+    "GEO": "Fragmentomics data",
+    "ENCODE": "Chromatin accessibility data",
+    "ICGC_ARGO": "Mutation burden and pathway alteration data"
+  },
+  "output_files": [
+    "four_source_integrated_data.csv",
+    "integration_report.json"
+  ]
+}
