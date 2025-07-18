@@ -1,0 +1,38 @@
+groups:
+- name: CancerAlphaAlertGroup
+  rules:
+  - alert: HighCpuUsage
+    expr: 100 - (avg by(instance) (rate(node_cpu_seconds_total{mode="idle"}[5m])) * 100) > 80
+    for: 5m
+    labels:
+      severity: warning
+    annotations:
+      summary: "High CPU usage detected"
+      description: "{{ $labels.instance }} has CPU usage above 80% for more than 5 minutes."
+
+  - alert: HighMemoryUsage
+    expr: node_memory_MemAvailable_bytes / node_memory_MemTotal_bytes * 100 < 20
+    for: 2m
+    labels:
+      severity: warning
+    annotations:
+      summary: "High memory usage detected"
+      description: "{{ $labels.instance }} has less than 20% memory available for 2 minutes."
+
+  - alert: InstanceDown
+    expr: up == 0
+    for: 5m
+    labels:
+      severity: critical
+    annotations:
+      summary: "Instance down"
+      description: "{{ $labels.instance }} is down for more than 5 minutes."
+
+  - alert: CancerAlphaApiLatencyHigh
+    expr: histogram_quantile(0.95, sum(rate(http_request_duration_seconds_bucket{job="cancer-alpha-api"}[5m])) by (le)) > 1
+    for: 5m
+    labels:
+      severity: warning
+    annotations:
+      summary: "Cancer Alpha API latency high"
+      description: "High latency detected for Cancer Alpha API. 95th percentile latency is greater than 1 second over 5 minutes."
