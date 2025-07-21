@@ -177,4 +177,4 @@ This software implements technology covered by one or more patents. See [PATENTS
 Academic and research institutions may use this software under the Academic and Research License - see the [LICENSE](LICENSE) file for details.
 
 **💼 Commercial Use**  
-Commercial use requires separate patent licensing. Contact [your-email@domain.com] for commercial licensing inquiries.
+Commercial use requires separate patent licensing. Contact craig.stillwell@gmail.com for commercial licensing inquiries.
