@@ -1,5 +1,0 @@
-Model,Test Accuracy,Cross-validation Mean,Cross-validation Std
-Logistic Regression,0.360,0.345,0.042
-Random Forest,0.270,0.272,0.003
-Support Vector Machine,0.270,0.272,0.003
-Gradient Boosting,0.205,0.226,0.034

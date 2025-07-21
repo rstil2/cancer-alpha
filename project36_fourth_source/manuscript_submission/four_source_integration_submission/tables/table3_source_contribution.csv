@@ -1,6 +1,0 @@
-Data Source,Feature Count,Percentage,Top Features
-TCGA,150,37.5%,Gene expression profiles
-GEO,125,31.25%,Epigenetic markers
-ENCODE,100,25.0%,Chromatin accessibility
-ICGC,25,6.25%,Mutation signatures
-Total,400,100.0%,Multi-omics integration
