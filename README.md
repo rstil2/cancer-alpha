@@ -1,6 +1,7 @@
 # Cancer Alpha: Multi-Modal Transformer Architecture for Cancer Classification
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![License: Academic](https://img.shields.io/badge/License-Academic%20Use%20Only-red.svg)](LICENSE)
+[![Patent Protected](https://img.shields.io/badge/Patent-Protected-blue.svg)](PATENTS.md)
 [![Python 3.8+](https://img.shields.io/badge/python-3.8+-blue.svg)](https://www.python.org/downloads/release/python-380/)
 [![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
 
@@ -167,6 +168,13 @@ If you use this work in your research, please cite:
 
 We welcome contributions! Please see our [Contributing Guide](CONTRIBUTING.md) for details.
 
-## 📜 License
+## ⚖️ License & Patents
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+**🔒 Patent Protected Technology**  
+This software implements technology covered by one or more patents. See [PATENTS.md](PATENTS.md) for details.
+
+**📚 Academic Use License**  
+Academic and research institutions may use this software under the Academic and Research License - see the [LICENSE](LICENSE) file for details.
+
+**💼 Commercial Use**  
+Commercial use requires separate patent licensing. Contact [your-email@domain.com] for commercial licensing inquiries.
