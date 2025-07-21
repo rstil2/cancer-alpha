@@ -5,10 +5,10 @@
 This repository contains software that implements technology covered by one or more patents owned by the copyright holder.
 
 ### Patent Status
-- **Patent Application/Grant Number**: [To be filled in with your patent details]
-- **Patent Title**: [Your patent title]
-- **Filing Date**: [Patent filing date]
-- **Status**: [Filed/Pending/Granted]
+- **Patent Application/Grant Number**: Provisional Patent Application No. 63/847,316
+- **Patent Title**: Systems and Methods for Cancer Classification Using Multi-Modal Transformer-Based Architectures
+- **Filing Date**: [Your actual filing date]
+- **Status**: Provisional Patent Filed
 
 ### Patent Coverage
 The patented technology in this repository includes:
