@@ -1,4 +1,96 @@
+# Python
 venv/
 __pycache__/
-*.pyc
+*.py[cod]
+*.pyo
+*.pyd
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+pip-wheel-metadata/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+PYTHONPATH
+
+# PyTorch
+*.pth
+*.pt
+checkpoints/
+lightning_logs/
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# IPython
+profile_default/
+ipython_config.py
+
+# Environment variables
+.env
+.venv
+env/
+ENV/
+env.bak/
+venv.bak/
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
 .DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Data files (large)
+*.csv
+*.h5
+*.hdf5
+*.parquet
+*.pkl
+*.pickle
+
+# Model files
+*.model
+*.joblib
+
+# Logs
+*.log
+logs/
+wandb/
+mlruns/
+
+# Temporary files
+*.tmp
+*.temp
+
+# Backup files
+backup_*/
+*.tar.gz
+*.zip
+
+# Cache
+.cache/
+.pytest_cache/
+.mypy_cache/
+.coverage
+htmlcov/
