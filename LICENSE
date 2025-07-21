@@ -1,64 +1,19 @@
-CANCER ALPHA ACADEMIC AND RESEARCH LICENSE
+Copyright (c) 2025 Dr. R. Craig Stillwell
 
-Copyright (c) 2024 [Your Name/Institution]
-Patent Protected Technology
+This software is part of a patent-pending system titled "Cancer Alpha: A Production-Ready Multi-Modal AI System for Precision Oncology" (Provisional Patent Application No. 63/847,316).
 
-=== GRANT OF RIGHTS ===
+Permission is granted to academic and non-profit research institutions to use, reproduce, and modify this software **solely for non-commercial, academic research purposes**, subject to the following conditions:
 
-Subject to the terms and conditions of this License, the Licensor hereby grants
-to academic institutions, researchers, and non-commercial users a limited,
-non-exclusive, non-transferable license to:
+1. **Commercial Use Prohibited Without License**  
+   Commercial use — including (but not limited to) integration into commercial products, internal use by for-profit entities, or provision of services — is **strictly prohibited** without a separate, written license agreement with the copyright holder.
 
-1. Use the software for academic research and educational purposes only
-2. Reproduce and distribute copies for academic and research purposes
-3. Create derivative works for academic research (with proper attribution)
-4. Publish research results based on use of this software
+2. **Patent Rights Reserved**  
+   This software may implement technology claimed in one or more patent applications. No license is granted under any patent, except as expressly stated above.
 
-=== PATENT NOTICE ===
+3. **Redistribution**  
+   Redistribution of modified or unmodified versions of this software is **not permitted** without written consent.
 
-This software implements technology covered by one or more patents owned by
-the Licensor. This license DOES NOT grant any patent rights for commercial
-use, manufacturing, or distribution outside of academic and research contexts.
-
-For commercial licensing inquiries, contact: [your-email@domain.com]
-
-=== RESTRICTIONS ===
-
-1. COMMERCIAL USE PROHIBITED: This software may not be used for commercial
-   purposes without explicit written permission from the Licensor.
-
-2. NO PATENT GRANT: Except for the limited academic use granted above, no
-   license is granted under any patents that may be infringed by use of
-   this software.
-
-3. ATTRIBUTION REQUIRED: All academic publications, presentations, or other
-   public disclosures of research using this software must include proper
-   citation and acknowledgment.
-
-4. NO REDISTRIBUTION FOR COMMERCIAL PURPOSES: Users may not redistribute
-   this software or derivative works for commercial gain.
-
-=== CONDITIONS ===
-
-1. The above copyright notice and this license notice shall be included in
-   all copies or substantial portions of the Software.
-
-2. Users must comply with all applicable laws and regulations.
-
-3. This license may be terminated if terms are violated.
-
-=== DISCLAIMER ===
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
-
-=== COMMERCIAL LICENSING ===
-
-For commercial use, licensing, or patent licensing inquiries, please contact:
-R. Craig Stillwell
-craig.stillwell@gmail.com
+4. **Contact**  
+   For commercial licensing, redistribution, or royalty terms, contact:  
+   Dr. R. Craig Stillwell  
+   craig.stillwell@gmail.com
