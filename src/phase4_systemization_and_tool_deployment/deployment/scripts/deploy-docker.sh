@@ -13,8 +13,8 @@ NC='\033[0m' # No Color
 
 # Script configuration
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-PROJECT_ROOT="$(cd "$SCRIPT_DIR/../../../../.." && pwd)"
-DOCKER_DIR="$PROJECT_ROOT/src/phase4_systemization_and_tool_deployment/deployment/docker"
+PROJECT_ROOT="$(cd "$SCRIPT_DIR/../../../../../" && pwd)"
+DOCKER_DIR="$SCRIPT_DIR/../docker"
 
 echo -e "${BLUE}🚀 Cancer Alpha - Docker Deployment${NC}"
 echo -e "${BLUE}====================================${NC}"

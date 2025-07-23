@@ -20,16 +20,17 @@ RUN apt-get update && apt-get install -y \
 RUN python -m venv /app/venv
 
 # Copy requirements file
-COPY requirements.txt .
+COPY src/phase4_systemization_and_tool_deployment/api/requirements.txt .
 
 # Install Python dependencies
 RUN pip install --no-cache-dir --upgrade pip && \
     pip install --no-cache-dir -r requirements.txt
 
 # Copy application code
-COPY api/ ./api/
+COPY src/phase4_systemization_and_tool_deployment/api/ ./api/
+COPY models/ ./models/
 COPY results/ ./results/
-COPY src/phase2_fixed_model_training.py ./src/
+COPY src/ ./src/
 
 # Create non-root user
 RUN useradd --create-home --shell /bin/bash appuser && \
