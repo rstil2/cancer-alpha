@@ -38,7 +38,7 @@ sys.path.append(str(project_root))
 # Print debug info
 print(f"Current working directory: {os.getcwd()}")
 print(f"Project root: {project_root}")
-print(f"Models directory: {project_root / 'results' / 'phase2'}")
+print(f"Models directory: {project_root / 'models' / 'phase2_models'}")
 
 # Model loading utilities
 class ModelLoader:
@@ -50,7 +50,7 @@ class ModelLoader:
         
     def load_models(self):
         """Load all trained models from Phase 2"""
-        models_dir = project_root / "results" / "phase2"
+        models_dir = project_root / "models" / "phase2_models"
         
         if not models_dir.exists():
             raise FileNotFoundError(f"Models directory not found: {models_dir}")
