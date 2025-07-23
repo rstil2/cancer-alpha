@@ -135,10 +135,13 @@ This project follows a five-phase roadmap:
 
 ## 📖 Documentation
 
-- [API Documentation](docs/api/)
-- [Model Architecture Guide](docs/models/)
-- [Data Processing Pipeline](docs/data/)
-- [Experiment Tracking](docs/experiments/)
+- [Master Installation Guide](MASTER_INSTALLATION_GUIDE.md) - Complete installation and usage guide
+- [Comprehensive Deployment Guide](COMPREHENSIVE_DEPLOYMENT_GUIDE.md) - Detailed deployment instructions
+- [Working Deployment Guide](WORKING_DEPLOYMENT_GUIDE.md) - Quick deployment guide
+- [Phase 4B Web App Deployment](src/phase4_systemization_and_tool_deployment/PHASE4B_DEPLOYMENT_GUIDE.md) - React web application setup
+- [Phase 4C Production Deployment](src/phase4_systemization_and_tool_deployment/PHASE4C_PRODUCTION_DEPLOYMENT_GUIDE.md) - Production deployment guide
+- [Beginner Guide](src/phase4_systemization_and_tool_deployment/BEGINNER_GUIDE.md) - Getting started guide
+- [Project Roadmap](docs/roadmap.md) - Development roadmap and milestones
 
 ## 🧪 Testing
 
