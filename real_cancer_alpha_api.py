@@ -128,7 +128,7 @@ class HealthResponse(BaseModel):
 class ModelInfoResponse(BaseModel):
     """Response model for model information"""
     loaded_models: List[str]
-    model_performance: Dict[str, Dict[str, float]]
+    model_performance: Dict[str, Dict[str, Any]]
     feature_count: int
     cancer_types: List[str]
     training_info: Dict[str, Any]
