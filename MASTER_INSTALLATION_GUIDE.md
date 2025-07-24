@@ -128,12 +128,45 @@ print('Ensemble accuracy:', model['test_accuracy'])
 
 ## 🚀 Available Deployment Options
 
-### Option 1: Real Models API (RECOMMENDED)
+### Option 1: Smart Launcher (RECOMMENDED)
+
+**Best for: All users - handles port conflicts automatically**
+
+```bash
+# Cross-platform Python launcher (handles port conflicts)
+python3 scripts/start_api.py
+
+# Or use the bash script (Unix/Linux/macOS)
+./scripts/start_api.sh
+
+# Access at: http://localhost:8001
+```
+
+**Features:**
+- ✅ **Automatically resolves port conflicts (errno 48)**
+- ✅ Cross-platform (Windows, macOS, Linux)
+- ✅ Dependency checking and validation
+- ✅ Support for custom ports and demo mode
+- ✅ Colored terminal output with status messages
+
+**Options:**
+```bash
+# Start on custom port
+python3 scripts/start_api.py --port 8002
+
+# Start demo API instead of real models
+python3 scripts/start_api.py --demo
+
+# Show help
+python3 scripts/start_api.py --help
+```
+
+### Option 2: Real Models API (Direct)
 
 **Best for: Research, production, scientific work**
 
 ```bash
-# Start the real models API
+# Start the real models API directly
 python3 real_cancer_alpha_api.py
 
 # Access at: http://localhost:8001
@@ -144,13 +177,14 @@ python3 real_cancer_alpha_api.py
 - ✅ 100% Random Forest accuracy, 99% Ensemble accuracy
 - ✅ Real genomic feature processing (110 features)
 - ✅ Scientific-grade predictions
+- ⚠️  May encounter port conflicts (use Option 1 to avoid)
 
-### Option 2: Simple Demo API
+### Option 3: Simple Demo API (Direct)
 
 **Best for: Demonstrations, testing, development**
 
 ```bash
-# Start the demo API
+# Start the demo API directly
 python3 simple_cancer_api.py
 
 # Access at: http://localhost:8000
@@ -161,8 +195,9 @@ python3 simple_cancer_api.py
 - ✅ Mock predictions for demonstration
 - ✅ Same API interface as real models
 - ✅ No model training required
+- ⚠️  May encounter port conflicts (use Option 1 to avoid)
 
-### Option 3: Docker Deployment
+### Option 4: Docker Deployment
 
 **Best for: Production, containerized deployment**
 
@@ -182,7 +217,7 @@ docker build -t cancer-alpha .
 docker run -p 8001:8001 cancer-alpha
 ```
 
-### Option 4: Development Mode
+### Option 5: Development Mode
 
 **Best for: Developers, customization**
 
@@ -561,13 +596,48 @@ ls -la results/phase2/
 python3 src/cancer_alpha/phase2_fixed_model_training.py
 ```
 
-#### 2. Port already in use
+#### 2. Port already in use (Error: errno 48 - Address already in use)
+
+**This is the most common issue!**
+
+**🚨 Problem**: You get `errno 48` when trying to start the API because another process is using port 8001.
+
+**✅ Solution A - Use the Smart Launcher (RECOMMENDED)**:
 ```bash
-# Find process using port
+# The smart launcher automatically handles port conflicts
+python3 scripts/start_api.py
+
+# Or use the bash version
+./scripts/start_api.sh
+```
+
+**✅ Solution B - Manual Port Cleanup**:
+```bash
+# Find what's using the port
 lsof -i :8001
 
-# Kill process or use different port
-python3 real_cancer_alpha_api.py --port 8002
+# Kill the process (replace PID with actual process ID)
+kill -9 [PID]
+
+# Then start your API
+python3 real_cancer_alpha_api.py
+```
+
+**✅ Solution C - Use Different Port**:
+```bash
+# Start on a different port
+python3 scripts/start_api.py --port 8002
+
+# Then access at http://localhost:8002/docs
+```
+
+**✅ Solution D - Kill All Python Processes** (if you're sure):
+```bash
+# ⚠️  WARNING: This kills ALL Python processes
+pkill -f python3
+
+# Then start your API
+python3 real_cancer_alpha_api.py
 ```
 
 #### 3. Import errors
