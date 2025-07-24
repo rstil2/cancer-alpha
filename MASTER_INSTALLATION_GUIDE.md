@@ -128,9 +128,45 @@ print('Ensemble accuracy:', model['test_accuracy'])
 
 ## 🚀 Available Deployment Options
 
-### Option 1: Smart Launcher (RECOMMENDED)
+### Option 1: Clean API Startup (RECOMMENDED) 🧹
 
-**Best for: All users - handles port conflicts automatically**
+**Best for: All users - ensures clean startup without port conflicts**
+
+```bash
+# Use the clean startup script (handles all port cleanup)
+bash ./start_api_clean.sh
+
+# Access at: http://localhost:8001
+```
+
+**Features:**
+- ✅ **Automatically kills any existing processes on port 8001**
+- ✅ **Prevents errno 48 (address already in use) errors**
+- ✅ **Ensures clean startup every time**
+- ✅ **Works with real trained models**
+- ✅ **Part of official Cancer Alpha workflow**
+
+**What it does:**
+1. 🔍 Finds any process using port 8001
+2. ⚡ Cleanly terminates existing processes
+3. 🚀 Starts the real Cancer Alpha API
+4. ✅ Confirms successful startup
+
+**Manual cleanup (if needed):**
+```bash
+# Find process using port 8001
+lsof -ti:8001
+
+# Kill the process
+kill -9 $(lsof -ti:8001)
+
+# Then start normally
+python3 real_cancer_alpha_api.py
+```
+
+### Option 2: Smart Launcher (Alternative)
+
+**Best for: Advanced users needing custom configurations**
 
 ```bash
 # Cross-platform Python launcher (handles port conflicts)
@@ -143,7 +179,6 @@ python3 scripts/start_api.py
 ```
 
 **Features:**
-- ✅ **Automatically resolves port conflicts (errno 48)**
 - ✅ Cross-platform (Windows, macOS, Linux)
 - ✅ Dependency checking and validation
 - ✅ Support for custom ports and demo mode
