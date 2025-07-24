@@ -82,8 +82,14 @@ bash ./start_api_clean.sh
 
 ### 2. **Launch the Web Application**
 
-In a second terminal, start the React frontend:
+In a second terminal, start the React frontend using the clean start script:
 
+```bash
+# Ensures a clean start on port 3000
+bash ./start_webapp_clean.sh
+```
+
+**Alternative manual method:**
 ```bash
 # Navigate to the web app directory
 cd src/phase4_systemization_and_tool_deployment/web_app
