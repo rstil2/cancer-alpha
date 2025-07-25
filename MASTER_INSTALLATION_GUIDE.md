@@ -14,8 +14,8 @@ This guide provides complete instructions for installing, deploying, and using t
 # 1. Navigate to the project
 cd /Users/stillwell/projects/cancer-alpha
 
-# 2. Install Python dependencies
-pip3 install fastapi uvicorn numpy scikit-learn
+# 2. Install Python dependencies (including explainability)
+pip3 install fastapi uvicorn numpy scikit-learn shap
 
 # 3. Start the REAL Cancer Alpha API with trained models
 python3 real_cancer_alpha_api.py
@@ -86,14 +86,14 @@ Cancer Alpha is a state-of-the-art machine learning system for cancer classifica
 ### Step 1: Install Python Dependencies
 
 ```bash
-# Core API dependencies
-pip3 install fastapi uvicorn numpy scikit-learn pandas
+# Core API dependencies (including explainability)
+pip3 install fastapi uvicorn numpy scikit-learn pandas shap
 
 # Optional: For enhanced functionality
 pip3 install matplotlib seaborn joblib
 
 # Verify installation
-python3 -c "import fastapi, uvicorn, numpy, sklearn; print('✅ All dependencies installed!')"
+python3 -c "import fastapi, uvicorn, numpy, sklearn, shap; print('✅ All dependencies installed!')"
 ```
 
 ### Step 2: Verify Project Structure
@@ -242,7 +242,7 @@ cat > Dockerfile << 'EOF'
 FROM python:3.11-slim
 WORKDIR /app
 COPY . .
-RUN pip install fastapi uvicorn numpy scikit-learn
+RUN pip install fastapi uvicorn numpy scikit-learn shap
 EXPOSE 8001
 CMD ["python", "real_cancer_alpha_api.py"]
 EOF
@@ -455,7 +455,7 @@ cat > Dockerfile << 'EOF'
 FROM python:3.11-slim
 WORKDIR /app
 COPY . .
-RUN pip install --no-cache-dir fastapi uvicorn numpy scikit-learn
+RUN pip install --no-cache-dir fastapi uvicorn numpy scikit-learn shap
 EXPOSE 8001
 CMD ["python", "real_cancer_alpha_api.py"]
 EOF
@@ -677,8 +677,8 @@ python3 real_cancer_alpha_api.py
 
 #### 3. Import errors
 ```bash
-# Install missing dependencies
-pip3 install fastapi uvicorn numpy scikit-learn
+# Install missing dependencies (including explainability)
+pip3 install fastapi uvicorn numpy scikit-learn shap
 
 # Verify Python version
 python3 --version  # Should be 3.8+
@@ -823,8 +823,8 @@ logging.basicConfig(
 ### Updates & Maintenance
 
 ```bash
-# Update dependencies
-pip3 install --upgrade fastapi uvicorn numpy scikit-learn
+# Update dependencies (including explainability)
+pip3 install --upgrade fastapi uvicorn numpy scikit-learn shap
 
 # Retrain models (if needed)
 python3 src/cancer_alpha/phase2_fixed_model_training.py
