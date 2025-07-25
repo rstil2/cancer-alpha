@@ -327,18 +327,33 @@ const PredictionInterface: React.FC = () => {
                       </Typography>
                       
                       <Typography variant="subtitle1" fontWeight="bold" sx={{ mt: 2 }}>
-                        Confidence
+                        Confidence Metrics
                       </Typography>
-                      <Box display="flex" alignItems="center" gap={1}>
+                      <Box display="flex" alignItems="center" gap={1} mb={1}>
                         <LinearProgress
                           variant="determinate"
-                          value={prediction.confidence * 100}
+                          value={(prediction.confidence_metrics?.prediction_confidence || prediction.confidence || 0) * 100}
                           sx={{ flexGrow: 1, height: 10, borderRadius: 5 }}
                         />
                         <Typography variant="body2" fontWeight="bold">
-                          {(prediction.confidence * 100).toFixed(1)}%
+                          {((prediction.confidence_metrics?.prediction_confidence || prediction.confidence || 0) * 100).toFixed(1)}%
                         </Typography>
                       </Box>
+                      {prediction.confidence_metrics && (
+                        <Box>
+                          <Chip
+                            label={`${prediction.confidence_metrics.confidence_level} Confidence`}
+                            size="small"
+                            color={prediction.confidence_metrics.confidence_level === 'High' ? 'success' : 
+                                   prediction.confidence_metrics.confidence_level === 'Medium' ? 'warning' : 'error'}
+                            sx={{ mr: 1, mb: 1 }}
+                          />
+                          <Typography variant="caption" display="block" color="text.secondary">
+                            Entropy: {prediction.confidence_metrics.entropy.toFixed(3)} | 
+                            Top 2 Margin: {(prediction.confidence_metrics.top_2_margin * 100).toFixed(1)}%
+                          </Typography>
+                        </Box>
+                      )}
                     </Box>
                   </Grid>
                   
@@ -368,6 +383,121 @@ const PredictionInterface: React.FC = () => {
                     </Box>
                   </Grid>
                 </Grid>
+                
+                {/* SHAP Explainability Section */}
+                {prediction.explanation && prediction.explanation.explanation_available && (
+                  <>
+                    <Divider sx={{ my: 2 }} />
+                    <Typography variant="h6" component="h3" gutterBottom>
+                      🔍 Feature Explanation (SHAP Analysis)
+                    </Typography>
+                    <Typography variant="body2" color="text.secondary" gutterBottom sx={{ mb: 2 }}>
+                      Method: {prediction.explanation.explanation_method} | 
+                      Base Value: {prediction.explanation.base_value.toFixed(3)}
+                    </Typography>
+                    
+                    <Grid container spacing={2}>
+                      {/* Top Positive Features */}
+                      <Grid item xs={12} md={6}>
+                        <Typography variant="subtitle1" fontWeight="bold" gutterBottom color="success.main">
+                          ➕ Top Contributing Features
+                        </Typography>
+                        {prediction.explanation.top_positive_features
+                          .slice(0, 5)
+                          .map((feature, index) => (
+                            <Box key={feature.feature_name} sx={{ mb: 1.5 }}>
+                              <Box display="flex" justifyContent="space-between" alignItems="center" mb={0.5}>
+                                <Typography variant="body2" fontWeight="medium">
+                                  {feature.feature_name}
+                                </Typography>
+                                <Box display="flex" alignItems="center" gap={1}>
+                                  <Chip
+                                    label={`#${feature.importance_rank}`}
+                                    size="small"
+                                    variant="outlined"
+                                    color="primary"
+                                  />
+                                  <Typography variant="caption" fontWeight="bold" color="success.main">
+                                    +{feature.shap_value.toFixed(3)}
+                                  </Typography>
+                                </Box>
+                              </Box>
+                              <Box display="flex" alignItems="center" gap={1}>
+                                <LinearProgress
+                                  variant="determinate"
+                                  value={Math.min(Math.abs(feature.shap_value) * 1000, 100)}
+                                  sx={{ 
+                                    flexGrow: 1, 
+                                    height: 6, 
+                                    borderRadius: 3,
+                                    '& .MuiLinearProgress-bar': {
+                                      backgroundColor: '#4caf50'
+                                    }
+                                  }}
+                                />
+                                <Typography variant="caption" color="text.secondary">
+                                  Value: {feature.feature_value.toFixed(2)}
+                                </Typography>
+                              </Box>
+                            </Box>
+                          ))}
+                      </Grid>
+                      
+                      {/* Top Negative Features */}
+                      <Grid item xs={12} md={6}>
+                        <Typography variant="subtitle1" fontWeight="bold" gutterBottom color="error.main">
+                          ➖ Top Detracting Features
+                        </Typography>
+                        {prediction.explanation.top_negative_features
+                          .slice(0, 5)
+                          .map((feature, index) => (
+                            <Box key={feature.feature_name} sx={{ mb: 1.5 }}>
+                              <Box display="flex" justifyContent="space-between" alignItems="center" mb={0.5}>
+                                <Typography variant="body2" fontWeight="medium">
+                                  {feature.feature_name}
+                                </Typography>
+                                <Box display="flex" alignItems="center" gap={1}>
+                                  <Chip
+                                    label={`#${feature.importance_rank}`}
+                                    size="small"
+                                    variant="outlined"
+                                    color="primary"
+                                  />
+                                  <Typography variant="caption" fontWeight="bold" color="error.main">
+                                    {feature.shap_value.toFixed(3)}
+                                  </Typography>
+                                </Box>
+                              </Box>
+                              <Box display="flex" alignItems="center" gap={1}>
+                                <LinearProgress
+                                  variant="determinate"
+                                  value={Math.min(Math.abs(feature.shap_value) * 1000, 100)}
+                                  sx={{ 
+                                    flexGrow: 1, 
+                                    height: 6, 
+                                    borderRadius: 3,
+                                    '& .MuiLinearProgress-bar': {
+                                      backgroundColor: '#f44336'
+                                    }
+                                  }}
+                                />
+                                <Typography variant="caption" color="text.secondary">
+                                  Value: {feature.feature_value.toFixed(2)}
+                                </Typography>
+                              </Box>
+                            </Box>
+                          ))}
+                      </Grid>
+                    </Grid>
+                    
+                    <Alert severity="info" sx={{ mt: 2 }}>
+                      <Typography variant="body2">
+                        <strong>SHAP Explanation:</strong> Positive values increase the likelihood of the predicted cancer type, 
+                        while negative values decrease it. The larger the absolute value, the more important the feature is for this prediction.
+                      </Typography>
+                    </Alert>
+                  </>
+                )}
                 
                 <Divider sx={{ my: 2 }} />
                 

@@ -126,18 +126,31 @@ class ModelLoader:
                 print("✓ Random Forest SHAP explainer initialized")
                 
             if 'gradient_boosting' in self.models:
-                self.explainers['gradient_boosting'] = shap.TreeExplainer(self.models['gradient_boosting'])
-                print("✓ Gradient Boosting SHAP explainer initialized")
+                try:
+                    self.explainers['gradient_boosting'] = shap.TreeExplainer(self.models['gradient_boosting'])
+                    print("✓ Gradient Boosting SHAP explainer initialized")
+                except Exception as gb_error:
+                    print(f"⚠️  Gradient Boosting SHAP explainer failed: {gb_error}")
+                    print("   Using Kernel explainer as fallback...")
+                    background_sample = self.training_data_sample[:20]
+                    self.explainers['gradient_boosting'] = shap.KernelExplainer(
+                        self.models['gradient_boosting'].predict_proba,
+                        background_sample
+                    )
+                    print("✓ Gradient Boosting Kernel explainer initialized")
                 
             # For neural networks, use Kernel explainer with sample data
             if 'deep_neural_network' in self.models:
-                # Use a smaller background sample for kernel explainer (computationally intensive)
-                background_sample = self.training_data_sample[:10]
-                self.explainers['deep_neural_network'] = shap.KernelExplainer(
-                    self.models['deep_neural_network'].predict_proba,
-                    background_sample
-                )
-                print("✓ Deep Neural Network SHAP explainer initialized")
+                try:
+                    # Use a smaller background sample for kernel explainer (computationally intensive)
+                    background_sample = self.training_data_sample[:10]
+                    self.explainers['deep_neural_network'] = shap.KernelExplainer(
+                        self.models['deep_neural_network'].predict_proba,
+                        background_sample
+                    )
+                    print("✓ Deep Neural Network SHAP explainer initialized")
+                except Exception as dnn_error:
+                    print(f"⚠️  Deep Neural Network SHAP explainer failed: {dnn_error}")
                 
         except Exception as e:
             print(f"⚠️  Warning: SHAP explainer initialization failed: {e}")
@@ -285,7 +298,7 @@ app = FastAPI(
     
     ## ⚠️ **Clinical Disclaimer**
     This API is for research purposes only. Results should not be used for clinical decision-making without proper medical oversight.
-    """
+    """,
     version="2.0.0 - REAL MODELS",
     docs_url="/docs",
     redoc_url="/redoc",
@@ -675,6 +688,85 @@ async def get_cancer_types():
         "total_types": len(CANCER_TYPES),
         "supported_models": ["ensemble", "random_forest", "gradient_boosting", "deep_neural_network"],
         "note": "These are the cancer types the models were trained on"
+    }
+
+@app.get("/features/info", 
+         response_model=dict,
+         tags=["Model Information"],
+         summary="🧬 Genomic Features Information",
+         description="""Get detailed information about the 110 genomic features used by the models:
+         - Feature categories and descriptions
+         - Expected value ranges and data types
+         - Feature importance rankings (when available)
+         - SHAP explainability support status
+         
+         **Returns:** Complete feature specifications and explainability information.
+         """)
+async def get_features_info():
+    """Get detailed information about genomic features"""
+    feature_categories = {
+        "methylation": {
+            "count": 20,
+            "range": "0-20",
+            "description": "DNA methylation patterns - typically 0-1 range representing methylation levels",
+            "example_features": ["methylation_0", "methylation_1", "methylation_2"],
+            "clinical_relevance": "Hypermethylation often associated with tumor suppressor gene silencing"
+        },
+        "mutation": {
+            "count": 25, 
+            "range": "20-45",
+            "description": "Genetic mutation counts - discrete values representing mutation burden",
+            "example_features": ["mutation_0", "mutation_1", "mutation_2"],
+            "clinical_relevance": "High mutation burden may indicate genomic instability"
+        },
+        "copynumber": {
+            "count": 20,
+            "range": "45-65", 
+            "description": "Copy number variations - typically around 2 (diploid) with amplifications/deletions",
+            "example_features": ["copynumber_0", "copynumber_1", "copynumber_2"],
+            "clinical_relevance": "Copy number alterations drive oncogene activation or tumor suppressor loss"
+        },
+        "fragment": {
+            "count": 15,
+            "range": "65-80",
+            "description": "Circulating tumor DNA fragmentomics - continuous values from liquid biopsy analysis", 
+            "example_features": ["fragment_0", "fragment_1", "fragment_2"],
+            "clinical_relevance": "Fragment patterns reflect tumor biology and treatment response"
+        },
+        "clinical": {
+            "count": 10,
+            "range": "80-90",
+            "description": "Clinical variables - normalized patient demographics and clinical factors",
+            "example_features": ["clinical_0", "clinical_1", "clinical_2"],
+            "clinical_relevance": "Traditional clinical factors that influence cancer risk and prognosis"
+        },
+        "icgc": {
+            "count": 20,
+            "range": "90-110",
+            "description": "ICGC ARGO pathway data - international cancer genomics consortium features",
+            "example_features": ["icgc_0", "icgc_1", "icgc_2"],
+            "clinical_relevance": "Pathway-level alterations from comprehensive genomic analysis"
+        }
+    }
+    
+    return {
+        "total_features": 110,
+        "feature_categories": feature_categories,
+        "explainability": {
+            "shap_support": True,
+            "available_explainers": list(model_loader.explainers.keys()) if model_loader.models_loaded else [],
+            "explanation_methods": {
+                "TreeExplainer": "For Random Forest and Gradient Boosting models",
+                "KernelExplainer": "For Deep Neural Network models (fallback)"
+            }
+        },
+        "feature_importance": model_loader.feature_importance if model_loader.feature_importance else "Feature importance data not available",
+        "usage_notes": [
+            "All 110 features should be provided for optimal prediction accuracy",
+            "Missing features will be zero-filled (may reduce accuracy)",
+            "Features are automatically scaled using trained scaler",
+            "SHAP explanations show per-feature contributions to predictions"
+        ]
     }
 
 @app.post("/predict", 

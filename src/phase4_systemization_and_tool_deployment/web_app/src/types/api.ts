@@ -8,15 +8,43 @@ export interface PredictionRequest {
   model_type?: string;
 }
 
+export interface ConfidenceMetrics {
+  prediction_confidence: number;
+  confidence_level: string;
+  entropy: number;
+  top_2_margin: number;
+}
+
+export interface FeatureExplanation {
+  feature_name: string;
+  shap_value: number;
+  feature_value: number;
+  contribution: string;
+  importance_rank: number;
+}
+
+export interface ExplanationSummary {
+  top_positive_features: FeatureExplanation[];
+  top_negative_features: FeatureExplanation[];
+  explanation_available: boolean;
+  explanation_method: string;
+  base_value: number;
+  prediction_value: number;
+}
+
 export interface PredictionResponse {
   patient_id: string;
   predicted_cancer_type: string;
   predicted_cancer_name: string;
-  confidence: number;
+  confidence_metrics: ConfidenceMetrics;
   probability_distribution: Record<string, number>;
+  explanation: ExplanationSummary;
   model_used: string;
   timestamp: string;
   processing_time_ms: number;
+  model_accuracy: number;
+  // Legacy field for backward compatibility
+  confidence?: number;
 }
 
 export interface ModelInfo {
