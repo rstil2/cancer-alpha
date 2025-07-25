@@ -57,6 +57,12 @@ Cancer Alpha represents a paradigm shift in computational oncology, delivering:
 - **Docker & Kubernetes**: Scalable deployment
 - **Hospital Integration**: Standards-compliant design
 
+### 🔍 **Clinical Explainability**
+- **Per-Case Confidence**: Prediction confidence with uncertainty metrics
+- **SHAP Explanations**: Feature-level contributions for every prediction
+- **Trust Scoring**: High/Medium/Low confidence levels for clinical decisions
+- **Transparent AI**: Full interpretability for regulatory compliance
+
 ### 🔬 **Scientific Rigor**
 - **Peer-Reviewed Methods**: Published research foundation
 - **Reproducible Results**: Standardized workflows
@@ -103,6 +109,7 @@ npm start
 
 - **Web App**: [http://localhost:3000](http://localhost:3000)
 - **API Docs**: [http://localhost:8001/docs](http://localhost:8001/docs)
+- **Test Explainability**: [http://localhost:8001/test-explainability](http://localhost:8001/test-explainability)
 
 ---
 
@@ -127,7 +134,7 @@ This comprehensive roadmap reflects our current achievements and outlines the ne
 **Current Phase Status:**
 1. **Phase 1**: Reframe the Scientific Problem ✅
 2. **Phase 2**: Technical and Model Innovation ✅ 
-3. **Phase 2.5**: Model Enhancement & Validation 🚀 **(NEXT)**
+3. **Phase 2.5**: Model Enhancement & Validation ✅ **(COMPLETE - SHAP Explainability Added)**
 4. **Phase 4**: Systemization and Tool Deployment ✅
 5. **Phase 4.5**: Advanced System Features 🔄 **(IN PROGRESS)**
 6. **Phase 5**: Publication & Community Impact 📝 **(UPCOMING)**
