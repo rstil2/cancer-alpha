@@ -120,15 +120,21 @@ For detailed instructions, see the [Master Installation Guide](MASTER_INSTALLATI
 
 ## 🗺️ Project Roadmap
 
-This project follows a five-phase roadmap, delivering continuous innovation from scientific discovery to clinical application:
+**📈 CURRENT ROADMAP (2025)**: [**Updated Project Roadmap 2025**](docs/UPDATED_PROJECT_ROADMAP_2025.md) ← **START HERE**
 
+This comprehensive roadmap reflects our current achievements and outlines the next 6 months of development priorities for transforming Cancer Alpha into the "AlphaFold of Oncology."
+
+**Current Phase Status:**
 1. **Phase 1**: Reframe the Scientific Problem ✅
-2. **Phase 2**: Technical and Model Innovation ✅
-3. **Phase 3**: Generalization and Biological Discovery 🔄
+2. **Phase 2**: Technical and Model Innovation ✅ 
+3. **Phase 2.5**: Model Enhancement & Validation 🚀 **(NEXT)**
 4. **Phase 4**: Systemization and Tool Deployment ✅
-5. **Phase 5**: Manuscript Rewriting and Submission ✅
+5. **Phase 4.5**: Advanced System Features 🔄 **(IN PROGRESS)**
+6. **Phase 5**: Publication & Community Impact 📝 **(UPCOMING)**
 
-See the detailed [Project Roadmap](docs/roadmap.md) for future plans.
+**Historical Roadmaps** (for reference):
+- [Technical Roadmap](docs/roadmap.md)
+- [Cancer Classification Roadmap](docs/cancer_classification_roadmap.md)
 
 ---
 
