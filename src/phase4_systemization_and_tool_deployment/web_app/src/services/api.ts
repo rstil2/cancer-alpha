@@ -77,6 +77,12 @@ export const apiService = {
     return response.data;
   },
 
+  // Get feature information and explainability details
+  async getFeatureInfo(): Promise<any> {
+    const response = await api.get('/features/info');
+    return response.data;
+  },
+
   // Make prediction
   async makePrediction(request: PredictionRequest): Promise<PredictionResponse> {
     const response = await api.post('/predict', request);
