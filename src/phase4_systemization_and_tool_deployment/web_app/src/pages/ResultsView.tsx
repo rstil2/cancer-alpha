@@ -33,7 +33,12 @@ const mockPredictions: PredictionResponse[] = [
     patient_id: 'P001',
     predicted_cancer_type: 'BRCA',
     predicted_cancer_name: 'Breast Invasive Carcinoma',
-    confidence: 0.95,
+    confidence_metrics: {
+      prediction_confidence: 0.95,
+      confidence_level: 'High',
+      entropy: 0.2,
+      top_2_margin: 0.89
+    },
     probability_distribution: {
       'BRCA': 0.95,
       'LUAD': 0.02,
@@ -44,15 +49,30 @@ const mockPredictions: PredictionResponse[] = [
       'HNSC': 0.0,
       'LIHC': 0.0,
     },
+    explanation: {
+      top_positive_features: [],
+      top_negative_features: [],
+      explanation_available: false,
+      explanation_method: 'Not available',
+      base_value: 0.0,
+      prediction_value: 0.0
+    },
     model_used: 'ensemble',
     timestamp: '2025-07-18T10:30:00Z',
     processing_time_ms: 45.2,
+    model_accuracy: 0.99,
+    confidence: 0.95, // Legacy compatibility
   },
   {
     patient_id: 'P002',
     predicted_cancer_type: 'LUAD',
     predicted_cancer_name: 'Lung Adenocarcinoma',
-    confidence: 0.87,
+    confidence_metrics: {
+      prediction_confidence: 0.87,
+      confidence_level: 'High',
+      entropy: 0.35,
+      top_2_margin: 0.76
+    },
     probability_distribution: {
       'LUAD': 0.87,
       'BRCA': 0.05,
@@ -63,15 +83,30 @@ const mockPredictions: PredictionResponse[] = [
       'HNSC': 0.0,
       'LIHC': 0.0,
     },
+    explanation: {
+      top_positive_features: [],
+      top_negative_features: [],
+      explanation_available: false,
+      explanation_method: 'Not available',
+      base_value: 0.0,
+      prediction_value: 0.0
+    },
     model_used: 'random_forest',
     timestamp: '2025-07-18T11:15:00Z',
     processing_time_ms: 38.7,
+    model_accuracy: 0.92,
+    confidence: 0.87, // Legacy compatibility
   },
   {
     patient_id: 'P003',
     predicted_cancer_type: 'COAD',
     predicted_cancer_name: 'Colon Adenocarcinoma',
-    confidence: 0.92,
+    confidence_metrics: {
+      prediction_confidence: 0.92,
+      confidence_level: 'Very High',
+      entropy: 0.25,
+      top_2_margin: 0.84
+    },
     probability_distribution: {
       'COAD': 0.92,
       'STAD': 0.04,
@@ -82,15 +117,30 @@ const mockPredictions: PredictionResponse[] = [
       'HNSC': 0.0,
       'LIHC': 0.0,
     },
+    explanation: {
+      top_positive_features: [],
+      top_negative_features: [],
+      explanation_available: false,
+      explanation_method: 'Not available',
+      base_value: 0.0,
+      prediction_value: 0.0
+    },
     model_used: 'gradient_boosting',
     timestamp: '2025-07-18T12:00:00Z',
     processing_time_ms: 42.1,
+    model_accuracy: 0.96,
+    confidence: 0.92, // Legacy compatibility
   },
 ];
 
 const ResultsView: React.FC = () => {
   const [predictions] = useState<PredictionResponse[]>(mockPredictions);
   const [selectedPrediction, setSelectedPrediction] = useState<PredictionResponse | null>(null);
+
+  // Helper function for backward compatibility with confidence field
+  const getConfidence = (prediction: PredictionResponse): number => {
+    return prediction.confidence_metrics?.prediction_confidence ?? prediction.confidence ?? 0;
+  };
 
   const getConfidenceColor = (confidence: number) => {
     if (confidence >= 0.9) return 'success';
@@ -112,7 +162,7 @@ const ResultsView: React.FC = () => {
       ...predictions.map(p => [
         p.patient_id,
         p.predicted_cancer_type,
-        p.confidence.toFixed(3),
+        getConfidence(p).toFixed(3),
         p.model_used,
         new Date(p.timestamp).toISOString()
       ].join(','))
@@ -132,7 +182,7 @@ const ResultsView: React.FC = () => {
     return acc;
   }, {} as Record<string, number>);
 
-  const averageConfidence = predictions.reduce((sum, pred) => sum + pred.confidence, 0) / predictions.length;
+  const averageConfidence = predictions.reduce((sum, pred) => sum + getConfidence(pred), 0) / predictions.length;
   const averageProcessingTime = predictions.reduce((sum, pred) => sum + pred.processing_time_ms, 0) / predictions.length;
 
   return (
@@ -264,7 +314,7 @@ const ResultsView: React.FC = () => {
                       </Box>
                       <Chip
                         label={prediction.predicted_cancer_type}
-                        color={getConfidenceColor(prediction.confidence) as any}
+                        color={getConfidenceColor(getConfidence(prediction)) as any}
                         size="small"
                       />
                     </Box>
@@ -323,7 +373,7 @@ const ResultsView: React.FC = () => {
                         <TableCell>
                           <Chip
                             label={prediction.predicted_cancer_type}
-                            color={getConfidenceColor(prediction.confidence) as any}
+                            color={getConfidenceColor(getConfidence(prediction)) as any}
                             size="small"
                           />
                         </TableCell>
@@ -335,11 +385,11 @@ const ResultsView: React.FC = () => {
                         <TableCell align="right">
                           <Box display="flex" alignItems="center" justifyContent="flex-end">
                             <Typography variant="body2" sx={{ mr: 1 }}>
-                              {(prediction.confidence * 100).toFixed(1)}%
+                              {(getConfidence(prediction) * 100).toFixed(1)}%
                             </Typography>
                             <Chip
-                              label={getConfidenceLabel(prediction.confidence)}
-                              color={getConfidenceColor(prediction.confidence) as any}
+                              label={getConfidenceLabel(getConfidence(prediction))}
+                              color={getConfidenceColor(getConfidence(prediction)) as any}
                               size="small"
                             />
                           </Box>
@@ -412,7 +462,7 @@ const ResultsView: React.FC = () => {
                         <strong>Full Name:</strong> {selectedPrediction.predicted_cancer_name}
                       </Typography>
                       <Typography variant="body2" gutterBottom>
-                        <strong>Confidence:</strong> {(selectedPrediction.confidence * 100).toFixed(1)}%
+                        <strong>Confidence:</strong> {(getConfidence(selectedPrediction) * 100).toFixed(1)}%
                       </Typography>
                       <Typography variant="body2" gutterBottom>
                         <strong>Model Used:</strong> {selectedPrediction.model_used}
