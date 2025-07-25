@@ -10,6 +10,7 @@ import Dashboard from './pages/Dashboard';
 import PredictionInterface from './pages/PredictionInterface';
 import ModelManagement from './pages/ModelManagement';
 import ResultsView from './pages/ResultsView';
+import Features from './pages/Features';
 import Navigation from './components/Navigation';
 
 // Enhanced Theme configuration for Cancer Alpha
@@ -174,6 +175,7 @@ function App() {
             <Route path="/predict" element={<PredictionInterface />} />
             <Route path="/models" element={<ModelManagement />} />
             <Route path="/results" element={<ResultsView />} />
+            <Route path="/features" element={<Features />} />
           </Routes>
         </Container>
       </Router>

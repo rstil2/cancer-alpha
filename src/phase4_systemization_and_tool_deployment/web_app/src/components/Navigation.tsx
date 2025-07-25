@@ -11,6 +11,7 @@ import {
   Psychology as PredictIcon,
   ModelTraining as ModelIcon,
   Assessment as ResultsIcon,
+  DataUsage as FeaturesIcon,
 } from '@mui/icons-material';
 
 const Navigation: React.FC = () => {
@@ -27,13 +28,15 @@ const Navigation: React.FC = () => {
         return 2;
       case '/results':
         return 3;
+      case '/features':
+        return 4;
       default:
         return 0;
     }
   };
 
   const handleTabChange = (event: React.SyntheticEvent, newValue: number) => {
-    const routes = ['/', '/predict', '/models', '/results'];
+    const routes = ['/', '/predict', '/models', '/results', '/features'];
     navigate(routes[newValue]);
   };
 
@@ -63,6 +66,11 @@ const Navigation: React.FC = () => {
           <Tab 
             icon={<ResultsIcon />} 
             label="Results" 
+            iconPosition="start"
+          />
+          <Tab 
+            icon={<FeaturesIcon />} 
+            label="Features" 
             iconPosition="start"
           />
         </Tabs>

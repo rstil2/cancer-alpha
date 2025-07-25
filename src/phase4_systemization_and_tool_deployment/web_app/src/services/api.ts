@@ -6,6 +6,7 @@ import {
   HealthStatus,
   CancerTypesResponse,
   FeatureImportance,
+  FeatureInfoResponse,
   ApiError,
 } from '../types/api';
 
@@ -78,7 +79,7 @@ export const apiService = {
   },
 
   // Get feature information and explainability details
-  async getFeatureInfo(): Promise<any> {
+  async getFeatureInfo(): Promise<FeatureInfoResponse> {
     const response = await api.get('/features/info');
     return response.data;
   },

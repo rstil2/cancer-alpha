@@ -94,6 +94,28 @@ export interface Patient {
   lastPrediction?: PredictionResponse;
 }
 
+export interface FeatureCategory {
+  count: number;
+  range: string;
+  description: string;
+  example_features: string[];
+  clinical_relevance: string;
+}
+
+export interface ExplainabilityInfo {
+  shap_support: boolean;
+  available_explainers: string[];
+  explanation_methods: Record<string, string>;
+}
+
+export interface FeatureInfoResponse {
+  total_features: number;
+  feature_categories: Record<string, FeatureCategory>;
+  explainability: ExplainabilityInfo;
+  feature_importance: Record<string, number[]> | string;
+  usage_notes: string[];
+}
+
 export interface ApiError {
   detail: string;
   status_code: number;

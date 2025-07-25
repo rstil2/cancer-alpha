@@ -52,8 +52,8 @@ Cancer Alpha represents a paradigm shift in computational oncology, delivering:
 <td width="50%">
 
 ### 🏥 **Production-Ready Platform**
-- **Web Application**: Intuitive clinical interface
-- **REST API**: Enterprise-grade backend service
+- **Web Application**: Intuitive clinical interface with Features tab for genomic data exploration
+- **REST API**: Enterprise-grade backend service with SHAP explainability
 - **Docker & Kubernetes**: Scalable deployment
 - **Hospital Integration**: Standards-compliant design
 
@@ -285,6 +285,8 @@ cancer-alpha/
 ## 📖 Documentation
 
 - [Master Installation Guide](MASTER_INSTALLATION_GUIDE.md) - Complete installation and usage guide
+- [API Reference Guide](docs/API_REFERENCE_GUIDE.md) - Comprehensive API documentation with SHAP explainability
+- [Web App Features Guide](docs/WEB_APP_FEATURES_GUIDE.md) - Features tab usage and genomic data exploration
 - [Comprehensive Deployment Guide](COMPREHENSIVE_DEPLOYMENT_GUIDE.md) - Detailed deployment instructions
 - [Working Deployment Guide](WORKING_DEPLOYMENT_GUIDE.md) - Quick deployment guide
 - [Phase 4B Web App Deployment](src/phase4_systemization_and_tool_deployment/PHASE4B_DEPLOYMENT_GUIDE.md) - React web application setup
