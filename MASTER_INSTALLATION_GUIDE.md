@@ -863,6 +863,58 @@ pkill -f cancer_alpha_api && python3 real_cancer_alpha_api.py
 
 ---
 
+## 🔍 **Enhanced Monitoring & Status Tools**
+
+### Quick Status Check
+```bash
+# Run comprehensive status check
+./scripts/quick_status.sh
+```
+
+This script provides instant overview of:
+- ✅ API status and version
+- 🗂️ Model file availability 
+- 🌐 Web application status
+- 📚 Documentation completeness
+- 🐍 Python dependencies
+
+### Detailed System Monitoring
+```bash
+# Comprehensive system monitoring
+python3 utils/system_monitor.py
+
+# Output as JSON for automation
+python3 utils/system_monitor.py --json
+
+# Continuous monitoring (every 30 seconds)
+python3 utils/system_monitor.py --continuous 30
+```
+
+The system monitor provides:
+- 🌐 API health and performance metrics
+- 💻 System resource usage (CPU, memory, disk)
+- 📊 Model validation and status
+- ⚡ Performance benchmarking
+- 📚 Documentation validation
+
+### Enhanced API Documentation
+
+The API now includes comprehensive OpenAPI/Swagger documentation:
+
+- **Interactive Docs**: http://localhost:8001/docs
+- **Alternative Docs**: http://localhost:8001/redoc
+- **API Reference Guide**: [docs/API_REFERENCE_GUIDE.md](docs/API_REFERENCE_GUIDE.md)
+
+Features:
+- 🎯 Organized by endpoint categories
+- 📋 Complete request/response schemas
+- 🧪 Built-in testing interface
+- 💻 Code examples in Python, JavaScript, cURL
+- 🔧 Error handling documentation
+- 🛡️ Security considerations
+
+---
+
 ## 📞 Support
 
 **If you need help:**
