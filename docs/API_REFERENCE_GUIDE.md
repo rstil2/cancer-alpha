@@ -184,6 +184,74 @@ Currently, the API does not require authentication. For production deployment, i
 }
 ```
 
+#### `GET /features/info` - 🧬 Genomic Features Information
+**Summary:** Get detailed information about the 110 genomic features used by the models
+
+**Response:**
+```json
+{
+  "total_features": 110,
+  "feature_categories": {
+    "methylation": {
+      "count": 20,
+      "range": "0-20",
+      "description": "DNA methylation patterns - typically 0-1 range representing methylation levels",
+      "example_features": ["methylation_0", "methylation_1", "methylation_2"],
+      "clinical_relevance": "Hypermethylation often associated with tumor suppressor gene silencing"
+    },
+    "mutation": {
+      "count": 25,
+      "range": "20-45",
+      "description": "Genetic mutation counts - discrete values representing mutation burden",
+      "example_features": ["mutation_0", "mutation_1", "mutation_2"],
+      "clinical_relevance": "High mutation burden may indicate genomic instability"
+    },
+    "copynumber": {
+      "count": 20,
+      "range": "45-65",
+      "description": "Copy number variations - typically around 2 (diploid) with amplifications/deletions",
+      "example_features": ["copynumber_0", "copynumber_1", "copynumber_2"],
+      "clinical_relevance": "Copy number alterations drive oncogene activation or tumor suppressor loss"
+    },
+    "fragment": {
+      "count": 15,
+      "range": "65-80",
+      "description": "Circulating tumor DNA fragmentomics - continuous values from liquid biopsy analysis",
+      "example_features": ["fragment_0", "fragment_1", "fragment_2"],
+      "clinical_relevance": "Fragment patterns reflect tumor biology and treatment response"
+    },
+    "clinical": {
+      "count": 10,
+      "range": "80-90",
+      "description": "Clinical variables - normalized patient demographics and clinical factors",
+      "example_features": ["clinical_0", "clinical_1", "clinical_2"],
+      "clinical_relevance": "Traditional clinical factors that influence cancer risk and prognosis"
+    },
+    "icgc": {
+      "count": 20,
+      "range": "90-110",
+      "description": "ICGC ARGO pathway data - international cancer genomics consortium features",
+      "example_features": ["icgc_0", "icgc_1", "icgc_2"],
+      "clinical_relevance": "Pathway-level alterations from comprehensive genomic analysis"
+    }
+  },
+  "explainability": {
+    "shap_support": true,
+    "available_explainers": ["random_forest", "gradient_boosting", "deep_neural_network"],
+    "explanation_methods": {
+      "TreeExplainer": "For Random Forest and Gradient Boosting models",
+      "KernelExplainer": "For Deep Neural Network models (fallback)"
+    }
+  },
+  "usage_notes": [
+    "All 110 features should be provided for optimal prediction accuracy",
+    "Missing features will be zero-filled (may reduce accuracy)",
+    "Features are automatically scaled using trained scaler",
+    "SHAP explanations show per-feature contributions to predictions"
+  ]
+}
+```
+
 ---
 
 ### **Cancer Classification Endpoints**
@@ -231,13 +299,18 @@ Currently, the API does not require authentication. For production deployment, i
 - `gradient_boosting` - Gradient Boosting (93% accuracy)
 - `deep_neural_network` - Deep Neural Network (89.5% accuracy)
 
-**Response:**
+**Response (with SHAP Explainability):**
 ```json
 {
   "patient_id": "PATIENT_12345",
   "predicted_cancer_type": "BRCA",
   "predicted_cancer_name": "Breast Invasive Carcinoma",
-  "confidence": 0.94,
+  "confidence_metrics": {
+    "prediction_confidence": 0.94,
+    "confidence_level": "High",
+    "entropy": 0.23,
+    "top_2_margin": 0.91
+  },
   "probability_distribution": {
     "BRCA": 0.94,
     "LUAD": 0.03,
@@ -248,10 +321,42 @@ Currently, the API does not require authentication. For production deployment, i
     "HNSC": 0.001,
     "LIHC": 0.001
   },
+  "explanation": {
+    "top_positive_features": [
+      {
+        "feature_name": "methylation_5",
+        "shap_value": 0.15,
+        "feature_value": 0.78,
+        "contribution": "positive",
+        "importance_rank": 1
+      },
+      {
+        "feature_name": "mutation_12",
+        "shap_value": 0.12,
+        "feature_value": 8,
+        "contribution": "positive",
+        "importance_rank": 2
+      }
+    ],
+    "top_negative_features": [
+      {
+        "feature_name": "clinical_3",
+        "shap_value": -0.08,
+        "feature_value": 0.25,
+        "contribution": "negative",
+        "importance_rank": 8
+      }
+    ],
+    "explanation_available": true,
+    "explanation_method": "TreeExplainer",
+    "base_value": 0.125,
+    "prediction_value": 0.94
+  },
   "model_used": "ensemble",
   "timestamp": "2025-07-25T14:45:55.123456",
   "processing_time_ms": 45.2,
-  "model_accuracy": 0.99
+  "model_accuracy": 0.99,
+  "confidence": 0.94
 }
 ```
 
