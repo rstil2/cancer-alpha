@@ -137,22 +137,59 @@ class CancerClassifierApp:
             st.error(f"❌ Error loading models: {str(e)}")
     
     def generate_sample_data(self, cancer_type="cancer"):
-        """Generate sample data for testing"""
+        """Generate sample data that matches the training data patterns for realistic demo"""
         np.random.seed(42 if cancer_type == "cancer" else 24)
         
         if cancer_type == "cancer":
-            # Cancer-like patterns
-            data = np.random.normal(0, 1, len(self.feature_names))
-            # Adjust specific features for cancer patterns
-            data[0] += 0.8   # higher global methylation
-            data[9] += 1.2   # more hypermethylation events
-            data[10] -= 15   # shorter fragments
-            data[12] += 0.3  # more short fragments
-            data[21] += 50   # more CNAs
-            data[24] += 0.8  # more instability
+            # Generate BRCA-like cancer sample matching the training data structure
+            sample_data = []
+            
+            # Base pattern for BRCA (class 0) from training
+            base_pattern = 0.2
+            
+            # Methylation features (20) - higher methylation typical of cancer
+            sample_data.extend(np.random.normal(base_pattern + 0.3, 0.1, 20))
+            
+            # Mutation features (25) - more mutations in cancer
+            sample_data.extend(np.random.poisson(5, 25))
+            
+            # Copy number alteration features (20) - more CNAs in cancer
+            sample_data.extend(np.random.normal(10, 2, 20))
+            
+            # Fragmentomics features (15) - shorter fragments in cancer
+            sample_data.extend(np.random.exponential(150, 15))
+            
+            # Clinical features (10) - cancer-associated values
+            sample_data.extend(np.random.normal(0.5, 0.1, 10))
+            
+            # ICGC ARGO features (20) - elevated in cancer
+            sample_data.extend(np.random.gamma(2, 0.5, 20))
+            
+            data = np.array(sample_data)
+            
         else:
-            # Control-like patterns
-            data = np.random.normal(0, 0.5, len(self.feature_names))
+            # Generate clearly healthy control sample with very different patterns
+            sample_data = []
+            
+            # Methylation features (20) - much lower methylation (healthy pattern)
+            sample_data.extend(np.random.normal(-0.2, 0.03, 20))
+            
+            # Mutation features (25) - very few mutations (healthy)
+            sample_data.extend(np.random.poisson(0.5, 25))
+            
+            # Copy number alteration features (20) - minimal alterations
+            sample_data.extend(np.random.normal(0, 0.5, 20))
+            
+            # Fragmentomics features (15) - longer, healthier fragments
+            sample_data.extend(np.random.exponential(200, 15))
+            
+            # Clinical features (10) - healthy values
+            sample_data.extend(np.random.normal(-0.3, 0.03, 10))
+            
+            # ICGC ARGO features (20) - low, healthy levels
+            sample_data.extend(np.random.gamma(0.8, 0.2, 20))
+            
+            data = np.array(sample_data)
         
         return data
     
@@ -309,10 +346,17 @@ def main():
     # App header
     st.title("🧬 Cancer Genomics AI Classifier")
     st.markdown("""
-    This interactive web application uses trained machine learning models to classify cancer 
+    This interactive web application uses trained machine learning models to classify **cancer types** 
     from multi-modal genomic data including methylation patterns, fragmentomics profiles, 
     and copy number alterations. The app provides predictions with confidence scores and 
     SHAP-based explanations for model interpretability.
+    """)
+    
+    # Demo information
+    st.info("""
+    📝 **Demo Note**: This model classifies between 8 different cancer types (BRCA, LUAD, COAD, PRAD, STAD, KIRC, HNSC, LIHC). 
+    Try both "Cancer Sample" and "Control Sample" to see how different genomic patterns lead to different cancer type predictions 
+    and confidence levels. The "Control Sample" represents healthier genomic patterns that may have lower confidence scores.
     """)
     
     # Initialize app
