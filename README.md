@@ -282,12 +282,22 @@ The demo download above is perfect for first-time users and quick testing.
 ### 🔬 **Option 2: Research Interface**
 For researchers and data scientists who want the full interactive experience:
 
+**Unix/Mac/Linux:**
 ```bash
 # Clone and run Streamlit interface
 git clone https://github.com/rstil2/cancer-alpha.git
 cd cancer-alpha
 ./start_streamlit.sh
 ```
+
+**Windows:**
+```cmd
+REM Clone and run Streamlit interface
+git clone https://github.com/rstil2/cancer-alpha.git
+cd cancer-alpha
+start_streamlit.bat
+```
+
 **Access at**: http://localhost:8501
 
 **Note**: This runs a demo version of the Streamlit interface with patent protection notices.
