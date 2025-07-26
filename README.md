@@ -109,46 +109,63 @@ Cancer Alpha represents a paradigm shift in computational oncology, delivering:
 </tr>
 </table>
 
-## 🚀 Quick Start
+## 🚀 Quick Start - Choose Your Interface
 
-Get the Cancer Alpha system running in minutes.
+Cancer Alpha provides **3 different ways** to interact with the AI system:
 
-### 1. **Start the AI Backend**
+### 🎯 **Option 1: Interactive Demo (Recommended for First-Time Users)**
 
-In a terminal, run the API using the clean start script:
+**Download the self-contained demo package** - No complex setup required!
+
+1. **Download**: [cancer_genomics_ai_demo.zip](https://github.com/rstil2/cancer-alpha/raw/main/cancer_genomics_ai_demo.zip) (~140KB)
+2. **Extract** the ZIP file
+3. **Run**: `./start_demo.sh` (Mac/Linux) or `start_demo.bat` (Windows)
+4. **Open**: http://localhost:8501
+
+**Perfect for**: Demos, testing, learning how the AI works
+
+---
+
+### 🔬 **Option 2: Streamlit Research Interface**
+
+**For researchers and data scientists** who want the full interactive experience:
 
 ```bash
-# Ensures a clean start on port 8001
-bash ./start_api_clean.sh
+# From the project root directory:
+./start_streamlit.sh
 ```
 
-### 2. **Launch the Web Application**
+**Access at**: http://localhost:8501  
+**Features**: Full model selection, SHAP explanations, biological insights
 
-**Option A: Streamlit Cancer Classifier (Recommended)**
+---
+
+### 🏥 **Option 3: Production Web Application**
+
+**For clinical environments** and professional deployment:
+
+**Step 1: Start the API Backend**
 ```bash
-# Navigate to the Streamlit app directory
-cd src/phase4_systemization_and_tool_deployment/web_app
-
-# Launch the interactive cancer classifier
-./start_app.sh
+./start_api.sh
 ```
 
-**Option B: React Web Application**
+**Step 2: Start the React Frontend**
 ```bash
-# Use the clean start script for React app
-bash ./start_webapp_clean.sh
-
-# Or manually:
-cd src/phase4_systemization_and_tool_deployment/web_app
-npm install && npm start
+./start_react_app.sh
 ```
 
-### 3. **Access the System**
+**Access at**:
+- **Web App**: http://localhost:3000 *(Modern clinical interface)*
+- **API Docs**: http://localhost:8001/docs *(REST API documentation)*
 
-- **Streamlit Cancer Classifier**: [http://localhost:8501](http://localhost:8501) *(Interactive AI with SHAP)*
-- **React Web App**: [http://localhost:3000](http://localhost:3000) *(Advanced interface)*
-- **API Docs**: [http://localhost:8001/docs](http://localhost:8001/docs) *(Backend API)*
-- **Test Explainability**: [http://localhost:8001/test-explainability](http://localhost:8001/test-explainability)
+---
+
+### 📋 **System Requirements**
+
+- **Python 3.8+** (required for all options)
+- **Node.js 16+** (only needed for Option 3)
+- **4GB RAM** minimum
+- **Internet connection** (for initial package installation)
 
 ---
 

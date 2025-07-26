@@ -94,10 +94,13 @@ class CancerClassifierApp:
     """Main application class for the cancer classifier web app"""
     
     def __init__(self):
-        self.models_dir = Path("models")
+        # Use local models directory for demo
+        self.models_dir = Path(__file__).parent / "models"
         self.models = {}
         self.scalers = {}
         self.feature_names = FEATURE_NAMES
+        # Define cancer types that the model was trained on
+        self.cancer_types = ['BRCA', 'LUAD', 'COAD', 'PRAD', 'STAD', 'KIRC', 'HNSC', 'LIHC']
         self.load_models()
     
     def load_models(self):
@@ -106,9 +109,9 @@ class CancerClassifierApp:
             # Load available models
             model_files = {
                 'Random Forest': 'random_forest_model.pkl',
-                'Gradient Boosting': 'gradient_boosting_model.pkl',
-                'Deep Neural Network': 'deep_neural_network_model.pkl',
-                'Ensemble': 'ensemble_model.pkl'
+                'Gradient Boosting': 'gradient_boosting_model_new.pkl',
+                'Deep Neural Network': 'deep_neural_network_model_new.pkl'
+                #'Ensemble': 'ensemble_model.pkl'  # Not needed as it's a combination
             }
             
             for model_name, filename in model_files.items():
@@ -131,28 +134,7 @@ class CancerClassifierApp:
                 self.scalers['main'] = StandardScaler()
                 
         except Exception as e:
-            st.warning(f"⚠️ Some models could not be loaded: {str(e)}")
-            # Create a demo model for showcase purposes
-            if not self.models:
-                st.info("🎯 Creating demo model for showcase...")
-                from sklearn.ensemble import RandomForestClassifier
-                from sklearn.preprocessing import StandardScaler
-                import numpy as np
-                
-                # Create and train a simple demo model
-                demo_model = RandomForestClassifier(n_estimators=10, random_state=42)
-                demo_X = np.random.normal(0, 1, (100, 110))
-                demo_y = np.random.randint(0, 2, 100)
-                demo_model.fit(demo_X, demo_y)
-                
-                self.models['Demo Random Forest'] = demo_model
-                
-                # Create demo scaler
-                demo_scaler = StandardScaler()
-                demo_scaler.fit(demo_X)
-                self.scalers['main'] = demo_scaler
-                
-                st.success("✅ Demo model created successfully!")
+            st.error(f"❌ Error loading models: {str(e)}")
     
     def generate_sample_data(self, cancer_type="cancer"):
         """Generate sample data for testing"""
@@ -189,18 +171,19 @@ class CancerClassifierApp:
         return scaled_data
     
     def predict_with_confidence(self, model, input_data):
-        """Make prediction with confidence scores"""
+        """Make prediction with confidence scores for multi-class cancer classification"""
         prediction = model.predict(input_data)[0]
         probabilities = model.predict_proba(input_data)[0]
         
         confidence_score = max(probabilities)
-        cancer_probability = probabilities[1] if len(probabilities) > 1 else probabilities[0]
+        predicted_cancer_type = self.cancer_types[prediction]
         
         return {
             'prediction': int(prediction),
-            'cancer_probability': float(cancer_probability),
+            'predicted_cancer_type': predicted_cancer_type,
             'confidence_score': float(confidence_score),
-            'class_probabilities': probabilities.tolist()
+            'class_probabilities': probabilities.tolist(),
+            'cancer_types': self.cancer_types
         }
     
     def generate_shap_explanation(self, model, input_data, model_name):
@@ -445,7 +428,10 @@ def main():
             
             # Model performance (if available)
             st.write("**Features:** Multi-modal genomic data")
-            st.write("**Classes:** Cancer vs Control")
+            st.write("**Classes:** 8 Cancer Types")
+            st.write("**Cancer Types:**")
+            for i, cancer_type in enumerate(app.cancer_types):
+                st.write(f"- {cancer_type}")
     
     # Prediction section
     if input_data is not None:
@@ -463,29 +449,37 @@ def main():
             col1, col2, col3 = st.columns(3)
             
             with col1:
-                prediction_text = "🔴 CANCER DETECTED" if prediction_result['prediction'] == 1 else "🟢 NO CANCER"
-                st.metric("Prediction", prediction_text)
+                predicted_type = prediction_result['predicted_cancer_type']
+                prediction_text = f"🔴 {predicted_type} CANCER"
+                st.metric("Predicted Cancer Type", predicted_type)
             
             with col2:
-                st.metric("Cancer Probability", f"{prediction_result['cancer_probability']:.1%}")
-            
-            with col3:
                 st.metric("Confidence Score", f"{prediction_result['confidence_score']:.1%}")
             
-            # Confidence visualization
+            with col3:
+                # Show probability of the predicted class
+                predicted_prob = prediction_result['class_probabilities'][prediction_result['prediction']]
+                st.metric("Prediction Probability", f"{predicted_prob:.1%}")
+            
+            # Cancer type probabilities visualization
             prob_df = pd.DataFrame({
-                'Class': ['Control', 'Cancer'],
+                'Cancer_Type': prediction_result['cancer_types'],
                 'Probability': prediction_result['class_probabilities']
             })
             
+            # Sort by probability for better visualization
+            prob_df = prob_df.sort_values('Probability', ascending=True)
+            
             fig_prob = px.bar(
                 prob_df,
-                x='Class',
-                y='Probability',
-                color='Class',
-                color_discrete_map={'Cancer': 'red', 'Control': 'green'},
-                title='Class Probabilities'
+                x='Probability',
+                y='Cancer_Type',
+                orientation='h',
+                color='Probability',
+                color_continuous_scale='Reds',
+                title='Cancer Type Classification Probabilities'
             )
+            fig_prob.update_layout(height=400)
             st.plotly_chart(fig_prob, use_container_width=True)
             
             # SHAP Explanations
@@ -521,8 +515,8 @@ def main():
                         if modality_scores.get('CNA', 0) > 0.3:
                             insights.append("📊 **Copy number alterations** suggest genomic instability - correlates with tumor progression")
                         
-                        if prediction_result['cancer_probability'] > 0.7:
-                            insights.append("⚠️ **High cancer probability** - recommend further clinical evaluation")
+                        if prediction_result['confidence_score'] > 0.7:
+                            insights.append(f"⚠️ **High confidence {predicted_type} prediction** - recommend further clinical evaluation")
                         
                         for insight in insights:
                             st.markdown(insight)
