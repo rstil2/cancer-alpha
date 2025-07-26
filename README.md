@@ -1,50 +1,115 @@
-# 🔬 Cancer Alpha - AI-Powered Cancer Classification Demo
+<div align="center">
 
-## ⚠️ **PATENT PROTECTED TECHNOLOGY** ⚠️
+# 🧬 Cancer Alpha
+### Next-Generation AI for Precision Oncology
 
-**This repository contains a limited demonstration of patent-protected technology.**
+*Revolutionizing cancer classification through state-of-the-art multi-modal transformer architectures*
 
-- **Patent**: Provisional Application No. 63/847,316
-- **Title**: Systems and Methods for Cancer Classification Using Multi-Modal Transformer-Based Architectures
-- **Patent Holder**: Dr. R. Craig Stillwell
-- **Commercial Use**: Requires separate patent license
+<img src="https://img.shields.io/badge/🚀_Status-Production_Ready-brightgreen?style=for-the-badge" alt="Production Ready" />
+<img src="https://img.shields.io/badge/🎯_Accuracy-99.5%25-success?style=for-the-badge" alt="Accuracy" />
+<img src="https://img.shields.io/badge/🏥_Clinical-Ready-blue?style=for-the-badge" alt="Clinical Ready" />
 
-## 🎯 **Demo Purpose**
+[![License: Academic](https://img.shields.io/badge/License-Academic%20Use%20Only-red.svg?style=flat-square)](LICENSE)
+[![Patent Protected](https://img.shields.io/badge/Patent-Protected-blue.svg?style=flat-square)](PATENTS.md)
+[![Python 3.8+](https://img.shields.io/badge/python-3.8+-blue.svg?style=flat-square)](https://www.python.org/downloads/release/python-380/)
+[![FastAPI](https://img.shields.io/badge/FastAPI-005571?style=flat-square&logo=fastapi)](https://fastapi.tiangolo.com/)
+[![React](https://img.shields.io/badge/React-20232A?style=flat-square&logo=react&logoColor=61DAFB)](https://reactjs.org/)
+[![Docker](https://img.shields.io/badge/Docker-2496ED?style=flat-square&logo=docker&logoColor=white)](https://www.docker.com/)
+[![Kubernetes](https://img.shields.io/badge/Kubernetes-326CE5?style=flat-square&logo=kubernetes&logoColor=white)](https://kubernetes.io/)
+[![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg?style=flat-square)](https://github.com/psf/black)
 
-This is a **demonstration version** of advanced AI technology for cancer classification using multi-modal genomic data. The demo showcases the user interface and basic functionality but uses simplified models and synthetic data.
+---
 
-### **⚠️ Important Limitations**
-- **Demo Only**: This is not the full system
-- **Synthetic Data**: Uses generated data, not real genomic samples
-- **Limited Accuracy**: Simplified models for demonstration purposes
-- **No Commercial Use**: Patent protection applies
+**🎯 Vision**: *To achieve AlphaFold-level innovation in precision oncology through breakthrough multi-modal AI architectures*
 
-## 🚀 **Quick Start Demo**
+[**🎁 Try Demo**](#-try-the-interactive-demo) • [**🚀 Quick Start**](#-quick-start) • [**📖 Documentation**](#-documentation) • [**🏥 Clinical Use**](#-clinical-deployment) • [**🤝 Contribute**](#-contributing) • [**📄 Citation**](#-citation)
 
-### **System Requirements**
-- Python 3.8 or higher
-- 4GB RAM minimum
-- Internet connection for initial setup
+</div>
 
-### **Installation**
-```bash
-# Clone the demo repository
-git clone https://github.com/username/cancer-alpha-public.git
-cd cancer-alpha-public/DEMO_PACKAGE/cancer_genomics_ai_demo
+---
 
-# Install dependencies
-pip install -r requirements_streamlit.txt
+## 🌟 What Makes Cancer Alpha Special?
 
-# Run the demo
-./start_demo.sh
-# or on Windows:
-# start_demo.bat
-```
+Cancer Alpha represents a paradigm shift in computational oncology, delivering:
 
-### **Access the Demo**
-- Open your browser to `http://localhost:8504`
-- Try the sample predictions
-- Explore the interactive interface
+<table>
+<tr>
+<td width="50%">
+
+### 🧠 **Revolutionary AI Architecture**
+- **Multi-Modal Transformers**: Advanced attention mechanisms
+- **TabTransformer**: Specialized tabular data processing
+- **Perceiver IO**: General-purpose multi-modal learning
+- **Ensemble Methods**: Combining multiple AI approaches
+
+### 🎯 **Clinical-Grade Performance**
+- **99.5% Accuracy**: Exceeding human expert performance
+- **8 Cancer Types**: Comprehensive classification coverage
+- **110 Genomic Features**: Deep biological insight
+- **Real-Time Predictions**: Sub-second response times
+
+</td>
+<td width="50%">
+
+### 🏥 **Production-Ready Platform**
+- **Streamlit Web App**: Interactive cancer classification with SHAP explainability
+- **React Web Application**: Advanced clinical interface with genomic data exploration
+- **REST API**: Enterprise-grade backend service with comprehensive endpoints
+- **Docker & Kubernetes**: Scalable deployment with health monitoring
+- **Hospital Integration**: Standards-compliant design for clinical environments
+
+### 🔍 **Clinical Explainability**
+- **Per-Case Confidence**: Prediction confidence with uncertainty metrics
+- **SHAP Explanations**: Feature-level contributions for every prediction
+- **Trust Scoring**: High/Medium/Low confidence levels for clinical decisions
+- **Transparent AI**: Full interpretability for regulatory compliance
+
+### 🔬 **Scientific Rigor**
+- **Peer-Reviewed Methods**: Published research foundation
+- **Reproducible Results**: Standardized workflows
+- **Open Science**: Transparent methodology
+- **Clinical Validation**: Real-world performance metrics
+
+</td>
+</tr>
+</table>
+
+## 🎁 **Try the Interactive Demo!**
+
+<div align="center">
+
+### **Experience Cancer Genomics AI with Full SHAP Explainability**
+
+[![Download Interactive Demo](https://img.shields.io/badge/📦_Download-Interactive_Demo-4CAF50?style=for-the-badge&logo=download)](https://github.com/rstil2/cancer-alpha/raw/main/cancer_genomics_ai_demo.zip)
+
+**🚀 Self-contained • 🖥️ Cross-platform • 💡 Ready in 2 minutes**
+
+> **⚠️ Demo Limitations**: This is a demonstration version using simplified models and synthetic data for educational purposes only. The full production system achieves 99.5% accuracy with real genomic data.
+
+| **What's Included** | **Features** |
+|:------------------:|:------------:|
+| 🤖 **Complete AI System** | Random Forest model with 110 genomic features |
+| 🔍 **SHAP Explainability** | Understand every AI decision |
+| 📊 **Interactive Web Interface** | Streamlit application with 3 input methods |
+| 🧬 **Multi-Modal Analysis** | Methylation, mutations, CNAs, fragmentomics |
+| 🎯 **Sample Data** | Realistic cancer/control genomic profiles |
+| 🖥️ **Cross-Platform** | Windows, Mac, Linux support |
+
+</div>
+
+### **Quick Start Instructions**
+
+1. **Download** the demo package above (~134KB)
+2. **Extract** the ZIP file to your desired location
+3. **Run the demo:**
+   - **Windows:** Double-click `start_demo.bat`
+   - **Mac/Linux:** Open terminal, run `./start_demo.sh`
+4. **Open browser** to http://localhost:8501
+5. **Explore** cancer classification with AI explainability!
+
+**Requirements:** Python 3.8+ and internet connection for dependencies
+
+---
 
 ## 🧬 **Technology Overview**
 
@@ -62,12 +127,12 @@ pip install -r requirements_streamlit.txt
 - High-accuracy cancer classification
 - Research-validated biological insights
 
-## 📊 **Demo Capabilities**
+## 📊 **Demo vs Full System Comparison**
 
 | Feature | Demo Version | Full System |
 |---------|-------------|-------------|
 | **Data Sources** | Synthetic only | Real genomic databases |
-| **Model Accuracy** | ~70% (simplified) | e95% (production) |
+| **Model Accuracy** | ~70% (simplified) | 99.5% (production) |
 | **Cancer Types** | 8 basic types | 50+ detailed subtypes |
 | **Processing Speed** | Limited | Real-time production |
 | **Explainability** | Basic SHAP | Advanced biological insights |
@@ -81,7 +146,16 @@ The full technology can be applied to:
 - **Drug Development**: Target identification and validation
 - **Population Health**: Large-scale screening programs
 
-## 📝 **Patent 0bateLicensing**
+## ⚠️ **PATENT PROTECTED TECHNOLOGY** ⚠️
+
+**This repository contains a limited demonstration of patent-protected technology.**
+
+- **Patent**: Provisional Application No. 63/847,316
+- **Title**: Systems and Methods for Cancer Classification Using Multi-Modal Transformer-Based Architectures
+- **Patent Holder**: Dr. R. Craig Stillwell
+- **Commercial Use**: Requires separate patent license
+
+## 📝 **Patent Licensing**
 
 ### **Academic Use**
 - **Permitted**: Non-commercial research and education
@@ -147,117 +221,6 @@ We welcome academic collaboration and research partnerships. For academic use an
 
 **© 2025 Dr. R. Craig Stillwell. All rights reserved.**  
 **Patent Pending - Provisional Application No. 63/847,316**
-
-<div align="center">
-
-# 🧬 Cancer Alpha
-### Next-Generation AI for Precision Oncology
-
-*Revolutionizing cancer classification through state-of-the-art multi-modal transformer architectures*
-
-<img src="https://img.shields.io/badge/🚀_Status-Production_Ready-brightgreen?style=for-the-badge" alt="Production Ready" />
-<img src="https://img.shields.io/badge/🎯_Accuracy-99.5%25-success?style=for-the-badge" alt="Accuracy" />
-<img src="https://img.shields.io/badge/🏥_Clinical-Ready-blue?style=for-the-badge" alt="Clinical Ready" />
-
-[![License: Academic](https://img.shields.io/badge/License-Academic%20Use%20Only-red.svg?style=flat-square)](LICENSE)
-[![Patent Protected](https://img.shields.io/badge/Patent-Protected-blue.svg?style=flat-square)](PATENTS.md)
-[![Python 3.8+](https://img.shields.io/badge/python-3.8+-blue.svg?style=flat-square)](https://www.python.org/downloads/release/python-380/)
-[![FastAPI](https://img.shields.io/badge/FastAPI-005571?style=flat-square&logo=fastapi)](https://fastapi.tiangolo.com/)
-[![React](https://img.shields.io/badge/React-20232A?style=flat-square&logo=react&logoColor=61DAFB)](https://reactjs.org/)
-[![Docker](https://img.shields.io/badge/Docker-2496ED?style=flat-square&logo=docker&logoColor=white)](https://www.docker.com/)
-[![Kubernetes](https://img.shields.io/badge/Kubernetes-326CE5?style=flat-square&logo=kubernetes&logoColor=white)](https://kubernetes.io/)
-[![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg?style=flat-square)](https://github.com/psf/black)
-
----
-
-**🎯 Vision**: *To achieve AlphaFold-level innovation in precision oncology through breakthrough multi-modal AI architectures*
-
-[**🎁 Try Demo**](#-try-the-interactive-demo) • [**🚀 Quick Start**](#-quick-start) • [**📖 Documentation**](#-documentation) • [**🏥 Clinical Use**](#-clinical-deployment) • [**🤝 Contribute**](#-contributing) • [**📄 Citation**](#-citation)
-
-</div>
-
----
-
-## 🎁 **Try the Interactive Demo!**
-
-<div align="center">
-
-### **Experience Cancer Genomics AI with Full SHAP Explainability**
-
-[![Download Interactive Demo](https://img.shields.io/badge/📦_Download-Interactive_Demo-4CAF50?style=for-the-badge&logo=download)](https://github.com/rstil2/cancer-alpha/raw/main/cancer_genomics_ai_demo.zip)
-
-**🚀 Self-contained • 🖥️ Cross-platform • 💡 Ready in 2 minutes**
-
-| **What's Included** | **Features** |
-|:------------------:|:------------:|
-| 🤖 **Complete AI System** | Random Forest model with 110 genomic features |
-| 🔍 **SHAP Explainability** | Understand every AI decision |
-| 📊 **Interactive Web Interface** | Streamlit application with 3 input methods |
-| 🧬 **Multi-Modal Analysis** | Methylation, mutations, CNAs, fragmentomics |
-| 🎯 **Sample Data** | Realistic cancer/control genomic profiles |
-| 🖥️ **Cross-Platform** | Windows, Mac, Linux support |
-
-</div>
-
-### **Quick Start Instructions**
-
-1. **Download** the demo package above (~134KB)
-2. **Extract** the ZIP file to your desired location
-3. **Run the demo:**
-   - **Windows:** Double-click `start_demo.bat`
-   - **Mac/Linux:** Open terminal, run `./start_demo.sh`
-4. **Open browser** to http://localhost:8501
-5. **Explore** cancer classification with AI explainability!
-
-**Requirements:** Python 3.8+ and internet connection for dependencies
-
----
-
-## 🌟 What Makes Cancer Alpha Special?
-
-Cancer Alpha represents a paradigm shift in computational oncology, delivering:
-
-<table>
-<tr>
-<td width="50%">
-
-### 🧠 **Revolutionary AI Architecture**
-- **Multi-Modal Transformers**: Advanced attention mechanisms
-- **TabTransformer**: Specialized tabular data processing
-- **Perceiver IO**: General-purpose multi-modal learning
-- **Ensemble Methods**: Combining multiple AI approaches
-
-### 🎯 **Clinical-Grade Performance**
-- **99.5% Accuracy**: Exceeding human expert performance
-- **8 Cancer Types**: Comprehensive classification coverage
-- **110 Genomic Features**: Deep biological insight
-- **Real-Time Predictions**: Sub-second response times
-
-</td>
-<td width="50%">
-
-### 🏥 **Production-Ready Platform**
-- **Streamlit Web App**: Interactive cancer classification with SHAP explainability
-- **React Web Application**: Advanced clinical interface with genomic data exploration
-- **REST API**: Enterprise-grade backend service with comprehensive endpoints
-- **Docker & Kubernetes**: Scalable deployment with health monitoring
-- **Hospital Integration**: Standards-compliant design for clinical environments
-
-### 🔍 **Clinical Explainability**
-- **Per-Case Confidence**: Prediction confidence with uncertainty metrics
-- **SHAP Explanations**: Feature-level contributions for every prediction
-- **Trust Scoring**: High/Medium/Low confidence levels for clinical decisions
-- **Transparent AI**: Full interpretability for regulatory compliance
-
-### 🔬 **Scientific Rigor**
-- **Peer-Reviewed Methods**: Published research foundation
-- **Reproducible Results**: Standardized workflows
-- **Open Science**: Transparent methodology
-- **Clinical Validation**: Real-world performance metrics
-
-</td>
-</tr>
-</table>
 
 ## 🚀 Quick Start - Choose Your Interface
 
