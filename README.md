@@ -22,11 +22,45 @@
 
 **🎯 Vision**: *To achieve AlphaFold-level innovation in precision oncology through breakthrough multi-modal AI architectures*
 
-[**🚀 Quick Start**](#-quick-start) • [**📖 Documentation**](#-documentation) • [**🏥 Clinical Use**](#-clinical-deployment) • [**🤝 Contribute**](#-contributing) • [**📄 Citation**](#-citation)
+[**🎁 Try Demo**](#-try-the-interactive-demo) • [**🚀 Quick Start**](#-quick-start) • [**📖 Documentation**](#-documentation) • [**🏥 Clinical Use**](#-clinical-deployment) • [**🤝 Contribute**](#-contributing) • [**📄 Citation**](#-citation)
 
 </div>
 
 ---
+
+## 🎁 **Try the Interactive Demo!**
+
+<div align="center">
+
+### **Experience Cancer Genomics AI with Full SHAP Explainability**
+
+[![Download Interactive Demo](https://img.shields.io/badge/📦_Download-Interactive_Demo-4CAF50?style=for-the-badge&logo=download)](https://github.com/stillwellcr/cancer-alpha/raw/main/src/phase4_systemization_and_tool_deployment/web_app/cancer_genomics_ai_demo.zip)
+
+**🚀 Self-contained • 🖥️ Cross-platform • 💡 Ready in 2 minutes**
+
+| **What's Included** | **Features** |
+|:------------------:|:------------:|
+| 🤖 **Complete AI System** | Random Forest model with 110 genomic features |
+| 🔍 **SHAP Explainability** | Understand every AI decision |
+| 📊 **Interactive Web Interface** | Streamlit application with 3 input methods |
+| 🧬 **Multi-Modal Analysis** | Methylation, mutations, CNAs, fragmentomics |
+| 🎯 **Sample Data** | Realistic cancer/control genomic profiles |
+| 🖥️ **Cross-Platform** | Windows, Mac, Linux support |
+
+### **Quick Start Instructions**
+1. **Download** the demo package above (~134KB)
+2. **Extract** the ZIP file to your desired location  
+3. **Run the demo:**
+   - **Windows:** Double-click `start_demo.bat`
+   - **Mac/Linux:** Open terminal, run `./start_demo.sh`
+4. **Open browser** to http://localhost:8501
+5. **Explore** cancer classification with AI explainability!
+
+**Requirements:** Python 3.8+ and internet connection for dependencies
+
+---
+
+</div>
 
 ## 🌟 What Makes Cancer Alpha Special?
 
