@@ -290,23 +290,23 @@ cd cancer-alpha
 ```
 **Access at**: http://localhost:8501
 
-### 🏥 **Option 3: Production Deployment**
-For clinical environments:
+**Note**: This runs a demo version of the Streamlit interface with patent protection notices.
+
+### 🏥 **Option 3: Production System Information**
+For information about clinical deployment capabilities:
 
 ```bash
-# Start API backend
+# Get API backend information
 ./start_api.sh
 
-# Start React frontend (in another terminal)
+# Get React frontend information  
 ./start_react_app.sh
 ```
-**Access at**:
-- Web App: http://localhost:3000 *(Clinical interface)*
-- API Docs: http://localhost:8001/docs *(REST API)*
+
+**Note**: These scripts provide information about licensing requirements for production deployment. The full production system with API backend and React frontend requires a separate patent license for commercial use.
 
 **System Requirements:**
-- Python 3.8+ (required for all options)
-- Node.js 16+ (only needed for Option 3)
+- Python 3.8+ (required for Streamlit demo)
 - 4GB RAM minimum
 - Internet connection (for initial package installation)
 
