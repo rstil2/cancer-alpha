@@ -111,6 +111,46 @@ Cancer Alpha represents a paradigm shift in computational oncology, delivering:
 
 ---
 
+## 🚀 **Get Started**
+
+Cancer Alpha provides multiple ways to interact with the AI system:
+
+### 🎯 **Option 1: Download Demo (Recommended)**
+The demo download above is perfect for first-time users and quick testing.
+
+### 🔬 **Option 2: Research Interface**
+For researchers and data scientists who want the full interactive experience:
+
+```bash
+# Clone and run Streamlit interface
+git clone https://github.com/rstil2/cancer-alpha.git
+cd cancer-alpha
+./start_streamlit.sh
+```
+**Access at**: http://localhost:8501
+
+### 🏥 **Option 3: Production Deployment**
+For clinical environments:
+
+```bash
+# Start API backend
+./start_api.sh
+
+# Start React frontend (in another terminal)
+./start_react_app.sh
+```
+**Access at**:
+- Web App: http://localhost:3000 *(Clinical interface)*
+- API Docs: http://localhost:8001/docs *(REST API)*
+
+**System Requirements:**
+- Python 3.8+ (required for all options)
+- Node.js 16+ (only needed for Option 3)
+- 4GB RAM minimum
+- Internet connection (for initial package installation)
+
+---
+
 ## 🧬 **Technology Overview**
 
 ### **What This Demo Shows**
@@ -221,64 +261,6 @@ We welcome academic collaboration and research partnerships. For academic use an
 
 **© 2025 Dr. R. Craig Stillwell. All rights reserved.**  
 **Patent Pending - Provisional Application No. 63/847,316**
-
-## 🚀 Quick Start - Choose Your Interface
-
-Cancer Alpha provides **3 different ways** to interact with the AI system:
-
-### 🎯 **Option 1: Interactive Demo (Recommended for First-Time Users)**
-
-**Download the self-contained demo package** - No complex setup required!
-
-1. **Download**: [cancer_genomics_ai_demo.zip](https://github.com/rstil2/cancer-alpha/raw/main/cancer_genomics_ai_demo.zip) (~140KB)
-2. **Extract** the ZIP file
-3. **Run**: `./start_demo.sh` (Mac/Linux) or `start_demo.bat` (Windows)
-4. **Open**: http://localhost:8501
-
-**Perfect for**: Demos, testing, learning how the AI works
-
----
-
-### 🔬 **Option 2: Streamlit Research Interface**
-
-**For researchers and data scientists** who want the full interactive experience:
-
-```bash
-# From the project root directory:
-./start_streamlit.sh
-```
-
-**Access at**: http://localhost:8501  
-**Features**: Full model selection, SHAP explanations, biological insights
-
----
-
-### 🏥 **Option 3: Production Web Application**
-
-**For clinical environments** and professional deployment:
-
-**Step 1: Start the API Backend**
-```bash
-./start_api.sh
-```
-
-**Step 2: Start the React Frontend**
-```bash
-./start_react_app.sh
-```
-
-**Access at**:
-- **Web App**: http://localhost:3000 *(Modern clinical interface)*
-- **API Docs**: http://localhost:8001/docs *(REST API documentation)*
-
----
-
-### 📋 **System Requirements**
-
-- **Python 3.8+** (required for all options)
-- **Node.js 16+** (only needed for Option 3)
-- **4GB RAM** minimum
-- **Internet connection** (for initial package installation)
 
 ---
 
