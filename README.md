@@ -166,6 +166,53 @@ Advanced boosting with sophisticated feature interactions.
 
 ---
 
+## 🛠️ **System Architecture**
+
+<div align="center">
+
+```mermaid
+graph TB
+    A[🧬 Genomic Data] --> B[📊 Data Processing]
+    B --> C[🤖 AI Models]
+    C --> D[🎯 Ensemble]
+    D --> E[📱 Web Interface]
+    D --> F[🔌 REST API]
+    
+    G[🏥 Hospital Systems] --> F
+    H[👨‍⚕️ Clinicians] --> E
+    
+    I[☁️ Cloud Deploy] --> J[🐳 Docker]
+    I --> K[☸️ Kubernetes]
+    
+    style D fill:#4CAF50
+    style E fill:#2196F3
+    style F fill:#FF9800
+```
+
+</div>
+
+### **📁 Project Structure**
+
+```
+cancer-alpha/
+├── 🧬 src/cancer_alpha/              # Core AI package
+│   ├── 📊 data/                      # Data processing
+│   ├── 🤖 models/                    # ML implementations  
+│   ├── 🔬 transformers/              # Advanced architectures
+│   ├── 📈 visualization/             # Clinical dashboards
+│   └── 🛠️ utils/                     # Helper functions
+├── 🌐 src/phase4_systemization_and_tool_deployment/
+│   ├── 📱 web_app/                   # React frontend
+│   ├── 🔌 real_cancer_alpha_api.py   # Production API
+│   └── 🐳 docker/                    # Container configs
+├── 📊 data/                          # Training datasets
+├── 🏆 results/                       # Model outputs
+├── 📚 docs/                          # Documentation
+└── 🧪 tests/                         # Quality assurance
+```
+
+---
+
 ## 🎁 **Try the Interactive Demo!**
 
 <div align="center">
@@ -387,52 +434,6 @@ This comprehensive roadmap reflects our current achievements and outlines the ne
 - [Cancer Classification Roadmap](docs/cancer_classification_roadmap.md)
 
 
----
-
-## 🛠️ System Architecture
-
-<div align="center">
-
-```mermaid
-graph TB
-    A[🧬 Genomic Data] --> B[📊 Data Processing]
-    B --> C[🤖 AI Models]
-    C --> D[🎯 Ensemble]
-    D --> E[📱 Web Interface]
-    D --> F[🔌 REST API]
-    
-    G[🏥 Hospital Systems] --> F
-    H[👨‍⚕️ Clinicians] --> E
-    
-    I[☁️ Cloud Deploy] --> J[🐳 Docker]
-    I --> K[☸️ Kubernetes]
-    
-    style D fill:#4CAF50
-    style E fill:#2196F3
-    style F fill:#FF9800
-```
-
-</div>
-
-### **📁 Project Structure**
-
-```
-cancer-alpha/
-├── 🧬 src/cancer_alpha/              # Core AI package
-│   ├── 📊 data/                      # Data processing
-│   ├── 🤖 models/                    # ML implementations  
-│   ├── 🔬 transformers/              # Advanced architectures
-│   ├── 📈 visualization/             # Clinical dashboards
-│   └── 🛠️ utils/                     # Helper functions
-├── 🌐 src/phase4_systemization_and_tool_deployment/
-│   ├── 📱 web_app/                   # React frontend
-│   ├── 🔌 real_cancer_alpha_api.py   # Production API
-│   └── 🐳 docker/                    # Container configs
-├── 📊 data/                          # Training datasets
-├── 🏆 results/                       # Model outputs
-├── 📚 docs/                          # Documentation
-└── 🧪 tests/                         # Quality assurance
-```
 
 ## 📖 Documentation
 
