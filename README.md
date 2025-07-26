@@ -34,7 +34,7 @@
 
 ### **Experience Cancer Genomics AI with Full SHAP Explainability**
 
-[![Download Interactive Demo](https://img.shields.io/badge/📦_Download-Interactive_Demo-4CAF50?style=for-the-badge&logo=download)](https://github.com/stillwellcr/cancer-alpha/raw/main/src/phase4_systemization_and_tool_deployment/web_app/cancer_genomics_ai_demo.zip)
+[![Download Interactive Demo](https://img.shields.io/badge/📦_Download-Interactive_Demo-4CAF50?style=for-the-badge&logo=download)](https://github.com/stillwellcr/cancer-alpha/raw/main/cancer_genomics_ai_demo.zip)
 
 **🚀 Self-contained • 🖥️ Cross-platform • 💡 Ready in 2 minutes**
 
