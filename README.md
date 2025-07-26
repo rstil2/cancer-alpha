@@ -211,6 +211,28 @@ cancer-alpha/
 └── 🧪 tests/                         # Quality assurance
 ```
 
+## 📖 **Documentation**
+
+- [Master Installation Guide](MASTER_INSTALLATION_GUIDE.md) - Complete installation and usage guide
+- [API Reference Guide](docs/API_REFERENCE_GUIDE.md) - Comprehensive API documentation with SHAP explainability
+- [Web App Features Guide](docs/WEB_APP_FEATURES_GUIDE.md) - Features tab usage and genomic data exploration
+- [Comprehensive Deployment Guide](COMPREHENSIVE_DEPLOYMENT_GUIDE.md) - Detailed deployment instructions
+- [Working Deployment Guide](WORKING_DEPLOYMENT_GUIDE.md) - Quick deployment guide
+- [Phase 4B Web App Deployment](src/phase4_systemization_and_tool_deployment/PHASE4B_DEPLOYMENT_GUIDE.md) - React web application setup
+- [Phase 4C Production Deployment](src/phase4_systemization_and_tool_deployment/PHASE4C_PRODUCTION_DEPLOYMENT_GUIDE.md) - Production deployment guide
+- [Beginner Guide](src/phase4_systemization_and_tool_deployment/BEGINNER_GUIDE.md) - Getting started guide
+- [Project Roadmap](docs/roadmap.md) - Development roadmap and milestones
+
+## 🧪 **Testing**
+
+```bash
+# Run all tests
+pytest tests/
+
+# Run with coverage
+pytest tests/ --cov=cancer_alpha --cov-report=html
+```
+
 ---
 
 ## 🎁 **Try the Interactive Demo!**
@@ -364,7 +386,7 @@ This technology is protected by provisional patent application and pending full 
 ### **Disclaimer**
 This demo is for illustration purposes only. It should not be used for actual medical diagnosis or treatment decisions.
 
-## 📚 **Documentation**
+## 📱 **Additional Resources**
 
 - [`DEMO_USAGE.md`](docs/demo_usage.md) - Detailed demo instructions
 - [`PATENT_LICENSING.md`](docs/patent_licensing.md) - Licensing information
@@ -435,27 +457,6 @@ This comprehensive roadmap reflects our current achievements and outlines the ne
 
 
 
-## 📖 Documentation
-
-- [Master Installation Guide](MASTER_INSTALLATION_GUIDE.md) - Complete installation and usage guide
-- [API Reference Guide](docs/API_REFERENCE_GUIDE.md) - Comprehensive API documentation with SHAP explainability
-- [Web App Features Guide](docs/WEB_APP_FEATURES_GUIDE.md) - Features tab usage and genomic data exploration
-- [Comprehensive Deployment Guide](COMPREHENSIVE_DEPLOYMENT_GUIDE.md) - Detailed deployment instructions
-- [Working Deployment Guide](WORKING_DEPLOYMENT_GUIDE.md) - Quick deployment guide
-- [Phase 4B Web App Deployment](src/phase4_systemization_and_tool_deployment/PHASE4B_DEPLOYMENT_GUIDE.md) - React web application setup
-- [Phase 4C Production Deployment](src/phase4_systemization_and_tool_deployment/PHASE4C_PRODUCTION_DEPLOYMENT_GUIDE.md) - Production deployment guide
-- [Beginner Guide](src/phase4_systemization_and_tool_deployment/BEGINNER_GUIDE.md) - Getting started guide
-- [Project Roadmap](docs/roadmap.md) - Development roadmap and milestones
-
-## 🧪 Testing
-
-```bash
-# Run all tests
-pytest tests/
-
-# Run with coverage
-pytest tests/ --cov=cancer_alpha --cov-report=html
-```
 
 ## 📄 Citation
 
