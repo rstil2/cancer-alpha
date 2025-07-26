@@ -47,9 +47,12 @@
 | 🎯 **Sample Data** | Realistic cancer/control genomic profiles |
 | 🖥️ **Cross-Platform** | Windows, Mac, Linux support |
 
+</div>
+
 ### **Quick Start Instructions**
+
 1. **Download** the demo package above (~134KB)
-2. **Extract** the ZIP file to your desired location  
+2. **Extract** the ZIP file to your desired location
 3. **Run the demo:**
    - **Windows:** Double-click `start_demo.bat`
    - **Mac/Linux:** Open terminal, run `./start_demo.sh`
@@ -59,8 +62,6 @@
 **Requirements:** Python 3.8+ and internet connection for dependencies
 
 ---
-
-</div>
 
 ## 🌟 What Makes Cancer Alpha Special?
 
@@ -148,45 +149,6 @@ npm install && npm start
 - **React Web App**: [http://localhost:3000](http://localhost:3000) *(Advanced interface)*
 - **API Docs**: [http://localhost:8001/docs](http://localhost:8001/docs) *(Backend API)*
 - **Test Explainability**: [http://localhost:8001/test-explainability](http://localhost:8001/test-explainability)
-
----
-
-## 🧬 Interactive Cancer Classifier (Streamlit)
-
-**NEW**: Experience our latest interactive cancer classification web application with full SHAP explainability!
-
-### ✨ **Key Features**
-- **🤖 Real-time Predictions**: Instant cancer classification with confidence scores
-- **🔍 SHAP Explainability**: Understand exactly why the AI made each prediction
-- **📊 Multi-modal Analysis**: Analyze 110 genomic features across 6 data modalities
-- **🎯 Interactive Interface**: Three input methods (sample data, manual input, CSV upload)
-- **📈 Visual Insights**: Interactive plots showing feature importance and biological insights
-
-### 🚀 **Quick Launch**
-```bash
-cd src/phase4_systemization_and_tool_deployment/web_app
-./start_app.sh
-```
-
-**Access at**: [http://localhost:8501](http://localhost:8501)
-
-### 📊 **What You Can Do**
-1. **Generate Sample Data**: Create realistic cancer/control genomic profiles
-2. **Manual Feature Input**: Adjust all 110 genomic features individually
-3. **Upload Your Data**: Process your own genomic CSV files
-4. **Get Predictions**: Receive cancer classification with confidence metrics
-5. **Explore Explanations**: See which features drove the AI's decision
-6. **Understand Biology**: Get automated insights about genomic patterns
-
-### 🔬 **Supported Data Modalities**
-- **Methylation** (20 features): DNA methylation patterns
-- **Mutations** (25 features): Genetic variant information  
-- **Copy Number Alterations** (20 features): Chromosomal gains/losses
-- **Fragmentomics** (15 features): cfDNA fragment characteristics
-- **Clinical** (10 features): Patient demographics and staging
-- **ICGC ARGO** (20 features): International cancer genomics data
-
-**📖 Full Documentation**: See [Web App README](src/phase4_systemization_and_tool_deployment/web_app/README.md)
 
 ---
 
