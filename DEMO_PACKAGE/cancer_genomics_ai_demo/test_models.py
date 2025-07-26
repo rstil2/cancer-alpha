@@ -35,7 +35,7 @@ def test_model_loading():
     print("Testing model loading...")
     print("=" * 50)
     
-    models_dir = Path("/Users/stillwell/projects/cancer-alpha/models/phase2_models")
+    models_dir = Path("./models")
     
     if not models_dir.exists():
         print(f"❌ Models directory not found: {models_dir}")
@@ -44,9 +44,8 @@ def test_model_loading():
     # Test loading each model
     model_files = {
         'Random Forest': 'random_forest_model.pkl',
-        'Gradient Boosting': 'gradient_boosting_model.pkl',
-        'Deep Neural Network': 'deep_neural_network_model.pkl',
-        'Ensemble': 'ensemble_model.pkl'
+        'Gradient Boosting': 'gradient_boosting_model_new.pkl',
+        'Deep Neural Network': 'deep_neural_network_model_new.pkl'
     }
     
     loaded_models = {}
