@@ -241,7 +241,7 @@ pytest tests/ --cov=cancer_alpha --cov-report=html
 
 ### **Experience Cancer Genomics AI with Full SHAP Explainability**
 
-[![Download Interactive Demo](https://img.shields.io/badge/📦_Download-Interactive_Demo-4CAF50?style=for-the-badge&logo=download)](https://github.com/rstil2/cancer-alpha/raw/main/cancer_genomics_ai_demo.zip)
+[![Download Interactive Demo](https://img.shields.io/badge/⬇️_DOWNLOAD-Interactive_Demo-4CAF50?style=for-the-badge&logo=data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0id2hpdGUiPjxwYXRoIGQ9Ik0xOSA5aC00VjNIOXY2SDVsNyA3IDctN3pNNSAxOHYyaDE0di0yaDE0eiIvPjwvc3ZnPg==)](http://localhost:8000/cancer_genomics_ai_demo.zip)
 
 **🚀 Self-contained • 🖥️ Cross-platform • 💡 Ready in 2 minutes**
 
@@ -260,7 +260,14 @@ pytest tests/ --cov=cancer_alpha --cov-report=html
 
 ### **Quick Start Instructions**
 
-1. **Download** the demo package above (~134KB)
+**For Local Development:** First start the demo server:
+```bash
+# Start the local demo server (run from cancer-alpha directory)
+python3 serve_demo.py
+```
+Then click the download link above or visit http://localhost:8000/cancer_genomics_ai_demo.zip
+
+1. **Download** the demo package above (~1.5MB)
 2. **Extract** the ZIP file to your desired location
 3. **Run the demo:**
    - **Windows:** Double-click `start_demo.bat`
