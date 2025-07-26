@@ -52,10 +52,11 @@ Cancer Alpha represents a paradigm shift in computational oncology, delivering:
 <td width="50%">
 
 ### 🏥 **Production-Ready Platform**
-- **Web Application**: Intuitive clinical interface with Features tab for genomic data exploration
-- **REST API**: Enterprise-grade backend service with SHAP explainability
-- **Docker & Kubernetes**: Scalable deployment
-- **Hospital Integration**: Standards-compliant design
+- **Streamlit Web App**: Interactive cancer classification with SHAP explainability
+- **React Web Application**: Advanced clinical interface with genomic data exploration
+- **REST API**: Enterprise-grade backend service with comprehensive endpoints
+- **Docker & Kubernetes**: Scalable deployment with health monitoring
+- **Hospital Integration**: Standards-compliant design for clinical environments
 
 ### 🔍 **Clinical Explainability**
 - **Per-Case Confidence**: Prediction confidence with uncertainty metrics
@@ -88,28 +89,70 @@ bash ./start_api_clean.sh
 
 ### 2. **Launch the Web Application**
 
-In a second terminal, start the React frontend using the clean start script:
-
+**Option A: Streamlit Cancer Classifier (Recommended)**
 ```bash
-# Ensures a clean start on port 3000
-bash ./start_webapp_clean.sh
-```
-
-**Alternative manual method:**
-```bash
-# Navigate to the web app directory
+# Navigate to the Streamlit app directory
 cd src/phase4_systemization_and_tool_deployment/web_app
 
-# Install dependencies and start
-npm install
-npm start
+# Launch the interactive cancer classifier
+./start_app.sh
+```
+
+**Option B: React Web Application**
+```bash
+# Use the clean start script for React app
+bash ./start_webapp_clean.sh
+
+# Or manually:
+cd src/phase4_systemization_and_tool_deployment/web_app
+npm install && npm start
 ```
 
 ### 3. **Access the System**
 
-- **Web App**: [http://localhost:3000](http://localhost:3000)
-- **API Docs**: [http://localhost:8001/docs](http://localhost:8001/docs)
+- **Streamlit Cancer Classifier**: [http://localhost:8501](http://localhost:8501) *(Interactive AI with SHAP)*
+- **React Web App**: [http://localhost:3000](http://localhost:3000) *(Advanced interface)*
+- **API Docs**: [http://localhost:8001/docs](http://localhost:8001/docs) *(Backend API)*
 - **Test Explainability**: [http://localhost:8001/test-explainability](http://localhost:8001/test-explainability)
+
+---
+
+## 🧬 Interactive Cancer Classifier (Streamlit)
+
+**NEW**: Experience our latest interactive cancer classification web application with full SHAP explainability!
+
+### ✨ **Key Features**
+- **🤖 Real-time Predictions**: Instant cancer classification with confidence scores
+- **🔍 SHAP Explainability**: Understand exactly why the AI made each prediction
+- **📊 Multi-modal Analysis**: Analyze 110 genomic features across 6 data modalities
+- **🎯 Interactive Interface**: Three input methods (sample data, manual input, CSV upload)
+- **📈 Visual Insights**: Interactive plots showing feature importance and biological insights
+
+### 🚀 **Quick Launch**
+```bash
+cd src/phase4_systemization_and_tool_deployment/web_app
+./start_app.sh
+```
+
+**Access at**: [http://localhost:8501](http://localhost:8501)
+
+### 📊 **What You Can Do**
+1. **Generate Sample Data**: Create realistic cancer/control genomic profiles
+2. **Manual Feature Input**: Adjust all 110 genomic features individually
+3. **Upload Your Data**: Process your own genomic CSV files
+4. **Get Predictions**: Receive cancer classification with confidence metrics
+5. **Explore Explanations**: See which features drove the AI's decision
+6. **Understand Biology**: Get automated insights about genomic patterns
+
+### 🔬 **Supported Data Modalities**
+- **Methylation** (20 features): DNA methylation patterns
+- **Mutations** (25 features): Genetic variant information  
+- **Copy Number Alterations** (20 features): Chromosomal gains/losses
+- **Fragmentomics** (15 features): cfDNA fragment characteristics
+- **Clinical** (10 features): Patient demographics and staging
+- **ICGC ARGO** (20 features): International cancer genomics data
+
+**📖 Full Documentation**: See [Web App README](src/phase4_systemization_and_tool_deployment/web_app/README.md)
 
 ---
 
