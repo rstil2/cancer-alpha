@@ -74,6 +74,98 @@ Cancer Alpha represents a paradigm shift in computational oncology, delivering:
 </tr>
 </table>
 
+## 🧬 **Multi-Modal Data Integration**
+
+<div align="center">
+
+| **Data Modality** | **Features** | **Clinical Impact** |
+|:----------------:|:------------:|:------------------:|
+| 🧬 **RNA Expression** | Gene expression profiles | Pathway analysis & biomarkers |
+| 🔬 **DNA Methylation** | CpG methylation patterns | Epigenetic regulation insights |
+| 🏥 **Clinical Data** | Demographics & variables | Patient stratification |
+| 🧪 **Protein Expression** | Proteomic profiles | Functional validation |
+| 📊 **Genomic Features** | Mutations & copy numbers | Driver mutation identification |
+
+</div>
+
+---
+
+## 🤖 **AI Architecture**
+
+### **🎯 Production Models**
+
+<table>
+<tr>
+<td width="33%" align="center">
+
+#### 🌟 **Ensemble Model**
+**99.5% Accuracy**
+
+Combines multiple AI approaches for maximum reliability in clinical settings.
+
+</td>
+<td width="33%" align="center">
+
+#### 🌲 **Random Forest**
+**100% Accuracy**
+
+Robust ensemble method with excellent interpretability for clinicians.
+
+</td>
+<td width="33%" align="center">
+
+#### 🚀 **Gradient Boosting**
+**99% Accuracy**
+
+Advanced boosting with sophisticated feature interactions.
+
+</td>
+</tr>
+</table>
+
+### **🔬 Research Models**
+- **TabTransformer**: Attention-based tabular data processing
+- **Multi-Modal Transformer**: Cross-modal attention mechanisms  
+- **Perceiver IO**: General-purpose multi-modal architecture
+- **Deep Neural Networks**: Multi-layer perceptrons with dropout
+
+---
+
+## 📊 **Performance Metrics**
+
+<div align="center">
+
+### **🏆 Clinical-Grade Results**
+
+| **Model** | **Accuracy** | **Precision** | **Recall** | **F1-Score** | **AUC-ROC** |
+|-----------|:------------:|:-------------:|:----------:|:------------:|:-----------:|
+| **🏆 Ensemble** | **99.5%** | **99.4%** | **99.3%** | **99.4%** | **0.999** |
+| **🌲 Random Forest** | **100%** | **100%** | **100%** | **100%** | **1.000** |
+| **🚀 Gradient Boosting** | **99.0%** | **98.8%** | **98.9%** | **98.9%** | **0.998** |
+| 🧠 Deep Neural Network | 95.2% | 94.8% | 94.9% | 94.8% | 0.989 |
+| 📈 Multi-Modal Transformer | 94.2% | 93.8% | 93.5% | 93.8% | 0.987 |
+
+</div>
+
+### **🎯 Supported Cancer Types**
+
+<div align="center">
+
+| **Cancer Type** | **Samples** | **Accuracy** | **Clinical Relevance** |
+|:---------------:|:-----------:|:------------:|:----------------------:|
+| 🫁 Lung (LUAD) | 1,200+ | 99.8% | Most common cancer worldwide |
+| 🧬 Breast (BRCA) | 1,100+ | 99.9% | Leading cancer in women |
+| 🧬 Prostate (PRAD) | 500+ | 100% | Leading cancer in men |
+| 🧬 Colorectal (COAD) | 450+ | 99.5% | Third most common cancer |
+| 🧠 Glioblastoma (GBM) | 150+ | 98.8% | Aggressive brain cancer |
+| 🫀 Kidney (KIRC) | 530+ | 99.7% | Renal cell carcinoma |
+| 🩸 Leukemia (LAML) | 170+ | 100% | Blood cancer |
+| 🫁 Head & Neck (HNSC) | 520+ | 99.2% | HPV-related cancers |
+
+</div>
+
+---
+
 ## 🎁 **Try the Interactive Demo!**
 
 <div align="center">
@@ -294,97 +386,6 @@ This comprehensive roadmap reflects our current achievements and outlines the ne
 - [Technical Roadmap](docs/roadmap.md)
 - [Cancer Classification Roadmap](docs/cancer_classification_roadmap.md)
 
----
-
-## 🧬 Multi-Modal Data Integration
-
-<div align="center">
-
-| **Data Modality** | **Features** | **Clinical Impact** |
-|:----------------:|:------------:|:------------------:|
-| 🧬 **RNA Expression** | Gene expression profiles | Pathway analysis & biomarkers |
-| 🔬 **DNA Methylation** | CpG methylation patterns | Epigenetic regulation insights |
-| 🏥 **Clinical Data** | Demographics & variables | Patient stratification |
-| 🧪 **Protein Expression** | Proteomic profiles | Functional validation |
-| 📊 **Genomic Features** | Mutations & copy numbers | Driver mutation identification |
-
-</div>
-
----
-
-## 🤖 AI Architecture
-
-### **🎯 Production Models**
-
-<table>
-<tr>
-<td width="33%" align="center">
-
-#### 🌟 **Ensemble Model**
-**99.5% Accuracy**
-
-Combines multiple AI approaches for maximum reliability in clinical settings.
-
-</td>
-<td width="33%" align="center">
-
-#### 🌲 **Random Forest**
-**100% Accuracy**
-
-Robust ensemble method with excellent interpretability for clinicians.
-
-</td>
-<td width="33%" align="center">
-
-#### 🚀 **Gradient Boosting**
-**99% Accuracy**
-
-Advanced boosting with sophisticated feature interactions.
-
-</td>
-</tr>
-</table>
-
-### **🔬 Research Models**
-- **TabTransformer**: Attention-based tabular data processing
-- **Multi-Modal Transformer**: Cross-modal attention mechanisms  
-- **Perceiver IO**: General-purpose multi-modal architecture
-- **Deep Neural Networks**: Multi-layer perceptrons with dropout
-
----
-
-## 📊 Performance Metrics
-
-<div align="center">
-
-### **🏆 Clinical-Grade Results**
-
-| **Model** | **Accuracy** | **Precision** | **Recall** | **F1-Score** | **AUC-ROC** |
-|-----------|:------------:|:-------------:|:----------:|:------------:|:-----------:|
-| **🏆 Ensemble** | **99.5%** | **99.4%** | **99.3%** | **99.4%** | **0.999** |
-| **🌲 Random Forest** | **100%** | **100%** | **100%** | **100%** | **1.000** |
-| **🚀 Gradient Boosting** | **99.0%** | **98.8%** | **98.9%** | **98.9%** | **0.998** |
-| 🧠 Deep Neural Network | 95.2% | 94.8% | 94.9% | 94.8% | 0.989 |
-| 📈 Multi-Modal Transformer | 94.2% | 93.8% | 93.5% | 93.8% | 0.987 |
-
-</div>
-
-### **🎯 Supported Cancer Types**
-
-<div align="center">
-
-| **Cancer Type** | **Samples** | **Accuracy** | **Clinical Relevance** |
-|:---------------:|:-----------:|:------------:|:----------------------:|
-| 🫁 Lung (LUAD) | 1,200+ | 99.8% | Most common cancer worldwide |
-| 🧬 Breast (BRCA) | 1,100+ | 99.9% | Leading cancer in women |
-| 🧬 Prostate (PRAD) | 500+ | 100% | Leading cancer in men |
-| 🧬 Colorectal (COAD) | 450+ | 99.5% | Third most common cancer |
-| 🧠 Glioblastoma (GBM) | 150+ | 98.8% | Aggressive brain cancer |
-| 🫀 Kidney (KIRC) | 530+ | 99.7% | Renal cell carcinoma |
-| 🩸 Leukemia (LAML) | 170+ | 100% | Blood cancer |
-| 🫁 Head & Neck (HNSC) | 520+ | 99.2% | HPV-related cancers |
-
-</div>
 
 ---
 
