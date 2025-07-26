@@ -1,19 +1,49 @@
-Copyright (c) 2025 Dr. R. Craig Stillwell
+# CANCER ALPHA - RESTRICTED USE LICENSE
 
-This software is part of a patent-pending system titled "Systems and Methods for Cancer Classification Using Multi-Modal Transformer-Based Architectures" (Provisional Patent Application No. 63/847,316).
+**Copyright (c) 2025 Dr. R. Craig Stillwell**
 
-Permission is granted to academic and non-profit research institutions to use, reproduce, and modify this software **solely for non-commercial, academic research purposes**, subject to the following conditions:
+This software implements patented technology titled "Systems and Methods for Cancer Classification Using Multi-Modal Transformer-Based Architectures" (Patent Application No. 63/847,316).
 
-1. **Commercial Use Prohibited Without License**  
-   Commercial use — including (but not limited to) integration into commercial products, internal use by for-profit entities, or provision of services — is **strictly prohibited** without a separate, written license agreement with the copyright holder.
+## 🔒 RESTRICTED USE LICENSE
 
-2. **Patent Rights Reserved**  
-   This software may implement technology claimed in one or more patent applications. No license is granted under any patent, except as expressly stated above.
+### 1. PERMITTED USES
+- **Academic Research Only**: Non-profit academic institutions may use this software solely for non-commercial research purposes
+- **Evaluation Period**: 30-day evaluation for potential commercial licensing
+- **Citation Required**: Must cite patent and software in ALL publications and derivative works
 
-3. **Redistribution**  
-   Redistribution of modified or unmodified versions of this software is **not permitted** without written consent.
+### 2. PROHIBITED USES
+- ❌ **Commercial Use**: ANY commercial use without written license agreement
+- ❌ **Redistribution**: NO redistribution in any form without written consent
+- ❌ **Derivative Works**: NO creation of commercial derivative works without license
+- ❌ **Reverse Engineering**: NO attempts to reverse engineer patented methods
+- ❌ **Service Provision**: NO providing services based on this technology
+- ❌ **Model Extraction**: NO extraction or replication of trained models
 
-4. **Contact**  
-   For commercial licensing, redistribution, or royalty terms, contact:  
-   Dr. R. Craig Stillwell  
-   craig.stillwell@gmail.com
+### 3. TERMINATION & ENFORCEMENT
+- License automatically terminates upon ANY violation
+- Must destroy all copies upon termination
+- Patent holder reserves right to monitor usage
+- Users must provide usage reports upon request
+- Liquidated damages of $100,000 per violation
+
+### 4. PATENT RIGHTS
+- NO patent license granted except as expressly stated above
+- Patent holder reserves ALL patent rights worldwide
+- Commercial patent licenses available separately
+
+### 5. CONFIDENTIALITY
+- Users must treat proprietary algorithms as confidential
+- NO disclosure of implementation details without permission
+- Confidentiality obligations survive license termination
+
+### 6. COMMERCIAL LICENSING
+**For ANY commercial use, contact:**
+- **Dr. R. Craig Stillwell**
+- **Email**: craig.stillwell@gmail.com
+- **Patent licensing required before ANY commercial use**
+
+### 7. DISCLAIMER
+SOFTWARE PROVIDED "AS IS" WITHOUT WARRANTY OF ANY KIND.
+
+---
+**⚠️ WARNING**: This software is protected by patent rights. Unauthorized commercial use may result in patent infringement claims and substantial damages.
