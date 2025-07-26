@@ -22,7 +22,44 @@
 
 **🎯 Vision**: *To achieve AlphaFold-level innovation in precision oncology through breakthrough multi-modal AI architectures*
 
-[**🎁 Try Demo**](#-try-the-interactive-demo) • [**🚀 Quick Start**](#-quick-start) • [**📖 Documentation**](#-documentation) • [**🏥 Clinical Use**](#-clinical-deployment) • [**🤝 Contribute**](#-contributing) • [**📄 Citation**](#-citation)
+[**📄 Research Papers**](#-research-papers) • [**🎁 Try Demo**](#-try-the-interactive-demo) • [**🚀 Quick Start**](#-quick-start) • [**📖 Documentation**](#-documentation) • [**🏥 Clinical Use**](#-clinical-deployment) • [**🤝 Contribute**](#-contributing) • [**📄 Citation**](#-citation)
+
+</div>
+
+---
+
+## 📄 **Research Papers**
+
+<div align="center">
+
+### 🔬 **Download Preprints**
+
+<table>
+<tr>
+<td width="50%" align="center">
+
+#### 📊 **Cancer Alpha: Multi-Modal AI for Precision Oncology**
+*Comprehensive study on AI-driven cancer classification*
+
+[![Download PDF](https://img.shields.io/badge/📄_Download-Main_Paper-red?style=for-the-badge&logo=adobe-acrobat-reader)](preprints/cancer_alpha_main_paper.pdf)
+
+**Focus:** Clinical validation, performance metrics, and real-world applications of our multi-modal AI system for cancer detection and classification.
+
+</td>
+<td width="50%" align="center">
+
+#### 🤖 **Multi-Modal Transformer Architecture for Genomic Data**
+*Technical methodology and innovation paper*
+
+[![Download PDF](https://img.shields.io/badge/📄_Download-Architecture_Paper-blue?style=for-the-badge&logo=adobe-acrobat-reader)](preprints/multimodal_transformer_architecture.pdf)
+
+**Focus:** Novel transformer architecture design, attention mechanisms, and technical innovations for multi-modal genomic data integration.
+
+</td>
+</tr>
+</table>
+
+**📋 Preprint Status:** Available for early access • Citation welcome • Community feedback encouraged
 
 </div>
 
