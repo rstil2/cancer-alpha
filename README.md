@@ -1,3 +1,153 @@
+# 🔬 Cancer Alpha - AI-Powered Cancer Classification Demo
+
+## ⚠️ **PATENT PROTECTED TECHNOLOGY** ⚠️
+
+**This repository contains a limited demonstration of patent-protected technology.**
+
+- **Patent**: Provisional Application No. 63/847,316
+- **Title**: Systems and Methods for Cancer Classification Using Multi-Modal Transformer-Based Architectures
+- **Patent Holder**: Dr. R. Craig Stillwell
+- **Commercial Use**: Requires separate patent license
+
+## 🎯 **Demo Purpose**
+
+This is a **demonstration version** of advanced AI technology for cancer classification using multi-modal genomic data. The demo showcases the user interface and basic functionality but uses simplified models and synthetic data.
+
+### **⚠️ Important Limitations**
+- **Demo Only**: This is not the full system
+- **Synthetic Data**: Uses generated data, not real genomic samples
+- **Limited Accuracy**: Simplified models for demonstration purposes
+- **No Commercial Use**: Patent protection applies
+
+## 🚀 **Quick Start Demo**
+
+### **System Requirements**
+- Python 3.8 or higher
+- 4GB RAM minimum
+- Internet connection for initial setup
+
+### **Installation**
+```bash
+# Clone the demo repository
+git clone https://github.com/username/cancer-alpha-public.git
+cd cancer-alpha-public/DEMO_PACKAGE/cancer_genomics_ai_demo
+
+# Install dependencies
+pip install -r requirements_streamlit.txt
+
+# Run the demo
+./start_demo.sh
+# or on Windows:
+# start_demo.bat
+```
+
+### **Access the Demo**
+- Open your browser to `http://localhost:8504`
+- Try the sample predictions
+- Explore the interactive interface
+
+## 🧬 **Technology Overview**
+
+### **What This Demo Shows**
+- **Interactive Web Interface**: User-friendly cancer classification tool
+- **Multi-Modal Data Integration**: Simulated genomic data processing
+- **AI Predictions**: Simplified cancer type classification
+- **SHAP Explainability**: Visual explanation of prediction factors
+- **Clinical Decision Support**: Demo of diagnostic assistance interface
+
+### **Real Technology Features** (Not in Demo)
+- Advanced transformer-based architectures
+- Real multi-omics data integration (genomic, transcriptomic, clinical)
+- Production-grade machine learning models
+- High-accuracy cancer classification
+- Research-validated biological insights
+
+## 📊 **Demo Capabilities**
+
+| Feature | Demo Version | Full System |
+|---------|-------------|-------------|
+| **Data Sources** | Synthetic only | Real genomic databases |
+| **Model Accuracy** | ~70% (simplified) | e95% (production) |
+| **Cancer Types** | 8 basic types | 50+ detailed subtypes |
+| **Processing Speed** | Limited | Real-time production |
+| **Explainability** | Basic SHAP | Advanced biological insights |
+
+## 🏥 **Potential Applications**
+
+The full technology can be applied to:
+- **Clinical Diagnostics**: Rapid cancer classification
+- **Precision Medicine**: Personalized treatment recommendations
+- **Research**: Biomarker discovery and validation
+- **Drug Development**: Target identification and validation
+- **Population Health**: Large-scale screening programs
+
+## 📝 **Patent 0bateLicensing**
+
+### **Academic Use**
+- **Permitted**: Non-commercial research and education
+- **Requirements**: Proper citation and attribution
+- **Restrictions**: No redistribution or commercial use
+
+### **Commercial Use**
+- **Status**: Prohibited without patent license
+- **Licensing**: Available through patent holder
+- **Applications**: Clinical deployment, commercial products, services
+
+### **Contact for Licensing**
+- **Email**: craig.stillwell@gmail.com
+- **Subject**: "Cancer Alpha Patent License Inquiry"
+- **Include**: Intended use case and organization details
+
+## 🔒 **Legal Notices**
+
+### **Patent Protection**
+This technology is protected by provisional patent application and pending full patent applications. Unauthorized commercial use may result in legal action.
+
+### **Data Privacy**
+- Demo uses only synthetic data
+- No real patient information is processed
+- Full system includes HIPAA-compliant security measures
+
+### **Disclaimer**
+This demo is for illustration purposes only. It should not be used for actual medical diagnosis or treatment decisions.
+
+## 📚 **Documentation**
+
+- [`DEMO_USAGE.md`](docs/demo_usage.md) - Detailed demo instructions
+- [`PATENT_LICENSING.md`](docs/patent_licensing.md) - Licensing information
+- [`CONTACT_INFO.md`](docs/contact_information.md) - Support and licensing contacts
+
+## 🤝 **Academic Collaboration**
+
+We welcome academic collaboration and research partnerships. For academic use and collaboration opportunities:
+
+- **Email**: craig.stillwell@gmail.com
+- **Subject**: "Cancer Alpha Academic Collaboration"
+- **Include**: Research proposal and institutional affiliation
+
+## 🛠️ **Technical Support**
+
+### **Demo Issues**
+- Check the installation requirements
+- Ensure all dependencies are installed
+- Try running in a fresh Python environment
+
+### **Licensing Questions**
+- Contact craig.stillwell@gmail.com
+- Include specific use case details
+- Allow 3-5 business days for response
+
+---
+
+## ⚖️ **Legal Warning**
+
+**Unauthorized commercial use of this patent-protected technology may result in patent infringement litigation and substantial monetary damages. Contact the patent holder before any commercial use.**
+
+---
+
+**© 2025 Dr. R. Craig Stillwell. All rights reserved.**  
+**Patent Pending - Provisional Application No. 63/847,316**
+
 <div align="center">
 
 # 🧬 Cancer Alpha
