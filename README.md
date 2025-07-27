@@ -233,43 +233,24 @@ graph TB
 
 ```
 cancer-alpha/
-├── 🧬 src/cancer_alpha/              # Core AI package
-│   ├── 📊 data/                      # Data processing
-│   ├── 🤖 models/                    # ML implementations  
-│   ├── 🔬 transformers/              # Advanced architectures
-│   ├── 📈 visualization/             # Clinical dashboards
-│   └── 🛠️ utils/                     # Helper functions
-├── 🌐 src/phase4_systemization_and_tool_deployment/
-│   ├── 📱 web_app/                   # React frontend
-│   ├── 🔌 real_cancer_alpha_api.py   # Production API
-│   └── 🐳 docker/                    # Container configs
-├── 📊 data/                          # Training datasets
-├── 🏆 results/                       # Model outputs
-├── 📚 docs/                          # Documentation
-└── 🧪 tests/                         # Quality assurance
+├── 📚 docs/                          # Documentation and figures
+├── 📄 preprints/                     # Research papers (bioRxiv published)
+├── 🎁 DEMO_PACKAGE/                  # Self-contained demo package
+│   └── cancer_genomics_ai_demo/      # Interactive Streamlit demo
+├── 🔧 scripts/                       # Utility scripts
+├── 📊 *.py                           # Demo server and startup scripts
+├── 📋 *.sh, *.bat                    # Cross-platform startup scripts
+├── ⚖️ LICENSE, PATENTS.md            # Legal documentation
+└── 📖 README.md, CONTRIBUTING.md     # Project documentation
 ```
 
 ## 📖 **Documentation**
 
-- [Master Installation Guide](MASTER_INSTALLATION_GUIDE.md) - Complete installation and usage guide
-- [API Reference Guide](docs/API_REFERENCE_GUIDE.md) - Comprehensive API documentation with SHAP explainability
-- [Web App Features Guide](docs/WEB_APP_FEATURES_GUIDE.md) - Features tab usage and genomic data exploration
-- [Comprehensive Deployment Guide](COMPREHENSIVE_DEPLOYMENT_GUIDE.md) - Detailed deployment instructions
-- [Working Deployment Guide](WORKING_DEPLOYMENT_GUIDE.md) - Quick deployment guide
-- [Phase 4B Web App Deployment](src/phase4_systemization_and_tool_deployment/PHASE4B_DEPLOYMENT_GUIDE.md) - React web application setup
-- [Phase 4C Production Deployment](src/phase4_systemization_and_tool_deployment/PHASE4C_PRODUCTION_DEPLOYMENT_GUIDE.md) - Production deployment guide
-- [Beginner Guide](src/phase4_systemization_and_tool_deployment/BEGINNER_GUIDE.md) - Getting started guide
-- [Project Roadmap](docs/roadmap.md) - Development roadmap and milestones
+- [Master Installation Guide](docs/MASTER_INSTALLATION_GUIDE.md) - Complete installation and usage guide
+- [Demo Usage Guide](docs/demo_usage.md) - Detailed demo instructions
+- [Contributing Guide](CONTRIBUTING.md) - Guidelines for contributing to the project
+- [Project Roadmap](docs/UPDATED_PROJECT_ROADMAP_2025.md) - Updated project roadmap
 
-## 🧪 **Testing**
-
-```bash
-# Run all tests
-pytest tests/
-
-# Run with coverage
-pytest tests/ --cov=cancer_alpha --cov-report=html
-```
 
 ---
 
@@ -444,8 +425,8 @@ This demo is for illustration purposes only. It should not be used for actual me
 ## 📱 **Additional Resources**
 
 - [`DEMO_USAGE.md`](docs/demo_usage.md) - Detailed demo instructions
-- [`PATENT_LICENSING.md`](docs/patent_licensing.md) - Licensing information
-- [`CONTACT_INFO.md`](docs/contact_information.md) - Support and licensing contacts
+- [`PATENTS.md`](PATENTS.md) - Patent protection information
+- [`LICENSE`](LICENSE) - Academic use license
 
 ## 🤝 **Academic Collaboration**
 
@@ -488,15 +469,11 @@ Cancer Alpha is designed for seamless integration into clinical and research env
 - **Scalable**: Docker and Kubernetes manifests are included for robust, scalable deployments.
 - **Secure**: Follows best practices for security and patient data privacy.
 
-For detailed instructions, see the [Master Installation Guide](MASTER_INSTALLATION_GUIDE.md).
+For detailed instructions, see the [Master Installation Guide](docs/MASTER_INSTALLATION_GUIDE.md).
 
 ---
 
 ## 🗺️ Project Roadmap
-
-**📈 CURRENT ROADMAP (2025)**: [**Updated Project Roadmap 2025**](docs/UPDATED_PROJECT_ROADMAP_2025.md) ← **START HERE**
-
-This comprehensive roadmap reflects our current achievements and outlines the next 6 months of development priorities for transforming Cancer Alpha into the "AlphaFold of Oncology."
 
 **Current Phase Status:**
 1. **Phase 1**: Reframe the Scientific Problem ✅
@@ -506,9 +483,11 @@ This comprehensive roadmap reflects our current achievements and outlines the ne
 5. **Phase 4.5**: Advanced System Features 🔄 **(IN PROGRESS)**
 6. **Phase 5**: Publication & Community Impact 📝 **(UPCOMING)**
 
-**Historical Roadmaps** (for reference):
-- [Technical Roadmap](docs/roadmap.md)
-- [Cancer Classification Roadmap](docs/cancer_classification_roadmap.md)
+**Next Steps:**
+- Expand cancer type coverage beyond current 8 types
+- Integrate additional genomic data modalities
+- Enhance clinical decision support features
+- Develop production-grade deployment infrastructure
 
 
 
