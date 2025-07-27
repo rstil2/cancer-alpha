@@ -7,7 +7,7 @@
 **Source:** Based on actual submitted version from `/cancer-alpha-core/` with enhanced citations
 
 **Complete Features:**
-- **29 properly formatted in-line citations** with comprehensive references section
+- **8 properly formatted in-line citations** with comprehensive references section
 - **3 embedded images**: Original figures from submitted version
 - **6 embedded tables**: Original tables from submitted version
 - **Professional formatting**: Maintains original submitted formatting
@@ -18,7 +18,7 @@
 
 ### 📋 **Source & Process:**
 - **Original source**: `scientific_reports_complete.docx` from cancer-alpha-core submission package
-- **Enhancement**: Added 21 additional citations and proper references
+- **Enhancement**: Added proper academic citations and references section
 - **Preservation**: All original embedded content maintained
 - **Status**: Ready for GitHub hosting with complete academic formatting
 
