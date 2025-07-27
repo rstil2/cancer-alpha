@@ -4,9 +4,12 @@ This directory contains preprint versions of research papers related to the Canc
 
 ## Available Papers
 
-### 📊 **Cancer Alpha: Multi-Modal AI for Precision Oncology**
+### 📊 **Cancer Alpha: Multi-Modal AI for Precision Oncology** 🌐 **PUBLISHED ON bioRxiv**
 **File:** `cancer_alpha_main_paper.pdf`  
+**bioRxiv DOI:** [10.1101/2025.07.22.666135v1](https://www.biorxiv.org/content/10.1101/2025.07.22.666135v1)  
 **Focus:** Comprehensive study covering clinical validation, performance metrics, and real-world applications of our multi-modal AI system for cancer detection and classification.
+
+**Publication Status:** Now live on bioRxiv preprint server (July 22, 2025)
 
 ### 🤖 **Multi-Modal Transformer Architecture for Genomic Data**
 **File:** `multimodal_transformer_architecture_corrected.pdf` 📄 **SUBMITTED VERSION**

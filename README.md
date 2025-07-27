@@ -38,10 +38,11 @@
 <tr>
 <td width="50%" align="center">
 
-#### 📊 **Cancer Alpha: Multi-Modal AI for Precision Oncology**
+#### 📊 **Cancer Alpha: Multi-Modal AI for Precision Oncology** 🌐 **PUBLISHED ON bioRxiv**
 *Comprehensive study on AI-driven cancer classification*
 
 [![Download PDF](https://img.shields.io/badge/📄_Download-Main_Paper-red?style=for-the-badge&logo=adobe-acrobat-reader)](preprints/cancer_alpha_main_paper.pdf)
+[![bioRxiv](https://img.shields.io/badge/bioRxiv-10.1101%2F2025.07.22.666135v1-B31B1B?style=for-the-badge&logo=biorxiv)](https://www.biorxiv.org/content/10.1101/2025.07.22.666135v1)
 
 **Focus:** Clinical validation, performance metrics, and real-world applications of our multi-modal AI system for cancer detection and classification.
 
@@ -59,7 +60,7 @@
 </tr>
 </table>
 
-**📋 Preprint Status:** Available for early access • Citation welcome • Community feedback encouraged
+**📋 Preprint Status:** Main paper published on bioRxiv • Architecture paper under review • Citation welcome • Community feedback encouraged
 
 </div>
 
@@ -517,12 +518,13 @@ This comprehensive roadmap reflects our current achievements and outlines the ne
 If you use this work in your research, please cite:
 
 ```bibtex
-@article{cancer_alpha_2024,
-    title={Multi-Modal Transformer Architecture for Cancer Classification},
-    author={Cancer Alpha Research Team},
-    journal={Nature Machine Intelligence},
-    year={2024},
-    status={Under Review}
+@article{cancer_alpha_2025,
+    title={Cancer Alpha: Multi-Modal AI for Precision Oncology},
+    author={Stillwell, R. Craig and Cancer Alpha Research Team},
+    journal={bioRxiv},
+    year={2025},
+    doi={10.1101/2025.07.22.666135},
+    url={https://www.biorxiv.org/content/10.1101/2025.07.22.666135v1}
 }
 ```
 
