@@ -1,26 +1,26 @@
 # Correction Notice
 
-## Scientific Reports Methodology Paper - Professional Formatting & Citations Added
+## Scientific Reports Methodology Paper - Multiple Versions Available
 
-The original Scientific Reports methodology paper has been updated with professional formatting and proper in-line citations throughout the text.
+### 📄 **Submitted Version (PRESERVE)** 
+**File:** `multimodal_transformer_architecture_corrected.pdf`  
+**Status:** This is the version that was submitted to Scientific Reports - **DO NOT MODIFY**
+- Professional formatting with Times New Roman font
+- Proper in-line citations with superscript formatting
+- Complete References section
+- Text-based content ready for journal submission
 
-**Updated Version:** `multimodal_transformer_architecture_corrected.pdf`
+### 📊 **Comprehensive Version (REFERENCE)**
+**File:** `multimodal_transformer_architecture_comprehensive.pdf`  
+**Status:** Enhanced version with embedded tables and figures for reference
+- **Embedded Tables**: 3 comprehensive tables (Dataset Characteristics, Model Performance, Feature Importance)
+- **Embedded Figures**: 2 figures (Performance Comparison, SHAP Analysis)
+- **File Size**: 382KB with all embedded visual content
+- **Use Case**: Reference version showing full methodology with visuals
 
-### Changes Made:
-- Added numbered superscript citations (^1^, ^2^, etc.) throughout the text
-- All citations now properly correspond to the reference list
-- Maintains the same content and structure as the original
-
-### Files:
+### 📋 **File Structure:**
 - `multimodal_transformer_architecture_original.pdf` - Original plain version
-- `multimodal_transformer_architecture_corrected.pdf` - **CURRENT VERSION** with professional formatting and proper citations
-- `multimodal_transformer_architecture_corrected.md` - Markdown source for corrected version
+- `multimodal_transformer_architecture_corrected.pdf` - **SUBMITTED VERSION** (preserve)
+- `multimodal_transformer_architecture_comprehensive.pdf` - Enhanced version with tables/figures
 
-Please use the PDF version (`multimodal_transformer_architecture_corrected.pdf`) as it contains the professionally formatted manuscript with proper styling and all in-line citations.
-
-### Formatting Improvements:
-- Times New Roman font for professional appearance
-- Proper heading styles and hierarchy
-- Superscript citations for academic standards
-- Enhanced readability and presentation
-- Consistent with main Cancer Alpha paper styling
+**Important**: The corrected version is the submitted manuscript and should remain unchanged.
