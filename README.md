@@ -66,6 +66,17 @@
 
 ---
 
+
+## 🏗️ **Multi-Modal Transformer Architecture**
+
+<div align="center">
+<img src="docs/figures/architecture_figure1.png" alt="Multi-Modal Transformer Architecture" width="800"/>
+
+*Figure 1: Novel multi-modal transformer architecture for cancer genomics data integration, showing modality-specific encoders, cross-modal attention mechanisms, and classification layers.*
+</div>
+
+---
+
 ## 🌟 What Makes Cancer Alpha Special?
 
 Cancer Alpha represents a paradigm shift in computational oncology, delivering:
