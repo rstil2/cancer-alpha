@@ -1,5 +1,16 @@
 # Multi-Modal Transformer Architecture for Genomic Data Integration: A Novel Approach to Cancer Classification
 
+**⚠️ PATENT PROTECTED TECHNOLOGY ⚠️**
+
+**Patent:** Provisional Application No. 63/847,316  
+**Title:** Systems and Methods for Cancer Classification Using Multi-Modal Transformer-Based Architectures  
+**Patent Holder:** Dr. R. Craig Stillwell  
+**Commercial Use:** Requires separate patent license
+
+*For commercial licensing inquiries, contact: craig.stillwell@gmail.com*
+
+---
+
 ## Abstract
 
 Cancer genomics research increasingly relies on multi-modal data integration to capture the complex molecular landscape of tumors. Here, we present a novel multi-modal transformer architecture specifically designed for integrating heterogeneous genomic data types in cancer classification tasks. Our approach addresses key computational challenges in applying attention mechanisms to genomic data through modality-specific encoders, cross-modal attention layers, and synthetic data generation strategies. The architecture demonstrates effective fusion of methylation patterns, fragmentomics profiles, and copy number alteration data through learned attention weights. We validate our approach using synthetic genomic datasets that preserve realistic data characteristics while enabling controlled experimentation. This work contributes to the growing field of AI-driven cancer genomics by providing a scalable framework for multi-modal genomic data analysis that can be adapted across different cancer types and genomic platforms.
