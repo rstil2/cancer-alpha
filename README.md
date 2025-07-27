@@ -260,7 +260,6 @@ cancer-alpha/
 - [Master Installation Guide](docs/MASTER_INSTALLATION_GUIDE.md) - Complete installation and usage guide
 - [Demo Usage Guide](docs/demo_usage.md) - Detailed demo instructions
 - [Contributing Guide](CONTRIBUTING.md) - Guidelines for contributing to the project
-- [Project Roadmap](docs/UPDATED_PROJECT_ROADMAP_2025.md) - Updated project roadmap
 
 
 ---
