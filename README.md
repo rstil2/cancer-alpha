@@ -53,8 +53,7 @@
 
 [![Download PDF](https://img.shields.io/badge/📄_Download-Architecture_Paper-blue?style=for-the-badge&logo=adobe-acrobat-reader)](preprints/multimodal_transformer_architecture_corrected.pdf)
 
-**Focus:** Novel transformer architecture design, attention mechanisms, and technical innovations for multi-modal genomic data integration.  
-**✅ Updated:** *Now includes proper in-line citations throughout the manuscript*
+**Focus:** Novel transformer architecture design, attention mechanisms, and technical innovations for multi-modal genomic data integration.
 
 </td>
 </tr>
