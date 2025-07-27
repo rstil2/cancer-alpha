@@ -9,10 +9,19 @@ This directory contains preprint versions of research papers related to the Canc
 **Focus:** Comprehensive study covering clinical validation, performance metrics, and real-world applications of our multi-modal AI system for cancer detection and classification.
 
 ### 🤖 **Multi-Modal Transformer Architecture for Genomic Data**
-**File:** `multimodal_transformer_architecture_corrected.pdf` ✅ **UPDATED WITH CITATIONS**
-**Focus:** Technical methodology paper detailing our novel transformer architecture design, attention mechanisms, and technical innovations for multi-modal genomic data integration.
+**File:** `multimodal_transformer_architecture_corrected.pdf` 📄 **SUBMITTED VERSION**
+**Focus:** Methodology paper targeting Scientific Reports featuring our novel transformer architecture for integrative cancer genomics analysis.
 
-**Note:** This version includes proper in-line citations throughout the manuscript. The original PDF version is archived as `multimodal_transformer_architecture_original.pdf`.
+**Submitted Version Features:**
+- **12 properly formatted in-line citations** with 18 academic references
+- **Professional formatting**: Times New Roman font, superscript citations
+- **Complete sections**: Abstract, Introduction, Methods, Results, Discussion, Conclusion, References  
+- **Status**: This is the version submitted to Scientific Reports - preserved unchanged
+
+**Additional Reference Version:**
+- `multimodal_transformer_architecture_comprehensive.pdf` - Enhanced version with embedded tables and figures for internal reference
+
+**Note:** The original version is archived as `multimodal_transformer_architecture_original.pdf`.
 
 ## Access and Citation
 
