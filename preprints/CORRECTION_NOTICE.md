@@ -7,14 +7,11 @@
 **Source:** Based on actual submitted version from `/cancer-alpha-core/` with enhanced citations
 
 **Complete Features:**
-- **8 properly formatted in-line citations** with comprehensive references section
-- **3 embedded images**: Original figures from submitted version
-- **6 embedded tables**: Original tables from submitted version
-- **Professional formatting**: Maintains original submitted formatting
-- **Enhanced citations**: Added proper academic citations throughout
-- **Complete references**: 8 relevant academic references added
-- **File size**: 670KB with all original embedded content
-- **Verified**: Citations ✓, Tables ✓, Figures ✓, References ✓
+- **3 embedded images**: Performance comparisons and analysis visualizations
+- **6 embedded tables**: Dataset characteristics, model performance, and feature analysis
+- **Professional formatting**: Academic manuscript styling
+- **Complete references**: 8 relevant academic references
+- **File size**: 670KB with all embedded content
 
 ### 📋 **Source & Process:**
 - **Original source**: `scientific_reports_complete.docx` from cancer-alpha-core submission package
