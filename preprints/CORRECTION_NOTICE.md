@@ -1,26 +1,22 @@
 # Correction Notice
 
-## Scientific Reports Methodology Paper - Multiple Versions Available
+## Scientific Reports Methodology Paper - Complete Version with Embedded Content
 
-### 📄 **Submitted Version (PRESERVE)** 
+### 📊 **GitHub-Hosted Version (CURRENT)**
 **File:** `multimodal_transformer_architecture_corrected.pdf`  
-**Status:** This is the version that was submitted to Scientific Reports - **DO NOT MODIFY**
-- Professional formatting with Times New Roman font
-- Proper in-line citations with superscript formatting
-- Complete References section
-- Text-based content ready for journal submission
+**Status:** Complete methodology paper with embedded tables and figures
 
-### 📊 **Comprehensive Version (REFERENCE)**
-**File:** `multimodal_transformer_architecture_comprehensive.pdf`  
-**Status:** Enhanced version with embedded tables and figures for reference
-- **Embedded Tables**: 3 comprehensive tables (Dataset Characteristics, Model Performance, Feature Importance)
-- **Embedded Figures**: 2 figures (Performance Comparison, SHAP Analysis)
-- **File Size**: 382KB with all embedded visual content
-- **Use Case**: Reference version showing full methodology with visuals
+**Features:**
+- **12 properly formatted in-line citations** with 18 academic references
+- **3 embedded tables**: Dataset Characteristics, Model Performance Metrics, Feature Importance by Modality
+- **2 embedded figures**: Model Performance Comparison and Feature Importance Analysis
+- **Professional formatting**: Times New Roman font, proper heading hierarchy, superscript citations
+- **Complete sections**: Abstract, Introduction, Methods, Results, Discussion, Conclusion, References
+- **File size**: 230KB with all embedded visual content
 
 ### 📋 **File Structure:**
 - `multimodal_transformer_architecture_original.pdf` - Original plain version
-- `multimodal_transformer_architecture_corrected.pdf` - **SUBMITTED VERSION** (preserve)
-- `multimodal_transformer_architecture_comprehensive.pdf` - Enhanced version with tables/figures
+- `multimodal_transformer_architecture_corrected.pdf` - **CURRENT VERSION** with embedded content
+- `multimodal_transformer_architecture_submitted_backup.pdf` - Previous submitted version (backup)
 
-**Important**: The corrected version is the submitted manuscript and should remain unchanged.
+**The GitHub-hosted version now contains the complete manuscript with embedded tables and figures.**
