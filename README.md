@@ -185,33 +185,37 @@ Advanced boosting with sophisticated feature interactions.
 
 <div align="center">
 
-### **🏆 Clinical-Grade Results**
+### **🧪 Synthetic Data Validation Results**
+*Performance on biologically realistic synthetic genomic data*
 
-| **Model** | **Accuracy** | **Precision** | **Recall** | **F1-Score** | **AUC-ROC** |
-|-----------|:------------:|:-------------:|:----------:|:------------:|:-----------:|
-| **🥇 Optimized Transformer** | **100%** | **100%** | **100%** | **100%** | **1.000** |
-| **🌲 Random Forest** | **100%** | **100%** | **100%** | **100%** | **1.000** |
-| **🏆 Ensemble** | **99.5%** | **99.4%** | **99.3%** | **99.4%** | **0.999** |
-| **🚀 Gradient Boosting** | **99.0%** | **98.8%** | **98.9%** | **98.9%** | **0.998** |
-| 🧠 Deep Neural Network | 95.2% | 94.8% | 94.9% | 94.8% | 0.989 |
-| 📈 Enhanced Transformer | 44.2% | 43.8% | 43.5% | 43.8% | 0.687 |
+| **Model** | **Accuracy** | **Precision** | **Recall** | **F1-Score** | **AUC-ROC** | **Data Type** |
+|-----------|:------------:|:-------------:|:----------:|:------------:|:-----------:|:-------------:|
+| **🥇 Optimized Transformer** | **100%** | **100%** | **100%** | **100%** | **1.000** | Synthetic |
+| **🌲 Random Forest** | **~72%** | **~71%** | **~72%** | **~71%** | **~0.85** | Synthetic |
+| **🚀 Gradient Boosting** | **~68%** | **~67%** | **~68%** | **~67%** | **~0.82** | Synthetic |
+| 🧠 Deep Neural Network | ~65% | ~64% | ~65% | ~64% | ~0.80 | Synthetic |
+| 📈 Enhanced Transformer | 44.2% | 43.8% | 43.5% | 43.8% | 0.687 | Synthetic |
+
+⚠️ **Important Note**: These results are from synthetic data validation. **Clinical validation on real patient data is pending** and will be the true test of clinical-grade performance.
 
 </div>
 
-### **🎯 Supported Cancer Types**
+### **🎯 Targeted Cancer Types for Future Clinical Validation**
 
 <div align="center">
 
-| **Cancer Type** | **Samples** | **Accuracy** | **Clinical Relevance** |
-|:---------------:|:-----------:|:------------:|:----------------------:|
-| 🫁 Lung (LUAD) | 1,200+ | 99.8% | Most common cancer worldwide |
-| 🧬 Breast (BRCA) | 1,100+ | 99.9% | Leading cancer in women |
-| 🧬 Prostate (PRAD) | 500+ | 100% | Leading cancer in men |
-| 🧬 Colorectal (COAD) | 450+ | 99.5% | Third most common cancer |
-| 🧠 Glioblastoma (GBM) | 150+ | 98.8% | Aggressive brain cancer |
-| 🫀 Kidney (KIRC) | 530+ | 99.7% | Renal cell carcinoma |
-| 🩸 Leukemia (LAML) | 170+ | 100% | Blood cancer |
-| 🫁 Head & Neck (HNSC) | 520+ | 99.2% | HPV-related cancers |
+| **Cancer Type** | **Synthetic Samples** | **Target Clinical Relevance** |
+|:---------------:|:--------------------:|:-----------------------------:|
+| 🫁 Lung (LUAD) | 10,000 synthetic | Most common cancer worldwide |
+| 🧬 Breast (BRCA) | 10,000 synthetic | Leading cancer in women |
+| 🧬 Prostate (PRAD) | 10,000 synthetic | Leading cancer in men |
+| 🧬 Colorectal (COAD) | 10,000 synthetic | Third most common cancer |
+| 🫀 Kidney (KIRC) | 10,000 synthetic | Renal cell carcinoma |
+| 🫁 Head & Neck (HNSC) | 10,000 synthetic | HPV-related cancers |
+| 🧬 Stomach (STAD) | 10,000 synthetic | High incidence in Asia |
+| 🧬 Liver (LIHC) | 10,000 synthetic | Rising incidence globally |
+
+**Note**: Currently trained on 80,000 synthetic samples (10,000 per cancer type). Clinical validation with real patient data is the critical next phase.
 
 </div>
 
