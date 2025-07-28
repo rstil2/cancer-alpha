@@ -1,0 +1,79 @@
+[
+  {
+    "test_name": "Normal Operation",
+    "status": "PASS",
+    "samples_tested": 10,
+    "avg_confidence": 0.8728728294372559,
+    "class_distribution": [
+      0,
+      0,
+      3,
+      0,
+      0,
+      7,
+      0,
+      0
+    ]
+  },
+  {
+    "test_name": "Extreme Values",
+    "status": "PASS",
+    "samples_tested": 15,
+    "avg_confidence": 0.7027679681777954,
+    "notes": "Model handles extreme values without errors"
+  },
+  {
+    "test_name": "Zero Values",
+    "status": "PASS",
+    "samples_tested": 3,
+    "predictions": [
+      5,
+      5,
+      5
+    ],
+    "confidences": [
+      0.9211773872375488,
+      0.9211773872375488,
+      0.9211772084236145
+    ]
+  },
+  {
+    "test_name": "NaN Handling",
+    "status": "PASS",
+    "samples_tested": 3,
+    "notes": "NaN values successfully handled by conversion to zeros"
+  },
+  {
+    "test_name": "Batch Consistency",
+    "status": "PASS",
+    "single_prediction": 5,
+    "batch_predictions": [
+      5,
+      5,
+      5,
+      5,
+      5
+    ],
+    "predictions_consistent": true,
+    "confidences_consistent": true
+  },
+  {
+    "test_name": "Cancer Type Coverage",
+    "status": "PASS",
+    "unique_cancer_types_predicted": 2,
+    "predicted_types": [
+      "BRCA",
+      "KIRC"
+    ],
+    "all_predictions": [
+      "KIRC",
+      "KIRC",
+      "KIRC",
+      "KIRC",
+      "BRCA",
+      "BRCA",
+      "BRCA",
+      "BRCA"
+    ]
+  }
+]
