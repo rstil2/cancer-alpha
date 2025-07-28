@@ -1,8 +1,8 @@
 {
-  "test_accuracy": 1.0,
-  "test_f1_score": 1.0,
+  "test_accuracy": 0.999875,
+  "test_f1_score": 0.99987499996875,
   "best_val_accuracy": 1.0,
-  "training_time_minutes": 9.383403078715007,
+  "training_time_minutes": 9.468900032838185,
   "config": {
     "embed_dim": 256,
     "n_heads": 8,

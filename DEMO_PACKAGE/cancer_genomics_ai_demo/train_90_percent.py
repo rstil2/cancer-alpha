@@ -433,7 +433,7 @@ def main():
         }, 'models/optimized_90_transformer.pth')
     
     # Save scaler
-    joblib.save(scaler, 'models/optimized_90_scaler.pkl')
+    joblib.dump(scaler, 'models/optimized_90_scaler.pkl')
     
     logger.info("Training pipeline completed!")
     
