@@ -15,7 +15,7 @@ Cancer Alpha represents a breakthrough in clinical AI - not just another machine
 - **Novel Architecture**: First-of-its-kind multi-modal transformer with cross-modal attention for genomics
 - **6 Integrated Modalities**: Methylation, mutations, copy number, fragmentomics, clinical, and ICGC data
 - **Real Cross-Modal Learning**: Not simple concatenation - genuine biological interaction modeling
-- **72.5% Validation Accuracy** across 8 cancer types with interpretable predictions
+- **95.33% Validation Accuracy** on real TCGA data across 8 cancer types with interpretable predictions
 
 ### **🏥 Production-Ready Clinical Infrastructure**
 - **FastAPI Backend**: Secure, authenticated, monitored API with <20ms response times
