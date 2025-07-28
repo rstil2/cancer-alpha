@@ -135,7 +135,8 @@ class CancerClassifierApp:
             "Gradient Boosting",
             "Deep Neural Network",
             "Enhanced Transformer",
-            "Optimized 90% Transformer"
+            "Optimized 90% Transformer",
+            "Ultra-Advanced 95% Transformer"
         ]
 
         # Define cancer types that the model was trained on
@@ -156,7 +157,8 @@ class CancerClassifierApp:
             transformer_files = {
                 'Multi-Modal Transformer': 'optimized_multimodal_transformer.pth',
             'Enhanced Transformer': 'enhanced_multimodal_transformer_best.pth',
-                'Optimized 90% Transformer': 'optimized_90_transformer.pth'
+                'Optimized 90% Transformer': 'optimized_90_transformer.pth',
+                'Ultra-Advanced 95% Transformer': 'ultra_tcga_near_100_transformer.pth'
             }
             
             for model_name, filename in model_files.items():
@@ -177,12 +179,21 @@ class CancerClassifierApp:
                         import torch
                         from models.enhanced_multimodal_transformer import EnhancedMultiModalTransformer
                         
-                        # Create model instance
-                        model = EnhancedMultiModalTransformer(
-                            input_dim=110,
-                            num_classes=8,
-                            embed_dim=256
-                        )
+                        # Create model instance with appropriate dimensions
+                        if model_name == 'Ultra-Advanced 95% Transformer':
+                            # Ultra-advanced model uses 270 features
+                            model = EnhancedMultiModalTransformer(
+                                input_dim=270,
+                                num_classes=8,
+                                embed_dim=512
+                            )
+                        else:
+                            # Standard models use 110 features
+                            model = EnhancedMultiModalTransformer(
+                                input_dim=110,
+                                num_classes=8,
+                                embed_dim=256
+                            )
                         
                         # Load checkpoint
                         checkpoint = torch.load(model_path, map_location='cpu')
@@ -201,6 +212,11 @@ class CancerClassifierApp:
                             if scalers_path.exists():
                                 self.scalers['enhanced'] = joblib.load(scalers_path)
                                 st.success(f"✅ Loaded enhanced scalers")
+                        elif model_name == 'Ultra-Advanced 95% Transformer':
+                            scalers_path = self.models_dir / 'ultra_tcga_near_100_scaler.pkl'
+                            if scalers_path.exists():
+                                self.scalers['ultra_advanced'] = joblib.load(scalers_path)
+                                st.success(f"✅ Loaded ultra-advanced scalers")
                                 
                     except Exception as e:
                         st.warning(f"⚠️ Could not load {model_name}: {str(e)}")
