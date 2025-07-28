@@ -1,0 +1,24 @@
+{
+  "test_accuracy": 0.9333333333333333,
+  "test_f1_score": 0.9333418022870077,
+  "best_val_accuracy": 0.9533333333333334,
+  "training_time_minutes": 41.20317431290945,
+  "config": {
+    "embed_dim": 768,
+    "n_heads": 24,
+    "n_layers": 16,
+    "dropout": 0.15,
+    "ff_hidden_dim": 2048,
+    "learning_rate": 0.0003,
+    "weight_decay": 0.0005,
+    "max_epochs": 300,
+    "patience": 50,
+    "use_residual_mlp": true,
+    "use_layer_scale": true,
+    "use_stochastic_depth": true
+  },
+  "model_parameters": 103581928,
+  "enhanced_features": true,
+  "data_augmentation": true,
+  "advanced_architecture": true
+}
