@@ -24,11 +24,11 @@ from dataclasses import dataclass
 class MultiModalConfig:
     """Configuration for multi-modal transformer architecture"""
     # Model dimensions
-    d_model: int = 256
-    d_ff: int = 1024
-    n_heads: int = 8
-    n_layers: int = 6
-    dropout: float = 0.1
+d_model: int = 512
+d_ff: int = 2048
+n_heads: int = 16
+n_layers: int = 12
+dropout: float = 0.2
     
     # Data modality dimensions
     methylation_dim: int = 20
@@ -157,7 +157,19 @@ class TabTransformerEncoder(nn.Module):
         return x
 
 
-class CrossModalAttention(nn.Module):
+class AdvancedRegularization(nn.Module):
+    """Applies advanced regularization techniques"""
+    def __init__(self, dropout: float = 0.3, label_smoothing: float = 0.1):
+        super().__init__()
+        self.dropout = nn.Dropout(dropout)
+        self.label_smoothing = label_smoothing
+
+    def forward(self, x: torch.Tensor) -> torch.Tensor:
+        x = self.dropout(x)
+        return x
+
+    def smooth_labels(self, labels: torch.Tensor, num_classes: int) -> torch.Tensor:
+        return labels * (1 - self.label_smoothing) + self.label_smoothing / num_classes
     """Cross-modal attention mechanism for modality interaction"""
     
     def __init__(self, config: MultiModalConfig):
@@ -244,7 +256,7 @@ class PerceiverIOEncoder(nn.Module):
             ) for _ in range(config.n_layers // 2)
         ])
         
-        self.layer_norm = nn.LayerNorm(config.d_model)
+self.advanced_regularization = AdvancedRegularization(dropout=config.dropout)
     
     def forward(self, encoded_inputs: torch.Tensor) -> torch.Tensor:
         """
@@ -343,7 +355,8 @@ class MultiModalTransformer(nn.Module):
             # Global average pooling over modalities
             pooled_repr = encoded_modalities.view(encoded_modalities.size(0), -1)
         
-        # Classification
+        # Apply regularization
+        pooled_repr = self.advanced_regularization(pooled_repr)
         logits = self.classifier(pooled_repr)
         
         # Temperature scaling
