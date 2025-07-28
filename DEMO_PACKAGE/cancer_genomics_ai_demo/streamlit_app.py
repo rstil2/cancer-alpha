@@ -129,6 +129,15 @@ class CancerClassifierApp:
         self.models = {}
         self.scalers = {}
         self.feature_names = FEATURE_NAMES
+        # Define available models for selection
+        self.available_models = [
+            "Random Forest",
+            "Gradient Boosting",
+            "Deep Neural Network",
+            "Enhanced Transformer",
+            "Optimized 90% Transformer"
+        ]
+
         # Define cancer types that the model was trained on
         self.cancer_types = ['BRCA', 'LUAD', 'COAD', 'PRAD', 'STAD', 'KIRC', 'HNSC', 'LIHC']
         self.load_models()
@@ -141,7 +150,13 @@ class CancerClassifierApp:
                 'Random Forest': 'random_forest_model.pkl',
                 'Gradient Boosting': 'gradient_boosting_model_new.pkl',
                 'Deep Neural Network': 'deep_neural_network_model_new.pkl'
-                #'Ensemble': 'ensemble_model.pkl'  # Not needed as it's a combination
+            }
+            
+            # Load transformer models
+            transformer_files = {
+                'Multi-Modal Transformer': 'optimized_multimodal_transformer.pth',
+            'Enhanced Transformer': 'enhanced_multimodal_transformer_best.pth',
+                'Optimized 90% Transformer': 'optimized_90_transformer.pth'
             }
             
             for model_name, filename in model_files.items():
@@ -150,6 +165,43 @@ class CancerClassifierApp:
                     try:
                         self.models[model_name] = joblib.load(model_path)
                         st.success(f"✅ Loaded {model_name} model")
+                    except Exception as e:
+                        st.warning(f"⚠️ Could not load {model_name}: {str(e)}")
+            
+            # Load transformer models
+            for model_name, filename in transformer_files.items():
+                model_path = self.models_dir / filename
+                if model_path.exists():
+                    try:
+                        # Load transformer models with PyTorch
+                        import torch
+                        from models.enhanced_multimodal_transformer import EnhancedMultiModalTransformer
+                        
+                        # Create model instance
+                        model = EnhancedMultiModalTransformer(
+                            input_dim=110,
+                            num_classes=8,
+                            embed_dim=256
+                        )
+                        
+                        # Load checkpoint
+                        checkpoint = torch.load(model_path, map_location='cpu')
+                        if 'model_state_dict' in checkpoint:
+                            model.load_state_dict(checkpoint['model_state_dict'])
+                        else:
+                            model.load_state_dict(checkpoint)
+                        
+                        model.eval()
+                        self.models[model_name] = model
+                        st.success(f"✅ Loaded {model_name} transformer model")
+                        
+                        # Load corresponding scalers
+                        if model_name == 'Enhanced Transformer':
+                            scalers_path = self.models_dir / 'enhanced_scalers.pkl'
+                            if scalers_path.exists():
+                                self.scalers['enhanced'] = joblib.load(scalers_path)
+                                st.success(f"✅ Loaded enhanced scalers")
+                                
                     except Exception as e:
                         st.warning(f"⚠️ Could not load {model_name}: {str(e)}")
             
@@ -239,17 +291,54 @@ class CancerClassifierApp:
     
     def predict_with_confidence(self, model, input_data):
         """Make prediction with confidence scores for multi-class cancer classification"""
-        prediction = model.predict(input_data)[0]
-        probabilities = model.predict_proba(input_data)[0]
+        # Check if this is a transformer model
+        if hasattr(model, 'forward') and hasattr(model, 'eval'):
+            return self.predict_transformer(model, input_data)
+        else:
+            # Traditional sklearn models
+            prediction = model.predict(input_data)[0]
+            probabilities = model.predict_proba(input_data)[0]
+            
+            confidence_score = max(probabilities)
+            predicted_cancer_type = self.cancer_types[prediction]
+            
+            return {
+                'prediction': int(prediction),
+                'predicted_cancer_type': predicted_cancer_type,
+                'confidence_score': float(confidence_score),
+                'class_probabilities': probabilities.tolist(),
+                'cancer_types': self.cancer_types
+            }
+    
+    def predict_transformer(self, model, input_data):
+        """Make prediction with PyTorch transformer model"""
+        import torch
+        import torch.nn.functional as F
         
-        confidence_score = max(probabilities)
-        predicted_cancer_type = self.cancer_types[prediction]
+        # Convert to tensor
+        if isinstance(input_data, np.ndarray):
+            input_tensor = torch.FloatTensor(input_data)
+        else:
+            input_tensor = torch.FloatTensor(np.array(input_data))
+        
+        # Make prediction
+        with torch.no_grad():
+            logits = model(input_tensor)
+            probabilities = F.softmax(logits, dim=1)
+            prediction = torch.argmax(probabilities, dim=1)
+        
+        # Convert back to numpy
+        probabilities_np = probabilities.cpu().numpy()[0]
+        prediction_int = prediction.cpu().numpy()[0]
+        
+        confidence_score = float(np.max(probabilities_np))
+        predicted_cancer_type = self.cancer_types[prediction_int]
         
         return {
-            'prediction': int(prediction),
+            'prediction': int(prediction_int),
             'predicted_cancer_type': predicted_cancer_type,
-            'confidence_score': float(confidence_score),
-            'class_probabilities': probabilities.tolist(),
+            'confidence_score': confidence_score,
+            'class_probabilities': probabilities_np.tolist(),
             'cancer_types': self.cancer_types
         }
     

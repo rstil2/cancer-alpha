@@ -3,14 +3,14 @@
     "test_name": "Normal Operation",
     "status": "PASS",
     "samples_tested": 10,
-    "avg_confidence": 0.8728728294372559,
+    "avg_confidence": 0.8136889338493347,
     "class_distribution": [
       0,
       0,
-      3,
+      1,
       0,
       0,
-      7,
+      9,
       0,
       0
     ]
@@ -19,7 +19,7 @@
     "test_name": "Extreme Values",
     "status": "PASS",
     "samples_tested": 15,
-    "avg_confidence": 0.7027679681777954,
+    "avg_confidence": 0.6998710036277771,
     "notes": "Model handles extreme values without errors"
   },
   {
@@ -60,18 +60,20 @@
   {
     "test_name": "Cancer Type Coverage",
     "status": "PASS",
-    "unique_cancer_types_predicted": 2,
+    "unique_cancer_types_predicted": 4,
     "predicted_types": [
       "BRCA",
-      "KIRC"
+      "LUAD",
+      "KIRC",
+      "HNSC"
     ],
     "all_predictions": [
       "KIRC",
-      "KIRC",
-      "KIRC",
-      "KIRC",
+      "LUAD",
+      "LUAD",
+      "LUAD",
       "BRCA",
-      "BRCA",
+      "HNSC",
       "BRCA",
       "BRCA"
     ]
