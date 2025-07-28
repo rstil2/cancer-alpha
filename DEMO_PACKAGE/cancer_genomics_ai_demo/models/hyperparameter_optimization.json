@@ -1,0 +1,16 @@
+{
+  "best_params": {
+    "learning_rate": 6.963114377829287e-05,
+    "weight_decay": 0.00014817820606039095,
+    "dropout": 0.15636968998990508,
+    "batch_size": 64,
+    "d_model": 256,
+    "n_heads": 8,
+    "n_layers": 10,
+    "label_smoothing": 0.014808930346818072,
+    "scheduler_t0": 10,
+    "l2_reg": 2.2264204303769692e-06
+  },
+  "best_value": 0.715,
+  "n_trials": 9
+}
