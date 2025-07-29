@@ -1,0 +1,102 @@
+{
+  "download_timestamp": "2025-07-28 20:22:46",
+  "projects": {
+    "TCGA-BRCA": {
+      "name": "Breast Invasive Carcinoma",
+      "files_by_type": {
+        "mutations": 20,
+        "methylation": 20,
+        "expression": 20,
+        "clinical": 20,
+        "copy_number": 20
+      },
+      "total_files": 100
+    },
+    "TCGA-LUAD": {
+      "name": "Lung Adenocarcinoma",
+      "files_by_type": {
+        "mutations": 20,
+        "methylation": 20,
+        "expression": 20,
+        "clinical": 20,
+        "copy_number": 20
+      },
+      "total_files": 100
+    },
+    "TCGA-COAD": {
+      "name": "Colon Adenocarcinoma",
+      "files_by_type": {
+        "mutations": 20,
+        "methylation": 20,
+        "expression": 20,
+        "clinical": 20,
+        "copy_number": 20
+      },
+      "total_files": 100
+    },
+    "TCGA-PRAD": {
+      "name": "Prostate Adenocarcinoma",
+      "files_by_type": {
+        "mutations": 20,
+        "methylation": 20,
+        "expression": 20,
+        "clinical": 20,
+        "copy_number": 20
+      },
+      "total_files": 100
+    },
+    "TCGA-STAD": {
+      "name": "Stomach Adenocarcinoma",
+      "files_by_type": {
+        "mutations": 20,
+        "methylation": 20,
+        "expression": 20,
+        "clinical": 20,
+        "copy_number": 20
+      },
+      "total_files": 100
+    },
+    "TCGA-KIRC": {
+      "name": "Kidney Renal Clear Cell Carcinoma",
+      "files_by_type": {
+        "mutations": 20,
+        "methylation": 20,
+        "expression": 20,
+        "clinical": 20,
+        "copy_number": 20
+      },
+      "total_files": 100
+    },
+    "TCGA-HNSC": {
+      "name": "Head and Neck Squamous Cell Carcinoma",
+      "files_by_type": {
+        "mutations": 20,
+        "methylation": 20,
+        "expression": 20,
+        "clinical": 20,
+        "copy_number": 20
+      },
+      "total_files": 100
+    },
+    "TCGA-LIHC": {
+      "name": "Liver Hepatocellular Carcinoma",
+      "files_by_type": {
+        "mutations": 20,
+        "methylation": 20,
+        "expression": 20,
+        "clinical": 20,
+        "copy_number": 20
+      },
+      "total_files": 100
+    }
+  },
+  "totals": {
+    "mutations": 160,
+    "total_files": 800,
+    "methylation": 160,
+    "expression": 160,
+    "clinical": 160,
+    "copy_number": 160,
+    "total_projects": 8
+  }
+}
