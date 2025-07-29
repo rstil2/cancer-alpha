@@ -6,8 +6,8 @@ This directory contains preprint versions of research papers related to the Canc
 
 | Paper | Version | Download Link | Size |
 |-------|---------|---------------|------|
-| **Main Paper** | bioRxiv Version | [📥 Download](cancer_alpha_main_paper_biorxiv.pdf) | 1.46MB |
-| **Main Paper** | Latest Journal Version | [📥 Download](cancer_alpha_main_paper_latest.pdf) | 1.46MB |
+| **Main Paper** | bioRxiv Version | [📥 Download](cancer_alpha_main_paper_biorxiv.pdf) | 1.98MB |
+| **Main Paper** | Latest Journal Version | [📥 Download](cancer_alpha_main_paper_latest.pdf) | 1.82MB |
 | **Architecture Paper** | Updated Version | [📥 Download](multimodal_transformer_architecture_corrected.pdf) | 1.66MB |
 
 ## Available Papers

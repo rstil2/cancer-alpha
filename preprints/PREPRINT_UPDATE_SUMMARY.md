@@ -4,9 +4,13 @@
 
 ## Updated Files
 
-### 1. Main Manuscript: `cancer_alpha_main_paper_biorxiv.pdf`
+### 1. Main Manuscript (bioRxiv): `cancer_alpha_main_paper_biorxiv.pdf`
 **Previous Version:** 551KB (synthetic data, preliminary results)  
-**New Version:** 1.46MB (real TCGA data, complete with embedded figures)
+**New Version:** 1.98MB (real TCGA data, complete with embedded figures and full citations)
+
+### 2. Main Manuscript (Latest Journal): `cancer_alpha_main_paper_latest.pdf`
+**Version:** 1.82MB (most current journal-ready version with optimized citations)
+**Status:** Ready for journal submission with full citations integrated
 
 **Key Improvements:**
 - ✅ **Validated Performance**: 97.6% accuracy on real TCGA clinical data
