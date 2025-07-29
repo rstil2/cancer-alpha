@@ -1,0 +1,19 @@
+# Cancer Alpha Minimal Demo Requirements
+# =====================================
+
+# Core web interface
+streamlit>=1.28.0
+
+# Data manipulation
+pandas>=1.5.0
+numpy>=1.23.0
+
+# Machine learning
+scikit-learn>=1.2.0
+
+# Explainability
+shap>=0.42.0
+
+# Visualization
+matplotlib>=3.6.0
+plotly>=5.15.0
