@@ -2,24 +2,39 @@
 
 This directory contains preprint versions of research papers related to the Cancer Alpha project.
 
+## 📥 **Quick Downloads**
+
+| Paper | Version | Download Link | Size |
+|-------|---------|---------------|------|
+| **Main Paper** | bioRxiv Version | [📥 Download](cancer_alpha_main_paper_biorxiv.pdf) | 1.46MB |
+| **Main Paper** | Latest Journal Version | [📥 Download](cancer_alpha_main_paper_latest.pdf) | 1.46MB |
+| **Architecture Paper** | Updated Version | [📥 Download](multimodal_transformer_architecture_corrected.pdf) | 1.66MB |
+
 ## Available Papers
 
-### 📊 **Cancer Alpha: Multi-Modal AI for Precision Oncology** 🌐 **UPDATED bioRxiv VERSION**
-**File:** `cancer_alpha_main_paper_biorxiv.pdf`  
+### 📊 **Cancer Alpha: Multi-Modal AI for Precision Oncology**
+
+#### 🌐 **bioRxiv Version**
+**📥 [Download bioRxiv Version](cancer_alpha_main_paper_biorxiv.pdf)**  
 **bioRxiv DOI:** [10.1101/2025.07.22.666135v1](https://www.biorxiv.org/content/10.1101/2025.07.22.666135v1)  
+**Status:** Published on bioRxiv preprint server (Updated July 29, 2025)
+
+#### 📄 **Latest Journal Version**
+**📥 [Download Latest Version](cancer_alpha_main_paper_latest.pdf)**  
+**Status:** Most current manuscript with all improvements and validations
+
 **Focus:** Comprehensive study covering clinical validation, performance metrics, and real-world applications of our multi-modal AI system for cancer detection and classification.
 
-**Publication Status:** **UPDATED VERSION** with validated 97.6% accuracy on real TCGA clinical data (254 patient samples, 99 genomic features)
-
-**Key Updates in v2:**
-- ✅ **Validated Performance**: 97.6% accuracy on real TCGA patient data
+**Key Features (Both Versions):**
+- ✅ **Validated Performance**: 97.6% accuracy on real TCGA clinical data
+- ✅ **Real Data**: 254 authentic TCGA patient samples with 99 genomic features
 - ✅ **Complete Figures**: All 13 figures embedded with proper captions
-- ✅ **Real Data Validation**: Clinical results on 254 TCGA samples
 - ✅ **Professional Citations**: Proper inline citations and references
 - ✅ **Data Availability**: GitHub repository and TCGA data portal information
+- ✅ **Clinical Validation**: Real-world clinical dataset validation completed
 
-### 🤖 **Multi-Modal Transformer Architecture for Genomic Data** 📄 **UPDATED VERSION**
-**File:** `multimodal_transformer_architecture_corrected.pdf`  
+### 🤖 **Multi-Modal Transformer Architecture for Genomic Data**
+**📥 [Download Architecture Paper](multimodal_transformer_architecture_corrected.pdf)**  
 **Focus:** Methodology paper targeting Scientific Reports featuring our novel transformer architecture for integrative cancer genomics analysis.
 
 **Updated Version Features (v2):**
