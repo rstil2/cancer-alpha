@@ -313,7 +313,7 @@ cancer-alpha/
 
 ### **Experience Cancer Genomics AI with Full SHAP Explainability**
 
-[![Download Interactive Demo](https://img.shields.io/badge/⬇️_DOWNLOAD-Interactive_Demo-4CAF50?style=for-the-badge&logo=data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0id2hpdGUiPjxwYXRoIGQ9Ik0xOSA5aC00VjNIOXY2SDVsNyA3IDctN3pNNSAxOHYyaDE0di0yaDE0eiIvPjwvc3ZnPg==)](http://localhost:8000/cancer_genomics_ai_demo.zip)
+[![Download Interactive Demo](https://img.shields.io/badge/⬇️_DOWNLOAD-Interactive_Demo-4CAF50?style=for-the-badge logo=data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0id2hpdGUiPjxwYXRoIGQ9Ik0xOSA5aC00VjNIOXY2SDVsNyA3IDctN3pNNSAxOHYyaDE0di0yaDE0eiIvPjwvc3ZnPg==)](https://raw.githubusercontent.com/rstil2/cancer-alpha/main/cancer_genomics_ai_demo.zip)
 
 **🚀 Self-contained • 🖥️ Cross-platform • 💡 Ready in 2 minutes**
 
@@ -332,20 +332,15 @@ cancer-alpha/
 
 ### **Quick Start Instructions**
 
-**For Local Development:** First start the demo server:
-```bash
-# Start the local demo server (run from cancer-alpha directory)
-python3 serve_demo.py
-```
-Then click the download link above or visit http://localhost:8000/cancer_genomics_ai_demo.zip
-
-1. **Download** the demo package above (~1.5MB)
+1. **Download** the demo package using the button above (196KB ultra-minimal)
 2. **Extract** the ZIP file to your desired location
 3. **Run the demo:**
    - **Windows:** Double-click `start_demo.bat`
    - **Mac/Linux:** Open terminal, run `./start_demo.sh`
 4. **Open browser** to http://localhost:8501
 5. **Explore** cancer classification with AI explainability!
+
+**Note:** The demo automatically generates data and models on first run, so no large downloads are needed!
 
 **Requirements:** Python 3.8+ and internet connection for dependencies
 
