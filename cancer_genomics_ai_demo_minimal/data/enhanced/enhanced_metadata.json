@@ -1,0 +1,33 @@
+{
+  "n_samples": 80000,
+  "n_features": 110,
+  "n_classes": 8,
+  "cancer_types": [
+    "BRCA",
+    "LUAD",
+    "COAD",
+    "PRAD",
+    "STAD",
+    "KIRC",
+    "HNSC",
+    "LIHC"
+  ],
+  "feature_groups": {
+    "methylation": 20,
+    "mutation": 25,
+    "cn_alteration": 20,
+    "fragmentomics": 15,
+    "clinical": 10,
+    "icgc_argo": 20
+  },
+  "class_distribution": [
+    10000,
+    10000,
+    10000,
+    10000,
+    10000,
+    10000,
+    10000,
+    10000
+  ]
+}
