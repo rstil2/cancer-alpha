@@ -4,22 +4,31 @@ This directory contains preprint versions of research papers related to the Canc
 
 ## Available Papers
 
-### 📊 **Cancer Alpha: Multi-Modal AI for Precision Oncology** 🌐 **PUBLISHED ON bioRxiv**
-**File:** `cancer_alpha_main_paper.pdf`  
+### 📊 **Cancer Alpha: Multi-Modal AI for Precision Oncology** 🌐 **UPDATED bioRxiv VERSION**
+**File:** `cancer_alpha_main_paper_biorxiv.pdf`  
 **bioRxiv DOI:** [10.1101/2025.07.22.666135v1](https://www.biorxiv.org/content/10.1101/2025.07.22.666135v1)  
 **Focus:** Comprehensive study covering clinical validation, performance metrics, and real-world applications of our multi-modal AI system for cancer detection and classification.
 
-**Publication Status:** Now live on bioRxiv preprint server (July 22, 2025)
+**Publication Status:** **UPDATED VERSION** with validated 97.6% accuracy on real TCGA clinical data (254 patient samples, 99 genomic features)
 
-### 🤖 **Multi-Modal Transformer Architecture for Genomic Data**
-**File:** `multimodal_transformer_architecture_corrected.pdf` 📄 **SUBMITTED VERSION**
+**Key Updates in v2:**
+- ✅ **Validated Performance**: 97.6% accuracy on real TCGA patient data
+- ✅ **Complete Figures**: All 13 figures embedded with proper captions
+- ✅ **Real Data Validation**: Clinical results on 254 TCGA samples
+- ✅ **Professional Citations**: Proper inline citations and references
+- ✅ **Data Availability**: GitHub repository and TCGA data portal information
+
+### 🤖 **Multi-Modal Transformer Architecture for Genomic Data** 📄 **UPDATED VERSION**
+**File:** `multimodal_transformer_architecture_corrected.pdf`  
 **Focus:** Methodology paper targeting Scientific Reports featuring our novel transformer architecture for integrative cancer genomics analysis.
 
-**Submitted Version Features:**
-- **12 properly formatted in-line citations** with 18 academic references
-- **Professional formatting**: Times New Roman font, superscript citations
-- **Complete sections**: Abstract, Introduction, Methods, Results, Discussion, Conclusion, References  
-- **Status**: This is the version submitted to Scientific Reports - preserved unchanged
+**Updated Version Features (v2):**
+- ✅ **Validated Performance**: Updated with 97.6% accuracy on real TCGA data
+- ✅ **Professional Citations**: 10 properly formatted inline citations with complete references
+- ✅ **Embedded Figures**: All architectural diagrams and performance plots included
+- ✅ **Data Availability**: Complete section with GitHub and TCGA portal links
+- ✅ **Clean Formatting**: Professional layout with proper citation placement
+- ✅ **Consistent Metrics**: Aligned with main manuscript (254 samples, 99 features)
 
 **Additional Reference Version:**
 - `multimodal_transformer_architecture_comprehensive.pdf` - Enhanced version with embedded tables and figures for internal reference
