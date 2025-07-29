@@ -313,7 +313,7 @@ cancer-alpha/
 
 ### **Experience Cancer Genomics AI with Full SHAP Explainability**
 
-[![Download Interactive Demo](https://img.shields.io/badge/⬇️_DOWNLOAD-Interactive_Demo-4CAF50?style=for-the-badge logo=data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0id2hpdGUiPjxwYXRoIGQ9Ik0xOSA5aC00VjNIOXY2SDVsNyA3IDctN3pNNSAxOHYyaDE0di0yaDE0eiIvPjwvc3ZnPg==)](https://github.com/rstil2/cancer-alpha/raw/main/cancer_genomics_ai_demo.zip)
+[![Download Interactive Demo](https://img.shields.io/badge/⬇️_DOWNLOAD-Interactive_Demo-4CAF50?style=for-the-badge&logo=data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0id2hpdGUiPjxwYXRoIGQ9Ik0xOSA5aC00VjNIOXY2SDVsNyA3IDctN3pNNSAxOHYyaDE0di0yaDE0eiIvPjwvc3ZnPg==)](https://github.com/rstil2/cancer-alpha/raw/main/cancer_genomics_ai_demo.zip)
 
 **🚀 Self-contained • 🖥️ Cross-platform • 💡 Ready in 2 minutes**
 
