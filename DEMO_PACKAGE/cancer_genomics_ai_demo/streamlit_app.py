@@ -72,8 +72,17 @@ st.set_page_config(
     initial_sidebar_state="expanded"
 )
 
-# Define feature names matching the trained models (110 features total)
-FEATURE_NAMES = (
+# Define feature names matching the trained models (99 features for Real TCGA models, 110 for demo models)
+# Real TCGA models use 99 features, demo models use 110
+FEATURE_NAMES_REAL_TCGA = (
+    # Real TCGA features (99 total)
+    [f'methylation_{i}' for i in range(35)] +
+    [f'cna_{i}' for i in range(32)] +
+    [f'clinical_{i}' for i in range(32)]
+)
+
+FEATURE_NAMES_DEMO = (
+    # Demo features (110 features total)
     # Methylation features (20 features)
     [f'methylation_{i}' for i in range(20)] +
     # Mutation features (25 features)
@@ -128,7 +137,7 @@ class CancerClassifierApp:
         self.models_dir = Path(__file__).parent / "models"
         self.models = {}
         self.scalers = {}
-        self.feature_names = FEATURE_NAMES
+        self.feature_names = FEATURE_NAMES_DEMO  # Default to demo features
         # Define available models for selection
         self.available_models = [
             "Real TCGA Logistic Regression (97.6%)",
@@ -228,78 +237,46 @@ class CancerClassifierApp:
                     except Exception as e:
                         st.warning(f"⚠️ Could not load {model_name}: {str(e)}")
             
-            # Load scalers - prioritize real TCGA scaler
-            real_tcga_scaler_path = self.models_dir / 'multimodal_real_tcga_scaler.pkl'
-            if real_tcga_scaler_path.exists():
-                self.scalers['real_tcga'] = joblib.load(real_tcga_scaler_path)
-                st.success("🔥 Loaded Real TCGA scaler - PRODUCTION SCALER")
-            
-            scaler_path = self.models_dir / 'scaler.pkl'
-            if scaler_path.exists():
-                self.scalers['main'] = joblib.load(scaler_path)
-                st.success("✅ Loaded data scaler")
-            else:
-                st.warning("⚠️ No scaler found - creating dummy scaler")
+            # Load all available scalers
+            scaler_files = {
+                'real_tcga': 'multimodal_real_tcga_scaler.pkl',
+                'enhanced': 'enhanced_scalers.pkl',
+                'ultra_advanced': 'ultra_tcga_near_100_scaler.pkl',
+                'main': 'scaler.pkl'
+            }
+            for scaler_name, filename in scaler_files.items():
+                scaler_path = self.models_dir / filename
+                if scaler_path.exists():
+                    try:
+                        self.scalers[scaler_name] = joblib.load(scaler_path)
+                        st.success(f"✅ Loaded {scaler_name} scaler")
+                    except Exception as e:
+                        st.warning(f"⚠️ Could not load {scaler_name} scaler: {str(e)}")
+
+            # Fallback to dummy scaler if main is not loaded
+            if 'main' not in self.scalers:
+                st.warning("⚠️ Main scaler not found - creating dummy scaler")
                 from sklearn.preprocessing import StandardScaler
                 self.scalers['main'] = StandardScaler()
                 
         except Exception as e:
             st.error(f"❌ Error loading models: {str(e)}")
     
-    def generate_sample_data(self, cancer_type="cancer"):
+    def generate_sample_data(self, cancer_type="cancer", model_name=""):
         """Generate sample data that matches the training data patterns for realistic demo"""
         np.random.seed(42 if cancer_type == "cancer" else 24)
+
+        if "Real TCGA" in model_name:
+            n_features = 99
+        else:
+            n_features = 110
         
         if cancer_type == "cancer":
-            # Generate BRCA-like cancer sample matching the training data structure
-            sample_data = []
-            
-            # Base pattern for BRCA (class 0) from training
-            base_pattern = 0.2
-            
-            # Methylation features (20) - higher methylation typical of cancer
-            sample_data.extend(np.random.normal(base_pattern + 0.3, 0.1, 20))
-            
-            # Mutation features (25) - more mutations in cancer
-            sample_data.extend(np.random.poisson(5, 25))
-            
-            # Copy number alteration features (20) - more CNAs in cancer
-            sample_data.extend(np.random.normal(10, 2, 20))
-            
-            # Fragmentomics features (15) - shorter fragments in cancer
-            sample_data.extend(np.random.exponential(150, 15))
-            
-            # Clinical features (10) - cancer-associated values
-            sample_data.extend(np.random.normal(0.5, 0.1, 10))
-            
-            # ICGC ARGO features (20) - elevated in cancer
-            sample_data.extend(np.random.gamma(2, 0.5, 20))
-            
-            data = np.array(sample_data)
-            
+            # Generate cancer-like sample with appropriate feature count
+            data = np.random.normal(0.3, 0.2, n_features)  # Cancer-like pattern
         else:
-            # Generate clearly healthy control sample with very different patterns
-            sample_data = []
-            
-            # Methylation features (20) - much lower methylation (healthy pattern)
-            sample_data.extend(np.random.normal(-0.2, 0.03, 20))
-            
-            # Mutation features (25) - very few mutations (healthy)
-            sample_data.extend(np.random.poisson(0.5, 25))
-            
-            # Copy number alteration features (20) - minimal alterations
-            sample_data.extend(np.random.normal(0, 0.5, 20))
-            
-            # Fragmentomics features (15) - longer, healthier fragments
-            sample_data.extend(np.random.exponential(200, 15))
-            
-            # Clinical features (10) - healthy values
-            sample_data.extend(np.random.normal(-0.3, 0.03, 10))
-            
-            # ICGC ARGO features (20) - low, healthy levels
-            sample_data.extend(np.random.gamma(0.8, 0.2, 20))
-            
-            data = np.array(sample_data)
+            # Generate healthy control sample 
+            data = np.random.normal(-0.1, 0.15, n_features)  # Healthy-like pattern
         
         return data
     
@@ -565,13 +542,19 @@ def main():
             
             if st.button("Generate Sample Data"):
                 sample_data_type = "cancer" if sample_type == "Cancer Sample" else "control"
-                input_data = app.generate_sample_data(sample_data_type)
+                input_data = app.generate_sample_data(sample_data_type, selected_model)
                 
+                # Use appropriate feature names for display
+                if "Real TCGA" in selected_model:
+                    display_feature_names = FEATURE_NAMES_REAL_TCGA
+                else:
+                    display_feature_names = FEATURE_NAMES_DEMO
+
                 # Display data
                 df = pd.DataFrame({
-                    'Feature': app.feature_names,
+                    'Feature': display_feature_names,
                     'Value': input_data,
-                    'Description': [FEATURE_DESCRIPTIONS.get(f, 'N/A') for f in app.feature_names]
+                    'Description': [FEATURE_DESCRIPTIONS.get(f, 'N/A') for f in display_feature_names]
                 })
                 st.dataframe(df, height=400)
         
