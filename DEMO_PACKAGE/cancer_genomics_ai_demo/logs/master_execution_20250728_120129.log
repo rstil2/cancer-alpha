@@ -1,4 +1,0 @@
-[2025-07-28 12:01:29] [INFO] Starting Cancer Genomics AI Demo execution
-[2025-07-28 12:01:29] [INFO] Configuration: batch=true, progress=true, email=false, parallel=false
-[2025-07-28 12:01:29] [INFO] Checking prerequisites for Cancer Genomics AI Demo execution
-[2025-07-28 12:01:29] [ERROR] Source directory not found: /Users/stillwell/projects/cancer-alpha/DEMO_PACKAGE/cancer_genomics_ai_demo/src
