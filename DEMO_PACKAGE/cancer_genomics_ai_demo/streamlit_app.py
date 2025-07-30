@@ -174,11 +174,13 @@ class CancerClassifierApp:
                 'Ultra-Advanced 95% Transformer': 'ultra_tcga_near_100_transformer.pth'
             }
             
+            
             for model_name, filename in model_files.items():
                 model_path = self.models_dir / filename
                 if model_path.exists():
                     try:
-                        self.models[model_name] = joblib.load(model_path)
+                        with open(model_path, 'rb') as f:
+                            self.models[model_name] = pickle.load(f)
                         if 'Real TCGA' in model_name:
                             st.success(f"🔥 Loaded {model_name} - PRODUCTION MODEL")
                         else:
@@ -195,23 +197,17 @@ class CancerClassifierApp:
                     try:
                         # Load transformer models with PyTorch
                         import torch
-                        from models.enhanced_multimodal_transformer import EnhancedMultiModalTransformer
+                        from models.enhanced_multimodal_transformer import EnhancedMultiModalTransformer, EnhancedMultiModalConfig
                         
                         # Create model instance with appropriate dimensions
                         if model_name == 'Ultra-Advanced 95% Transformer':
                             # Ultra-advanced model uses 270 features
-                            model = EnhancedMultiModalTransformer(
-                                input_dim=270,
-                                num_classes=8,
-                                embed_dim=512
-                            )
+                            config = EnhancedMultiModalConfig(d_model=512, n_layers=24, n_heads=16)
                         else:
                             # Standard models use 110 features
-                            model = EnhancedMultiModalTransformer(
-                                input_dim=110,
-                                num_classes=8,
-                                embed_dim=256
-                            )
+                            config = EnhancedMultiModalConfig()
+                        
+                        model = EnhancedMultiModalTransformer(config)
                         
                         # Load checkpoint
                         checkpoint = torch.load(model_path, map_location='cpu')
