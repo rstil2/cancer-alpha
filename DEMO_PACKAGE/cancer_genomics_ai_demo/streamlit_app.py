@@ -150,8 +150,8 @@ class CancerClassifierApp:
             "Ultra-Advanced 95% Transformer"
         ]
 
-        # Define cancer types that the model was trained on
-        self.cancer_types = ['BRCA', 'LUAD', 'COAD', 'PRAD', 'STAD', 'KIRC', 'HNSC', 'LIHC']
+        # Define cancer types that the model was trained on (matching generate_demo_data.py)
+        self.cancer_types = ['BRCA', 'LUAD', 'COAD', 'STAD', 'BLCA', 'LIHC', 'CESC', 'KIRP']
         self.load_models()
     
     def load_models(self):
@@ -162,8 +162,8 @@ class CancerClassifierApp:
                 'Real TCGA Logistic Regression (97.6%)': 'multimodal_real_tcga_logistic_regression.pkl',
                 'Real TCGA Random Forest (88.6%)': 'multimodal_real_tcga_random_forest.pkl',
                 'Random Forest': 'random_forest_model.pkl',
-                'Gradient Boosting': 'gradient_boosting_model_new.pkl',
-                'Deep Neural Network': 'deep_neural_network_model_new.pkl'
+                'Gradient Boosting': 'gradient_boosting_model.pkl',
+                'Deep Neural Network': 'deep_neural_network_model.pkl'
             }
             
             # Load transformer models
@@ -184,7 +184,9 @@ class CancerClassifierApp:
                         else:
                             st.success(f"✅ Loaded {model_name} model")
                     except Exception as e:
-                        st.warning(f"⚠️ Could not load {model_name}: {str(e)}")
+                        import traceback
+                        error_msg = f"Error: {str(e)}\nTraceback: {traceback.format_exc()}"
+                        st.warning(f"⚠️ Could not load {model_name}: {error_msg}")
             
             # Load transformer models
             for model_name, filename in transformer_files.items():
@@ -496,7 +498,7 @@ def main():
     """)
     
     st.info("""
-    📝 **Demo Note**: This model classifies between 8 different cancer types (BRCA, LUAD, COAD, PRAD, STAD, KIRC, HNSC, LIHC). 
+    📝 **Demo Note**: This model classifies between 8 different cancer types (BRCA, LUAD, COAD, STAD, BLCA, LIHC, CESC, KIRP). 
     Try both "Cancer Sample" and "Control Sample" to see how different genomic patterns lead to different cancer type predictions 
     and confidence levels. The "Control Sample" represents healthier genomic patterns that may have lower confidence scores.
     """)

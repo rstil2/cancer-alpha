@@ -5,3 +5,6 @@
 {"event_type": "DEMO_START", "data": {"session_id": "3f45b6cf57f7", "timestamp": "2025-07-30T08:24:32.644848", "user": "stillwell", "platform": "Darwin", "node": "Craigs-MacBook-Pro.local", "python_version": "3.12.9"}}
 {"event_type": "DEMO_START", "data": {"session_id": "53a0a11bb43c", "timestamp": "2025-07-30T08:27:31.176656", "user": "stillwell", "platform": "Darwin", "node": "Craigs-MacBook-Pro.local", "python_version": "3.12.9"}}
 {"event_type": "DEMO_START", "data": {"session_id": "9a08c7838b19", "timestamp": "2025-07-30T08:32:06.573094", "user": "stillwell", "platform": "Darwin", "node": "Craigs-MacBook-Pro.local", "python_version": "3.12.9"}}
+{"event_type": "DEMO_START", "data": {"session_id": "9a08c7838b19", "timestamp": "2025-07-30T10:15:29.516352", "user": "stillwell", "platform": "Darwin", "node": "Craigs-MacBook-Pro.local", "python_version": "3.12.9"}}
+{"event_type": "DEMO_START", "data": {"session_id": "9a08c7838b19", "timestamp": "2025-07-30T10:15:38.877313", "user": "stillwell", "platform": "Darwin", "node": "Craigs-MacBook-Pro.local", "python_version": "3.12.9"}}
+{"event_type": "PREDICTION", "data": {"session_id": "9a08c7838b19", "timestamp": "2025-07-30T10:15:38.917311", "model_type": "Real TCGA Logistic Regression (97.6%)", "sample_type": "Cancer Sample", "confidence": 0.5228668341563242}}
