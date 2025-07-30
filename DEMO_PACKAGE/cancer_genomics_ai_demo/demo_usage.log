@@ -1,3 +1,7 @@
 {"event_type": "DEMO_START", "data": {"session_id": "c71a65c66079", "timestamp": "2025-07-28T06:30:15.583276", "user": "stillwell", "platform": "Darwin", "node": "Craigs-MacBook-Pro.local", "python_version": "3.12.9"}}
 {"event_type": "DEMO_START", "data": {"session_id": "c71a65c66079", "timestamp": "2025-07-28T06:30:22.640797", "user": "stillwell", "platform": "Darwin", "node": "Craigs-MacBook-Pro.local", "python_version": "3.12.9"}}
 {"event_type": "PREDICTION", "data": {"session_id": "c71a65c66079", "timestamp": "2025-07-28T06:30:22.678903", "model_type": "Random Forest", "sample_type": "Cancer Sample", "confidence": 0.8856916083916084}}
+{"event_type": "DEMO_START", "data": {"session_id": "3f45b6cf57f7", "timestamp": "2025-07-30T08:23:55.416175", "user": "stillwell", "platform": "Darwin", "node": "Craigs-MacBook-Pro.local", "python_version": "3.12.9"}}
+{"event_type": "DEMO_START", "data": {"session_id": "3f45b6cf57f7", "timestamp": "2025-07-30T08:24:32.644848", "user": "stillwell", "platform": "Darwin", "node": "Craigs-MacBook-Pro.local", "python_version": "3.12.9"}}
+{"event_type": "DEMO_START", "data": {"session_id": "53a0a11bb43c", "timestamp": "2025-07-30T08:27:31.176656", "user": "stillwell", "platform": "Darwin", "node": "Craigs-MacBook-Pro.local", "python_version": "3.12.9"}}
+{"event_type": "DEMO_START", "data": {"session_id": "9a08c7838b19", "timestamp": "2025-07-30T08:32:06.573094", "user": "stillwell", "platform": "Darwin", "node": "Craigs-MacBook-Pro.local", "python_version": "3.12.9"}}
