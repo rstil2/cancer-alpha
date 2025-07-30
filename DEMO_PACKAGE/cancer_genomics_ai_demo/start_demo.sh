@@ -26,10 +26,23 @@ echo "✅ Python found: $(python3 --version)"
 echo "📦 Installing dependencies..."
 pip3 install -r requirements_streamlit.txt
 
-# Generate data and models
-echo "🔬 Generating demo data and models..."
-python3 generate_demo_data.py
-if [ $? -ne 0 ]; then
-    echo "❌ Failed to generate demo data. Please check the error above."
-    exit 1
+# Generate data and models if they don't exist
+if [ ! -f "models/scaler.pkl" ] || [ ! -f "data/tcga_processed_data.npz" ]; then
+    echo "🔬 Generating demo data and models..."
+    python3 generate_demo_data.py
+    if [ $? -ne 0 ]; then
+        echo "❌ Failed to generate demo data. Please check the error above."
+        exit 1
+    fi
+else
+    echo "✅ Demo data and models already exist"
 fi
+
+echo ""
+echo "🚀 Starting Streamlit demo..."
+echo "   Demo will open in your browser at http://localhost:8501"
+echo "   Press Ctrl+C to stop the demo"
+echo ""
+
+# Start Streamlit
+streamlit run streamlit_app.py --server.port 8501 --server.headless false
