@@ -1,0 +1,11 @@
+{
+  "version": "2.0_optimized",
+  "accuracy": 0.9206,
+  "f1_score": 0.9176,
+  "model_type": "RandomForest_Optimized",
+  "training_data": "Real_TCGA_Multi_Cancer",
+  "samples": 315,
+  "cancer_types": 8,
+  "features": 18,
+  "timestamp": "2025-07-31"
+}
