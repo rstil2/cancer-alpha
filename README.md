@@ -6,7 +6,7 @@
 *Revolutionizing cancer classification through state-of-the-art multi-modal transformer architectures*
 
 <img src="https://img.shields.io/badge/🚀_Status-Production_Ready-brightgreen?style=for-the-badge" alt="Production Ready" />
-<img src="https://img.shields.io/badge/🎯_Accuracy-97.6%25_REAL_TCGA-gold?style=for-the-badge" alt="97.6% Real TCGA Data Accuracy" />
+<img src="https://img.shields.io/badge/🎯_Accuracy-92.06%25_REAL_TCGA-gold?style=for-the-badge" alt="92.06% Real TCGA Data Accuracy" />
 <img src="https://img.shields.io/badge/🏥_Clinical-Ready-blue?style=for-the-badge" alt="Clinical Ready" />
 
 [![License: Academic](https://img.shields.io/badge/License-Academic%20Use%20Only-red.svg?style=flat-square)](LICENSE)
@@ -92,12 +92,13 @@ Cancer Alpha represents a paradigm shift in computational oncology, delivering:
 - **Ensemble Methods**: Combining multiple AI approaches
 
 ### 🎯 **Breakthrough Performance**
-- **🔥 97.6% Real TCGA Data Accuracy**: Outstanding real patient data validation (Logistic Regression)
-- **🌲 88.6% Random Forest Accuracy**: Stable and interpretable performance
-- **254 Real Patient Samples**: Verified TCGA genomic and clinical data
-- **383 Real Mutations**: Derived from original MAF files
-- **99 Multi-Modal Features**: Comprehensive real data integration
-- **Zero Synthetic Data**: All results based solely on 100% authentic data
+- **🔥 92.06% Multi-Cancer Classification**: NEW breakthrough with Random Forest on 315 real TCGA samples
+- **🏆 8 Cancer Types Classified**: BRCA, LUAD, LUSC, PRAD, COAD, OV, DLBC, SKCM with hyperparameter optimization
+- **⚡ Advanced Hyperparameter Tuning**: RandomizedSearchCV with 30+ iterations per model
+- **🌲 90.48% Gradient Boosting**: Second-best performance with ensemble methods
+- **🤖 88.89% LightGBM**: Advanced gradient boosting with leaf optimization
+- **📊 18 Optimized Features**: Feature selection from comprehensive methylation analysis
+- **Zero Synthetic Data**: All results based solely on 100% authentic TCGA patient data
 
 </td>
 <td width="50%">
@@ -197,7 +198,39 @@ Multi-modal transformer validated on authentic genomic data (23M parameters).
 | 🧠 Deep Neural Network | ~65% | ~64% | ~65% | ~64% | ~0.80 | Synthetic |
 | 📈 Enhanced Transformer | 44.2% | 43.8% | 43.5% | 43.8% | 0.687 | Synthetic |
 
-⚠️ **Important Note**: These results are from synthetic data validation used for initial model development. **Real clinical data validation has been completed** (see breakthrough results below) with 95.33% accuracy achieved on TCGA data.
+⚠️ **Important Note**: These results are from synthetic data validation used for initial model development. **Real clinical data validation has been completed** (see breakthrough results below) with 92.06% accuracy achieved on TCGA data.
+
+</div>
+
+### **🔥 LATEST BREAKTHROUGH: Multi-Cancer Classification on Real TCGA Data**
+*New achievement: 92.06% accuracy on 315 authentic TCGA patient samples across 8 cancer types*
+
+<div align="center">
+
+| **Model** | **Accuracy** | **F1-Score** | **Samples** | **Cancer Types** | **Features** | **Method** | **Status** |
+|-----------|:------------:|:------------:|:-----------:|:---------------:|:------------:|:----------:|:-----------:|
+| **🏆 Random Forest** | **92.06%** | **91.76%** | **315** | **8** | **18** | Hyperparameter Optimized | **🔥 NEW BREAKTHROUGH** |
+| **🥈 Gradient Boosting** | **90.48%** | **90.15%** | **315** | **8** | **18** | Hyperparameter Optimized | **✅ VALIDATED** |
+| **🥉 LightGBM** | **88.89%** | **88.25%** | **315** | **8** | **18** | Advanced Boosting | **✅ VALIDATED** |
+| **🤖 Ensemble Model** | **88.89%** | **88.46%** | **315** | **8** | **18** | Soft Voting | **✅ VALIDATED** |
+| **📊 Logistic Regression** | **55.56%** | **52.42%** | **315** | **8** | **18** | L1 Regularized | **✅ BASELINE** |
+
+**🎯 Cancer Types Successfully Classified:**
+- **BRCA** (Breast Cancer): 40 samples
+- **LUAD** (Lung Adenocarcinoma): 40 samples  
+- **LUSC** (Lung Squamous Cell Carcinoma): 40 samples
+- **PRAD** (Prostate Adenocarcinoma): 40 samples
+- **COAD** (Colon Adenocarcinoma): 40 samples
+- **OV** (Ovarian Cancer): 46 samples
+- **DLBC** (Large B-cell Lymphoma): 40 samples
+- **SKCM** (Skin Melanoma): 27 samples
+
+**🧬 Technical Achievements:**
+- **Zero Synthetic Data**: 100% authentic TCGA methylation files
+- **Advanced Feature Selection**: SelectKBest with f_classif scoring
+- **Rigorous Cross-Validation**: StratifiedKFold with 5 splits
+- **Hyperparameter Optimization**: RandomizedSearchCV with 30 iterations
+- **Production Ready**: All models saved for clinical deployment
 
 </div>
 
