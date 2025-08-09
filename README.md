@@ -251,8 +251,8 @@ Multi-modal transformer validated on authentic genomic data (23M parameters).
 
 </div>
 
-### **🌟 Latest Multi-Modal Real TCGA Achievement**
-*Direct validation on 254 authentic TCGA patient samples with 383 verified mutations*
+### **🧬 Multi-Modal Integration Validation**
+*Additional validation using mutation data from 254 TCGA patients with 383 verified mutations*
 
 <div align="center">
 
@@ -261,12 +261,11 @@ Multi-modal transformer validated on authentic genomic data (23M parameters).
 | **🎯 Logistic Regression** | **75.0%** | **±10.5%** | **254** | **383** | **99** | Real TCGA MAF | **✅ VALIDATED** |
 | **🌲 Random Forest** | **88.6%** | **±4.5%** | **254** | **383** | **99** | Real TCGA MAF | **✅ VALIDATED** |
 
-**🧬 Key Features:**
-- **Zero Synthetic Data**: 100% authentic TCGA patient samples
-- **Real Mutations**: Extracted from original MAF files
-- **Multi-Modal Integration**: Mutations + clinical data
-- **Cross-Validation**: Rigorous 5-fold validation
-- **Clinical Ready**: Performance suitable for clinical deployment
+**🧬 Multi-Modal Features:**
+- **Mutation Integration**: Real mutations from TCGA MAF files
+- **Multi-Omics Approach**: Combining genomic and clinical data
+- **Cross-Validation**: Rigorous 5-fold validation protocol
+- **Complementary Analysis**: Supports main 95.0% breakthrough results
 
 </div>
 
