@@ -1,22 +1,92 @@
 version: '3.8'
 
 services:
-  cancer-classifier:
+  # LightGBM SMOTE API Service
+  cancer-alpha-api:
     build: .
+    container_name: cancer-alpha-lightgbm-api
     ports:
-      - "8501:8501"
+      - "8000:8000"
     volumes:
-      - "/Users/stillwell/projects/cancer-alpha/models:/app/models:ro"
+      - "./models:/app/models:ro"
+      - "./logs:/app/logs"
+      - "./cache:/app/cache"
     environment:
+      - ENVIRONMENT=production
       - PYTHONPATH=/app
+      - PYTHONUNBUFFERED=1
+      - LOG_LEVEL=info
     restart: unless-stopped
     healthcheck:
-      test: ["CMD", "curl", "-f", "http://localhost:8501/_stcore/health"]
+      test: ["CMD", "curl", "-f", "http://localhost:8000/health"]
       interval: 30s
       timeout: 10s
       retries: 3
-      start_period: 40s
+      start_period: 60s
+    depends_on:
+      - redis
     labels:
       - "traefik.enable=true"
-      - "traefik.http.routers.cancer-classifier.rule=Host(`cancer-classifier.local`)"
-      - "traefik.http.services.cancer-classifier.loadbalancer.server.port=8501"
+      - "traefik.http.routers.cancer-alpha-api.rule=Host(`api.cancer-alpha.local`)"
+      - "traefik.http.services.cancer-alpha-api.loadbalancer.server.port=8000"
+      - "com.cancer-alpha.service=lightgbm-smote-api"
+      - "com.cancer-alpha.version=production-v1.0"
+
+  # Redis Cache Service
+  redis:
+    image: redis:7-alpine
+    container_name: cancer-alpha-redis
+    ports:
+      - "6379:6379"
+    volumes:
+      - "redis_data:/data"
+    command: redis-server --appendonly yes --maxmemory 256mb --maxmemory-policy allkeys-lru
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+  # Optional: Nginx Load Balancer
+  nginx:
+    image: nginx:alpine
+    container_name: cancer-alpha-nginx
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - "./nginx/nginx.conf:/etc/nginx/nginx.conf:ro"
+      - "./ssl:/etc/nginx/ssl:ro"
+    depends_on:
+      - cancer-alpha-api
+    restart: unless-stopped
+    profiles: ["with-nginx"]
+
+  # Optional: Prometheus Monitoring
+  prometheus:
+    image: prom/prometheus
+    container_name: cancer-alpha-prometheus
+    ports:
+      - "9090:9090"
+    volumes:
+      - "./monitoring/prometheus.yml:/etc/prometheus/prometheus.yml:ro"
+      - "prometheus_data:/prometheus"
+    command:
+      - '--config.file=/etc/prometheus/prometheus.yml'
+      - '--storage.tsdb.path=/prometheus'
+      - '--web.console.libraries=/etc/prometheus/console_libraries'
+      - '--web.console.templates=/etc/prometheus/consoles'
+    restart: unless-stopped
+    profiles: ["monitoring"]
+
+volumes:
+  redis_data:
+    driver: local
+  prometheus_data:
+    driver: local
+
+networks:
+  default:
+    name: cancer-alpha-network
+    driver: bridge

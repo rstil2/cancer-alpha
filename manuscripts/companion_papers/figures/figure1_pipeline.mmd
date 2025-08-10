@@ -1,0 +1,17 @@
+flowchart TD
+    A[Raw TCGA Data] --> B[Data Preprocessing]
+    B --> C[Feature Engineering]
+    C --> D[Multi-omics Integration]
+    D --> E[SMOTE Application]
+    E --> F[LightGBM Training]
+    F --> G[Model Validation]
+    G --> H[95.0% Balanced Accuracy]
+    
+    I[Gene Expression] --> D
+    J[Copy Number] --> D
+    K[Mutations] --> D
+    L[Pathways] --> D
+    
+    style A fill:#e1f5fe
+    style H fill:#c8e6c9
+    style F fill:#fff3e0

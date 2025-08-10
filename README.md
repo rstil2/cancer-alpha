@@ -246,23 +246,59 @@ The Cancer Alpha system utilizes a breakthrough **LightGBM with SMOTE** achievin
 <div align="center">
 
 ```mermaid
-graph TB
-    A[🧬 Genomic Data] --> B[📊 Data Processing]
-    B --> C[🤖 AI Models]
-    C --> D[🎯 Ensemble]
-    D --> E[📱 Web Interface]
-    D --> F[🔌 REST API]
+flowchart TD
+    subgraph "Data Layer"
+        A[🧬 Real TCGA Data<br/>158 Samples, 8 Cancer Types]
+        B[📊 Genomic Features<br/>Mutations, Clinical, Multi-omics]
+    end
     
-    G[🏥 Hospital Systems] --> F
-    H[👨‍⚕️ Clinicians] --> E
+    subgraph "Processing Pipeline"
+        C[🔬 Feature Engineering<br/>Biological Interactions]
+        D[⚖️ SMOTE Integration<br/>Class Imbalance Handling]
+        E[🌲 LightGBM Model<br/>Gradient Boosting Framework]
+    end
     
-    I[☁️ Cloud Deploy] --> J[🐳 Docker]
-    I --> K[☸️ Kubernetes]
+    subgraph "Validation & Deployment"
+        F[✅ 5-Fold Cross-Validation<br/>Stratified Sampling]
+        G[🏆 95.0% ± 5.4% Accuracy<br/>Champion Model]
+        H[📊 SHAP Explainability<br/>Clinical Interpretability]
+    end
     
-    style D fill:#4CAF50
-    style E fill:#2196F3
-    style F fill:#FF9800
+    subgraph "Application Layer"
+        I[📱 Streamlit Web App<br/>Interactive Interface]
+        J[🔌 REST API<br/>Clinical Integration]
+        K[⚙️ Model Serving<br/>Real-time Predictions]
+    end
+    
+    subgraph "Infrastructure"
+        L[🐳 Docker Containers<br/>Reproducible Deployment]
+        M[☸️ Kubernetes<br/>Scalable Orchestration]
+        N[🏥 Hospital Systems<br/>Clinical Workflow]
+    end
+    
+    A --> B
+    B --> C
+    C --> D
+    D --> E
+    E --> F
+    F --> G
+    G --> H
+    H --> I
+    H --> J
+    J --> K
+    I --> L
+    J --> L
+    K --> L
+    L --> M
+    M --> N
+    
+    style G fill:#FFD700,stroke:#FF6B35,stroke-width:3px
+    style E fill:#E8F5E8
+    style D fill:#F3E5F5
+    style H fill:#E3F2FD
 ```
+
+*System Architecture: End-to-end Cancer Alpha pipeline from real TCGA data ingestion through LightGBM SMOTE processing to clinical deployment, achieving 95.0% balanced accuracy with full explainability.*
 
 </div>
 
