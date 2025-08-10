@@ -364,7 +364,7 @@ cancer-alpha/
 # Download and extract the 563KB ZIP file
 wget https://github.com/rstil2/cancer-alpha/raw/main/cancer_genomics_ai_demo_production_v2.0.zip
 unzip cancer_genomics_ai_demo_production_v2.0.zip
-cd cancer_genomics_ai_demo_clean
+cd cancer_genomics_ai_demo_fixed
 
 # One-command setup and launch
 python setup.py
