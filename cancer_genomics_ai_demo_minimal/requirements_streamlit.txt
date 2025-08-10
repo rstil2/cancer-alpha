@@ -1,5 +1,7 @@
-# Cancer Alpha Minimal Demo Requirements
-# =====================================
+# Cancer Genomics AI Demo - Core Dependencies
+# Patent: Provisional Application No. 63/847,316
+# Contact: craig.stillwell@gmail.com
+# =============================================
 
 # Core web interface
 streamlit>=1.28.0
@@ -7,13 +9,17 @@ streamlit>=1.28.0
 # Data manipulation
 pandas>=1.5.0
 numpy>=1.23.0
+joblib>=1.2.0
 
 # Machine learning
 scikit-learn>=1.2.0
+lightgbm>=3.3.0
+imbalanced-learn>=0.9.0
 
-# Explainability
+# Model interpretability
 shap>=0.42.0
 
 # Visualization
 matplotlib>=3.6.0
 plotly>=5.15.0
+seaborn>=0.11.0

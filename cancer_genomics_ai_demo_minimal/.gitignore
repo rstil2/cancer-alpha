@@ -1,0 +1,105 @@
+# Cancer Genomics AI Demo - .gitignore
+# ====================================
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# Virtual environments
+venv/
+env/
+ENV/
+.env
+.venv
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Demo specific
+demo_usage.log
+*.log
+
+# Large model files (keep only essential ones)
+models_large_scale/
+*.pth
+!models/lightgbm_smote_production.pkl
+!models/standard_scaler.pkl
+!models/model_metadata.json
+
+# Development files
+*.ipynb_checkpoints/
+.jupyter/
+.pytest_cache/
+
+# Docker
+.dockerignore
+
+# Documentation (keep only essential)
+ACCURACY_IMPROVEMENT_STRATEGY.md
+BREAKTHROUGH_RESULTS.md
+CHANGE_LOG.md
+CLINICAL_VALIDATION_PREPARATION.md
+MAJOR_MILESTONE_ACHIEVED.md
+NEXT_STEPS_IMPLEMENTATION.md
+PERFORMANCE_COMPARISON.md
+PROJECT_PROGRESS_LOG.md
+REAL_TCGA_DATA_PIPELINE_SUMMARY.md
+SUCCESS_REAL_TCGA_90_PERCENT.md
+SYSTEM_STATUS_REPORT.md
+
+# Training scripts (not needed for demo)
+train_*.py
+process_*.py
+test_*.py
+enhanced_data_generator.py
+master_tcga_pipeline.py
+multimodal_tcga_processor.py
+scalable_tcga_downloader.py
+
+# Development directories
+api/
+clinical_partnerships/
+data/
+data_integration/
+interpretability/
+k8s/
+scripts/
+src/
+tests/
+catboost_info/
+
+# Other config files
+validation_results.json
+requirements_installed.flag
