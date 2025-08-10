@@ -332,7 +332,7 @@ cancer-alpha/
 
 ### **🏆 Experience Our 95.0% Accuracy Production Model!**
 
-[![Download Production Demo](https://img.shields.io/badge/⬇️_DOWNLOAD-Production_Demo_v2.0-FFD700?style=for-the-badge&logo=data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0id2hpdGUiPjxwYXRoIGQ9Ik0xOSA5aC00VjNIOXY2SDVsNyA3IDctN3pNNSAxOHYyaDE0di0yaDE0eiIvPjwvc3ZnPg==)](cancer_genomics_ai_demo_minimal/)
+[![Download Production Demo](https://img.shields.io/badge/⬇️_DOWNLOAD-Production_Demo_v2.0-FFD700?style=for-the-badge&logo=data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0id2hpdGUiPjxwYXRoIGQ9Ik0xOSA5aC00VjNIOXY2SDVsNyA3IDctN3pNNSAxOHYyaDE0di0yaDE0eiIvPjwvc3ZnPg==)](https://github.com/rstil2/cancer-alpha/raw/main/cancer_genomics_ai_demo_production_v2.0.zip)
 
 **🔥 NEW: Production LightGBM + SMOTE • 95.0% Accuracy • Full SHAP Explanations**
 
@@ -359,11 +359,12 @@ cancer-alpha/
 
 ### **🚀 Quick Start Instructions**
 
-#### **Option 1: Direct Access (Recommended)**
+#### **Option 1: Download ZIP (Fastest)**
 ```bash
-# Clone repository and navigate to demo
-git clone https://github.com/rstil2/cancer-alpha.git
-cd cancer-alpha/cancer_genomics_ai_demo_minimal
+# Download and extract the 563KB ZIP file
+wget https://github.com/rstil2/cancer-alpha/raw/main/cancer_genomics_ai_demo_production_v2.0.zip
+unzip cancer_genomics_ai_demo_production_v2.0.zip
+cd cancer_genomics_ai_demo_clean
 
 # One-command setup and launch
 python setup.py
@@ -374,18 +375,29 @@ python setup.py
 start_demo.bat         # Windows
 ```
 
-#### **Option 2: Verification First**
+#### **Option 2: Clone Repository**
 ```bash
-# Verify installation before running
+# Clone repository and navigate to demo
+git clone https://github.com/rstil2/cancer-alpha.git
+cd cancer-alpha/cancer_genomics_ai_demo_minimal
+
+# One-command setup and launch
+python setup.py && ./start_demo.sh
+```
+
+#### **Option 3: Verify Before Running**
+```bash
+# For either option above, verify first
 python verify_installation.py
 
 # Then setup and launch
 python setup.py && ./start_demo.sh
 ```
 
-**🌐 Access**: http://localhost:8501
-**📋 Requirements**: Python 3.8+, 4GB RAM, Internet connection
-**⚡ Total Time**: 30 seconds from clone to running demo!
+**🌐 Access**: http://localhost:8501  
+**📦 ZIP Size**: 563KB (includes 1.5MB LightGBM model)  
+**📋 Requirements**: Python 3.8+, 4GB RAM, Internet connection  
+**⚡ Total Time**: 30 seconds from download to running demo!
 
 ---
 
