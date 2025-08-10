@@ -1,0 +1,114 @@
+# Cancer Alpha - IP Protection .gitignore
+# ==========================================
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# Virtual environments
+venv/
+env/
+ENV/
+.env
+.venv
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# === CORE IP PROTECTION ===
+# Training scripts contain proprietary algorithms
+**/train*.py
+**/update*.py
+**/optimize*.py
+models/lightgbm_smote_production.py
+models/multimodal_transformer.py
+
+# Development and testing scripts
+test_*.py
+process_*.py
+enhanced_data_generator.py
+master_tcga_pipeline.py
+multimodal_tcga_processor.py
+scalable_tcga_downloader.py
+
+# Large model files (keep only minimal demo models)
+models_large_scale/
+*.pth
+!cancer_genomics_ai_demo_minimal/models/*.pkl
+!cancer_genomics_ai_demo_minimal/models/*.json
+
+# Data processing pipelines
+data/
+src/
+scripts/
+
+# Development directories with IP
+api/
+clinical_partnerships/
+data_integration/
+interpretability/
+k8s/
+tests/
+catboost_info/
+
+# Documentation with detailed implementation
+ACCURACY_IMPROVEMENT_STRATEGY.md
+BREAKTHROUGH_RESULTS.md
+CHANGE_LOG.md
+CLINICAL_VALIDATION_PREPARATION.md
+MAJOR_MILESTONE_ACHIEVED.md
+NEXT_STEPS_IMPLEMENTATION.md
+PERFORMANCE_COMPARISON.md
+PROJECT_PROGRESS_LOG.md
+REAL_TCGA_DATA_PIPELINE_SUMMARY.md
+SUCCESS_REAL_TCGA_90_PERCENT.md
+SYSTEM_STATUS_REPORT.md
+DEMO_UPDATE_COMPLETED.md
+
+# Configuration and validation files
+validation_results.json
+requirements_installed.flag
+*.log
+
+# Manuscript generation scripts (contain algorithm details)
+manuscripts/embed_figures_in_word.py
+manuscripts/create_interpretability_figures.py
+manuscripts/generate_word_manuscript.py
+manuscripts/generate_manuscript_figures.py
+manuscripts/simple_embed_figures.py
+
+# Production deployment configs
+PRODUCTION_DEPLOYMENT.md
+serve_demo.py
