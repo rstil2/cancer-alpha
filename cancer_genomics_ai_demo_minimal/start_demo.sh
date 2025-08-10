@@ -47,11 +47,30 @@ pip3 install -r requirements_streamlit.txt
 echo ""
 # Clear any existing processes on port 8501
 echo "🔄 Clearing port 8501..."
-PORT_PID=$(lsof -ti :8501)
-if [ ! -z "$PORT_PID" ]; then
-    echo "   Killing existing process on port 8501 (PID: $PORT_PID)"
-    kill -9 $PORT_PID 2>/dev/null || true
-    sleep 2
+
+# First, kill any Streamlit processes
+echo "   Killing existing Streamlit processes..."
+pkill -f "streamlit" 2>/dev/null || true
+
+# Wait a moment
+sleep 2
+
+# Find and kill all processes using port 8501
+PORT_PIDS=$(lsof -ti :8501 2>/dev/null)
+if [ ! -z "$PORT_PIDS" ]; then
+    for PID in $PORT_PIDS; do
+        echo "   Killing existing process on port 8501 (PID: $PID)"
+        kill -9 $PID 2>/dev/null || true
+    done
+    sleep 3
+    
+    # Verify port is cleared
+    if lsof -i :8501 > /dev/null 2>&1; then
+        echo "⚠️  Warning: Port 8501 may still be in use. Waiting longer..."
+        sleep 5
+        # Final attempt - kill anything on the port
+        lsof -ti :8501 2>/dev/null | xargs -r kill -9 2>/dev/null || true
+    fi
 fi
 echo "✅ Port 8501 cleared"
 

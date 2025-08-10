@@ -30,3 +30,5 @@
 {"event_type": "DEMO_START", "data": {"session_id": "cbc4837f72f9", "timestamp": "2025-08-10T13:49:32.732739", "user": "stillwell", "platform": "Darwin", "node": "Craigs-MacBook-Pro.local", "python_version": "3.12.9"}}
 {"event_type": "DEMO_START", "data": {"session_id": "cbc4837f72f9", "timestamp": "2025-08-10T13:49:42.954674", "user": "stillwell", "platform": "Darwin", "node": "Craigs-MacBook-Pro.local", "python_version": "3.12.9"}}
 {"event_type": "PREDICTION", "data": {"session_id": "cbc4837f72f9", "timestamp": "2025-08-10T13:49:42.985096", "model_type": "Production LightGBM + SMOTE (95.0%)", "sample_type": "Cancer Sample", "confidence": 0.48972132530256895}}
+{"event_type": "DEMO_START", "data": {"session_id": "64555d23032d", "timestamp": "2025-08-10T14:34:54.004491", "user": "stillwell", "platform": "Darwin", "node": "Craigs-MacBook-Pro.local", "python_version": "3.12.9"}}
+{"event_type": "DEMO_START", "data": {"session_id": "64555d23032d", "timestamp": "2025-08-10T14:35:05.238746", "user": "stillwell", "platform": "Darwin", "node": "Craigs-MacBook-Pro.local", "python_version": "3.12.9"}}
