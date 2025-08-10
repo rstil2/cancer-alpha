@@ -46,11 +46,25 @@ pip install -r requirements_streamlit.txt
 echo.
 REM Clear any existing processes on port 8501
 echo 🔄 Clearing port 8501...
-for /f "tokens=5" %%a in ('netstat -ano ^| findstr :8501') do (
+
+REM First, kill any Streamlit processes
+echo    Killing existing Streamlit processes...
+taskkill /F /IM python.exe /FI "WINDOWTITLE eq streamlit*" >nul 2>&1
+taskkill /F /IM pythonw.exe /FI "WINDOWTITLE eq streamlit*" >nul 2>&1
+timeout /t 2 >nul 2>&1
+
+REM Then kill any processes using port 8501
+for /f "tokens=5" %%a in ('netstat -ano ^| findstr :8501 2^>nul') do (
     echo    Killing existing process on port 8501 (PID: %%a)
     taskkill /PID %%a /F >nul 2>&1
 )
-timeout /t 2 >nul 2>&1
+timeout /t 3 >nul 2>&1
+
+REM Final verification - kill any remaining processes on port 8501
+for /f "tokens=5" %%a in ('netstat -ano ^| findstr :8501 2^>nul') do (
+    echo    Final cleanup: Killing PID %%a
+    taskkill /PID %%a /F >nul 2>&1
+)
 echo ✅ Port 8501 cleared
 
 echo 🚀 Starting Cancer Genomics AI Classifier...
