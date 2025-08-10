@@ -330,38 +330,62 @@ cancer-alpha/
 
 <div align="center">
 
-### **Experience Cancer Genomics AI with Full SHAP Explainability**
+### **🏆 Experience Our 95.0% Accuracy Production Model!**
 
-[![Download Interactive Demo](https://img.shields.io/badge/⬇️_DOWNLOAD-Interactive_Demo-4CAF50?style=for-the-badge&logo=data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0id2hpdGUiPjxwYXRoIGQ9Ik0xOSA5aC00VjNIOXY2SDVsNyA3IDctN3pNNSAxOHYyaDE0di0yaDE0eiIvPjwvc3ZnPg==)](https://github.com/rstil2/cancer-alpha/raw/main/cancer_genomics_ai_demo.zip)
+[![Download Production Demo](https://img.shields.io/badge/⬇️_DOWNLOAD-Production_Demo_v2.0-FFD700?style=for-the-badge&logo=data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0id2hpdGUiPjxwYXRoIGQ9Ik0xOSA5aC00VjNIOXY2SDVsNyA3IDctN3pNNSAxOHYyaDE0di0yaDE0eiIvPjwvc3ZnPg==)](cancer_genomics_ai_demo_minimal/)
 
-**🚀 Self-contained • 🖥️ Cross-platform • 💡 Ready in 2 minutes**
+**🔥 NEW: Production LightGBM + SMOTE • 95.0% Accuracy • Full SHAP Explanations**
 
-> **⚠️ Demo Limitations**: This is a demonstration version using simplified models and synthetic data for educational purposes only. The full production system achieves 95.0% accuracy on real TCGA clinical data.
+| **🏆 Production Demo Features** | **Breakthrough Technology** |
+|:-------------------------------:|:---------------------------:|
+| **🌟 Production LightGBM + SMOTE** | **95.0% accuracy** on real TCGA data |
+| **🔍 Advanced SHAP Explanations** | Full model interpretability with biological insights |
+| **📊 Interactive Web Interface** | Professional Streamlit application |
+| **🧬 Multi-Modal Genomic Data** | 110 features across 6 data types |
+| **🎯 8 Cancer Types** | BRCA, LUAD, COAD, PRAD, STAD, KIRC, HNSC, LIHC |
+| **🚀 30-Second Setup** | Automated installation with `python setup.py` |
+| **🖥️ Cross-Platform** | Windows, Mac, Linux + Docker support |
+| **⚖️ Patent Protected** | Demonstration license included |
 
-| **What's Included** | **Features** |
-|:------------------:|:------------:|
-| 🤖 **Complete AI System** | Random Forest model with 110 genomic features |
-| 🔍 **SHAP Explainability** | Understand every AI decision |
-| 📊 **Interactive Web Interface** | Streamlit application with 3 input methods |
-| 🧬 **Multi-Modal Analysis** | Methylation, mutations, CNAs, fragmentomics |
-| 🎯 **Sample Data** | Realistic cancer/control genomic profiles |
-| 🖥️ **Cross-Platform** | Windows, Mac, Linux support |
+**📁 What's Included:**
+- 🤖 **Production AI Model** (1.5MB LightGBM + SMOTE)
+- 📊 **Data Processing Pipeline** (Standard scaler + preprocessing)
+- 🔧 **Automated Setup** (`setup.py` + verification script)
+- 📚 **Complete Documentation** (README + Quick Start guide)
+- 🐳 **Docker Support** (Dockerfile + docker-compose)
+- 🖥️ **Platform Scripts** (Unix/Windows launchers)
 
 </div>
 
-### **Quick Start Instructions**
+### **🚀 Quick Start Instructions**
 
-1. **Download** the demo package using the button above (196KB ultra-minimal)
-2. **Extract** the ZIP file to your desired location
-3. **Run the demo:**
-   - **Windows:** Double-click `start_demo.bat`
-   - **Mac/Linux:** Open terminal, run `./start_demo.sh`
-4. **Open browser** to http://localhost:8501
-5. **Explore** cancer classification with AI explainability!
+#### **Option 1: Direct Access (Recommended)**
+```bash
+# Clone repository and navigate to demo
+git clone https://github.com/rstil2/cancer-alpha.git
+cd cancer-alpha/cancer_genomics_ai_demo_minimal
 
-**Note:** The demo automatically generates data and models on first run, so no large downloads are needed!
+# One-command setup and launch
+python setup.py
 
-**Requirements:** Python 3.8+ and internet connection for dependencies
+# Start the demo
+./start_demo.sh        # Mac/Linux
+# OR
+start_demo.bat         # Windows
+```
+
+#### **Option 2: Verification First**
+```bash
+# Verify installation before running
+python verify_installation.py
+
+# Then setup and launch
+python setup.py && ./start_demo.sh
+```
+
+**🌐 Access**: http://localhost:8501
+**📋 Requirements**: Python 3.8+, 4GB RAM, Internet connection
+**⚡ Total Time**: 30 seconds from clone to running demo!
 
 ---
 
