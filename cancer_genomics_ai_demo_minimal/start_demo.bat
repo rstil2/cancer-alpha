@@ -44,6 +44,15 @@ echo 📦 Installing dependencies...
 pip install -r requirements_streamlit.txt
 
 echo.
+REM Clear any existing processes on port 8501
+echo 🔄 Clearing port 8501...
+for /f "tokens=5" %%a in ('netstat -ano ^| findstr :8501') do (
+    echo    Killing existing process on port 8501 (PID: %%a)
+    taskkill /PID %%a /F >nul 2>&1
+)
+timeout /t 2 >nul 2>&1
+echo ✅ Port 8501 cleared
+
 echo 🚀 Starting Cancer Genomics AI Classifier...
 echo 🌐 Open your browser to: http://localhost:8501
 echo ⏹️  Press Ctrl+C to stop

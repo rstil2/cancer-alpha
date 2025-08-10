@@ -45,6 +45,16 @@ echo "📦 Installing dependencies..."
 pip3 install -r requirements_streamlit.txt
 
 echo ""
+# Clear any existing processes on port 8501
+echo "🔄 Clearing port 8501..."
+PORT_PID=$(lsof -ti :8501)
+if [ ! -z "$PORT_PID" ]; then
+    echo "   Killing existing process on port 8501 (PID: $PORT_PID)"
+    kill -9 $PORT_PID 2>/dev/null || true
+    sleep 2
+fi
+echo "✅ Port 8501 cleared"
+
 echo "🚀 Starting Cancer Genomics AI Classifier..."
 echo "🌐 Open your browser to: http://localhost:8501"
 echo "⏹️  Press Ctrl+C to stop"
