@@ -102,6 +102,23 @@ validation_results.json
 requirements_installed.flag
 *.log
 
+# === HOUSEKEEPING CLEANUP ===
+# Cache and temporary files
+catboost_info/
+*.pyc
+*.pyo
+*.tmp
+*.temp
+temp/
+tmp/
+
+# Archive directory (for old/duplicate files)
+archive/
+
+# Empty directories
+**/logs/
+**/monitoring/
+
 # Manuscript generation scripts (contain algorithm details)
 manuscripts/embed_figures_in_word.py
 manuscripts/create_interpretability_figures.py
