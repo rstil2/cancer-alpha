@@ -1,0 +1,53 @@
+# Cancer Alpha - Comprehensive Dependencies
+# ========================================
+# Patent: Provisional Application No. 63/847,316
+# Contact: craig.stillwell@gmail.com
+
+# Core Web Interface
+streamlit>=1.28.0
+
+# API Framework
+fastapi>=0.104.0
+uvicorn[standard]>=0.24.0
+pydantic>=2.4.0
+python-multipart>=0.0.6
+gunicorn>=21.2.0
+
+# Data Manipulation & Processing
+pandas>=2.0.0
+numpy>=1.24.0
+joblib>=1.3.0
+
+# Machine Learning Core
+scikit-learn>=1.3.0
+lightgbm>=4.1.0
+torch>=2.1.1
+imbalanced-learn>=0.11.0
+
+# Model Interpretability
+shap>=0.42.0
+
+# Visualization
+matplotlib>=3.6.0
+plotly>=5.15.0
+seaborn>=0.11.0
+
+# Caching & Performance
+redis>=5.0.0
+
+# Security & Authentication
+python-jose[cryptography]>=3.3.0
+passlib[bcrypt]>=1.7.4
+
+# Monitoring & Logging
+structlog>=23.2.0
+psutil>=5.9.0
+
+# Utilities
+python-dotenv>=1.0.0
+requests>=2.31.0
+
+# Development & Testing
+pytest>=7.4.3
+pytest-asyncio>=0.21.1
+httpx>=0.25.2
