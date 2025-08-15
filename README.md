@@ -9,16 +9,9 @@
 <img src="https://img.shields.io/badge/🎯_Accuracy-95%25_BREAKTHROUGH-gold?style=for-the-badge" alt="95% BREAKTHROUGH" />
 <img src="https://img.shields.io/badge/🧬_Data-Real_TCGA-blue?style=for-the-badge" alt="Real TCGA Data" />
 
-[![License: Academic](https://img.shields.io/badge/License-Academic%20Use%20Only-red.svg?style=flat-square)](LICENSE)
-[![Patent Protected](https://img.shields.io/badge/Patent-Protected-blue.svg?style=flat-square)](PATENTS.md)
-[![Python 3.8+](https://img.shields.io/badge/python-3.8+-blue.svg?style=flat-square)](https://www.python.org/downloads/release/python-380/)
-[![FastAPI](https://img.shields.io/badge/FastAPI-005571?style=flat-square&logo=fastapi)](https://fastapi.tiangolo.com/)
-[![React](https://img.shields.io/badge/React-20232A?style=flat-square&logo=react&logoColor=61DAFB)](https://reactjs.org/)
-[![Docker](https://img.shields.io/badge/Docker-2496ED?style=flat-square&logo=docker&logoColor=white)](https://www.docker.com/)
-[![Kubernetes](https://img.shields.io/badge/Kubernetes-326CE5?style=flat-square&logo=kubernetes&logoColor=white)](https://kubernetes.io/)
-[![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg?style=flat-square)](https://github.com/psf/black)
-
----
+[![License: Academic](https://img.shields.io/badge/License-Academic%20Use%20Only-red.svg)](LICENSE)
+[![Patent Protected](https://img.shields.io/badge/Patent-Protected-blue.svg)](PATENTS.md)
+[![Python 3.8+](https://img.shields.io/badge/python-3.8+-blue.svg)](https://www.python.org/downloads/)
 
 **🎯 Vision**: *To achieve AlphaFold-level innovation in precision oncology through breakthrough multi-modal AI architectures*
 
@@ -413,6 +406,7 @@ cancer-alpha/
 - [Master Installation Guide](docs/MASTER_INSTALLATION_GUIDE.md) - Complete installation and usage guide
 - [Demo Usage Guide](docs/demo_usage.md) - Detailed demo instructions
 - [Competitive Analysis Methodology](docs/Competitive_Analysis_Methodology.md) - Complete scoring methodology and calculations
+- [Changelog](CHANGELOG.md) - Complete project history and version updates
 - [Contributing Guide](CONTRIBUTING.md) - Guidelines for contributing to the project
 
 
@@ -426,7 +420,7 @@ cancer-alpha/
 
 [![Download Production Demo](https://img.shields.io/badge/⬇️_DOWNLOAD-Production_Demo_v2.0-FFD700?style=for-the-badge&logo=data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0id2hpdGUiPjxwYXRoIGQ9Ik0xOSA5aC00VjNIOXY2SDVsNyA3IDctN3pNNSAxOHYyaDE0di0yaDE0eiIvPjwvc3ZnPg==)](https://github.com/rstil2/cancer-alpha/raw/main/cancer_genomics_ai_demo_production_v2.0.zip)
 
-**🔥 NEW: Production LightGBM + SMOTE • 95.0% Accuracy • Full SHAP Explanations**
+**Latest: Production LightGBM + SMOTE • 95.0% Accuracy • Full SHAP Explanations**
 
 | **🏆 Production Demo Features** | **Breakthrough Technology** |
 |:-------------------------------:|:---------------------------:|

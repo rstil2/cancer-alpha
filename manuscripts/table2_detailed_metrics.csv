@@ -1,0 +1,7 @@
+System,Balanced Accuracy,Cross-Validation Rigor,Data Authenticity,Interpretability,Production Readiness,Reproducibility,Sample Size,Statistical Rigor,Regulatory Pathway,Innovation Impact
+Cancer Alpha,95.0,100,100,100,100,100,65,85,80,100
+FoundationOne CDx,94.6,95,95,60,100,25,85,75,100,85
+Yuan et al. 2023,89.2,65,90,30,0,60,95,85,20,90
+MSK-IMPACT,88.3,70,95,70,95,25,85,75,90,70
+Cheerla & Gevaert,91.5,100,85,25,0,55,95,85,20,80
+Zhang et al. 2021,85.7,55,85,20,0,50,85,75,20,75
