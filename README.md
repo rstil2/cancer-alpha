@@ -207,7 +207,7 @@ The Cancer Alpha system utilizes a breakthrough **LightGBM with SMOTE** achievin
 | **Metric** | **Weight** | **Cancer Alpha** | **Best Competitor** | **Advantage** |
 |:-----------|:----------:|:----------------:|:-------------------:|:-------------:|
 | **🎯 Balanced Accuracy** | 20% | **100/100** (95.0%) | 96/100 (94.6%) | **+4 points** |
-| **🔬 Cross-Validation** | 15% | **100/100** (10-fold) | 90/100 (5-fold) | **+10 points** |
+| **🔬 Cross-Validation** | 15% | **100/100** (5-fold stratified) | 90/100 (5-fold) | **+10 points** |
 | **💎 Data Quality** | 15% | **100/100** (Real only) | 95/100 (Mixed) | **+5 points** |
 | **🧠 Interpretability** | 12% | **100/100** (Full SHAP) | 75/100 (Limited) | **+25 points** |
 | **🚀 Production Ready** | 10% | **100/100** (Complete) | 100/100 (Deployed) | **Tied** |
@@ -228,7 +228,7 @@ The Cancer Alpha system utilizes a breakthrough **LightGBM with SMOTE** achievin
 | **🏅 Category Champion** | **Cancer Alpha's Achievement** | **Competitive Edge** |
 |:------------------------:|:------------------------------:|:--------------------:|
 | **🎯 Highest Accuracy** | **95.0% on real TCGA data** | First to break 95% barrier |
-| **🔬 Best Validation** | **10-fold stratified CV** | Gold standard methodology |
+| **🔬 Best Validation** | **Stratified 5-fold CV** | Gold standard methodology |
 | **💎 Cleanest Data** | **100% real, zero synthetic** | Ethical AI leadership |
 | **🧠 Best Interpretability** | **Complete SHAP analysis** | Full clinical explanations |
 | **🚀 Production Excellence** | **Complete deployment system** | Matches commercial leaders |
@@ -392,8 +392,7 @@ flowchart TD
 cancer-alpha/
 ├── 📚 docs/                          # Documentation and figures
 ├── 📄 preprints/                     # Research papers (bioRxiv published)
-├── 🎁 DEMO_PACKAGE/                  # Self-contained demo package
-│   └── cancer_genomics_ai_demo/      # Interactive Streamlit demo
+├── 🎁 cancer_genomics_ai_demo_minimal/ # Self-contained demo package
 ├── 🔧 scripts/                       # Utility scripts
 ├── 📊 *.py                           # Demo server and startup scripts
 ├── 📋 *.sh, *.bat                    # Cross-platform startup scripts
@@ -450,7 +449,7 @@ cancer-alpha/
 # Download and extract the 563KB ZIP file
 wget https://github.com/rstil2/cancer-alpha/raw/main/cancer_genomics_ai_demo_production_v2.0.zip
 unzip cancer_genomics_ai_demo_production_v2.0.zip
-cd cancer_genomics_ai_demo_fixed
+cd cancer_genomics_ai_demo_production
 
 # One-command setup and launch
 python setup.py
@@ -562,8 +561,8 @@ For information about clinical deployment capabilities:
 | **Cancer Types** | 8 basic types | 8+ cancer types (validated) |
 | **Processing Speed** | Limited | Real-time production (<50ms) |
 | **Explainability** | Basic SHAP | Advanced biological insights |
-| **Sample Size** | Demo data | 254 real patients |
-| **Mutations** | Synthetic | 383 real mutations from MAF files |
+| **Sample Size** | Demo data | 158 real TCGA samples |
+| **Mutations** | Synthetic | Real cancer gene mutations (TP53, PIK3CA, KRAS, etc.) |
 
 ## 🏥 **Potential Applications**
 
