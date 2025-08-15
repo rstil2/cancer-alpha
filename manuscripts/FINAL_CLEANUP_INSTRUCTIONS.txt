@@ -1,0 +1,144 @@
+
+🎯 FINAL MANUSCRIPT CLEANUP INSTRUCTIONS
+=======================================
+
+You now have the original formatted document with embedded figures open in LibreOffice Writer.
+Follow these steps to create a professional, journal-ready manuscript:
+
+STEP 1: REMOVE MARKDOWN FORMATTING
+==================================
+1. Use Find & Replace (Ctrl+H) to remove markdown characters:
+   
+   Find: ^#{1,6}\s*
+   Replace: (empty)
+   ☑ Regular expressions: ON
+   Click "Replace All"
+   
+2. Remove bold/italic markdown:
+   Find: \*\*([^*]+)\*\*
+   Replace: $1
+   ☑ Regular expressions: ON
+   Click "Replace All"
+   
+3. Remove single asterisks:
+   Find: \*([^*]+)\*
+   Replace: $1
+   ☑ Regular expressions: ON
+   Click "Replace All"
+
+4. Clean up table formatting:
+   - Find all instances of | (pipe characters) and remove them
+   - Convert markdown tables to proper Word tables using Table → Insert Table
+
+STEP 2: APPLY PROFESSIONAL FORMATTING
+====================================
+
+TITLE (first line):
+• Font: Times New Roman, 16pt, Bold
+• Alignment: Center
+• Space after: 12pt
+
+MAIN SECTION HEADERS (1. Introduction, 2. Methods, etc.):
+• Font: Times New Roman, 14pt, Bold
+• Space before: 18pt
+• Space after: 6pt
+
+SUBSECTION HEADERS (2.1, 2.2, 3.1, etc.):
+• Font: Times New Roman, 12pt, Bold
+• Space before: 12pt
+• Space after: 3pt
+
+BODY TEXT:
+• Font: Times New Roman, 12pt
+• Line spacing: 1.5 lines
+• Alignment: Justified
+• First line indent: 0.5"
+
+ABSTRACT SECTION:
+• Indent left and right margins by 0.5"
+• Font: Times New Roman, 12pt
+• Line spacing: 1.5 lines
+
+STEP 3: VERIFY FIGURES
+=====================
+Check that these figures are properly embedded and visible:
+
+Required Figures:
+✓ Figure 1: Model Performance Comparison
+✓ Figure 2: Cancer Type-Specific Performance  
+✓ Figure 3: Feature Importance Analysis
+✓ Figure 3B: SHAP Summary Plot and Individual Force Plots
+✓ Figure 4A: Academic Research Comparison
+✓ Figure 5A: Confusion Matrix
+✓ Figure 5B: ROC Curves
+✓ Figure 6: System Architecture
+
+If any figures are missing:
+1. Position cursor where figure should be inserted
+2. Insert → Image → From File
+3. Navigate to: /Users/stillwell/projects/cancer-alpha/manuscripts/manuscript_figures/
+4. Select appropriate PNG file
+5. Resize to fit page width (about 6 inches maximum)
+
+STEP 4: FINAL FORMATTING
+=======================
+
+PAGE SETUP:
+• Format → Page → Page tab
+• Margins: 1" all around
+• Paper: Letter (8.5" × 11")
+• Orientation: Portrait
+
+HEADERS/FOOTERS:
+• Insert → Header/Footer → Footer (Default)
+• Add page numbers: Insert → Field → Page Number
+• Center alignment
+
+TABLES:
+• Select each table
+• Right-click → Table Properties
+• Table → Alignment: Center
+• Font: Times New Roman, 10pt
+• Borders: Simple grid
+
+FIGURE CAPTIONS:
+• Font: Times New Roman, 10pt, Bold for "Figure X:"
+• Font: Times New Roman, 10pt, Regular for caption text
+• Center alignment
+
+REFERENCES:
+• Font: Times New Roman, 10pt
+• Hanging indent: 0.5"
+• Single line spacing
+
+STEP 5: QUALITY CHECK
+====================
+Before saving, verify:
+☑ No markdown characters remain (#, *, |, ---)
+☑ All figures are visible and properly sized
+☑ Tables are properly formatted
+☑ Consistent font throughout (Times New Roman)
+☑ Proper spacing and indentation
+☑ Page numbers present
+☑ Professional appearance
+
+STEP 6: SAVE FINAL VERSIONS
+===========================
+1. Save as Word document (.docx)
+2. Save as PDF: File → Export as PDF
+3. Name files: Cancer_Alpha_FINAL_MANUSCRIPT_CLEAN.docx/pdf
+
+📝 IMPORTANT NOTES:
+==================
+• The document already contains the embedded figures from the original
+• Focus on removing markdown formatting artifacts
+• Maintain professional academic style
+• This will be ready for journal submission once cleanup is complete
+
+🎯 SUCCESS CRITERIA:
+===================
+• Clean, professional appearance
+• No AI-generated formatting markers
+• All figures properly embedded and visible
+• Standard academic manuscript format
+• Ready for peer review submission
