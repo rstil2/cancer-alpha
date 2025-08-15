@@ -1,0 +1,77 @@
+
+PROFESSIONAL ACADEMIC MANUSCRIPT FORMATTING INSTRUCTIONS
+========================================================
+
+When you open the document in LibreOffice Writer, apply these formatting changes:
+
+TITLE FORMATTING:
+1. Select the title: "Cancer Alpha: A Production-Ready AI System..."
+2. Format → Character → Font: Times New Roman, Size: 16pt, Bold
+3. Format → Paragraph → Alignment: Center
+4. Add space after: 12pt
+
+SECTION HEADERS:
+1. Find all main sections (1. Introduction, 2. Methods, 3. Results, etc.)
+2. Format → Character → Font: Times New Roman, Size: 14pt, Bold
+3. Format → Paragraph → Space before: 18pt, Space after: 6pt
+
+SUBSECTION HEADERS:
+1. Find all subsections (2.1, 2.2, 3.1, etc.)
+2. Format → Character → Font: Times New Roman, Size: 12pt, Bold
+3. Format → Paragraph → Space before: 12pt, Space after: 3pt
+
+BODY TEXT:
+1. Select all body text (Ctrl+A)
+2. Format → Character → Font: Times New Roman, Size: 12pt
+3. Format → Paragraph → Alignment: Justify
+4. Line spacing: 1.5 lines
+5. Space after: 0pt
+6. First line indent: 0.5 inches
+
+ABSTRACT:
+1. Select "Abstract" heading and format as section header
+2. Select abstract text and apply body text formatting
+3. Format → Paragraph → Indent: 0.5" left and right margins
+
+TABLES:
+1. Select each table
+2. Table → Properties → Table → Alignment: Center
+3. Format → Character → Font: Times New Roman, Size: 10pt
+4. Table → Properties → Borders → Apply simple grid borders
+
+FIGURE CAPTIONS:
+1. Find "Figure 1:", "Figure 2:", etc.
+2. Format → Character → Font: Times New Roman, Size: 10pt, Bold
+3. Caption text: Size 10pt, Regular
+
+CITATIONS:
+1. Citations are already in proper format (numbers in parentheses)
+2. No changes needed for citations
+
+REFERENCES:
+1. Select "References" heading and format as section header
+2. Select reference list
+3. Format → Character → Font: Times New Roman, Size: 10pt
+4. Format → Paragraph → Hanging indent: 0.5"
+5. Line spacing: Single
+
+PAGE SETUP:
+1. Format → Page → Page tab
+2. Margins: 1" all sides
+3. Paper: Letter (8.5" x 11")
+4. Orientation: Portrait
+
+FINAL STEPS:
+1. Insert page numbers: Insert → Header/Footer → Footer
+2. Add page numbers centered at bottom
+3. Save as both .docx and .pdf formats
+
+PROFESSIONAL APPEARANCE CHECKLIST:
+✓ Remove all markdown characters (#, *, |, etc.)
+✓ Consistent font (Times New Roman) throughout
+✓ Proper heading hierarchy
+✓ Justified text alignment
+✓ Appropriate spacing
+✓ Professional table formatting
+✓ Page numbers
+✓ Standard academic margins
