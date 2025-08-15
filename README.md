@@ -194,6 +194,8 @@ The Cancer Alpha system utilizes a breakthrough **LightGBM with SMOTE** achievin
 ### **🥇 CANCER AI SYSTEMS LEADERBOARD**
 *Objective multi-metric evaluation across 10 key performance dimensions*
 
+[![View Full Methodology](https://img.shields.io/badge/📊_View_Full-Scoring_Methodology-blue?style=for-the-badge)](docs/Competitive_Analysis_Methodology.md)
+
 | Rank | System | **Composite Score** | **Accuracy** | **Status** | **Key Strengths** |
 |:----:|:-------|:-------------------:|:------------:|:----------:|:-----------------:|
 | **🥇** | **Cancer Alpha** | **91.8/100** | **95.0%** | **Prod Ready** | **Accuracy + Interpretability + Production** |
@@ -410,6 +412,7 @@ cancer-alpha/
 
 - [Master Installation Guide](docs/MASTER_INSTALLATION_GUIDE.md) - Complete installation and usage guide
 - [Demo Usage Guide](docs/demo_usage.md) - Detailed demo instructions
+- [Competitive Analysis Methodology](docs/Competitive_Analysis_Methodology.md) - Complete scoring methodology and calculations
 - [Contributing Guide](CONTRIBUTING.md) - Guidelines for contributing to the project
 
 
