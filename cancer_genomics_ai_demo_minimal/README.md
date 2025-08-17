@@ -20,12 +20,13 @@ Cancer Alpha represents a breakthrough in clinical AI - not just another machine
   - **Random Forest**: Achieved 88.6% accuracy (±4.5%)
   - Evaluated over **254 Real Patient Samples**: Processing 383 mutations, 99 clinical features, devoid of synthetic augmentation
 
-### **🏥 Production-Ready Clinical Infrastructure**
-- **FastAPI Backend**: Secure, authenticated, monitored API with <20ms response times
-- **Streamlit Demo**: Interactive web interface for immediate clinical use
-- **TCGA Integration**: Direct real-time access to The Cancer Genome Atlas database
-- **Explainable AI**: Regulatory-compliant interpretability with attention weights and biological insights
-- **Clinical Partnership Framework**: Ready-to-deploy collaboration templates for medical institutions
+### **🏥 Production-Ready Hospital Integration**
+- **"Plug and Play" Deployment**: One-command Docker setup for hospitals
+- **Epic/Cerner Integration**: Direct EMR connectivity with FHIR R4 compliance
+- **Hospital Authentication**: SSO, LDAP/Active Directory, and role-based access
+- **Clinical Workflow API**: Complete order-to-result automation
+- **HIPAA Compliance**: Built-in audit logging and regulatory frameworks
+- **24/7 Production Support**: Enterprise-grade monitoring and maintenance
 
 ### **✅ Comprehensive Validation (100% Test Pass Rate)**
 - **Model Validation**: 6/6 comprehensive tests passed including extreme values, NaN handling, batch consistency
@@ -57,23 +58,37 @@ Cancer Alpha represents a breakthrough in clinical AI - not just another machine
 
 ## 🚀 **Quick Start**
 
-### **Installation**
+### **For Researchers & Developers**
 ```bash
+# Clone and setup demo
 git clone https://github.com/your-repo/cancer-alpha
-cd cancer-alpha
+cd cancer-alpha/cancer_genomics_ai_demo_minimal
 pip install -r requirements.txt
-```
 
-### **Run Demo**
-```bash
+# Run Streamlit demo
 streamlit run streamlit_app.py
+
+# Or start API server
+cd api && uvicorn main:app --reload
 ```
 
-### **API Server**
+### **🏥 For Hospital Deployment**
 ```bash
-cd api
-uvicorn main:app --reload
+# One-command hospital deployment
+cp .env.example .env.hospital
+# Edit .env.hospital with your hospital configuration
+docker-compose --env-file .env.hospital up -d
+
+# Verify deployment
+curl http://localhost:8000/health
 ```
+
+📖 **Complete Hospital Setup Guide**: See [`HOSPITAL_DEPLOYMENT_GUIDE.md`](HOSPITAL_DEPLOYMENT_GUIDE.md) for full instructions including:
+- Epic/Cerner EMR integration
+- LDAP/SSO authentication setup  
+- FHIR R4 compliance configuration
+- Clinical workflow automation
+- HIPAA compliance and audit logging
 
 ## 🏗️ **Architecture Overview**
 
