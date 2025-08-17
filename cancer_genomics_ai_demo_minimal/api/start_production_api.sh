@@ -1,8 +1,8 @@
 #!/bin/bash
-# Cancer Alpha - LightGBM SMOTE API Production Startup
+# Oncura - LightGBM SMOTE API Production Startup
 # ===================================================
 
-echo "🚀 Starting Cancer Alpha LightGBM SMOTE API (Production Mode)..."
+echo "🚀 Starting Oncura LightGBM SMOTE API (Production Mode)..."
 
 # Set production environment
 export ENVIRONMENT=production
@@ -54,7 +54,7 @@ echo "🔍 Production model files verified:"
 ls -la $MODELS_DIR/*production*
 
 # Start the API server
-echo "🌟 Starting Cancer Alpha LightGBM SMOTE API..."
+echo "🌟 Starting Oncura LightGBM SMOTE API..."
 echo "   📡 Endpoint: http://localhost:$API_PORT"
 echo "   📋 Documentation: http://localhost:$API_PORT/docs"
 echo "   🔑 API Keys: cancer-alpha-prod-key-2025, demo-key-123"

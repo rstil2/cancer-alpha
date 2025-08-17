@@ -1,6 +1,6 @@
 # 🔒 PATENT PROTECTION NOTICE
 
-## Cancer Alpha Technology Patents
+## Oncura Technology Patents
 
 **⚠️ THIS REPOSITORY CONTAINS PATENT-PROTECTED TECHNOLOGY ⚠️**
 
@@ -38,7 +38,7 @@ Commercial use includes but is not limited to:
 **Contact for Patent Licensing:**
 - **Patent Holder**: Dr. R. Craig Stillwell
 - **Email**: craig.stillwell@gmail.com
-- **Subject Line**: "Cancer Alpha Patent License Inquiry"
+- **Subject Line**: "Oncura Patent License Inquiry"
 
 ## 🎓 Academic Use
 Limited academic use is permitted under the terms of the LICENSE file, which grants restricted rights for non-commercial research purposes only.

@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 
 """
-Cancer Alpha Progress Tracking Utility
+Oncura Progress Tracking Utility
 Updates checkpoint files with task progress
 """
 
@@ -135,7 +135,7 @@ class ProgressTracker:
         print(f"Total progress: {progress_data['total_progress']:.1f}%")
 
 def main():
-    parser = argparse.ArgumentParser(description="Update Cancer Alpha progress tracking")
+    parser = argparse.ArgumentParser(description="Update Oncura progress tracking")
     parser.add_argument("--checkpoint-file", required=True, help="Path to checkpoint file")
     parser.add_argument("--phase", required=True, choices=["A", "B"], help="Phase (A or B)")
     parser.add_argument("--task", required=True, help="Task ID (e.g., A.1.1)")

@@ -1,12 +1,12 @@
 #!/usr/bin/env python3
 """
-EMR Connector Framework for Cancer Alpha
+EMR Connector Framework for Oncura
 =======================================
 
 Provides seamless integration with major Electronic Medical Record (EMR) systems
 including Epic and Cerner through their respective APIs and authentication systems.
 
-Author: Cancer Alpha Research Team
+Author: Oncura Research Team
 Date: August 2025
 Version: 1.0.0
 """
@@ -210,7 +210,7 @@ class EpicConnector(BaseEMRConnector):
         
         Args:
             patient_id: Epic patient identifier
-            results: Cancer Alpha prediction results
+            results: Oncura prediction results
             
         Returns:
             True if successful, False otherwise
@@ -374,7 +374,7 @@ class EpicConnector(BaseEMRConnector):
                 'coding': [{
                     'system': 'http://canceralphasolutions.com/cancer-types',
                     'code': results.get('predicted_cancer_type'),
-                    'display': f"Cancer Alpha Prediction: {results.get('predicted_cancer_type')}"
+                    'display': f"Oncura Prediction: {results.get('predicted_cancer_type')}"
                 }]
             },
             'component': [
@@ -410,13 +410,13 @@ class EpicConnector(BaseEMRConnector):
                 'coding': [{
                     'system': 'http://loinc.org',
                     'code': '81247-9',
-                    'display': 'Cancer Alpha Genomic Analysis'
+                    'display': 'Oncura Genomic Analysis'
                 }]
             },
             'subject': {'reference': f'Patient/{patient_id}'},
             'effectiveDateTime': results.get('timestamp'),
             'result': [{'reference': f'Observation/{observation_id}'}],
-            'conclusion': f"Cancer Alpha AI Analysis: {results.get('predicted_cancer_type')} "
+            'conclusion': f"Oncura AI Analysis: {results.get('predicted_cancer_type')} "
                          f"(Confidence: {results.get('confidence_score', 0):.1%})"
         }
     
@@ -445,7 +445,7 @@ class EpicConnector(BaseEMRConnector):
                 'subject': {'reference': f'Patient/{patient_id}'},
                 'sent': datetime.now().isoformat(),
                 'payload': [{
-                    'contentString': f"Cancer Alpha genomic results available for patient. "
+                    'contentString': f"Oncura genomic results available for patient. "
                                    f"Predicted type: {results.get('predicted_cancer_type')} "
                                    f"(Confidence: {results.get('confidence_score', 0):.1%})"
                 }]
@@ -660,7 +660,7 @@ class CernerConnector(BaseEMRConnector):
                 'coding': [{
                     'system': 'http://loinc.org',
                     'code': '81247-9',
-                    'display': 'Cancer Alpha Genomic Classification'
+                    'display': 'Oncura Genomic Classification'
                 }]
             },
             'subject': {'reference': f'Patient/{patient_id}'},

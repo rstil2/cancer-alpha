@@ -1,12 +1,12 @@
 #!/usr/bin/env python3
 """
-Production API for Cancer Alpha - LightGBM SMOTE System
+Production API for Oncura - LightGBM SMOTE System
 ======================================================
 
 FastAPI backend providing scalable access to the breakthrough LightGBM SMOTE model
 for cancer genomics classification with 95.0% balanced accuracy on real TCGA data.
 
-Author: Cancer Alpha Research Team
+Author: Oncura Research Team
 Date: August 2025
 Version: Production v1.0
 """
@@ -94,7 +94,7 @@ async def lifespan(app: FastAPI):
     await shutdown_event()
 
 app = FastAPI(
-    title="Cancer Alpha - LightGBM SMOTE API",
+    title="Oncura - LightGBM SMOTE API",
     description="Production API for breakthrough cancer genomics classification using LightGBM with SMOTE - 95.0% balanced accuracy on real TCGA data",
     version="1.0.0",
     lifespan=lifespan
@@ -121,7 +121,7 @@ async def startup_event():
     """Load LightGBM SMOTE model and initialize services on startup"""
     global lightgbm_pipeline, label_encoder, feature_names, model_metadata, shap_explainer, redis_client
     
-    logger.info("🚀 Starting Cancer Alpha LightGBM SMOTE API...")
+    logger.info("🚀 Starting Oncura LightGBM SMOTE API...")
     
     try:
         # Determine models directory
@@ -190,7 +190,7 @@ async def startup_event():
             logger.warning("⚠️ Redis not available, caching disabled")
             redis_client = None
         
-        logger.info("🎯 Cancer Alpha LightGBM SMOTE API startup complete!")
+        logger.info("🎯 Oncura LightGBM SMOTE API startup complete!")
         logger.info(f"   Model: LightGBM with SMOTE integration")
         logger.info(f"   Target Accuracy: 95.0% on real TCGA data")
         logger.info(f"   Cancer Types: 8 (BRCA, LUAD, COAD, PRAD, STAD, KIRC, HNSC, LIHC)")
@@ -202,7 +202,7 @@ async def startup_event():
 
 async def shutdown_event():
     """Cleanup on shutdown"""
-    logger.info("Shutting down Cancer Alpha LightGBM SMOTE API...")
+    logger.info("Shutting down Oncura LightGBM SMOTE API...")
     if redis_client:
         try:
             redis_client.close()
@@ -559,7 +559,7 @@ async def model_info(api_key: str = Depends(verify_api_key)):
 async def root():
     """Root endpoint with API information"""
     return {
-        'name': 'Cancer Alpha - LightGBM SMOTE API',
+        'name': 'Oncura - LightGBM SMOTE API',
         'version': '1.0.0',
         'description': 'Production API for breakthrough cancer genomics classification using LightGBM with SMOTE',
         'breakthrough_performance': '95.0% balanced accuracy on real TCGA data',

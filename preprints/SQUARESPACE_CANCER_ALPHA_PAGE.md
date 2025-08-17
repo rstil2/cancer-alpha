@@ -1,4 +1,4 @@
-# Cancer Alpha - Squarespace Page Content
+# Oncura - Squarespace Page Content
 
 ## 🎯 **Hero Section**
 
@@ -42,10 +42,10 @@ Provisional Patent Filed
 
 ---
 
-## 🚀 **What Makes Cancer Alpha Unique**
+## 🚀 **What Makes Oncura Unique**
 
 ### **Revolutionary Technology**
-Cancer Alpha is the first production-ready AI system that combines cutting-edge multi-modal transformer architectures with clinical-grade infrastructure. Unlike research prototypes, our system is designed for real-world deployment.
+Oncura is the first production-ready AI system that combines cutting-edge multi-modal transformer architectures with clinical-grade infrastructure. Unlike research prototypes, our system is designed for real-world deployment.
 
 ### **Validated Performance**
 - ✅ **97.6% accuracy** on authentic TCGA clinical data
@@ -162,7 +162,7 @@ Our patented system integrates multiple data types:
 
 ### **vs. Industry Leaders**
 
-| **Feature** | **Cancer Alpha** | **IBM Watson** | **Foundation Medicine** |
+| **Feature** | **Oncura** | **IBM Watson** | **Foundation Medicine** |
 |:------------|:----------------:|:--------------:|:----------------------:|
 | **Real Data Accuracy** | ✅ 97.6% | ❌ Variable | ❌ Proprietary |
 | **Multi-Modal** | ✅ Yes | ⚠️ Limited | ❌ Single-modal |
@@ -190,8 +190,8 @@ Our patented system integrates multiple data types:
 
 **For Licensing & Investment Inquiries:**
 - 📧 **Email**: craig.stillwell@gmail.com
-- 📞 **Subject**: "Cancer Alpha Commercial Inquiry"
-- 🌐 **GitHub**: [Cancer Alpha Repository](https://github.com/your-username/cancer-alpha)
+- 📞 **Subject**: "Oncura Commercial Inquiry"
+- 🌐 **GitHub**: [Oncura Repository](https://github.com/your-username/cancer-alpha)
 
 ### **Partnership Opportunities**
 - 🏥 **Clinical Collaborations**
@@ -205,7 +205,7 @@ Our patented system integrates multiple data types:
 
 ### **Ready to Transform Cancer Diagnosis?**
 
-Cancer Alpha represents the future of AI-driven precision oncology. With validated 97.6% accuracy on real clinical data and patent-protected technology, we're ready to partner with forward-thinking organizations.
+Oncura represents the future of AI-driven precision oncology. With validated 97.6% accuracy on real clinical data and patent-protected technology, we're ready to partner with forward-thinking organizations.
 
 **Next Steps:**
 1. **Request a Demo** - See the system in action
@@ -216,7 +216,7 @@ Cancer Alpha represents the future of AI-driven precision oncology. With validat
 
 ---
 
-*Cancer Alpha - Where AI Meets Precision Oncology*
+*Oncura - Where AI Meets Precision Oncology*
 
 **© 2025 Dr. R. Craig Stillwell. All rights reserved. Patent-protected technology.**
 
@@ -238,7 +238,7 @@ Cancer Alpha represents the future of AI-driven precision oncology. With validat
 5. **Download Buttons**: Link directly to your preprint PDFs
 
 ### **SEO Optimization:**
-- **Page Title**: "Cancer Alpha - 97.6% Accurate AI Cancer Diagnosis | Patent-Protected Technology"
+- **Page Title**: "Oncura - 97.6% Accurate AI Cancer Diagnosis | Patent-Protected Technology"
 - **Meta Description**: "Revolutionary AI system achieving 97.6% accuracy on real cancer data. Patent-protected multi-modal transformer technology. Licensing available."
 - **Keywords**: "cancer AI, precision oncology, transformer models, clinical AI, cancer diagnosis"
 

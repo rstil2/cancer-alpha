@@ -1,7 +1,7 @@
 # Competitive Analysis Methodology
 
 ## Overview
-This document provides complete transparency on how the Cancer Alpha competitive analysis was conducted, including scoring methodology, data sources, and calculation methods for all metrics.
+This document provides complete transparency on how the Oncura competitive analysis was conducted, including scoring methodology, data sources, and calculation methods for all metrics.
 
 ---
 
@@ -14,9 +14,9 @@ This document provides complete transparency on how the Cancer Alpha competitive
 - **Transparent methodology** with all calculations documented
 
 ### **Systems Evaluated**
-We compared Cancer Alpha against 5 leading cancer AI systems representing different categories:
+We compared Oncura against 5 leading cancer AI systems representing different categories:
 
-1. **Cancer Alpha** (This Study) - Research + Production Ready
+1. **Oncura** (This Study) - Research + Production Ready
 2. **FoundationOne CDx** (Foundation Medicine) - FDA Approved Commercial
 3. **Yuan et al. (2023)** - Academic Research Leader (Nature Machine Intelligence)
 4. **Zhang et al. (2021)** - Deep Learning Approach (Nature Medicine) 
@@ -36,7 +36,7 @@ We compared Cancer Alpha against 5 leading cancer AI systems representing differ
 - Minimum threshold: 70% accuracy = 0 points
 
 **Data Sources:**
-- **Cancer Alpha:** 95.0% ± 5.4% (10-fold CV on 158 TCGA samples)
+- **Oncura:** 95.0% ± 5.4% (10-fold CV on 158 TCGA samples)
 - **FoundationOne CDx:** 94.6% (FDA submission data, multiple studies)
 - **Yuan et al. 2023:** 89.2% (Nature Machine Intelligence, 4,127 samples)
 - **Zhang et al. 2021:** 88.3% (Nature Medicine, 3,586 samples)
@@ -45,7 +45,7 @@ We compared Cancer Alpha against 5 leading cancer AI systems representing differ
 
 **Calculation Example:**
 ```
-Cancer Alpha: (95.0 / 95.0) × 100 = 100 points
+Oncura: (95.0 / 95.0) × 100 = 100 points
 FoundationOne: (94.6 / 95.0) × 100 = 99.6 ≈ 96 points
 Yuan et al.: (89.2 / 95.0) × 100 = 93.9 ≈ 94 points
 ```
@@ -65,7 +65,7 @@ Yuan et al.: (89.2 / 95.0) × 100 = 93.9 ≈ 94 points
 - **25 points:** No clear validation methodology
 
 **Assignments:**
-- **Cancer Alpha:** 100 points (10-fold stratified CV with CI)
+- **Oncura:** 100 points (10-fold stratified CV with CI)
 - **FoundationOne CDx:** 85 points (Clinical validation across studies)
 - **Yuan et al. 2023:** 75 points (5-fold CV reported)
 - **Zhang et al. 2021:** 65 points (Hold-out validation)
@@ -87,7 +87,7 @@ Yuan et al.: (89.2 / 95.0) × 100 = 93.9 ≈ 94 points
 - **25 points:** Mostly synthetic data
 
 **Assignments & Justification:**
-- **Cancer Alpha:** 100 points (100% real TCGA data, explicitly no synthetic data)
+- **Oncura:** 100 points (100% real TCGA data, explicitly no synthetic data)
 - **FoundationOne CDx:** 95 points (Proprietary real clinical data)
 - **Yuan et al. 2023:** 90 points (Real TCGA + CPTAC multi-omics)
 - **Zhang et al. 2021:** 85 points (Real TCGA with preprocessing)
@@ -109,7 +109,7 @@ Yuan et al.: (89.2 / 95.0) × 100 = 93.9 ≈ 94 points
 - **20 points:** Black box with no explanations
 
 **Assignments & Evidence:**
-- **Cancer Alpha:** 100 points (Full SHAP analysis, biological validation, individual explanations)
+- **Oncura:** 100 points (Full SHAP analysis, biological validation, individual explanations)
 - **FoundationOne CDx:** 60 points (Limited proprietary reporting methods)
 - **Yuan et al. 2023:** 70 points (Transformer attention maps)
 - **Zhang et al. 2021:** 40 points (Limited deep learning interpretability)
@@ -131,7 +131,7 @@ Yuan et al.: (89.2 / 95.0) × 100 = 93.9 ≈ 94 points
 - **20 points:** Academic prototype only
 
 **Assignments & Evidence:**
-- **Cancer Alpha:** 100 points (FastAPI, Docker, Kubernetes, monitoring, HIPAA compliance)
+- **Oncura:** 100 points (FastAPI, Docker, Kubernetes, monitoring, HIPAA compliance)
 - **FoundationOne CDx:** 100 points (Fully commercialized clinical system)
 - **Yuan et al. 2023:** 30 points (Research code, academic prototype)
 - **Zhang et al. 2021:** 25 points (Research code, limited availability)
@@ -153,7 +153,7 @@ Yuan et al.: (89.2 / 95.0) × 100 = 93.9 ≈ 94 points
 - **20 points:** Proprietary/closed system
 
 **Assignments & Evidence:**
-- **Cancer Alpha:** 100 points (Full GitHub repo, notebooks, data, Docker, documentation)
+- **Oncura:** 100 points (Full GitHub repo, notebooks, data, Docker, documentation)
 - **FoundationOne CDx:** 20 points (Proprietary commercial system)
 - **Yuan et al. 2023:** 60 points (Some code available, partial documentation)
 - **Zhang et al. 2021:** 50 points (Basic scripts available)
@@ -178,7 +178,7 @@ quality_penalty = -10 for low-quality large datasets
 ```
 
 **Assignments:**
-- **Cancer Alpha:** 45 points (158 samples, high quality, curated TCGA)
+- **Oncura:** 45 points (158 samples, high quality, curated TCGA)
 - **FoundationOne CDx:** 80 points (Large undisclosed clinical cohort)
 - **Yuan et al. 2023:** 100 points (4,127 samples, multi-modal)
 - **Zhang et al. 2021:** 90 points (3,586 samples)
@@ -199,7 +199,7 @@ quality_penalty = -10 for low-quality large datasets
 - **25 points:** Poor or missing statistical analysis
 
 **Assignments:**
-- **Cancer Alpha:** 100 points (Full CI, significance testing, bootstrap analysis)
+- **Oncura:** 100 points (Full CI, significance testing, bootstrap analysis)
 - **FoundationOne CDx:** 85 points (FDA-level statistical standards)
 - **Yuan et al. 2023:** 80 points (Standard academic reporting)
 - **Zhang et al. 2021:** 70 points (Basic statistical analysis)
@@ -220,7 +220,7 @@ quality_penalty = -10 for low-quality large datasets
 - **20 points:** No regulatory consideration
 
 **Assignments:**
-- **Cancer Alpha:** 80 points (FDA SaMD pathway mapped, regulatory strategy)
+- **Oncura:** 80 points (FDA SaMD pathway mapped, regulatory strategy)
 - **FoundationOne CDx:** 100 points (FDA approved, commercially deployed)
 - **Yuan et al. 2023:** 20 points (Academic research, no regulatory path)
 - **Zhang et al. 2021:** 20 points (Academic research, no regulatory path)
@@ -242,7 +242,7 @@ quality_penalty = -10 for low-quality large datasets
 - **50 points:** Limited novelty
 
 **Assignments:**
-- **Cancer Alpha:** 100 points (SMOTE integration, production architecture, real data ethics)
+- **Oncura:** 100 points (SMOTE integration, production architecture, real data ethics)
 - **FoundationOne CDx:** 85 points (Commercial innovation, market leadership)
 - **Yuan et al. 2023:** 90 points (Transformer application to genomics)
 - **Zhang et al. 2021:** 75 points (Standard deep learning approach)
@@ -257,7 +257,7 @@ quality_penalty = -10 for low-quality large datasets
 ```python
 Composite_Score = Σ(Metric_Score × Weight) for all 10 metrics
 
-# Example for Cancer Alpha:
+# Example for Oncura:
 Score = (100×0.20) + (100×0.15) + (100×0.15) + (100×0.12) + 
         (100×0.10) + (100×0.08) + (45×0.08) + (100×0.05) + 
         (80×0.04) + (100×0.03)
@@ -268,7 +268,7 @@ Score = (100×0.20) + (100×0.15) + (100×0.15) + (100×0.12) +
 ### **Final Rankings**
 | System | Weighted Score | Rank |
 |--------|----------------|------|
-| Cancer Alpha | 91.8/100 | 1st |
+| Oncura | 91.8/100 | 1st |
 | FoundationOne CDx | 86.2/100 | 2nd |
 | Yuan et al. 2023 | 75.4/100 | 3rd |
 | MSK-IMPACT | 74.8/100 | 4th |
@@ -288,7 +288,7 @@ Score = (100×0.20) + (100×0.15) + (100×0.15) + (100×0.12) +
 - **FoundationOne CDx:** FDA approval documentation, clinical validation studies
 - **MSK-IMPACT:** Published clinical outcomes, institutional reports
 
-### **Cancer Alpha Data**
+### **Oncura Data**
 - **Internal validation:** 10-fold stratified cross-validation results
 - **Technical specifications:** Production system architecture documentation
 - **Code availability:** Complete GitHub repository with reproducible results
@@ -309,7 +309,7 @@ Score = (100×0.20) + (100×0.15) + (100×0.15) + (100×0.12) +
 4. **Transparent methodology:** All calculations documented
 
 ### **Limitations Acknowledged**
-1. **Sample size penalty:** Cancer Alpha scored lower due to smaller dataset
+1. **Sample size penalty:** Oncura scored lower due to smaller dataset
 2. **Regulatory timing:** Some systems benefit from earlier FDA approval
 3. **Publication bias:** Academic systems may have reporting advantages
 4. **Commercial secrecy:** Limited data availability for proprietary systems

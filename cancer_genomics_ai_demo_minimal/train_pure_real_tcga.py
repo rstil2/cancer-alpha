@@ -6,7 +6,7 @@ Pure Real TCGA Training Script
 This script trains models using ONLY the 5 real TCGA samples with 129 real mutations.
 No synthetic data augmentation or expansion - pure real data only.
 
-Author: Cancer Alpha Research Team
+Author: Oncura Research Team
 Date: July 29, 2025
 """
 

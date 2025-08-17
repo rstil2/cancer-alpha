@@ -1,10 +1,10 @@
 @echo off
 
-REM Cancer Alpha - Streamlit Demo Launcher (Windows)
+REM Oncura - Streamlit Demo Launcher (Windows)
 REM This is a demonstration version using simplified models and synthetic data
 REM For the full production system, contact craig.stillwell@gmail.com for licensing
 
-echo 🧬 Cancer Alpha - Streamlit Demo Interface
+echo 🧬 Oncura - Streamlit Demo Interface
 echo ==========================================
 echo.
 echo ⚠️  DEMO VERSION NOTICE:
@@ -29,7 +29,7 @@ if %errorlevel% neq 0 (
     exit /b 1
 )
 
-echo 🚀 Starting Cancer Alpha Streamlit Demo...
+echo 🚀 Starting Oncura Streamlit Demo...
 echo 📦 Using demo package with synthetic data
 echo.
 

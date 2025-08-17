@@ -1,4 +1,4 @@
-# Cancer Alpha: Supplementary Figures and Tables
+# Oncura: Supplementary Figures and Tables
 
 ## Figure 1: Top 20 Feature Importance Rankings
 
@@ -191,11 +191,11 @@
 
 ## Table S4: Performance Comparison with Published Studies
 
-**Description**: Detailed comparison of Cancer Alpha with previously published cancer classification studies using TCGA data.
+**Description**: Detailed comparison of Oncura with previously published cancer classification studies using TCGA data.
 
 | Study | Year | Journal | Sample Size | Cancer Types | Validation Method | Best Method | Balanced Accuracy | Key Limitations |
 |-------|------|---------|-------------|--------------|------------------|-------------|-------------------|-----------------|
-| Cancer Alpha | 2024 | This study | 158 | 8 | 10-fold Stratified CV | LightGBM + SMOTE | 95.0% ± 5.4% | Sample size |
+| Oncura | 2024 | This study | 158 | 8 | 10-fold Stratified CV | LightGBM + SMOTE | 95.0% ± 5.4% | Sample size |
 | Zhang et al. | 2021 | Nature Medicine | 3,586 | 14 | Train/Test Split | Deep Neural Network | 88.3% | No cross-validation |
 | Li et al. | 2020 | Scientific Reports | 2,448 | 10 | 5-fold CV | Random Forest | 84.7% | Limited feature engineering |
 | Wang et al. | 2019 | Bioinformatics | 1,892 | 6 | Hold-out validation | SVM | 81.2% | No class balancing |
@@ -203,7 +203,7 @@
 | Rodriguez et al. | 2017 | BMC Genomics | 892 | 4 | Bootstrap | Ensemble | 73.1% | Limited cancer types |
 | Kim et al. | 2016 | PLOS Computational Biology | 567 | 3 | Leave-one-out CV | k-NN | 69.8% | Small dataset |
 
-**Key Advantages of Cancer Alpha**:
+**Key Advantages of Oncura**:
 - Highest reported balanced accuracy (95.0%)
 - Rigorous 10-fold stratified cross-validation
 - Advanced class balancing with SMOTE
@@ -265,7 +265,7 @@
 
 ### Technical Implementation Details
 
-The Cancer Alpha production system implements several advanced technical features that distinguish it from typical research prototypes:
+The Oncura production system implements several advanced technical features that distinguish it from typical research prototypes:
 
 **API Architecture**: The REST API follows OpenAPI 3.0 specifications with comprehensive endpoint documentation, standardized error responses, and versioning support. Input validation includes schema validation, range checking, and biological plausibility constraints.
 

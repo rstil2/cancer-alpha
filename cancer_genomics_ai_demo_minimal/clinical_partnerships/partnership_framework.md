@@ -68,9 +68,9 @@ Creating strategic partnerships with healthcare institutions is crucial for vali
     - Assign roles and responsibilities
 
 ## Contact Points
-- Cancer Alpha Partnerships Manager: partnerships@canceralphasolutions.com
+- Oncura Partnerships Manager: partnerships@canceralphasolutions.com
 - Chief Clinical Officer: clinical@canceralphasolutions.com
 
 ---
-**Prepared By:** Cancer Alpha Research Team
+**Prepared By:** Oncura Research Team
 **Date:** July 28, 2025

@@ -37,7 +37,7 @@ def create_word_manuscript():
         content = f.read()
     
     # Add title
-    title = "Cancer Alpha: A Production-Ready AI System for Multi-Cancer Classification Achieving 95% Balanced Accuracy on Real TCGA Data"
+    title = "Oncura: A Production-Ready AI System for Multi-Cancer Classification Achieving 95% Balanced Accuracy on Real TCGA Data"
     title_para = doc.add_heading(title, 0)
     title_para.alignment = WD_ALIGN_PARAGRAPH.CENTER
     

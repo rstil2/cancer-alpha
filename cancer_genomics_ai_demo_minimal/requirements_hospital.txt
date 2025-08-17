@@ -1,4 +1,4 @@
-# Cancer Alpha Hospital Integration Requirements
+# Oncura Hospital Integration Requirements
 # ==================================================
 # Python dependencies for full hospital deployment
 

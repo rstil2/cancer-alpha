@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Generate comprehensive figures for Cancer Alpha manuscript
+Generate comprehensive figures for Oncura manuscript
 Creates publication-quality figures based on the 95% performance results
 """
 
@@ -33,7 +33,7 @@ class ManuscriptFigureGenerator:
         self.output_dir = Path(output_dir)
         self.output_dir.mkdir(exist_ok=True)
         
-        # Cancer Alpha results data (based on manuscript claims)
+        # Oncura results data (based on manuscript claims)
         self.model_performance = {
             'LightGBM (Champion)': {'accuracy': 95.0, 'std': 5.4, 'precision': 94.8, 'recall': 95.0, 'f1': 94.9},
             'Gradient Boosting': {'accuracy': 94.4, 'std': 7.6, 'precision': 94.1, 'recall': 94.4, 'f1': 94.2},
@@ -55,7 +55,7 @@ class ManuscriptFigureGenerator:
         }
         
         self.comparison_studies = {
-            'Cancer Alpha': {'samples': 158, 'types': 8, 'method': 'LightGBM + SMOTE', 'accuracy': 95.0},
+            'Oncura': {'samples': 158, 'types': 8, 'method': 'LightGBM + SMOTE', 'accuracy': 95.0},
             'Zhang et al. (2021)': {'samples': 3586, 'types': 14, 'method': 'Deep Learning', 'accuracy': 88.3},
             'Li et al. (2020)': {'samples': 2448, 'types': 10, 'method': 'Random Forest', 'accuracy': 84.7},
             'Wang et al. (2019)': {'samples': 1892, 'types': 6, 'method': 'SVM', 'accuracy': 81.2},
@@ -275,11 +275,11 @@ class ManuscriptFigureGenerator:
         accuracies = [self.comparison_studies[s]['accuracy'] for s in studies]
         
         # A. Accuracy comparison
-        colors = ['#2E8B57' if s == 'Cancer Alpha' else '#778899' for s in studies]
+        colors = ['#2E8B57' if s == 'Oncura' else '#778899' for s in studies]
         bars = ax1.bar(range(len(studies)), accuracies, color=colors, alpha=0.8,
                       edgecolor='black', linewidth=1)
         
-        # Highlight Cancer Alpha
+        # Highlight Oncura
         bars[0].set_color('#2E8B57')
         bars[0].set_alpha(1.0)
         bars[0].set_linewidth(2)
@@ -293,7 +293,7 @@ class ManuscriptFigureGenerator:
         ax1.set_ylabel('Balanced Accuracy (%)', fontweight='bold')
         ax1.set_title('A. Performance Comparison with Literature', fontweight='bold', pad=20)
         ax1.set_xticks(range(len(studies)))
-        ax1.set_xticklabels([s.replace(' et al.', '\net al.').replace('Cancer Alpha', 'Cancer Alpha\n(This Study)') 
+        ax1.set_xticklabels([s.replace(' et al.', '\net al.').replace('Oncura', 'Oncura\n(This Study)') 
                             for s in studies], rotation=0, ha='center')
         ax1.set_ylim(70, 100)
         ax1.legend()
@@ -306,11 +306,11 @@ class ManuscriptFigureGenerator:
                             alpha=0.8, edgecolors='black', linewidth=1, label='Other Studies')
         ax2.scatter(sample_sizes[0], accuracies[0], s=200, c='#2E8B57', 
                    alpha=1.0, edgecolors='black', linewidth=2, marker='*', 
-                   label='Cancer Alpha', zorder=5)
+                   label='Oncura', zorder=5)
         
         # Add study labels
         for i, study in enumerate(studies):
-            if study == 'Cancer Alpha':
+            if study == 'Oncura':
                 ax2.annotate(study, (sample_sizes[i], accuracies[i]), 
                            xytext=(10, 10), textcoords='offset points',
                            fontsize=10, fontweight='bold', color='#2E8B57')
@@ -429,7 +429,7 @@ class ManuscriptFigureGenerator:
         plt.show()
 
     def create_figure6_workflow_architecture(self):
-        """Figure 6: Cancer Alpha System Architecture and Workflow"""
+        """Figure 6: Oncura System Architecture and Workflow"""
         fig, ax = plt.subplots(figsize=(16, 10))
         
         # Create workflow diagram
@@ -509,7 +509,7 @@ class ManuscriptFigureGenerator:
         ax.set_ylim(-2, 10)
         ax.set_aspect('equal')
         ax.axis('off')
-        ax.set_title('Cancer Alpha: Production-Ready AI System Architecture', 
+        ax.set_title('Oncura: Production-Ready AI System Architecture', 
                     fontweight='bold', fontsize=18, pad=30)
         
         plt.tight_layout()
@@ -521,7 +521,7 @@ class ManuscriptFigureGenerator:
 
     def generate_all_figures(self):
         """Generate all manuscript figures"""
-        print("Generating comprehensive manuscript figures for Cancer Alpha...")
+        print("Generating comprehensive manuscript figures for Oncura...")
         print("Based on 95% balanced accuracy performance on real TCGA data\n")
         
         # Create figures
@@ -552,10 +552,10 @@ class ManuscriptFigureGenerator:
 
     def create_figure_summary(self):
         """Create a summary document describing all figures"""
-        summary_content = """# Cancer Alpha Manuscript Figures Summary
+        summary_content = """# Oncura Manuscript Figures Summary
 
 ## Overview
-This document describes the comprehensive figures generated for the Cancer Alpha manuscript, demonstrating the system's breakthrough 95% balanced accuracy on real TCGA patient data.
+This document describes the comprehensive figures generated for the Oncura manuscript, demonstrating the system's breakthrough 95% balanced accuracy on real TCGA patient data.
 
 ## Figure 1: Model Performance Comparison
 - **Panel A**: Balanced accuracy comparison across 6 different algorithms with error bars (10-fold CV)
@@ -576,7 +576,7 @@ This document describes the comprehensive figures generated for the Cancer Alpha
 ## Figure 4: Comparison with Published Methods
 - **Panel A**: Performance comparison with 4 recent TCGA studies
 - **Panel B**: Sample size vs accuracy scatter plot
-- **Key Finding**: Cancer Alpha achieves highest accuracy (95.0%) with focused dataset approach
+- **Key Finding**: Oncura achieves highest accuracy (95.0%) with focused dataset approach
 
 ## Figure 5: Confusion Matrix and ROC Analysis
 - **Panel A**: 8×8 confusion matrix showing classification accuracy across cancer types
@@ -615,7 +615,7 @@ This document describes the comprehensive figures generated for the Cancer Alpha
 7. figure6_system_architecture.png/pdf
 8. figure_summary.md (this file)
 
-These figures provide comprehensive visual evidence supporting Cancer Alpha's breakthrough performance and clinical readiness as described in the manuscript.
+These figures provide comprehensive visual evidence supporting Oncura's breakthrough performance and clinical readiness as described in the manuscript.
 """
         
         with open(self.output_dir / 'figure_summary.md', 'w') as f:

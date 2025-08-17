@@ -1,4 +1,4 @@
-# 🔒 Cancer Alpha IP Protection Status Report
+# 🔒 Oncura IP Protection Status Report
 
 **Date**: August 10, 2025  
 **Action**: Core Algorithm Protection Implemented  

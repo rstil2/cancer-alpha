@@ -1,6 +1,6 @@
-# Contributing to Cancer Alpha
+# Contributing to Oncura
 
-Thank you for your interest in contributing to Cancer Alpha! This project is patent-protected technology with specific licensing requirements.
+Thank you for your interest in contributing to Oncura! This project is patent-protected technology with specific licensing requirements.
 
 ## 🔒 **Legal Requirements**
 

@@ -1,12 +1,12 @@
 #!/usr/bin/env python3
 """
-Hospital Authentication System for Cancer Alpha
+Hospital Authentication System for Oncura
 ===============================================
 
 Provides comprehensive authentication and authorization for hospital environments
 including SSO integration, LDAP/Active Directory support, and role-based access control.
 
-Author: Cancer Alpha Research Team
+Author: Oncura Research Team
 Date: August 2025
 Version: 1.0.0
 """
@@ -372,7 +372,7 @@ class HospitalAuthenticationSystem:
                         "user_id": "ADM001",
                         "username": "admin",
                         "email": "admin@hospital.com",
-                        "first_name": "Cancer Alpha",
+                        "first_name": "Oncura",
                         "last_name": "Administrator",
                         "role": UserRole.ADMIN,
                         "department": "IT",
@@ -654,7 +654,7 @@ async def lifespan(app: FastAPI):
     logger.info("Shutting down Hospital Authentication System...")
 
 app = FastAPI(
-    title="Cancer Alpha - Hospital Authentication System",
+    title="Oncura - Hospital Authentication System",
     description="Comprehensive authentication and authorization for hospital environments",
     version="1.0.0",
     lifespan=lifespan
@@ -919,7 +919,7 @@ async def list_users(current_user: HospitalUser = Depends(require_permission(Per
 async def root():
     """Root endpoint with system information"""
     return {
-        "name": "Cancer Alpha - Hospital Authentication System",
+        "name": "Oncura - Hospital Authentication System",
         "version": "1.0.0",
         "description": "Comprehensive authentication and authorization for hospital environments",
         "features": [

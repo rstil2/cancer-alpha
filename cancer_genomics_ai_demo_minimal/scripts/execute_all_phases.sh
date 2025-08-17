@@ -344,7 +344,7 @@ main() {
     check_prerequisites
     
     # Send start notification
-    send_master_notification "Cancer Alpha Demo: Execution Started" \
+    send_master_notification "Oncura Demo: Execution Started" \
         "Cancer Genomics AI Demo execution has started.
         
 Configuration:
@@ -471,7 +471,7 @@ The system will notify you upon completion or failure."
         completion_status="PARTIAL SUCCESS / FAILURE"
     fi
     
-    send_master_notification "Cancer Alpha Demo: Execution $completion_status" \
+    send_master_notification "Oncura Demo: Execution $completion_status" \
         "Cancer Genomics AI Demo execution has completed.
         
 Final Status: $completion_status

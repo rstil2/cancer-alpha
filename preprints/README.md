@@ -1,6 +1,6 @@
-# Cancer Alpha Research Papers
+# Oncura Research Papers
 
-This directory contains preprint versions of research papers related to the Cancer Alpha project.
+This directory contains preprint versions of research papers related to the Oncura project.
 
 ## 📥 **Quick Downloads**
 
@@ -12,7 +12,7 @@ This directory contains preprint versions of research papers related to the Canc
 
 ## Available Papers
 
-### 📊 **Cancer Alpha: Multi-Modal AI for Precision Oncology**
+### 📊 **Oncura: Multi-Modal AI for Precision Oncology**
 
 #### 🌐 **bioRxiv Version**
 **📥 [Download bioRxiv Version](cancer_alpha_main_paper_biorxiv.pdf)**  

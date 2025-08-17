@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Generate demo data and models for Cancer Alpha Demo
+Generate demo data and models for Oncura Demo
 This script creates the necessary data files and models when missing.
 """
 
@@ -100,7 +100,7 @@ def generate_demo_models(X, y):
 
 def main():
     """Main function to generate all demo data and models"""
-    print("🚀 Cancer Alpha Demo - Generating Demo Data and Models")
+    print("🚀 Oncura Demo - Generating Demo Data and Models")
     print("=" * 60)
     
     # Check if data already exists

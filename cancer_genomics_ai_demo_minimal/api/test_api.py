@@ -5,7 +5,7 @@ API Test Suite for Cancer Genomics AI Classifier
 
 Comprehensive tests for the production FastAPI backend.
 
-Author: Cancer Alpha Research Team
+Author: Oncura Research Team
 Date: July 28, 2025
 """
 

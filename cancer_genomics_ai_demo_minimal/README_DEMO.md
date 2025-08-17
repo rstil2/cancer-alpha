@@ -65,7 +65,7 @@ Analyze 110 genomic features across 6 data types:
 
 ## 📞 Support
 
-This is a demonstration version of the Cancer Alpha AI system.
+This is a demonstration version of the Oncura AI system.
 For questions or commercial licensing: craig.stillwell@gmail.com
 
 ## 📄 License

@@ -6,7 +6,7 @@ Real TCGA Data Processing Pipeline
 This script processes actual downloaded TCGA files to create training-ready
 genomic feature matrices from real patient data.
 
-Author: Cancer Alpha Research Team
+Author: Oncura Research Team
 Date: July 28, 2025
 """
 

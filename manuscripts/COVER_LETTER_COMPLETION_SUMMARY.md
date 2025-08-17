@@ -79,7 +79,7 @@ Professional cover letter created for Nature Communications submission of the co
 "First systematic framework for evaluating AI systems across multiple dimensions essential for clinical deployment"
 
 ### **Unique Value**
-"Cancer Alpha uniquely bridges the persistent gap between academic research excellence and commercial deployment readiness"
+"Oncura uniquely bridges the persistent gap between academic research excellence and commercial deployment readiness"
 
 ### **Field Impact**
 "Fills a critical void in cancer AI evaluation methodology while demonstrating successful achievement of clinical-grade AI performance"

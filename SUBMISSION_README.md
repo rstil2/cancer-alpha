@@ -1,8 +1,8 @@
-# Cancer Alpha: Production-Ready AI System for Multi-Cancer Classification
+# Oncura: Production-Ready AI System for Multi-Cancer Classification
 
 ## Nature Machine Intelligence Submission Package
 
-**Manuscript Title:** Cancer Alpha: A Production-Ready AI System for Multi-Cancer Classification Achieving 95% Balanced Accuracy on Real TCGA Data
+**Manuscript Title:** Oncura: A Production-Ready AI System for Multi-Cancer Classification Achieving 95% Balanced Accuracy on Real TCGA Data
 
 **Submission Date:** August 2024
 
@@ -10,7 +10,7 @@
 
 ## 🏆 Key Achievement
 
-**Cancer Alpha achieved 95.0% ± 5.4% balanced accuracy** on authentic TCGA patient data across 8 cancer types, significantly exceeding all previous benchmarks (76-89%) and meeting clinical relevance thresholds.
+**Oncura achieved 95.0% ± 5.4% balanced accuracy** on authentic TCGA patient data across 8 cancer types, significantly exceeding all previous benchmarks (76-89%) and meeting clinical relevance thresholds.
 
 ## 📁 Package Contents
 
@@ -147,7 +147,7 @@ jupyter notebook notebooks/03_interpretability.ipynb
 ### Performance Benchmarking
 | System | Data Source | Samples | Cancer Types | Accuracy | Status |
 |--------|-------------|---------|--------------|----------|---------|
-| **Cancer Alpha** | TCGA (Real) | 158 | 8 | **95.0%** | This Study |
+| **Oncura** | TCGA (Real) | 158 | 8 | **95.0%** | This Study |
 | Yuan et al. 2023 | TCGA+CPTAC | 4,127 | 12 | 89.2% | Nat Mach Intell |
 | Zhang et al. 2021 | TCGA | 3,586 | 14 | 88.3% | Nat Med |
 | FoundationOne CDx | Proprietary | N/A | 300+ variants | 94.6% | FDA Approved |
@@ -290,7 +290,7 @@ If you use this code or methodology, please cite:
 
 ```bibtex
 @article{cancer_alpha_2024,
-  title={Cancer Alpha: A Production-Ready AI System for Multi-Cancer Classification Achieving 95% Balanced Accuracy on Real TCGA Data},
+  title={Oncura: A Production-Ready AI System for Multi-Cancer Classification Achieving 95% Balanced Accuracy on Real TCGA Data},
   author={[Author Names]},
   journal={Nature Machine Intelligence},
   year={2024},

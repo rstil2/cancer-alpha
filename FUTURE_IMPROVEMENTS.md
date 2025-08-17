@@ -1,4 +1,4 @@
-# Future Improvements for Cancer Alpha
+# Future Improvements for Oncura
 
 **Document Created**: August 16, 2025  
 **Current Project Status**: 95.0% balanced accuracy on real TCGA data with 158 samples across 8 cancer types  

@@ -5,7 +5,7 @@ Advanced Training Script for Enhanced Multi-Modal Transformer
 
 Trains the enhanced model with improved techniques and validation.
 
-Author: Cancer Alpha Research Team
+Author: Oncura Research Team
 Date: July 28, 2025
 """
 

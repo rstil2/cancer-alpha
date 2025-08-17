@@ -3,7 +3,7 @@
 Training Script for Enhanced Multi-Modal Transformer
 ===================================================
 
-Author: Cancer Alpha Research Team
+Author: Oncura Research Team
 Date: July 28, 2025
 """
 

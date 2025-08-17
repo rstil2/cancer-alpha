@@ -1,6 +1,6 @@
 # Master Installation Guide
 
-This guide provides instructions for installing and setting up the Cancer Alpha system for various deployment scenarios.
+This guide provides instructions for installing and setting up the Oncura system for various deployment scenarios.
 
 ## Prerequisites
 

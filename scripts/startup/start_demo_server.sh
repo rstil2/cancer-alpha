@@ -1,9 +1,9 @@
 #!/bin/bash
 
-# Cancer Alpha Demo Server Startup Script
+# Oncura Demo Server Startup Script
 # This script starts the demo server to serve the downloadable demo package
 
-echo "🌟 Cancer Alpha Demo Server"
+echo "🌟 Oncura Demo Server"
 echo "=================================="
 
 # Check if demo package exists

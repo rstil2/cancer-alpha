@@ -6,7 +6,7 @@ Enhanced Real TCGA Data Processing Pipeline
 This script processes actual TCGA mutation data and expands it into a larger
 training dataset while preserving real genomic mutation patterns.
 
-Author: Cancer Alpha Research Team
+Author: Oncura Research Team
 Date: July 28, 2025
 """
 

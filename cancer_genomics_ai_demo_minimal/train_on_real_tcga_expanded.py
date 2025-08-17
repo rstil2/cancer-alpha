@@ -6,7 +6,7 @@ Training on Real TCGA-Derived Expanded Data
 This script trains the ultra-advanced transformer model on the expanded
 dataset derived from real TCGA mutation patterns.
 
-Author: Cancer Alpha Research Team
+Author: Oncura Research Team
 Date: July 28, 2025
 """
 
