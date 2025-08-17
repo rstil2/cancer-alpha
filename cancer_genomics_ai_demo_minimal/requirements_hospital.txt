@@ -1,0 +1,174 @@
+# Cancer Alpha Hospital Integration Requirements
+# ==================================================
+# Python dependencies for full hospital deployment
+
+# Core API Framework
+fastapi>=0.104.0
+uvicorn[standard]>=0.24.0
+pydantic>=2.4.0
+pydantic-settings>=2.0.0
+
+# FHIR R4 Integration
+fhir.resources>=7.0.0
+fhirclient>=4.1.0
+
+# EMR Connectors & Healthcare Standards
+requests>=2.31.0
+httpx>=0.25.0
+python-jose[cryptography]>=3.3.0
+cryptography>=41.0.0
+PyJWT>=2.8.0
+
+# LDAP/Active Directory Authentication
+python-ldap>=3.4.3
+ldap3>=2.9.1
+
+# SSO Integration
+python3-saml>=1.15.0
+authlib>=1.2.1
+
+# Database & Caching
+sqlalchemy>=2.0.0
+alembic>=1.12.0
+asyncpg>=0.29.0  # PostgreSQL async driver
+redis>=5.0.0
+pymongo>=4.5.0   # MongoDB support (optional)
+
+# Clinical Workflow & Notifications
+celery>=5.3.0
+kombu>=5.3.0
+flower>=2.0.1
+smtplib2>=0.2.2
+
+# Security & Compliance
+bcrypt>=4.0.1
+passlib[bcrypt]>=1.7.4
+python-multipart>=0.0.6
+itsdangerous>=2.1.2
+
+# HIPAA Audit Logging
+structlog>=23.2.0
+python-json-logger>=2.0.7
+loguru>=0.7.2
+
+# Data Validation & Serialization
+marshmallow>=3.20.0
+marshmallow-sqlalchemy>=0.29.0
+attrs>=23.1.0
+
+# Configuration Management
+python-dotenv>=1.0.0
+dynaconf>=3.2.0
+pyyaml>=6.0.1
+toml>=0.10.2
+
+# Monitoring & Metrics
+prometheus-client>=0.18.0
+statsd>=4.0.1
+psutil>=5.9.6
+
+# Testing (for deployment verification)
+pytest>=7.4.0
+pytest-asyncio>=0.21.1
+pytest-mock>=3.11.1
+httpx>=0.25.0  # For API testing
+factory-boy>=3.3.0
+
+# Development & Debugging
+black>=23.9.0
+isort>=5.12.0
+flake8>=6.1.0
+mypy>=1.6.0
+pre-commit>=3.5.0
+
+# Documentation Generation
+sphinx>=7.2.0
+sphinx-rtd-theme>=1.3.0
+mkdocs>=1.5.3
+mkdocs-material>=9.4.0
+
+# Production Server
+gunicorn>=21.2.0
+gevent>=23.9.0
+
+# Health Checks & Service Discovery
+consul>=1.1.0
+etcd3>=0.12.0
+
+# Container Support
+docker>=6.1.0
+docker-compose>=1.29.0
+
+# Message Queuing
+pika>=1.3.2  # RabbitMQ
+kafka-python>=2.0.2  # Apache Kafka (optional)
+
+# Additional Healthcare Libraries
+hl7>=0.4.5
+pydicom>=2.4.3  # DICOM support (optional)
+python-ccd>=1.0.0  # Continuity of Care Document
+
+# Machine Learning Dependencies (for model serving)
+numpy>=1.24.0
+pandas>=2.1.0
+scikit-learn>=1.3.0
+lightgbm>=4.1.0
+shap>=0.43.0
+joblib>=1.3.0
+
+# Web Interface (for clinical dashboard)
+jinja2>=3.1.2
+aiofiles>=23.2.1
+python-multipart>=0.0.6
+
+# Time Zone Handling
+pytz>=2023.3
+dateutil>=2.8.2
+
+# Encryption & Security
+cryptography>=41.0.0
+pyotp>=2.9.0  # Two-factor authentication
+qrcode>=7.4.2  # QR code generation for 2FA
+
+# Network & Protocol Support
+paramiko>=3.3.0  # SSH support
+ftputil>=5.0.4   # FTP support
+requests-oauthlib>=1.3.1
+
+# Data Export & Reporting
+openpyxl>=3.1.2
+xlsxwriter>=3.1.9
+reportlab>=4.0.4  # PDF generation
+matplotlib>=3.8.0
+seaborn>=0.12.2
+
+# Clinical Data Standards
+fhir-parser>=0.2.4
+hl7apy>=1.3.4
+python-hl7>=0.3.4
+
+# Performance & Optimization
+cachetools>=5.3.0
+lru-dict>=1.3.0
+aiocache>=0.12.2
+
+# Environment-specific dependencies
+supervisor>=4.2.5  # Process management
+systemd-python>=235  # systemd integration (Linux)
+
+# Development Utilities (remove in production)
+jupyter>=1.0.0
+ipython>=8.16.0
+memory-profiler>=0.61.0
+py-spy>=0.3.14
+
+# Version pinning for critical dependencies
+# (These versions are tested and verified)
+fastapi==0.104.0
+pydantic==2.4.0
+sqlalchemy==2.0.23
+redis==5.0.1
+celery==5.3.4
+cryptography==41.0.8
+PyJWT==2.8.0
+requests==2.31.0
