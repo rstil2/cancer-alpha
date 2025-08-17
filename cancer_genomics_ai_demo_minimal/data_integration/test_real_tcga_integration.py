@@ -5,7 +5,7 @@ Test Real TCGA Data Integration
 
 This script tests the enhanced TCGA data integration pipeline with real data access.
 
-Author: Cancer Alpha Research Team
+Author: Oncura Research Team
 Date: July 28, 2025
 """
 

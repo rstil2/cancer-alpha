@@ -1,12 +1,12 @@
 #!/usr/bin/env python3
 """
-Clinical Workflow API for Cancer Alpha
+Clinical Workflow API for Oncura
 =====================================
 
 Provides comprehensive clinical workflow integration including order management,
 provider notifications, clinical decision support, and result distribution.
 
-Author: Cancer Alpha Research Team  
+Author: Oncura Research Team  
 Date: August 2025
 Version: 1.0.0
 """
@@ -134,8 +134,8 @@ async def lifespan(app: FastAPI):
     logger.info("Shutting down Clinical Workflow API...")
 
 app = FastAPI(
-    title="Cancer Alpha - Clinical Workflow API",
-    description="Comprehensive clinical workflow integration for Cancer Alpha genomic predictions",
+    title="Oncura - Clinical Workflow API",
+    description="Comprehensive clinical workflow integration for Oncura genomic predictions",
     version="1.0.0",
     lifespan=lifespan
 )
@@ -175,7 +175,7 @@ async def create_genomic_order(
     """
     Create a new genomic test order
     
-    This endpoint allows healthcare providers to order Cancer Alpha genomic
+    This endpoint allows healthcare providers to order Oncura genomic
     classification tests through their EMR systems or clinical applications.
     """
     try:
@@ -606,13 +606,13 @@ async def process_genomic_order(order_id: str):
         else:
             await asyncio.sleep(900)  # 15 minutes for routine orders
         
-        # Here we would integrate with the actual Cancer Alpha prediction API
+        # Here we would integrate with the actual Oncura prediction API
         # For now, we'll simulate completion
         order_data["estimated_completion"] = datetime.now().isoformat()
         order_data["processing_notes"] = [
             "Specimen received and processed",
             "Genomic features extracted",
-            "Cancer Alpha AI analysis complete"
+            "Oncura AI analysis complete"
         ]
         
         logger.info(f"✅ Processed genomic order {order_id}")
@@ -661,7 +661,7 @@ async def notify_provider_results_available(provider_id: str, patient_mrn: str,
             action_required = False
         
         content = f"""
-Cancer Alpha genomic analysis results are now available for patient {patient_mrn}.
+Oncura genomic analysis results are now available for patient {patient_mrn}.
 
 Key Findings:
 - Predicted Cancer Type: {cancer_type}
@@ -674,7 +674,7 @@ Please review the complete results in your EMR system or provider dashboard.
         notification = {
             "provider_id": provider_id,
             "patient_mrn": patient_mrn,
-            "subject": f"URGENT: Cancer Alpha Results Available - {patient_mrn}",
+            "subject": f"URGENT: Oncura Results Available - {patient_mrn}",
             "content": content,
             "channels": [NotificationChannel.EMR_MESSAGE, NotificationChannel.EMAIL, NotificationChannel.PORTAL_ALERT],
             "severity": severity,
@@ -704,7 +704,7 @@ async def evaluate_clinical_alerts(patient_mrn: str, results: Dict[str, Any]):
                 "alert_type": "high_confidence_prediction",
                 "severity": AlertSeverity.CRITICAL,
                 "title": "High Confidence Cancer Prediction",
-                "description": f"Cancer Alpha has made a high confidence prediction ({confidence:.1%}) for {cancer_type}",
+                "description": f"Oncura has made a high confidence prediction ({confidence:.1%}) for {cancer_type}",
                 "recommendations": [
                     "Review complete genomic analysis results",
                     "Consider immediate oncology consultation",
@@ -821,7 +821,7 @@ async def send_portal_alert(notification: Dict[str, Any]):
 async def root():
     """Root endpoint with API information"""
     return {
-        "name": "Cancer Alpha - Clinical Workflow API",
+        "name": "Oncura - Clinical Workflow API",
         "version": "1.0.0",
         "description": "Comprehensive clinical workflow integration for genomic predictions",
         "endpoints": {

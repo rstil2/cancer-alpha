@@ -1,10 +1,10 @@
 #!/bin/bash
 
-# Cancer Alpha - Demo API Information
+# Oncura - Demo API Information
 # This is a demonstration version - full API requires separate licensing
 # For production API access, contact craig.stillwell@gmail.com
 
-echo "🔌 Cancer Alpha - API Demo Information"
+echo "🔌 Oncura - API Demo Information"
 echo "======================================"
 echo ""
 echo "⚠️  DEMO VERSION NOTICE:"
@@ -26,7 +26,7 @@ echo "  • Multi-modal transformer architectures"
 echo ""
 echo "💼 Commercial Licensing:"
 echo "  • Email: craig.stillwell@gmail.com"
-echo "  • Subject: 'Cancer Alpha API License Inquiry'"
+echo "  • Subject: 'Oncura API License Inquiry'"
 echo "  • Include: Intended use case and organization details"
 echo ""
 echo "📖 Academic Use:"

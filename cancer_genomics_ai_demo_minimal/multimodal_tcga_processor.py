@@ -7,7 +7,7 @@ This script processes multiple TCGA data modalities (mutations, expression,
 methylation, clinical) and integrates them into unified feature matrices
 for large-scale cancer classification.
 
-Author: Cancer Alpha Research Team
+Author: Oncura Research Team
 Date: July 28, 2025
 """
 

@@ -1,10 +1,10 @@
 #!/bin/bash
 
-# Cancer Alpha - Streamlit Demo Launcher
+# Oncura - Streamlit Demo Launcher
 # This is a demonstration version using simplified models and synthetic data
 # For the full production system, contact craig.stillwell@gmail.com for licensing
 
-echo "🧬 Cancer Alpha - Streamlit Demo Interface"
+echo "🧬 Oncura - Streamlit Demo Interface"
 echo "=========================================="
 echo ""
 echo "⚠️  DEMO VERSION NOTICE:"
@@ -26,7 +26,7 @@ if ! command -v python3 &> /dev/null; then
     exit 1
 fi
 
-echo "🚀 Starting Cancer Alpha Streamlit Demo..."
+echo "🚀 Starting Oncura Streamlit Demo..."
 echo "📦 Using demo package with synthetic data"
 echo ""
 

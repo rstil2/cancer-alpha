@@ -6,7 +6,7 @@ Scalable TCGA Data Downloader
 This script downloads and processes hundreds of TCGA samples across multiple
 cancer types and data modalities for large-scale training.
 
-Author: Cancer Alpha Research Team
+Author: Oncura Research Team
 Date: July 28, 2025
 """
 

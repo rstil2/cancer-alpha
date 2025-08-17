@@ -1,14 +1,14 @@
 Dear Editor,
 
-We are pleased to submit our manuscript entitled "Cancer Alpha: A Production-Ready AI System for Multi-Cancer Classification Achieving 95% Balanced Accuracy on Real TCGA Data" for consideration for publication in Nature Machine Intelligence.
+We are pleased to submit our manuscript entitled "Oncura: A Production-Ready AI System for Multi-Cancer Classification Achieving 95% Balanced Accuracy on Real TCGA Data" for consideration for publication in Nature Machine Intelligence.
 
-This work presents Cancer Alpha, a breakthrough artificial intelligence system for multi-cancer classification that achieves 95% balanced accuracy on authentic TCGA patient data—significantly exceeding previous benchmarks and meeting clinical relevance thresholds. Our system addresses critical limitations in current cancer genomics research through rigorous methodology, comprehensive validation, and production-ready implementation.
+This work presents Oncura, a breakthrough artificial intelligence system for multi-cancer classification that achieves 95% balanced accuracy on authentic TCGA patient data—significantly exceeding previous benchmarks and meeting clinical relevance thresholds. Our system addresses critical limitations in current cancer genomics research through rigorous methodology, comprehensive validation, and production-ready implementation.
 
 KEY INNOVATIONS AND CONTRIBUTIONS:
 
-1. EXCEPTIONAL PERFORMANCE ON REAL DATA: Cancer Alpha achieved 95.0% ± 5.4% balanced accuracy across eight cancer types using authentic TCGA patient data, surpassing all previous studies which achieved 76-89% accuracy. This represents the highest reported performance for multi-cancer classification on real genomic data.
+1. EXCEPTIONAL PERFORMANCE ON REAL DATA: Oncura achieved 95.0% ± 5.4% balanced accuracy across eight cancer types using authentic TCGA patient data, surpassing all previous studies which achieved 76-89% accuracy. This represents the highest reported performance for multi-cancer classification on real genomic data.
 
-2. PRODUCTION-READY CLINICAL SYSTEM: Unlike research prototypes, Cancer Alpha includes comprehensive deployment infrastructure with RESTful APIs, containerized deployment, monitoring systems, and healthcare-grade security measures, enabling immediate clinical implementation.
+2. PRODUCTION-READY CLINICAL SYSTEM: Unlike research prototypes, Oncura includes comprehensive deployment infrastructure with RESTful APIs, containerized deployment, monitoring systems, and healthcare-grade security measures, enabling immediate clinical implementation.
 
 3. RIGOROUS METHODOLOGY: Our approach combines advanced ensemble methods (LightGBM), sophisticated class balancing (SMOTE), and comprehensive feature engineering of 150 carefully selected genomic and clinical variables from 206 initial features through mutual information-based selection.
 
@@ -18,7 +18,7 @@ KEY INNOVATIONS AND CONTRIBUTIONS:
 
 SIGNIFICANCE FOR PRECISION MEDICINE:
 
-This work represents a significant advancement toward clinical implementation of AI-powered cancer diagnosis. Cancer Alpha's combination of exceptional accuracy, production readiness, and interpretability addresses the translation gap between research innovation and clinical practice. The system's potential applications span diagnostic support, quality assurance, screening programs, and treatment selection.
+This work represents a significant advancement toward clinical implementation of AI-powered cancer diagnosis. Oncura's combination of exceptional accuracy, production readiness, and interpretability addresses the translation gap between research innovation and clinical practice. The system's potential applications span diagnostic support, quality assurance, screening programs, and treatment selection.
 
 Our comprehensive regulatory pathway development, including FDA Software as Medical Device (SaMD) strategy and planned multi-center clinical trials, demonstrates commitment to real-world clinical translation. The system's ability to integrate genomic and clinical data provides more comprehensive diagnostic capabilities than current histopathology-based approaches.
 
@@ -30,7 +30,7 @@ While acknowledging limitations including sample size constraints (n=158) and TC
 
 RELEVANCE TO NATURE MACHINE INTELLIGENCE:
 
-This work exemplifies the journal's focus on machine intelligence applications with real-world impact. Cancer Alpha demonstrates how sophisticated AI methodologies can achieve clinical-grade performance while maintaining interpretability and production readiness. The research bridges the gap between computational innovation and healthcare application, addressing fundamental challenges in medical AI translation.
+This work exemplifies the journal's focus on machine intelligence applications with real-world impact. Oncura demonstrates how sophisticated AI methodologies can achieve clinical-grade performance while maintaining interpretability and production readiness. The research bridges the gap between computational innovation and healthcare application, addressing fundamental challenges in medical AI translation.
 
 The manuscript's comprehensive approach—from algorithm development through regulatory strategy—provides a complete roadmap for clinical AI implementation, offering valuable insights for the broader machine intelligence community working on healthcare applications.
 
@@ -52,7 +52,7 @@ On behalf of all co-authors:
 [List all co-author names and affiliations]
 
 Manuscript Details:
-- Title: Cancer Alpha: A Production-Ready AI System for Multi-Cancer Classification Achieving 95% Balanced Accuracy on Real TCGA Data
+- Title: Oncura: A Production-Ready AI System for Multi-Cancer Classification Achieving 95% Balanced Accuracy on Real TCGA Data
 - Article Type: Research Article
 - Word Count: [Specify word count]
 - Figure Count: 8 figures

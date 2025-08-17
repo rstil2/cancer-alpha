@@ -92,8 +92,8 @@ def add_figure_to_readme():
         content = f.read()
     
     # Find a good place to insert the figure (after the main description)
-    # Look for the "What Makes Cancer Alpha Special?" section
-    insert_marker = "## 🌟 What Makes Cancer Alpha Special?"
+    # Look for the "What Makes Oncura Special?" section
+    insert_marker = "## 🌟 What Makes Oncura Special?"
     
     if insert_marker in content:
         # Insert the figure before this section

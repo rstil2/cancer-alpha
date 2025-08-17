@@ -1,6 +1,6 @@
 <div align="center">
 
-# 🧬 Cancer Alpha
+# 🧬 Oncura
 ### Next-Generation AI for Precision Oncology
 
 *Advanced AI system for multi-cancer classification using real clinical genomic data*
@@ -31,7 +31,7 @@
 <tr>
 <td width="50%" align="center">
 
-#### 📊 **Cancer Alpha: Multi-Modal AI for Precision Oncology** 🌐 **PUBLISHED ON bioRxiv**
+#### 📊 **Oncura: Multi-Modal AI for Precision Oncology** 🌐 **PUBLISHED ON bioRxiv**
 *Comprehensive study on AI-driven cancer classification*
 
 [![Download PDF](https://img.shields.io/badge/📄_Download-Main_Paper-red?style=for-the-badge&logo=adobe-acrobat-reader)](preprints/cancer_alpha_main_paper.pdf)
@@ -95,9 +95,9 @@ flowchart TD
 
 ---
 
-## 🌟 What Makes Cancer Alpha Special?
+## 🌟 What Makes Oncura Special?
 
-Cancer Alpha represents a paradigm shift in computational oncology, delivering:
+Oncura represents a paradigm shift in computational oncology, delivering:
 
 <table>
 <tr>
@@ -166,7 +166,7 @@ Cancer Alpha represents a paradigm shift in computational oncology, delivering:
 
 ### **🎯 Current Model Architecture**
 
-The Cancer Alpha system utilizes a breakthrough **LightGBM with SMOTE** achieving **95.0% balanced accuracy on real TCGA clinical data** with:
+The Oncura system utilizes a breakthrough **LightGBM with SMOTE** achieving **95.0% balanced accuracy on real TCGA clinical data** with:
 - **Advanced SMOTE Integration** for perfect class imbalance handling
 - **Biological Feature Engineering** with interaction terms from mutual information
 - **Gradient Boosting Framework** optimized for genomics datasets
@@ -180,7 +180,7 @@ The Cancer Alpha system utilizes a breakthrough **LightGBM with SMOTE** achievin
 
 ---
 
-## 🏆 **Competitive Analysis: Cancer Alpha vs. The World's Best**
+## 🏆 **Competitive Analysis: Oncura vs. The World's Best**
 
 <div align="center">
 
@@ -191,7 +191,7 @@ The Cancer Alpha system utilizes a breakthrough **LightGBM with SMOTE** achievin
 
 | Rank | System | **Composite Score** | **Accuracy** | **Status** | **Key Strengths** |
 |:----:|:-------|:-------------------:|:------------:|:----------:|:-----------------:|
-| **🥇** | **Cancer Alpha** | **91.8/100** | **95.0%** | **Prod Ready** | **Accuracy + Interpretability + Production** |
+| **🥇** | **Oncura** | **91.8/100** | **95.0%** | **Prod Ready** | **Accuracy + Interpretability + Production** |
 | **🥈** | **FoundationOne CDx** | **86.2/100** | **94.6%** | **FDA Approved** | **Commercial Deployment** |
 | **🥉** | **Yuan et al. 2023** | **75.4/100** | **89.2%** | **Research** | **Large Sample Size** |
 | 4th | MSK-IMPACT | 74.8/100 | 89.7% | Clinical Use | Hospital Integration |
@@ -204,7 +204,7 @@ The Cancer Alpha system utilizes a breakthrough **LightGBM with SMOTE** achievin
 
 <div align="center">
 
-| **Metric** | **Weight** | **Cancer Alpha** | **Best Competitor** | **Advantage** |
+| **Metric** | **Weight** | **Oncura** | **Best Competitor** | **Advantage** |
 |:-----------|:----------:|:----------------:|:-------------------:|:-------------:|
 | **🎯 Balanced Accuracy** | 20% | **100/100** (95.0%) | 96/100 (94.6%) | **+4 points** |
 | **🔬 Cross-Validation** | 15% | **100/100** (5-fold stratified) | 90/100 (5-fold) | **+10 points** |
@@ -217,15 +217,15 @@ The Cancer Alpha system utilizes a breakthrough **LightGBM with SMOTE** achievin
 | **⚖️ Regulatory Path** | 4% | 80/100 (SaMD mapped) | **100/100** (FDA approved) | **-20 points** |
 | **💡 Innovation** | 3% | **100/100** (Multiple) | 90/100 (Novel arch) | **+10 points** |
 
-**🏆 FINAL SCORE: Cancer Alpha leads with 91.8/100**
+**🏆 FINAL SCORE: Oncura leads with 91.8/100**
 
 </div>
 
-### **🎯 What Makes Cancer Alpha #1**
+### **🎦 What Makes Oncura #1**
 
 <div align="center">
 
-| **🏅 Category Champion** | **Cancer Alpha's Achievement** | **Competitive Edge** |
+| **🏅 Category Champion** | **Oncura's Achievement** | **Competitive Edge** |
 |:------------------------:|:------------------------------:|:--------------------:|
 | **🎯 Highest Accuracy** | **95.0% on real TCGA data** | First to break 95% barrier |
 | **🔬 Best Validation** | **Stratified 5-fold CV** | Gold standard methodology |
@@ -243,7 +243,7 @@ Accuracy vs. Production Readiness Matrix:
                     
     High Performance ↗️
         ┌─────────────────┐
-        │  Cancer Alpha   │ ← DOMINANT POSITION
+        │     Oncura      │ ← DOMINANT POSITION
         │ (95%, Complete) │   (Best of Both Worlds)
         ├─────────────────┤
         │ FoundationOne   │ ← Commercial Leader  
@@ -259,7 +259,7 @@ Accuracy vs. Production Readiness Matrix:
 
 <div align="center">
 
-| **Advantage Category** | **Cancer Alpha's Edge** | **Market Impact** |
+| **Advantage Category** | **Oncura's Edge** | **Market Impact** |
 |:----------------------:|:------------------------:|:-----------------:|
 | **🎯 Performance Breakthrough** | Only system >95% on real data | Sets new industry benchmark |
 | **💎 Data Integrity** | Zero synthetic contamination | Ethical AI leadership |
@@ -382,7 +382,7 @@ flowchart TD
     style H fill:#E3F2FD
 ```
 
-*System Architecture: End-to-end Cancer Alpha pipeline from real TCGA data ingestion through LightGBM SMOTE processing to clinical deployment, achieving 95.0% balanced accuracy with full explainability.*
+*System Architecture: End-to-end Oncura pipeline from real TCGA data ingestion through LightGBM SMOTE processing to clinical deployment, achieving 95.0% balanced accuracy with full explainability.*
 
 </div>
 
@@ -488,7 +488,7 @@ python setup.py && ./start_demo.sh
 
 ## 🚀 **Get Started**
 
-Cancer Alpha provides multiple ways to interact with the AI system:
+Oncura provides multiple ways to interact with the AI system:
 
 ### 🎯 **Option 1: Download Demo (Recommended)**
 The demo download above is perfect for first-time users and quick testing.
@@ -596,7 +596,7 @@ The full technology can be applied to:
 
 ### **Contact for Licensing**
 - **Email**: craig.stillwell@gmail.com
-- **Subject**: "Cancer Alpha Patent License Inquiry"
+- **Subject**: "Oncura Patent License Inquiry"
 - **Include**: Intended use case and organization details
 
 ## 🔒 **Legal Notices**
@@ -623,7 +623,7 @@ This demo is for illustration purposes only. It should not be used for actual me
 We welcome academic collaboration and research partnerships. For academic use and collaboration opportunities:
 
 - **Email**: craig.stillwell@gmail.com
-- **Subject**: "Cancer Alpha Academic Collaboration"
+- **Subject**: "Oncura Academic Collaboration"
 - **Include**: Research proposal and institutional affiliation
 
 ## 🛠️ **Technical Support**
@@ -653,7 +653,7 @@ We welcome academic collaboration and research partnerships. For academic use an
 
 ## 🏥 Clinical Deployment
 
-Cancer Alpha is designed for seamless integration into clinical and research environments.
+Oncura is designed for seamless integration into clinical and research environments.
 
 - **Hospital IT Ready**: Can be deployed by hospital IT teams using the provided guides.
 - **Scalable**: Docker and Kubernetes manifests are included for robust, scalable deployments.
@@ -695,9 +695,9 @@ For detailed instructions, see the [Master Installation Guide](docs/MASTER_INSTA
 If you use this work in your research, please cite:
 
 ```bibtex
-@article{cancer_alpha_2025,
-    title={Cancer Alpha: Multi-Modal AI for Precision Oncology},
-    author={Stillwell, R. Craig and Cancer Alpha Research Team},
+@article{oncura_2025,
+    title={Oncura: Multi-Modal AI for Precision Oncology},
+    author={Stillwell, R. Craig and Oncura Research Team},
     journal={bioRxiv},
     year={2025},
     doi={10.1101/2025.07.22.666135},

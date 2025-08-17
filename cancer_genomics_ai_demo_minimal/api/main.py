@@ -1,12 +1,12 @@
 #!/usr/bin/env python3
 """
-Production API for Cancer Alpha - LightGBM SMOTE System
+Production API for Oncura - LightGBM SMOTE System
 ======================================================
 
 FastAPI backend providing scalable access to the breakthrough LightGBM SMOTE model
 for cancer genomics classification with 95.0% balanced accuracy on real TCGA data.
 
-Author: Cancer Alpha Research Team
+Author: Oncura Research Team
 Date: August 2025
 Version: Production v1.0
 """

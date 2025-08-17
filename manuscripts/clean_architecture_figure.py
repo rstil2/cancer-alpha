@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Clean System Architecture Figure for Cancer Alpha
+Clean System Architecture Figure for Oncura
 Creates a professional, clean workflow diagram from scratch
 """
 
@@ -143,7 +143,7 @@ def create_clean_architecture_figure():
             fontsize=9, color='#333333', linespacing=1.4)
     
     # Add main title
-    ax.text(8, 7.5, 'Cancer Alpha: Production-Ready AI System Architecture', 
+    ax.text(8, 7.5, 'Oncura: Production-Ready AI System Architecture', 
             ha='center', va='center', fontsize=18, fontweight='bold',
             color='#1f4e79')
     

@@ -6,7 +6,7 @@ Multi-Modal Real TCGA Training Script
 This script trains models using ONLY the 254 real TCGA samples from the multi-modal
 dataset with 383 real mutations and 99 features. No synthetic data.
 
-Author: Cancer Alpha Research Team
+Author: Oncura Research Team
 Date: July 29, 2025
 """
 

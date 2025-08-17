@@ -1,4 +1,4 @@
-# Cancer Alpha - Minimal Demo Package
+# Oncura - Minimal Demo Package
 
 **⚡ Ultra-lightweight demo package that generates models on first run**
 
@@ -78,7 +78,7 @@ If you encounter issues:
 
 ## 🔗 Full System
 
-For the complete Cancer Alpha system with production models and real data validation:
+For the complete Oncura system with production models and real data validation:
 - Visit: https://github.com/stillwell/cancer-alpha
 - Accuracy: 95.33% on real clinical data
 - Features: 270 multi-modal genomic features

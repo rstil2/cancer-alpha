@@ -1,4 +1,4 @@
-# Cancer Alpha - Production-Ready Multi-Modal AI for Cancer Genomics
+# Oncura - Production-Ready Multi-Modal AI for Cancer Genomics
 
 **🧬 Complete Clinical AI Ecosystem - Tested, Validated, and Ready for Deployment**
 
@@ -7,9 +7,9 @@
 [![API Status](https://img.shields.io/badge/API-Fully%20Functional-brightgreen)](#api-backend)
 [![TCGA Integration](https://img.shields.io/badge/TCGA-Integrated-blue)](#real-data-integration)
 
-Cancer Alpha represents a breakthrough in clinical AI - not just another machine learning model, but a **complete production ecosystem** integrating multi-modal genomic data through our advanced transformer architecture (see Figure 1) for accurate, interpretable cancer predictions ready for deployment.
+Oncura represents a breakthrough in clinical AI - not just another machine learning model, but a **complete production ecosystem** integrating multi-modal genomic data through our advanced transformer architecture (see Figure 1) for accurate, interpretable cancer predictions ready for deployment.
 
-## 🎯 **What Makes Cancer Alpha Truly Special**
+## 🎯 **What Makes Oncura Truly Special**
 
 ### **🔬 Multi-Modal Transformer Innovation**
 - **Novel Architecture**: First-of-its-kind multi-modal transformer with cross-modal attention for genomic studies
@@ -115,7 +115,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 For questions, collaborations, or commercial licensing:
 - **Email**: craig.stillwell@gmail.com
-- **Project**: Cancer Alpha Genomics AI Classifier
+- **Project**: Oncura Genomics AI Classifier
 
 ---
 

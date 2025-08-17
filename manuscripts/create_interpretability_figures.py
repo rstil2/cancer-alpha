@@ -2,7 +2,7 @@
 """
 Create Enhanced SHAP Interpretability Figures
 Generate comprehensive model interpretability visualizations including SHAP summary plots,
-feature importance heatmaps, and individual force plots for Cancer Alpha manuscript.
+feature importance heatmaps, and individual force plots for Oncura manuscript.
 """
 
 import matplotlib.pyplot as plt
@@ -61,7 +61,7 @@ def create_shap_interpretability_figure():
 def create_shap_summary_plot(ax):
     """Create SHAP summary plot showing feature importance and impact direction"""
     
-    # Top features based on Cancer Alpha analysis
+    # Top features based on Oncura analysis
     features = ['TP53', 'Age at Diagnosis', 'PIK3CA', 'KRAS', 'Tumor Stage', 
                 'APC', 'EGFR', 'BRCA1', 'Total Mutations', 'PTEN',
                 'RB1', 'CDKN2A', 'VHL', 'ARID1A', 'CTNNB1']

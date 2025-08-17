@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Simple HTTP server to serve the Cancer Alpha demo package locally.
+Simple HTTP server to serve the Oncura demo package locally.
 Run this script and then access http://localhost:8000/cancer_genomics_ai_demo.zip
 """
 
@@ -26,7 +26,7 @@ def main():
     file_size = os.path.getsize(DEMO_FILE)
     file_size_mb = file_size / (1024 * 1024)
     
-    print("🌟 Cancer Alpha Demo Server")
+    print("🌟 Oncura Demo Server")
     print("=" * 40)
     print(f"📦 Demo package: {DEMO_FILE}")
     print(f"📊 File size: {file_size_mb:.1f}MB")

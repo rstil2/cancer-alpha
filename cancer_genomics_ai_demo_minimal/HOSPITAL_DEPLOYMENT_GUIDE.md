@@ -1,15 +1,15 @@
-# Cancer Alpha Hospital Deployment Guide
+# Oncura Hospital Deployment Guide
 ## Complete "Plug and Play" Integration for Healthcare Systems
 
 **Version:** 1.0.0  
 **Date:** August 2025  
-**Author:** Cancer Alpha Research Team  
+**Author:** Oncura Research Team  
 
 ---
 
 ## 🏥 Overview
 
-This guide provides step-by-step instructions for deploying Cancer Alpha as a fully integrated "plug and play" solution in hospital environments. The system provides 95.0% accuracy cancer genomics classification with seamless EHR integration, clinical workflow automation, and regulatory compliance.
+This guide provides step-by-step instructions for deploying Oncura as a fully integrated "plug and play" solution in hospital environments. The system provides 95.0% accuracy cancer genomics classification with seamless EHR integration, clinical workflow automation, and regulatory compliance.
 
 ### What's Included
 - **FHIR R4 Integration** - Seamless EHR connectivity
@@ -100,7 +100,7 @@ HOSPITAL_ID=main_hospital
 HOSPITAL_NAME="Main Medical Center"
 HOSPITAL_DOMAIN=mainmedical.com
 
-# Cancer Alpha API
+# Oncura API
 CANCER_ALPHA_API_KEY=your-production-api-key
 CANCER_ALPHA_BASE_URL=http://localhost:8000
 
@@ -159,7 +159,7 @@ LOG_LEVEL=INFO
 ### Epic Integration
 
 1. **Register Application with Epic**
-   - Contact Epic to register Cancer Alpha as a SMART on FHIR application
+   - Contact Epic to register Oncura as a SMART on FHIR application
    - Obtain client credentials and sandbox access
    - Configure redirect URIs and scopes
 
@@ -295,7 +295,7 @@ python test_ldap_auth.py --username testuser --password testpass
 GENOMIC_TEST_CODES = {
     "cancer_genomics_classification": {
         "cpt_code": "81445",
-        "description": "Cancer Alpha Genomic Classification",
+        "description": "Oncura Genomic Classification",
         "turnaround_time_hours": 2,
         "priority_levels": ["routine", "urgent", "stat"]
     }
@@ -307,7 +307,7 @@ NOTIFICATION_TEMPLATES = {
         "template": "order_received_template.html"
     },
     "results_available": {
-        "subject": "URGENT: Cancer Alpha Results Available - {patient_mrn}",
+        "subject": "URGENT: Oncura Results Available - {patient_mrn}",
         "template": "results_available_template.html"
     }
 }
@@ -734,7 +734,7 @@ grep "audit.*error" /var/log/cancer-alpha/audit.log
 
 | Service | Port | Protocol | Description |
 |---------|------|----------|-------------|
-| Cancer Alpha API | 8000 | HTTPS | Main prediction API |
+| Oncura API | 8000 | HTTPS | Main prediction API |
 | Clinical Workflow | 8001 | HTTPS | Workflow management |
 | Authentication | 8002 | HTTPS | User authentication |
 | FHIR Endpoint | 8003 | HTTPS | FHIR R4 interface |

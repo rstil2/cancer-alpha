@@ -1,14 +1,14 @@
-# Cancer Alpha: A Production-Ready AI System for Multi-Cancer Classification Achieving 95% Balanced Accuracy on Real TCGA Data
+# Oncura: A Production-Ready AI System for Multi-Cancer Classification Achieving 95% Balanced Accuracy on Real TCGA Data
 
 ## Abstract
 
 **Background**: Cancer classification remains a critical challenge in precision medicine, with traditional diagnostic methods often limited by subjectivity and time constraints. Machine learning approaches have shown promise for genomic data analysis, but many studies rely on synthetic data or fail to achieve clinically relevant performance thresholds.
 
-**Methods**: We developed Cancer Alpha, a production-ready artificial intelligence system for multi-cancer classification using authentic genomic and clinical data from The Cancer Genome Atlas (TCGA). Our approach employed LightGBM ensemble methods with Synthetic Minority Oversampling Technique (SMOTE) integration, processing 158 real patient samples across eight cancer types. The system incorporates 150 carefully selected features from 206 genomic and clinical variables through mutual information-based feature selection. We implemented rigorous 10-fold stratified cross-validation to ensure robust performance evaluation.
+**Methods**: We developed Oncura, a production-ready artificial intelligence system for multi-cancer classification using authentic genomic and clinical data from The Cancer Genome Atlas (TCGA). Our approach employed LightGBM ensemble methods with Synthetic Minority Oversampling Technique (SMOTE) integration, processing 158 real patient samples across eight cancer types. The system incorporates 150 carefully selected features from 206 genomic and clinical variables through mutual information-based feature selection. We implemented rigorous 10-fold stratified cross-validation to ensure robust performance evaluation.
 
-**Results**: Cancer Alpha achieved a breakthrough balanced accuracy of 95.0% ± 5.4% on real TCGA patient data, significantly exceeding previous benchmarks. The system demonstrated consistent performance across cancer types including breast cancer (BRCA), lung adenocarcinoma (LUAD), colorectal adenocarcinoma (COAD), prostate adenocarcinoma (PRAD), stomach adenocarcinoma (STAD), kidney renal clear cell carcinoma (KIRC), head and neck squamous cell carcinoma (HNSC), and liver hepatocellular carcinoma (LIHC). Individual model performance ranged from 91.9% to 95.0% balanced accuracy, with the champion LightGBM model achieving the highest performance.
+**Results**: Oncura achieved a breakthrough balanced accuracy of 95.0% ± 5.4% on real TCGA patient data, significantly exceeding previous benchmarks. The system demonstrated consistent performance across cancer types including breast cancer (BRCA), lung adenocarcinoma (LUAD), colorectal adenocarcinoma (COAD), prostate adenocarcinoma (PRAD), stomach adenocarcinoma (STAD), kidney renal clear cell carcinoma (KIRC), head and neck squamous cell carcinoma (HNSC), and liver hepatocellular carcinoma (LIHC). Individual model performance ranged from 91.9% to 95.0% balanced accuracy, with the champion LightGBM model achieving the highest performance.
 
-**Conclusions**: Cancer Alpha represents a significant advancement in AI-powered cancer classification, demonstrating both scientific rigor and clinical readiness. The system's production-ready architecture, combined with its exceptional performance on real patient data, positions it as a valuable tool for precision medicine and clinical decision support. Our comprehensive validation approach and deployment-ready infrastructure make Cancer Alpha suitable for immediate clinical implementation and further research applications.
+**Conclusions**: Oncura represents a significant advancement in AI-powered cancer classification, demonstrating both scientific rigor and clinical readiness. The system's production-ready architecture, combined with its exceptional performance on real patient data, positions it as a valuable tool for precision medicine and clinical decision support. Our comprehensive validation approach and deployment-ready infrastructure make Oncura suitable for immediate clinical implementation and further research applications.
 
 **Keywords**: cancer classification, machine learning, genomics, TCGA, precision medicine, artificial intelligence, clinical decision support
 
@@ -24,7 +24,7 @@ Machine learning approaches have shown considerable promise for cancer classific
 
 Recent advances in ensemble methods and class balancing techniques have opened new possibilities for improving classification performance on imbalanced genomic datasets (12). The Synthetic Minority Oversampling Technique (SMOTE) has proven particularly effective for addressing class imbalance in genomic applications, while gradient boosting methods like LightGBM have demonstrated superior performance on high-dimensional biological data (13,14). Despite these technical advances, few studies have achieved the combination of high accuracy, rigorous validation, and clinical readiness necessary for real-world deployment.
 
-The objective of this study was to develop and validate Cancer Alpha, a production-ready artificial intelligence system for multi-cancer classification that addresses the limitations of previous approaches through the use of authentic TCGA data, advanced ensemble methods, and comprehensive clinical validation. We hypothesized that a carefully engineered pipeline combining feature selection, class balancing, and ensemble methods could achieve clinically relevant accuracy (≥90%) on real patient data while maintaining the robustness and scalability required for clinical implementation.
+The objective of this study was to develop and validate Oncura, a production-ready artificial intelligence system for multi-cancer classification that addresses the limitations of previous approaches through the use of authentic TCGA data, advanced ensemble methods, and comprehensive clinical validation. We hypothesized that a carefully engineered pipeline combining feature selection, class balancing, and ensemble methods could achieve clinically relevant accuracy (≥90%) on real patient data while maintaining the robustness and scalability required for clinical implementation.
 
 ## 2. Methods
 
@@ -44,7 +44,7 @@ Feature selection employed mutual information-based ranking to identify the most
 
 ### 2.3 Machine Learning Pipeline
 
-The Cancer Alpha system employed a sophisticated machine learning pipeline designed for optimal performance on imbalanced genomic data. The core architecture consisted of:
+The Oncura system employed a sophisticated machine learning pipeline designed for optimal performance on imbalanced genomic data. The core architecture consisted of:
 
 **Preprocessing**: Missing values were imputed using K-Nearest Neighbors (KNN) imputation with k=5, chosen for its effectiveness with genomic data (20). Features were then scaled using RobustScaler to handle outliers common in genomic datasets (21).
 
@@ -66,7 +66,7 @@ External validation employed temporal splitting where possible, and we conducted
 
 ### 2.5 Production System Development
 
-Cancer Alpha was developed as a production-ready system with comprehensive infrastructure for clinical deployment. The system architecture included:
+Oncura was developed as a production-ready system with comprehensive infrastructure for clinical deployment. The system architecture included:
 
 **API Development**: A RESTful API built using FastAPI framework provided standardized endpoints for single and batch predictions (29). The API included comprehensive input validation, error handling, and response formatting optimized for clinical workflows.
 
@@ -100,7 +100,7 @@ The preprocessing pipeline effectively handled missing data (6.8% overall missin
 
 ### 3.3 Model Performance
 
-Cancer Alpha achieved exceptional performance across all evaluated metrics. The champion LightGBM model attained a balanced accuracy of 95.0% ± 5.4% through 10-fold stratified cross-validation, significantly exceeding our predefined clinical relevance threshold of 90% (p < 0.001).
+Oncura achieved exceptional performance across all evaluated metrics. The champion LightGBM model attained a balanced accuracy of 95.0% ± 5.4% through 10-fold stratified cross-validation, significantly exceeding our predefined clinical relevance threshold of 90% (p < 0.001).
 
 **Figure 1: Model Performance Comparison**
 
@@ -198,7 +198,7 @@ To estimate real-world clinical performance, we developed a Monte Carlo simulati
 | Challenging Clinical | 500 | 25% | 84.3% ± 7.1% | [80.5%, 88.1%] |
 | Multi-platform | 750 | 20% | 86.9% ± 6.4% | [83.4%, 90.4%] |
 
-Even under challenging clinical conditions with 25% missing data, Cancer Alpha maintains accuracy above 84%, well above clinically relevant thresholds.
+Even under challenging clinical conditions with 25% missing data, Oncura maintains accuracy above 84%, well above clinically relevant thresholds.
 
 #### 3.8.3 Independent Test Set Performance (Held-out TCGA Data)
 
@@ -218,7 +218,7 @@ We conducted extensive benchmarking against published cancer classification stud
 
 #### 3.8.1 Academic Research Benchmarking
 
-Comparison with published cancer classification studies revealed superior performance of Cancer Alpha across multiple evaluation metrics. Previous studies using TCGA data achieved balanced accuracies ranging from 76% to 88%, while Cancer Alpha achieved 95% accuracy.
+Comparison with published cancer classification studies revealed superior performance of Oncura across multiple evaluation metrics. Previous studies using TCGA data achieved balanced accuracies ranging from 76% to 88%, while Oncura achieved 95% accuracy.
 
 **Figure 4A: Academic Research Comparison**
 
@@ -226,7 +226,7 @@ Comparison with published cancer classification studies revealed superior perfor
 
 | Study | Data Source | Sample Size | Cancer Types | Method | Balanced Accuracy | F1-Score | Publication |
 |-------|-------------|-------------|--------------|--------|-------------------|----------|-----------|
-| Cancer Alpha | TCGA (Real) | 158 | 8 | LightGBM + SMOTE | 95.0% | 94.9% | This Study |
+| Oncura | TCGA (Real) | 158 | 8 | LightGBM + SMOTE | 95.0% | 94.9% | This Study |
 | Yuan et al. (2023) | TCGA + CPTAC | 4,127 | 12 | Transformer + Multi-omics | 89.2% | 88.7% | Nat Mach Intell |
 | Zhang et al. (2021) | TCGA | 3,586 | 14 | Deep Neural Network | 88.3% | 87.9% | Nat Med |
 | Cheerla & Gevaert (2019) | TCGA | 5,314 | 18 | DeepSurv + CNN | 86.1% | 85.4% | Bioinformatics |
@@ -237,13 +237,13 @@ Comparison with published cancer classification studies revealed superior perfor
 
 #### 3.8.2 Commercial Platform Benchmarking
 
-We also benchmarked Cancer Alpha against reported performance metrics from leading commercial diagnostic platforms, acknowledging that direct head-to-head comparisons are challenging due to proprietary datasets and different validation approaches.
+We also benchmarked Oncura against reported performance metrics from leading commercial diagnostic platforms, acknowledging that direct head-to-head comparisons are challenging due to proprietary datasets and different validation approaches.
 
 **Table 4: Commercial Platform Performance Comparison**
 
 | Platform | Company | Sample Types | Cancer Types | Reported Accuracy | Clinical Status |
 |----------|---------|--------------|--------------|-------------------|----------------|
-| Cancer Alpha | This Study | Genomic + Clinical | 8 | 95.0% | Research/Development |
+| Oncura | This Study | Genomic + Clinical | 8 | 95.0% | Research/Development |
 | FoundationOne CDx | Foundation Medicine | Tissue/Liquid Biopsy | 300+ variants | 94.6%* | FDA Approved |
 | TruSight Oncology 500 | Illumina | Tissue/Liquid Biopsy | 500+ genes | 92.8%* | FDA Approved |
 | Guardant360 | Guardant Health | Liquid Biopsy | 70+ genes | 90.1%* | FDA Approved |
@@ -254,7 +254,7 @@ We also benchmarked Cancer Alpha against reported performance metrics from leadi
 
 #### 3.8.3 Deep Learning and Transformer Model Comparison
 
-Recent advances in deep learning for genomics have produced sophisticated models including transformer architectures and multi-modal approaches. Cancer Alpha's performance compares favorably against these state-of-the-art methods:
+Recent advances in deep learning for genomics have produced sophisticated models including transformer architectures and multi-modal approaches. Oncura's performance compares favorably against these state-of-the-art methods:
 
 **Advanced Deep Learning Benchmarking:**
 - **Pan-Cancer BERT** (Poirion et al., 2021): 83.9% accuracy on 20 cancer types using transformer architecture with gene expression data
@@ -263,14 +263,14 @@ Recent advances in deep learning for genomics have produced sophisticated models
 
 #### 3.8.4 Performance Analysis and Methodological Advantages
 
-Cancer Alpha significantly outperforms all previous TCGA-based studies, achieving 95% accuracy compared to the next highest of 89.2% (Figure 4A). Despite using a focused dataset approach with 158 carefully curated samples, Cancer Alpha demonstrates superior performance efficiency compared to studies using thousands of samples (Figure 4B).
+Oncura significantly outperforms all previous TCGA-based studies, achieving 95% accuracy compared to the next highest of 89.2% (Figure 4A). Despite using a focused dataset approach with 158 carefully curated samples, Oncura demonstrates superior performance efficiency compared to studies using thousands of samples (Figure 4B).
 
 **Key Performance Differentiators:**
 1. **Data Quality Focus**: Our curated approach with complete, high-quality data outperforms larger datasets with missing information
 2. **Advanced Ensemble Methods**: LightGBM optimization for genomic data provides superior performance to traditional ML and deep learning approaches
 3. **Sophisticated Feature Engineering**: Integration of biological knowledge with mutation burden metrics captures complex genomic patterns
 4. **Rigorous Class Balancing**: SMOTE implementation addresses dataset imbalance more effectively than standard approaches
-5. **Production-Ready Architecture**: Unlike research prototypes, Cancer Alpha includes complete deployment infrastructure
+5. **Production-Ready Architecture**: Unlike research prototypes, Oncura includes complete deployment infrastructure
 
 **Comparative Advantages over Commercial Platforms:**
 - **Broader Cancer Coverage**: 8 major cancer types vs. focused gene panels
@@ -278,19 +278,19 @@ Cancer Alpha significantly outperforms all previous TCGA-based studies, achievin
 - **Transparent Methodology**: Open validation approach vs. proprietary commercial methods
 - **Cost-Effectiveness**: Streamlined feature set vs. comprehensive but expensive commercial panels
 
-The superior performance of Cancer Alpha can be attributed to several methodological advances that distinguish it from both academic research and commercial platforms: (1) carefully curated real patient data prioritizing quality over quantity, (2) advanced ensemble methods specifically optimized for genomic data characteristics, (3) sophisticated feature engineering incorporating established cancer biology, and (4) rigorous validation with transparent reporting of limitations and generalizability constraints.
+The superior performance of Oncura can be attributed to several methodological advances that distinguish it from both academic research and commercial platforms: (1) carefully curated real patient data prioritizing quality over quantity, (2) advanced ensemble methods specifically optimized for genomic data characteristics, (3) sophisticated feature engineering incorporating established cancer biology, and (4) rigorous validation with transparent reporting of limitations and generalizability constraints.
 
 ## 4. Discussion
 
 ### 4.1 Principal Findings
 
-This study presents Cancer Alpha, a production-ready artificial intelligence system that achieved 95% balanced accuracy for multi-cancer classification using real TCGA patient data. This performance significantly exceeds previous benchmarks and meets the clinical relevance threshold necessary for diagnostic support applications. The system's robust architecture, comprehensive validation, and production-ready deployment infrastructure represent a significant advancement toward clinical implementation of AI-powered cancer diagnosis.
+This study presents Oncura, a production-ready artificial intelligence system that achieved 95% balanced accuracy for multi-cancer classification using real TCGA patient data. This performance significantly exceeds previous benchmarks and meets the clinical relevance threshold necessary for diagnostic support applications. The system's robust architecture, comprehensive validation, and production-ready deployment infrastructure represent a significant advancement toward clinical implementation of AI-powered cancer diagnosis.
 
 The achievement of 95% accuracy on authentic patient data addresses a critical limitation of previous studies that often relied on synthetic data or achieved high performance only under controlled research conditions (38). Our comprehensive validation approach, including 10-fold stratified cross-validation and biological validation of feature importance, provides confidence in the system's generalizability and clinical utility.
 
 ### 4.2 Technical Innovation and Methodological Advances
 
-Several technical innovations contributed to Cancer Alpha's exceptional performance. The integration of SMOTE class balancing with gradient boosting methods effectively addressed the inherent imbalance in cancer genomics datasets while maintaining sample authenticity (39). This approach avoided the pitfalls of traditional oversampling methods that can introduce bias or synthetic artifacts.
+Several technical innovations contributed to Oncura's exceptional performance. The integration of SMOTE class balancing with gradient boosting methods effectively addressed the inherent imbalance in cancer genomics datasets while maintaining sample authenticity (39). This approach avoided the pitfalls of traditional oversampling methods that can introduce bias or synthetic artifacts.
 
 The feature engineering pipeline incorporating mutation burden metrics, variant type distributions, and biological pathway information captured complex genomic patterns beyond simple mutation presence/absence. This multi-dimensional approach to genomic feature representation enabled the model to learn nuanced patterns distinguishing cancer types based on their molecular characteristics (40).
 
@@ -298,17 +298,17 @@ The selection of LightGBM as the champion model proved optimal for high-dimensio
 
 ### 4.3 Clinical Implications and Translational Potential
 
-Cancer Alpha's clinical implications extend beyond diagnostic accuracy to encompass workflow integration and decision support capabilities. The system's rapid response time (<50ms per prediction) enables real-time integration into clinical workflows without disrupting physician decision-making processes. The comprehensive confidence scoring and feature importance reporting provide clinicians with interpretable results essential for clinical acceptance (42).
+Oncura's clinical implications extend beyond diagnostic accuracy to encompass workflow integration and decision support capabilities. The system's rapid response time (<50ms per prediction) enables real-time integration into clinical workflows without disrupting physician decision-making processes. The comprehensive confidence scoring and feature importance reporting provide clinicians with interpretable results essential for clinical acceptance (42).
 
-The production-ready architecture, including API endpoints, containerized deployment, and monitoring infrastructure, addresses practical barriers that have hindered clinical translation of previous research systems. The comprehensive system architecture demonstrates the end-to-end workflow from TCGA data input through preprocessing, feature selection, model training, production deployment, and clinical output generation (Figure 6). Healthcare organizations can deploy Cancer Alpha using standard IT infrastructure without requiring specialized machine learning expertise (43).
+The production-ready architecture, including API endpoints, containerized deployment, and monitoring infrastructure, addresses practical barriers that have hindered clinical translation of previous research systems. The comprehensive system architecture demonstrates the end-to-end workflow from TCGA data input through preprocessing, feature selection, model training, production deployment, and clinical output generation (Figure 6). Healthcare organizations can deploy Oncura using standard IT infrastructure without requiring specialized machine learning expertise (43).
 
 The system's potential applications span multiple clinical scenarios: (1) diagnostic support for challenging cases where traditional histopathology is inconclusive, (2) quality assurance for routine diagnoses, (3) screening applications for early detection programs, and (4) research applications for biomarker discovery and treatment selection (44).
 
 ### 4.4 Comparison with Current Clinical Practice
 
-Traditional cancer diagnosis relies primarily on histopathological examination, which, while highly effective, can be subjective and time-consuming. Inter-observer variability among pathologists ranges from 10-20% for common cancer types, with higher variability for rare or poorly differentiated tumors (45). Cancer Alpha's consistent 95% accuracy and objective, reproducible results could significantly reduce diagnostic uncertainty and improve patient outcomes.
+Traditional cancer diagnosis relies primarily on histopathological examination, which, while highly effective, can be subjective and time-consuming. Inter-observer variability among pathologists ranges from 10-20% for common cancer types, with higher variability for rare or poorly differentiated tumors (45). Oncura's consistent 95% accuracy and objective, reproducible results could significantly reduce diagnostic uncertainty and improve patient outcomes.
 
-The integration of genomic and clinical data in Cancer Alpha provides a more comprehensive diagnostic approach than histopathology alone. This multi-modal integration aligns with precision medicine principles and enables more personalized treatment selection based on molecular characteristics rather than morphological features alone (46).
+The integration of genomic and clinical data in Oncura provides a more comprehensive diagnostic approach than histopathology alone. This multi-modal integration aligns with precision medicine principles and enables more personalized treatment selection based on molecular characteristics rather than morphological features alone (46).
 
 ### 4.5 Limitations and Future Directions
 
@@ -320,7 +320,7 @@ The integration of genomic and clinical data in Cancer Alpha provides a more com
 
 While our rigorous cross-validation approach provides confidence in model performance within this constrained setting, we emphasize that larger, more diverse validation cohorts will be essential for establishing true clinical utility. The focused dataset approach, while enabling careful curation and quality control, inherently limits the statistical power for detecting subtle performance differences between cancer types and may not capture the full complexity of real-world clinical practice.
 
-To address this limitation, we have developed a comprehensive external validation strategy: (1) **CPTAC Validation**: We plan immediate validation using the Clinical Proteomic Tumor Analysis Consortium (CPTAC) datasets, which provide orthogonal proteomic and genomic data for several overlapping cancer types. (2) **ICGC Integration**: Collaboration with the International Cancer Genome Consortium (ICGC) will enable validation across diverse populations and sequencing platforms. (3) **Institutional Partnerships**: We are establishing partnerships with major cancer centers to validate Cancer Alpha on institutional datasets, including Mayo Clinic, MD Anderson, and Memorial Sloan Kettering cohorts. (4) **Prospective Clinical Trial**: A multi-center prospective validation study is planned for 2024, targeting enrollment of 500+ patients across participating institutions.
+To address this limitation, we have developed a comprehensive external validation strategy: (1) **CPTAC Validation**: We plan immediate validation using the Clinical Proteomic Tumor Analysis Consortium (CPTAC) datasets, which provide orthogonal proteomic and genomic data for several overlapping cancer types. (2) **ICGC Integration**: Collaboration with the International Cancer Genome Consortium (ICGC) will enable validation across diverse populations and sequencing platforms. (3) **Institutional Partnerships**: We are establishing partnerships with major cancer centers to validate Oncura on institutional datasets, including Mayo Clinic, MD Anderson, and Memorial Sloan Kettering cohorts. (4) **Prospective Clinical Trial**: A multi-center prospective validation study is planned for 2024, targeting enrollment of 500+ patients across participating institutions.
 
 #### 4.5.2 SMOTE Methodology and Overfitting Risk Assessment
 
@@ -352,19 +352,19 @@ Future development should incorporate additional data modalities including histo
 
 #### 4.6.1 FDA Software as Medical Device (SaMD) Pathway
 
-Cancer Alpha's regulatory strategy follows the FDA's Software as Medical Device (SaMD) framework, specifically targeting Class II medical device classification as a diagnostic support tool. Our comprehensive regulatory roadmap includes:
+Oncura's regulatory strategy follows the FDA's Software as Medical Device (SaMD) framework, specifically targeting Class II medical device classification as a diagnostic support tool. Our comprehensive regulatory roadmap includes:
 
 **Pre-Submission Strategy**: We have initiated FDA Pre-Submission meetings (Q-Sub) to establish regulatory expectations and validation requirements. Key discussion points include: (1) **Clinical Validation Requirements**: FDA guidance on appropriate clinical validation study design, including required sample sizes and performance benchmarks. (2) **Predicate Device Identification**: Comparison with existing cleared diagnostic support software, including Foundation Medicine's FoundationOne CDx and Illumina's TruSight Oncology 500. (3) **Risk Classification**: Confirmation of Class II device classification with 510(k) clearance pathway rather than PMA requirements.
 
-**510(k) Clearance Pathway**: Cancer Alpha's regulatory strategy leverages substantial equivalence to existing cleared diagnostic software platforms. Key components include: (1) **Substantial Equivalence Documentation**: Detailed comparison with predicate devices demonstrating similar intended use, technological characteristics, and safety/effectiveness profiles. (2) **Clinical Performance Data**: Comprehensive validation studies demonstrating non-inferiority to existing diagnostic methods and clinical decision-making impact. (3) **Quality Management System**: ISO 13485-compliant quality management system covering design controls, risk management, and post-market surveillance.
+**510(k) Clearance Pathway**: Oncura's regulatory strategy leverages substantial equivalence to existing cleared diagnostic software platforms. Key components include: (1) **Substantial Equivalence Documentation**: Detailed comparison with predicate devices demonstrating similar intended use, technological characteristics, and safety/effectiveness profiles. (2) **Clinical Performance Data**: Comprehensive validation studies demonstrating non-inferiority to existing diagnostic methods and clinical decision-making impact. (3) **Quality Management System**: ISO 13485-compliant quality management system covering design controls, risk management, and post-market surveillance.
 
 #### 4.6.2 Clinical Trials and Validation Studies
 
 **Phase I Validation Study (Completed)**: The current manuscript represents completion of our analytical validation phase, demonstrating 95% accuracy on real TCGA data with comprehensive technical validation.
 
-**Phase II Clinical Utility Study (In Planning)**: A prospective, multi-center clinical utility study is planned for Q2 2024, designed to demonstrate clinical impact and workflow integration: (1) **Study Design**: Randomized controlled trial comparing diagnostic accuracy and time-to-diagnosis with and without Cancer Alpha support across 5 major cancer centers. (2) **Primary Endpoints**: Non-inferiority in diagnostic accuracy compared to standard-of-care pathology review, reduction in diagnostic turnaround time, and improvement in diagnostic confidence scores. (3) **Secondary Endpoints**: Impact on treatment selection, inter-observer agreement improvement, and healthcare cost analysis. (4) **Target Enrollment**: 1,200 patients across 8 cancer types with 6-month follow-up for treatment outcome assessment.
+**Phase II Clinical Utility Study (In Planning)**: A prospective, multi-center clinical utility study is planned for Q2 2024, designed to demonstrate clinical impact and workflow integration: (1) **Study Design**: Randomized controlled trial comparing diagnostic accuracy and time-to-diagnosis with and without Oncura support across 5 major cancer centers. (2) **Primary Endpoints**: Non-inferiority in diagnostic accuracy compared to standard-of-care pathology review, reduction in diagnostic turnaround time, and improvement in diagnostic confidence scores. (3) **Secondary Endpoints**: Impact on treatment selection, inter-observer agreement improvement, and healthcare cost analysis. (4) **Target Enrollment**: 1,200 patients across 8 cancer types with 6-month follow-up for treatment outcome assessment.
 
-**Phase III Real-World Evidence Study (Planned)**: Following FDA clearance, a large-scale real-world evidence study will assess long-term clinical outcomes: (1) **Registry Study**: Multi-institutional registry tracking patient outcomes when Cancer Alpha is used in routine clinical practice. (2) **Outcome Measures**: Overall survival, progression-free survival, treatment response rates, and healthcare utilization metrics. (3) **Population Health Impact**: Assessment of diagnostic accuracy improvements across diverse patient populations and healthcare settings.
+**Phase III Real-World Evidence Study (Planned)**: Following FDA clearance, a large-scale real-world evidence study will assess long-term clinical outcomes: (1) **Registry Study**: Multi-institutional registry tracking patient outcomes when Oncura is used in routine clinical practice. (2) **Outcome Measures**: Overall survival, progression-free survival, treatment response rates, and healthcare utilization metrics. (3) **Population Health Impact**: Assessment of diagnostic accuracy improvements across diverse patient populations and healthcare settings.
 
 #### 4.6.3 International Regulatory Strategy
 
@@ -391,13 +391,13 @@ Comprehensive implementation strategy addressing healthcare system integration c
 
 ## 5. Conclusions
 
-Cancer Alpha represents a significant advancement in AI-powered cancer classification, achieving 95% balanced accuracy on real TCGA patient data while providing a production-ready system suitable for clinical implementation. The system's combination of technical excellence, rigorous validation, and practical deployment infrastructure addresses longstanding barriers to clinical translation of cancer genomics research.
+Oncura represents a significant advancement in AI-powered cancer classification, achieving 95% balanced accuracy on real TCGA patient data while providing a production-ready system suitable for clinical implementation. The system's combination of technical excellence, rigorous validation, and practical deployment infrastructure addresses longstanding barriers to clinical translation of cancer genomics research.
 
-The achievement of clinically relevant accuracy using authentic patient data, combined with comprehensive interpretability and robust deployment architecture, positions Cancer Alpha as a valuable tool for precision medicine applications. The system's potential to improve diagnostic accuracy, reduce inter-observer variability, and accelerate diagnosis could significantly impact patient care and outcomes.
+The achievement of clinically relevant accuracy using authentic patient data, combined with comprehensive interpretability and robust deployment architecture, positions Oncura as a valuable tool for precision medicine applications. The system's potential to improve diagnostic accuracy, reduce inter-observer variability, and accelerate diagnosis could significantly impact patient care and outcomes.
 
-Future research should focus on expanding the system to additional cancer types, incorporating multi-modal data sources, and conducting prospective clinical validation studies. The continued evolution of Cancer Alpha and similar systems represents an important step toward realizing the full potential of artificial intelligence in precision oncology.
+Future research should focus on expanding the system to additional cancer types, incorporating multi-modal data sources, and conducting prospective clinical validation studies. The continued evolution of Oncura and similar systems represents an important step toward realizing the full potential of artificial intelligence in precision oncology.
 
-The success of Cancer Alpha demonstrates that with careful methodology, rigorous validation, and attention to clinical implementation requirements, AI systems can achieve the performance and reliability necessary for real-world healthcare applications. This work provides a roadmap for future development of clinical AI systems and highlights the importance of bridging the gap between research innovation and clinical implementation.
+The success of Oncura demonstrates that with careful methodology, rigorous validation, and attention to clinical implementation requirements, AI systems can achieve the performance and reliability necessary for real-world healthcare applications. This work provides a roadmap for future development of clinical AI systems and highlights the importance of bridging the gap between research innovation and clinical implementation.
 
 ## Acknowledgments
 
@@ -413,7 +413,7 @@ To ensure full transparency and reproducibility, all supplementary materials are
 
 ### Code Availability
 
-- **Complete Source Code**: The full source code for Cancer Alpha, including data preprocessing, model training, evaluation scripts, and production deployment infrastructure, is available at:
+- **Complete Source Code**: The full source code for Oncura, including data preprocessing, model training, evaluation scripts, and production deployment infrastructure, is available at:
   - **GitHub Repository**: [https://github.com/cancer-alpha/cancer-alpha-main](https://github.com/cancer-alpha/cancer-alpha-main)
 
 ### Data Availability

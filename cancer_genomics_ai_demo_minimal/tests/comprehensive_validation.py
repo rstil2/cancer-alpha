@@ -6,7 +6,7 @@ Comprehensive Validation Test Suite for Cancer Genomics AI Classifier
 This test suite validates the robustness and reliability of the transformer model
 across various edge cases and scenarios.
 
-Author: Cancer Alpha Research Team
+Author: Oncura Research Team
 Date: July 28, 2025
 """
 

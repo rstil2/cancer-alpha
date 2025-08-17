@@ -4,7 +4,7 @@ This file provides guidance to WARP (warp.dev) when working with code in this re
 
 ## Project Overview
 
-Cancer Alpha is a breakthrough AI system for precision oncology, achieving 95.0% balanced accuracy on real TCGA cancer genomics data. The project combines advanced machine learning with multi-modal genomic data processing to deliver production-ready cancer classification capabilities.
+Oncura is a breakthrough AI system for precision oncology, achieving 95.0% balanced accuracy on real TCGA cancer genomics data. The project combines advanced machine learning with multi-modal genomic data processing to deliver production-ready cancer classification capabilities.
 
 ### Core Architecture
 

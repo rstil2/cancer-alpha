@@ -6,7 +6,7 @@ TCGA Real Data Integration Module
 This module handles the integration of real TCGA (The Cancer Genome Atlas) data
 for validation and improvement of the cancer genomics classifier.
 
-Author: Cancer Alpha Research Team
+Author: Oncura Research Team
 Date: July 28, 2025
 """
 

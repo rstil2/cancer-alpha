@@ -1,6 +1,6 @@
 # Demo Usage Guide
 
-This guide explains how to use the Cancer Alpha interactive demo for cancer genomics classification.
+This guide explains how to use the Oncura interactive demo for cancer genomics classification.
 
 ## Getting Started
 
@@ -14,7 +14,7 @@ This guide explains how to use the Cancer Alpha interactive demo for cancer geno
 
 ### Accessing the Interface
 - Open your browser to http://localhost:8501
-- The Streamlit interface will load with the Cancer Alpha demo
+- The Streamlit interface will load with the Oncura demo
 
 ## Using the Demo
 

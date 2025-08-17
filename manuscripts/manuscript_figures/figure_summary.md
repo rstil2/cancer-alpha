@@ -1,7 +1,7 @@
-# Cancer Alpha Manuscript Figures Summary
+# Oncura Manuscript Figures Summary
 
 ## Overview
-This document describes the comprehensive figures generated for the Cancer Alpha manuscript, demonstrating the system's breakthrough 95% balanced accuracy on real TCGA patient data.
+This document describes the comprehensive figures generated for the Oncura manuscript, demonstrating the system's breakthrough 95% balanced accuracy on real TCGA patient data.
 
 ## Figure 1: Model Performance Comparison
 - **Panel A**: Balanced accuracy comparison across 6 different algorithms with error bars (10-fold CV)
@@ -22,7 +22,7 @@ This document describes the comprehensive figures generated for the Cancer Alpha
 ## Figure 4: Comparison with Published Methods
 - **Panel A**: Performance comparison with 4 recent TCGA studies
 - **Panel B**: Sample size vs accuracy scatter plot
-- **Key Finding**: Cancer Alpha achieves highest accuracy (95.0%) with focused dataset approach
+- **Key Finding**: Oncura achieves highest accuracy (95.0%) with focused dataset approach
 
 ## Figure 5: Confusion Matrix and ROC Analysis
 - **Panel A**: 8×8 confusion matrix showing classification accuracy across cancer types
@@ -34,7 +34,7 @@ This document describes the comprehensive figures generated for the Cancer Alpha
   - End-to-end workflow: Data Input → Preprocessing → Feature Selection → Model Training
   - Production deployment: Model Training → Production System → Output
   - Comprehensive details: Each stage includes 3 key components
-  - Performance metrics box: All key Cancer Alpha statistics
+  - Performance metrics box: All key Oncura statistics
   - Clean design: 6 main stages with logical arrow flow
   - Professional styling: Color-coded stages with rounded boxes
 
@@ -62,4 +62,4 @@ This document describes the comprehensive figures generated for the Cancer Alpha
 7. figure6_system_architecture.png/pdf
 8. figure_summary.md (this file)
 
-These figures provide comprehensive visual evidence supporting Cancer Alpha's breakthrough performance and clinical readiness as described in the manuscript.
+These figures provide comprehensive visual evidence supporting Oncura's breakthrough performance and clinical readiness as described in the manuscript.

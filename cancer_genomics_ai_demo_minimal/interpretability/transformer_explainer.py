@@ -6,7 +6,7 @@ Enhanced Model Interpretability for Multi-Modal Transformers
 This module provides advanced interpretability features specifically designed 
 for multi-modal transformer models in cancer genomics.
 
-Author: Cancer Alpha Research Team  
+Author: Oncura Research Team  
 Date: July 28, 2025
 """
 

@@ -28,7 +28,7 @@ plt.rcParams.update({
 })
 
 # Data from the manuscript
-systems = ['Cancer Alpha', 'FoundationOne CDx', 'Yuan et al. 2023', 
+systems = ['Oncura', 'FoundationOne CDx', 'Yuan et al. 2023', 
            'MSK-IMPACT', 'Cheerla & Gevaert', 'Zhang et al. 2021']
 
 composite_scores = [91.8, 86.2, 75.4, 74.8, 72.1, 66.3]
@@ -38,7 +38,7 @@ error_bars = [2.1, 2.5, 3.2, 3.0, 3.5, 3.8]
 
 # Domain scores for each system
 domain_data = {
-    'Cancer Alpha': [100.0, 100.0, 100.0, 75.4, 80.0, 100.0],
+    'Oncura': [100.0, 100.0, 100.0, 75.4, 80.0, 100.0],
     'FoundationOne CDx': [94.8, 95.0, 90.0, 52.5, 100.0, 85.0],
     'Yuan et al. 2023': [80.1, 90.0, 42.0, 85.0, 20.0, 90.0],
     'MSK-IMPACT': [82.2, 95.0, 85.0, 52.5, 90.0, 70.0],
@@ -53,16 +53,16 @@ def create_figure1():
     """Create Figure 1: Overall Performance Comparison"""
     fig, ax = plt.subplots(figsize=(12, 8))
     
-    # Create color scheme with Cancer Alpha highlighted
-    colors = ['#1f77b4' if sys == 'Cancer Alpha' else '#7f7f7f' for sys in systems]
-    colors[0] = '#d62728'  # Highlight Cancer Alpha in red
+    # Create color scheme with Oncura highlighted
+    colors = ['#1f77b4' if sys == 'Oncura' else '#7f7f7f' for sys in systems]
+    colors[0] = '#d62728'  # Highlight Oncura in red
     
     # Create bar chart
     bars = ax.bar(range(len(systems)), composite_scores, 
                   yerr=error_bars, capsize=5, color=colors, 
                   alpha=0.8, edgecolor='black', linewidth=1)
     
-    # Add significance stars above Cancer Alpha
+    # Add significance stars above Oncura
     ax.text(0, composite_scores[0] + error_bars[0] + 2, '***', 
             ha='center', va='bottom', fontsize=16, fontweight='bold')
     
@@ -70,7 +70,7 @@ def create_figure1():
     ax.set_xlabel('Cancer AI Systems', fontweight='bold')
     ax.set_ylabel('Composite Score (0-100)', fontweight='bold')
     ax.set_title('Figure 1: Comprehensive Cancer AI System Performance Comparison\n' + 
-                 'Cancer Alpha Demonstrates Superior Performance Across All Metrics',
+                 'Oncura Demonstrates Superior Performance Across All Metrics',
                  fontweight='bold', pad=20)
     
     # Set x-axis labels with rotation
@@ -93,7 +93,7 @@ def create_figure1():
     ax.grid(True, alpha=0.3, axis='y')
     
     # Add statistical note
-    ax.text(0.02, 0.98, 'Statistical Analysis: F(5,54) = 15.2, p < 0.001\n*** Cancer Alpha vs. all others: p < 0.05',
+    ax.text(0.02, 0.98, 'Statistical Analysis: F(5,54) = 15.2, p < 0.001\n*** Oncura vs. all others: p < 0.05',
             transform=ax.transAxes, ha='left', va='top',
             bbox=dict(boxstyle='round', facecolor='lightgray', alpha=0.8),
             fontsize=9)
@@ -123,7 +123,7 @@ def create_figure2():
     for i, (system, color, style) in enumerate(zip(systems, colors, line_styles)):
         values = domain_data[system] + [domain_data[system][0]]  # Complete the circle
         
-        if system == 'Cancer Alpha':
+        if system == 'Oncura':
             ax.plot(angles, values, 'o-', linewidth=3, label=system, 
                    color=color, markersize=8, linestyle=style)
             ax.fill(angles, values, alpha=0.1, color=color)
@@ -143,7 +143,7 @@ def create_figure2():
     
     # Add title
     plt.title('Figure 2: Domain-Specific Performance Analysis\n' +
-              'Cancer Alpha Excels Across All Clinical Deployment Dimensions',
+              'Oncura Excels Across All Clinical Deployment Dimensions',
               fontweight='bold', pad=30, fontsize=14)
     
     # Add legend
@@ -152,7 +152,7 @@ def create_figure2():
     # Add performance summary box
     summary_text = (
         "Key Performance Highlights:\n"
-        "• Cancer Alpha: Perfect scores in 3/6 domains\n"
+        "• Oncura: Perfect scores in 3/6 domains\n"
         "• Only system >90% in Performance & Clinical Readiness\n"
         "• Balanced excellence across all evaluation criteria"
     )

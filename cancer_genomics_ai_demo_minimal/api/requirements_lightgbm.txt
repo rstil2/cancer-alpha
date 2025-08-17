@@ -1,4 +1,4 @@
-# Cancer Alpha - LightGBM SMOTE API Production Requirements
+# Oncura - LightGBM SMOTE API Production Requirements
 # =========================================================
 
 # FastAPI and server

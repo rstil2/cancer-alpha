@@ -5,7 +5,7 @@ PROFESSIONAL ACADEMIC MANUSCRIPT FORMATTING INSTRUCTIONS
 When you open the document in LibreOffice Writer, apply these formatting changes:
 
 TITLE FORMATTING:
-1. Select the title: "Cancer Alpha: A Production-Ready AI System..."
+1. Select the title: "Oncura: A Production-Ready AI System..."
 2. Format → Character → Font: Times New Roman, Size: 16pt, Bold
 3. Format → Paragraph → Alignment: Center
 4. Add space after: 12pt

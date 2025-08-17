@@ -8,7 +8,7 @@ This script orchestrates the complete pipeline:
 2. Multi-modal data processing
 3. Model training on integrated data
 
-Author: Cancer Alpha Research Team
+Author: Oncura Research Team
 Date: July 28, 2025
 """
 

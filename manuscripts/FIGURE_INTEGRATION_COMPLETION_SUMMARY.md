@@ -9,15 +9,15 @@ The original manuscript stated "Figures: 2, Tables: 2" but contained neither emb
 ### 1. Publication-Quality Figures
 - **Figure 1**: `figure1_competitive_comparison.png/pdf`
   - Bar chart showing composite scores for all 6 cancer AI systems
-  - Cancer Alpha leads with 91.8/100, significantly exceeding all competitors (p < 0.05)
+  - Oncura leads with 91.8/100, significantly exceeding all competitors (p < 0.05)
   - Includes statistical significance indicators and clinical excellence threshold
   - Professional styling with error bars and publication-quality formatting
 
 - **Figure 2**: `figure2_domain_analysis.png/pdf`
   - Radar/spider chart showing domain-specific performance analysis
-  - Shows Cancer Alpha's superiority across all 6 evaluation domains
+  - Shows Oncura's superiority across all 6 evaluation domains
   - Highlights unique combination of research-grade performance with clinical readiness
-  - Cancer Alpha is the only system exceeding 90% in both Performance and Clinical Readiness
+  - Oncura is the only system exceeding 90% in both Performance and Clinical Readiness
 
 ### 2. Comprehensive Tables
 - **Table 1**: Comprehensive Cancer AI System Evaluation Results
@@ -61,7 +61,7 @@ The original manuscript stated "Figures: 2, Tables: 2" but contained neither emb
 
 ## Key Performance Highlights Visualized
 
-1. **Cancer Alpha's Market Leadership**
+1. **Oncura's Market Leadership**
    - Highest composite score: 91.8/100
    - Perfect scores in Performance, Data Quality, and Clinical Readiness domains
    - Only system achieving >95% balanced accuracy with complete interpretability

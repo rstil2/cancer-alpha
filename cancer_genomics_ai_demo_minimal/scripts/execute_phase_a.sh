@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Cancer Alpha Phase A: Real Data Integration
+# Oncura Phase A: Real Data Integration
 # Batch execution script with progress tracking
 
 set -e  # Exit on any error

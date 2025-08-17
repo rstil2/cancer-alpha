@@ -1,10 +1,10 @@
 #!/bin/bash
 
-# Cancer Alpha - React Web App Demo Information
+# Oncura - React Web App Demo Information
 # This is a demonstration version - full React app requires separate licensing
 # For production web application access, contact craig.stillwell@gmail.com
 
-echo "⚛️  Cancer Alpha - React Web App Demo Information"
+echo "⚛️  Oncura - React Web App Demo Information"
 echo "================================================"
 echo ""
 echo "⚠️  DEMO VERSION NOTICE:"
@@ -29,7 +29,7 @@ echo "  • Professional patient data management"
 echo ""
 echo "💼 Commercial Licensing:"
 echo "  • Email: craig.stillwell@gmail.com"
-echo "  • Subject: 'Cancer Alpha React App License Inquiry'"
+echo "  • Subject: 'Oncura React App License Inquiry'"
 echo "  • Include: Intended use case and organization details"
 echo ""
 echo "📖 Academic Use:"

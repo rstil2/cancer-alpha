@@ -1,6 +1,6 @@
-# Cancer Alpha Changelog
+# Oncura Changelog
 
-All notable changes to the Cancer Alpha project are documented in this file.
+All notable changes to the Oncura project are documented in this file.
 
 ## [Latest] - 2025-08-15
 

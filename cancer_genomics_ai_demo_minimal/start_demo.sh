@@ -3,7 +3,7 @@
 # Cancer Genomics AI Classifier - Production Demo
 # ==============================================
 
-echo "🧬 Cancer Alpha - Production Demo (95.0% Accuracy)"
+echo "🧬 Oncura - Production Demo (95.0% Accuracy)"
 echo "================================================" 
 echo ""
 
