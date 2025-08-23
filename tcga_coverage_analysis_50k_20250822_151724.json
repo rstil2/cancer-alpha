@@ -1,0 +1,981 @@
+{
+  "total_files": 61399,
+  "total_samples": 43631,
+  "multi_omics_samples": 2412,
+  "cancer_type_coverage": {
+    "TCGA-TGCT": {
+      "total_files": 1142,
+      "data_types": [
+        "mutations",
+        "protein",
+        "methylation",
+        "copy_number",
+        "expression"
+      ],
+      "data_type_counts": {
+        "mutations": 147,
+        "protein": 122,
+        "methylation": 156,
+        "copy_number": 561,
+        "expression": 156
+      }
+    },
+    "TCGA-GBM": {
+      "total_files": 3100,
+      "data_types": [
+        "mutations",
+        "protein",
+        "methylation",
+        "copy_number",
+        "expression"
+      ],
+      "data_type_counts": {
+        "mutations": 464,
+        "protein": 243,
+        "methylation": 450,
+        "copy_number": 1552,
+        "expression": 391
+      }
+    },
+    "TCGA-PCPG": {
+      "total_files": 1167,
+      "data_types": [
+        "mutations",
+        "protein",
+        "methylation",
+        "copy_number",
+        "expression"
+      ],
+      "data_type_counts": {
+        "mutations": 184,
+        "protein": 82,
+        "methylation": 187,
+        "copy_number": 527,
+        "expression": 187
+      }
+    },
+    "TCGA-UCS": {
+      "total_files": 379,
+      "data_types": [
+        "mutations",
+        "protein",
+        "methylation",
+        "copy_number",
+        "expression"
+      ],
+      "data_type_counts": {
+        "mutations": 57,
+        "protein": 48,
+        "methylation": 57,
+        "copy_number": 160,
+        "expression": 57
+      }
+    },
+    "TCGA-CHOL": {
+      "total_files": 304,
+      "data_types": [
+        "mutations",
+        "protein",
+        "methylation",
+        "copy_number",
+        "expression"
+      ],
+      "data_type_counts": {
+        "mutations": 51,
+        "protein": 30,
+        "methylation": 45,
+        "copy_number": 134,
+        "expression": 44
+      }
+    },
+    "TCGA-READ": {
+      "total_files": 1135,
+      "data_types": [
+        "mutations",
+        "protein",
+        "methylation",
+        "copy_number",
+        "expression"
+      ],
+      "data_type_counts": {
+        "mutations": 161,
+        "protein": 132,
+        "methylation": 179,
+        "copy_number": 486,
+        "expression": 177
+      }
+    },
+    "TCGA-HNSC": {
+      "total_files": 2354,
+      "data_types": [
+        "mutations",
+        "protein",
+        "methylation",
+        "copy_number",
+        "expression"
+      ],
+      "data_type_counts": {
+        "mutations": 500,
+        "protein": 354,
+        "methylation": 500,
+        "copy_number": 500,
+        "expression": 500
+      }
+    },
+    "TCGA-OV": {
+      "total_files": 3530,
+      "data_types": [
+        "mutations",
+        "protein",
+        "methylation",
+        "copy_number",
+        "expression"
+      ],
+      "data_type_counts": {
+        "mutations": 482,
+        "protein": 432,
+        "methylation": 623,
+        "copy_number": 1564,
+        "expression": 429
+      }
+    },
+    "TCGA-THYM": {
+      "total_files": 820,
+      "data_types": [
+        "mutations",
+        "protein",
+        "methylation",
+        "copy_number",
+        "expression"
+      ],
+      "data_type_counts": {
+        "mutations": 123,
+        "protein": 90,
+        "methylation": 126,
+        "copy_number": 359,
+        "expression": 122
+      }
+    },
+    "TCGA-DLBC": {
+      "total_files": 322,
+      "data_types": [
+        "mutations",
+        "protein",
+        "methylation",
+        "copy_number",
+        "expression"
+      ],
+      "data_type_counts": {
+        "mutations": 47,
+        "protein": 33,
+        "methylation": 48,
+        "copy_number": 146,
+        "expression": 48
+      }
+    },
+    "TCGA-SKCM": {
+      "total_files": 3051,
+      "data_types": [
+        "mutations",
+        "protein",
+        "methylation",
+        "copy_number",
+        "expression"
+      ],
+      "data_type_counts": {
+        "mutations": 472,
+        "protein": 352,
+        "methylation": 473,
+        "copy_number": 1285,
+        "expression": 469
+      }
+    },
+    "TCGA-KIRC": {
+      "total_files": 3993,
+      "data_types": [
+        "mutations",
+        "protein",
+        "methylation",
+        "copy_number",
+        "expression"
+      ],
+      "data_type_counts": {
+        "mutations": 412,
+        "protein": 478,
+        "methylation": 903,
+        "copy_number": 1586,
+        "expression": 614
+      }
+    },
+    "TCGA-LUSC": {
+      "total_files": 2328,
+      "data_types": [
+        "mutations",
+        "protein",
+        "methylation",
+        "copy_number",
+        "expression"
+      ],
+      "data_type_counts": {
+        "mutations": 500,
+        "protein": 328,
+        "methylation": 500,
+        "copy_number": 500,
+        "expression": 500
+      }
+    },
+    "TCGA-LUAD": {
+      "total_files": 2365,
+      "data_types": [
+        "mutations",
+        "protein",
+        "methylation",
+        "copy_number",
+        "expression"
+      ],
+      "data_type_counts": {
+        "mutations": 500,
+        "protein": 365,
+        "methylation": 500,
+        "copy_number": 500,
+        "expression": 500
+      }
+    },
+    "TCGA-CESC": {
+      "total_files": 1986,
+      "data_types": [
+        "mutations",
+        "protein",
+        "methylation",
+        "copy_number",
+        "expression"
+      ],
+      "data_type_counts": {
+        "mutations": 289,
+        "protein": 172,
+        "methylation": 312,
+        "copy_number": 904,
+        "expression": 309
+      }
+    },
+    "unknown": {
+      "total_files": 704,
+      "data_types": [
+        "unknown",
+        "mutations",
+        "methylation",
+        "expression",
+        "copy_number",
+        "clinical"
+      ],
+      "data_type_counts": {
+        "unknown": 7,
+        "mutations": 545,
+        "methylation": 31,
+        "expression": 60,
+        "copy_number": 30,
+        "clinical": 31
+      }
+    },
+    "TCGA-COAD": {
+      "total_files": 2320,
+      "data_types": [
+        "mutations",
+        "protein",
+        "methylation",
+        "copy_number",
+        "expression"
+      ],
+      "data_type_counts": {
+        "mutations": 457,
+        "protein": 363,
+        "methylation": 500,
+        "copy_number": 500,
+        "expression": 500
+      }
+    },
+    "TCGA-LIHC": {
+      "total_files": 1910,
+      "data_types": [
+        "mutations",
+        "protein",
+        "methylation",
+        "copy_number",
+        "expression"
+      ],
+      "data_type_counts": {
+        "mutations": 372,
+        "protein": 184,
+        "methylation": 430,
+        "copy_number": 500,
+        "expression": 424
+      }
+    },
+    "TCGA-LGG": {
+      "total_files": 2435,
+      "data_types": [
+        "mutations",
+        "protein",
+        "methylation",
+        "copy_number",
+        "expression"
+      ],
+      "data_type_counts": {
+        "mutations": 500,
+        "protein": 435,
+        "methylation": 500,
+        "copy_number": 500,
+        "expression": 500
+      }
+    },
+    "TCGA-UVM": {
+      "total_files": 528,
+      "data_types": [
+        "mutations",
+        "protein",
+        "methylation",
+        "copy_number",
+        "expression"
+      ],
+      "data_type_counts": {
+        "mutations": 80,
+        "protein": 12,
+        "methylation": 80,
+        "copy_number": 276,
+        "expression": 80
+      }
+    },
+    "TCGA-STAD": {
+      "total_files": 2209,
+      "data_types": [
+        "mutations",
+        "protein",
+        "methylation",
+        "copy_number",
+        "expression"
+      ],
+      "data_type_counts": {
+        "mutations": 434,
+        "protein": 357,
+        "methylation": 470,
+        "copy_number": 500,
+        "expression": 448
+      }
+    },
+    "TCGA-ACC": {
+      "total_files": 549,
+      "data_types": [
+        "mutations",
+        "protein",
+        "methylation",
+        "copy_number",
+        "expression"
+      ],
+      "data_type_counts": {
+        "mutations": 90,
+        "protein": 46,
+        "methylation": 80,
+        "copy_number": 254,
+        "expression": 79
+      }
+    },
+    "TCGA-SARC": {
+      "total_files": 1769,
+      "data_types": [
+        "mutations",
+        "protein",
+        "methylation",
+        "copy_number",
+        "expression"
+      ],
+      "data_type_counts": {
+        "mutations": 238,
+        "protein": 226,
+        "methylation": 269,
+        "copy_number": 771,
+        "expression": 265
+      }
+    },
+    "TCGA-LAML": {
+      "total_files": 1089,
+      "data_types": [
+        "mutations",
+        "methylation",
+        "copy_number",
+        "expression"
+      ],
+      "data_type_counts": {
+        "mutations": 153,
+        "methylation": 388,
+        "copy_number": 397,
+        "expression": 151
+      }
+    },
+    "TCGA-ESCA": {
+      "total_files": 1185,
+      "data_types": [
+        "mutations",
+        "protein",
+        "methylation",
+        "copy_number",
+        "expression"
+      ],
+      "data_type_counts": {
+        "mutations": 185,
+        "protein": 126,
+        "methylation": 202,
+        "copy_number": 475,
+        "expression": 197
+      }
+    },
+    "TCGA-PRAD": {
+      "total_files": 2352,
+      "data_types": [
+        "mutations",
+        "protein",
+        "methylation",
+        "copy_number",
+        "expression"
+      ],
+      "data_type_counts": {
+        "mutations": 500,
+        "protein": 352,
+        "methylation": 500,
+        "copy_number": 500,
+        "expression": 500
+      }
+    },
+    "TCGA-KIRP": {
+      "total_files": 2011,
+      "data_types": [
+        "mutations",
+        "protein",
+        "methylation",
+        "copy_number",
+        "expression"
+      ],
+      "data_type_counts": {
+        "mutations": 283,
+        "protein": 216,
+        "methylation": 342,
+        "copy_number": 847,
+        "expression": 323
+      }
+    },
+    "TCGA-THCA": {
+      "total_files": 2379,
+      "data_types": [
+        "mutations",
+        "protein",
+        "methylation",
+        "copy_number",
+        "expression"
+      ],
+      "data_type_counts": {
+        "mutations": 498,
+        "protein": 381,
+        "methylation": 500,
+        "copy_number": 500,
+        "expression": 500
+      }
+    },
+    "TCGA-KICH": {
+      "total_files": 552,
+      "data_types": [
+        "mutations",
+        "protein",
+        "methylation",
+        "copy_number",
+        "expression"
+      ],
+      "data_type_counts": {
+        "mutations": 66,
+        "protein": 63,
+        "methylation": 66,
+        "copy_number": 266,
+        "expression": 91
+      }
+    },
+    "TCGA-PAAD": {
+      "total_files": 1260,
+      "data_types": [
+        "mutations",
+        "protein",
+        "methylation",
+        "copy_number",
+        "expression"
+      ],
+      "data_type_counts": {
+        "mutations": 180,
+        "protein": 120,
+        "methylation": 195,
+        "copy_number": 583,
+        "expression": 182
+      }
+    },
+    "TCGA-BLCA": {
+      "total_files": 3276,
+      "data_types": [
+        "mutations",
+        "protein",
+        "methylation",
+        "copy_number",
+        "expression"
+      ],
+      "data_type_counts": {
+        "mutations": 415,
+        "protein": 343,
+        "methylation": 440,
+        "copy_number": 1647,
+        "expression": 431
+      }
+    },
+    "TCGA-UCEC": {
+      "total_files": 3833,
+      "data_types": [
+        "mutations",
+        "protein",
+        "methylation",
+        "copy_number",
+        "expression"
+      ],
+      "data_type_counts": {
+        "mutations": 519,
+        "protein": 440,
+        "methylation": 603,
+        "copy_number": 1682,
+        "expression": 589
+      }
+    },
+    "TCGA-MESO": {
+      "total_files": 562,
+      "data_types": [
+        "mutations",
+        "protein",
+        "methylation",
+        "copy_number",
+        "expression"
+      ],
+      "data_type_counts": {
+        "mutations": 80,
+        "protein": 62,
+        "methylation": 87,
+        "copy_number": 246,
+        "expression": 87
+      }
+    },
+    "TCGA-BRCA": {
+      "total_files": 2500,
+      "data_types": [
+        "mutations",
+        "protein",
+        "methylation",
+        "copy_number",
+        "expression"
+      ],
+      "data_type_counts": {
+        "mutations": 500,
+        "protein": 500,
+        "methylation": 500,
+        "copy_number": 500,
+        "expression": 500
+      }
+    }
+  },
+  "data_type_coverage": {
+    "methylation": {
+      "total_files": 11242,
+      "cancer_types": [
+        "TCGA-TGCT",
+        "TCGA-GBM",
+        "TCGA-PCPG",
+        "TCGA-UCS",
+        "TCGA-CHOL",
+        "TCGA-READ",
+        "TCGA-HNSC",
+        "TCGA-OV",
+        "TCGA-THYM",
+        "TCGA-DLBC",
+        "TCGA-SKCM",
+        "TCGA-KIRC",
+        "TCGA-LUSC",
+        "TCGA-LUAD",
+        "TCGA-CESC",
+        "unknown",
+        "TCGA-COAD",
+        "TCGA-LIHC",
+        "TCGA-LGG",
+        "TCGA-UVM",
+        "TCGA-STAD",
+        "TCGA-ACC",
+        "TCGA-SARC",
+        "TCGA-LAML",
+        "TCGA-ESCA",
+        "TCGA-PRAD",
+        "TCGA-KIRP",
+        "TCGA-THCA",
+        "TCGA-KICH",
+        "TCGA-PAAD",
+        "TCGA-BLCA",
+        "TCGA-UCEC",
+        "TCGA-MESO",
+        "TCGA-BRCA"
+      ],
+      "cancer_count": 34
+    },
+    "protein": {
+      "total_files": 7487,
+      "cancer_types": [
+        "TCGA-TGCT",
+        "TCGA-GBM",
+        "TCGA-PCPG",
+        "TCGA-UCS",
+        "TCGA-CHOL",
+        "TCGA-READ",
+        "TCGA-HNSC",
+        "TCGA-OV",
+        "TCGA-THYM",
+        "TCGA-DLBC",
+        "TCGA-SKCM",
+        "TCGA-KIRC",
+        "TCGA-LUSC",
+        "TCGA-LUAD",
+        "TCGA-CESC",
+        "TCGA-COAD",
+        "TCGA-LIHC",
+        "TCGA-LGG",
+        "TCGA-UVM",
+        "TCGA-STAD",
+        "TCGA-ACC",
+        "TCGA-SARC",
+        "TCGA-ESCA",
+        "TCGA-PRAD",
+        "TCGA-KIRP",
+        "TCGA-THCA",
+        "TCGA-KICH",
+        "TCGA-PAAD",
+        "TCGA-BLCA",
+        "TCGA-UCEC",
+        "TCGA-MESO",
+        "TCGA-BRCA"
+      ],
+      "cancer_count": 32
+    },
+    "unknown": {
+      "total_files": 7,
+      "cancer_types": [
+        "unknown"
+      ],
+      "cancer_count": 1
+    },
+    "clinical": {
+      "total_files": 31,
+      "cancer_types": [
+        "unknown"
+      ],
+      "cancer_count": 1
+    },
+    "mutations": {
+      "total_files": 10484,
+      "cancer_types": [
+        "TCGA-TGCT",
+        "TCGA-GBM",
+        "TCGA-PCPG",
+        "TCGA-UCS",
+        "TCGA-CHOL",
+        "TCGA-READ",
+        "TCGA-HNSC",
+        "TCGA-OV",
+        "TCGA-THYM",
+        "TCGA-DLBC",
+        "TCGA-SKCM",
+        "TCGA-KIRC",
+        "TCGA-LUSC",
+        "TCGA-LUAD",
+        "TCGA-CESC",
+        "unknown",
+        "TCGA-COAD",
+        "TCGA-LIHC",
+        "TCGA-LGG",
+        "TCGA-UVM",
+        "TCGA-STAD",
+        "TCGA-ACC",
+        "TCGA-SARC",
+        "TCGA-LAML",
+        "TCGA-ESCA",
+        "TCGA-PRAD",
+        "TCGA-KIRP",
+        "TCGA-THCA",
+        "TCGA-KICH",
+        "TCGA-PAAD",
+        "TCGA-BLCA",
+        "TCGA-UCEC",
+        "TCGA-MESO",
+        "TCGA-BRCA"
+      ],
+      "cancer_count": 34
+    },
+    "expression": {
+      "total_files": 10410,
+      "cancer_types": [
+        "TCGA-TGCT",
+        "TCGA-GBM",
+        "TCGA-PCPG",
+        "TCGA-UCS",
+        "TCGA-CHOL",
+        "TCGA-READ",
+        "TCGA-HNSC",
+        "TCGA-OV",
+        "TCGA-THYM",
+        "TCGA-DLBC",
+        "TCGA-SKCM",
+        "TCGA-KIRC",
+        "TCGA-LUSC",
+        "TCGA-LUAD",
+        "TCGA-CESC",
+        "unknown",
+        "TCGA-COAD",
+        "TCGA-LIHC",
+        "TCGA-LGG",
+        "TCGA-UVM",
+        "TCGA-STAD",
+        "TCGA-ACC",
+        "TCGA-SARC",
+        "TCGA-LAML",
+        "TCGA-ESCA",
+        "TCGA-PRAD",
+        "TCGA-KIRP",
+        "TCGA-THCA",
+        "TCGA-KICH",
+        "TCGA-PAAD",
+        "TCGA-BLCA",
+        "TCGA-UCEC",
+        "TCGA-MESO",
+        "TCGA-BRCA"
+      ],
+      "cancer_count": 34
+    },
+    "copy_number": {
+      "total_files": 21738,
+      "cancer_types": [
+        "TCGA-TGCT",
+        "TCGA-GBM",
+        "TCGA-PCPG",
+        "TCGA-UCS",
+        "TCGA-CHOL",
+        "TCGA-READ",
+        "TCGA-HNSC",
+        "TCGA-OV",
+        "TCGA-THYM",
+        "TCGA-DLBC",
+        "TCGA-SKCM",
+        "TCGA-KIRC",
+        "TCGA-LUSC",
+        "TCGA-LUAD",
+        "TCGA-CESC",
+        "unknown",
+        "TCGA-COAD",
+        "TCGA-LIHC",
+        "TCGA-LGG",
+        "TCGA-UVM",
+        "TCGA-STAD",
+        "TCGA-ACC",
+        "TCGA-SARC",
+        "TCGA-LAML",
+        "TCGA-ESCA",
+        "TCGA-PRAD",
+        "TCGA-KIRP",
+        "TCGA-THCA",
+        "TCGA-KICH",
+        "TCGA-PAAD",
+        "TCGA-BLCA",
+        "TCGA-UCEC",
+        "TCGA-MESO",
+        "TCGA-BRCA"
+      ],
+      "cancer_count": 34
+    }
+  },
+  "gaps_analysis": {
+    "missing_cancer_types": [],
+    "missing_count": 0,
+    "low_coverage_types": [],
+    "data_type_gaps": {
+      "TCGA-LAML": [
+        "protein",
+        "miRNA",
+        "clinical"
+      ],
+      "TCGA-ACC": [
+        "clinical",
+        "miRNA"
+      ],
+      "TCGA-BLCA": [
+        "clinical",
+        "miRNA"
+      ],
+      "TCGA-LGG": [
+        "clinical",
+        "miRNA"
+      ],
+      "TCGA-BRCA": [
+        "clinical",
+        "miRNA"
+      ],
+      "TCGA-CESC": [
+        "clinical",
+        "miRNA"
+      ],
+      "TCGA-CHOL": [
+        "clinical",
+        "miRNA"
+      ],
+      "TCGA-COAD": [
+        "clinical",
+        "miRNA"
+      ],
+      "TCGA-DLBC": [
+        "clinical",
+        "miRNA"
+      ],
+      "TCGA-ESCA": [
+        "clinical",
+        "miRNA"
+      ],
+      "TCGA-GBM": [
+        "clinical",
+        "miRNA"
+      ],
+      "TCGA-HNSC": [
+        "clinical",
+        "miRNA"
+      ],
+      "TCGA-KICH": [
+        "clinical",
+        "miRNA"
+      ],
+      "TCGA-KIRC": [
+        "clinical",
+        "miRNA"
+      ],
+      "TCGA-KIRP": [
+        "clinical",
+        "miRNA"
+      ],
+      "TCGA-LIHC": [
+        "clinical",
+        "miRNA"
+      ],
+      "TCGA-LUAD": [
+        "clinical",
+        "miRNA"
+      ],
+      "TCGA-LUSC": [
+        "clinical",
+        "miRNA"
+      ],
+      "TCGA-MESO": [
+        "clinical",
+        "miRNA"
+      ],
+      "TCGA-OV": [
+        "clinical",
+        "miRNA"
+      ],
+      "TCGA-PAAD": [
+        "clinical",
+        "miRNA"
+      ],
+      "TCGA-PCPG": [
+        "clinical",
+        "miRNA"
+      ],
+      "TCGA-PRAD": [
+        "clinical",
+        "miRNA"
+      ],
+      "TCGA-READ": [
+        "clinical",
+        "miRNA"
+      ],
+      "TCGA-SARC": [
+        "clinical",
+        "miRNA"
+      ],
+      "TCGA-SKCM": [
+        "clinical",
+        "miRNA"
+      ],
+      "TCGA-STAD": [
+        "clinical",
+        "miRNA"
+      ],
+      "TCGA-TGCT": [
+        "clinical",
+        "miRNA"
+      ],
+      "TCGA-THCA": [
+        "clinical",
+        "miRNA"
+      ],
+      "TCGA-THYM": [
+        "clinical",
+        "miRNA"
+      ],
+      "TCGA-UCEC": [
+        "clinical",
+        "miRNA"
+      ],
+      "TCGA-UCS": [
+        "clinical",
+        "miRNA"
+      ],
+      "TCGA-UVM": [
+        "clinical",
+        "miRNA"
+      ]
+    }
+  },
+  "scaling_recommendations": {
+    "current_samples": 43631,
+    "target_samples": 50000,
+    "scaling_factor": 1.1459741926611813,
+    "priority_actions": [
+      {
+        "priority": 3,
+        "action": "Add missing data types to existing cancers",
+        "targets": [
+          "TCGA-LAML",
+          "TCGA-ACC",
+          "TCGA-BLCA",
+          "TCGA-LGG",
+          "TCGA-BRCA",
+          "TCGA-CESC",
+          "TCGA-CHOL",
+          "TCGA-COAD",
+          "TCGA-DLBC",
+          "TCGA-ESCA"
+        ],
+        "expected_samples": 2000
+      },
+      {
+        "priority": 4,
+        "action": "Expand high-yield data types globally",
+        "targets": [
+          "expression",
+          "mutations",
+          "copy_number",
+          "methylation"
+        ],
+        "expected_samples": 20000
+      }
+    ],
+    "estimated_download_requirements": {
+      "additional_samples_needed": 6369,
+      "additional_files_needed": 8962,
+      "estimated_download_size_gb": 437.59765625,
+      "estimated_download_time_hours": 89.62,
+      "priority_cancer_types": []
+    }
+  }
+}

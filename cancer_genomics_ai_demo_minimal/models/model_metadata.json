@@ -1,23 +1,37 @@
 {
-  "model_date": "2025-08-10",
-  "optimization": "Grid Search + Feature Selection",
+  "model_date": "2025-08-22",
+  "optimization": "Multi-Omics TCGA + SMOTE Integration",
+  "champion_model": "LightGBM",
   "accuracies": {
-    "logistic_regression": "99.1%",
-    "random_forest": "100.0%"
+    "lightgbm": "44.9%",
+    "xgboost": "44.7%", 
+    "random_forest": "42.0%",
+    "gradient_boosting": "43.1%",
+    "logistic_regression": "39.9%"
+  },
+  "cross_validation": {
+    "lightgbm_cv_mean": "42.4%",
+    "lightgbm_cv_std": "1.0%",
+    "auc": "85.5%"
   },
   "cancer_types": [
     "BRCA",
-    "LUAD",
+    "LUAD", 
     "COAD",
     "PRAD",
     "STAD",
     "KIRC",
     "HNSC",
-    "LIHC"
+    "LIHC",
+    "THCA",
+    "LGG"
   ],
   "features": {
-    "total": 110,
-    "selected_for_lr": 80
+    "total": 16506,
+    "selected_for_training": 1000,
+    "feature_types": ["mutations", "copy_number", "protein", "interaction_features"]
   },
-  "training_samples": 3000
+  "training_samples": 8000,
+  "data_source": "Real TCGA genomics data",
+  "patent": "Provisional Application No. 63/847,316"
 }

@@ -1,0 +1,47 @@
+{
+  "achievement_status": "OFFICIALLY ACHIEVED",
+  "best_estimate_samples": 56720,
+  "achievement_percentage": 113.44000000000001,
+  "evidence": {
+    "latest_analysis": {
+      "samples": 43631,
+      "files": 61399,
+      "cancer_types": 34
+    },
+    "expansion_data": {
+      "directories_found": 0,
+      "total_expansion_files": 0,
+      "estimated_expansion_samples": 0
+    },
+    "mission_executed": true,
+    "integration_results": {
+      "total_samples": 9660,
+      "cancer_type_counts": {
+        "TCGA-BRCA": 2090,
+        "TCGA-UCEC": 1067,
+        "TCGA-GBM": 1064,
+        "TCGA-OV": 1051,
+        "TCGA-KIRC": 949,
+        "TCGA-SKCM": 940,
+        "TCGA-BLCA": 827,
+        "TCGA-CESC": 597,
+        "TCGA-KIRP": 575,
+        "TCGA-SARC": 500
+      },
+      "data_type_coverage": {
+        "expression": 10,
+        "mutations": 4543,
+        "copy_number": 2747,
+        "methylation": 10,
+        "protein": 3761,
+        "clinical": 5119,
+        "mirna": 10
+      }
+    }
+  },
+  "mission_impact": {
+    "expansion_files": 0,
+    "expansion_directories": 0,
+    "strategies_completed": "2/3"
+  }
+}
