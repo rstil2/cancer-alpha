@@ -1,0 +1,33 @@
+theme: jekyll-theme-cayman
+
+title: "Oncura"
+description: "Next-Generation AI for Precision Oncology — 95.0% Accuracy on Real TCGA Clinical Data"
+url: "https://rstil2.github.io"
+baseurl: "/cancer-alpha"
+
+# Exclude non-web files from the Jekyll build
+exclude:
+  - "*.py"
+  - "*.sh"
+  - "*.bat"
+  - "*.zip"
+  - "*.pkl"
+  - "*.json"
+  - "*.docx"
+  - "*.csv"
+  - "*.tsv"
+  - "*.joblib"
+  - models/
+  - cancer_genomics_ai_demo_minimal/
+  - scripts/
+  - src/
+  - data/
+  - notebooks/
+  - business/
+  - requirements.txt
+  - Dockerfile
+  - docker-compose.yml
+  - setup.py
+  - WARP.md
+  - Gemfile
+  - Gemfile.lock

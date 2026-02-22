@@ -1,0 +1,13 @@
+<script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    // Convert ```mermaid code blocks into mermaid-rendered diagrams
+    document.querySelectorAll('pre code.language-mermaid').forEach(function (codeEl) {
+      var container = document.createElement('div');
+      container.className = 'mermaid';
+      container.textContent = codeEl.textContent;
+      codeEl.parentNode.replaceWith(container);
+    });
+    mermaid.initialize({ startOnLoad: true, theme: 'default' });
+  });
+</script>
