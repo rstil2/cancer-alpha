@@ -1,4 +1,16 @@
-# Oncura: A Production-Ready AI System for Multi-Cancer Classification Achieving 95% Balanced Accuracy on Real TCGA Data
+# Oncura: A Production-Ready AI System for Multi-Cancer Classification Achieving 95.0% Balanced Accuracy on Real TCGA Data
+
+**R. Craig Stillwell***
+
+Department of Computer Science, Campbellsville University, Campbellsville, KY, USA
+
+*Corresponding Author: R. Craig Stillwell
+Email: craig.stillwell@gmail.com
+Department of Computer Science
+Campbellsville University
+Campbellsville, KY 42718, USA
+
+---
 
 ## Abstract
 
@@ -100,9 +112,10 @@ The preprocessing pipeline effectively handled missing data (6.8% overall missin
 
 ### 3.3 Model Performance
 
-Oncura achieved exceptional performance across all evaluated metrics. The champion LightGBM model attained a balanced accuracy of 95.0% ± 5.4% through 10-fold stratified cross-validation, significantly exceeding our predefined clinical relevance threshold of 90% (p < 0.001).
+Oncura achieved exceptional performance across all evaluated metrics. The champion LightGBM model attained a balanced accuracy of 95.0% ± 5.4% through 10-fold stratified cross-validation, significantly exceeding our predefined clinical relevance threshold of 90% (p < 0.001). Detailed model performance metrics are presented in Table 1 and Figure 1.
 
 **Figure 1: Model Performance Comparison**
+Comparison of balanced accuracy, precision, recall, and F1-score across six machine learning models evaluated in this study.
 
 **Table 1: Model Performance Comparison**
 
@@ -119,9 +132,10 @@ The gradient boosting and stacking ensemble models achieved comparable performan
 
 ### 3.4 Cancer Type-Specific Performance
 
-Analysis of cancer type-specific performance revealed consistent accuracy across all eight cancer types, with balanced accuracy ranging from 91.2% (STAD) to 97.8% (BRCA). No significant performance bias was observed toward any specific cancer type (ANOVA p = 0.23), indicating robust generalization capability.
+Analysis of cancer type-specific performance revealed consistent accuracy across all eight cancer types, with balanced accuracy ranging from 91.2% (STAD) to 97.8% (BRCA). No significant performance bias was observed toward any specific cancer type (ANOVA p = 0.23), indicating robust generalization capability. Performance metrics for each cancer type are presented in Table 2 and Figure 2.
 
 **Figure 2: Cancer Type-Specific Performance**
+Performance metrics across eight cancer types showing consistent accuracy above clinical threshold.
 
 **Table 2: Cancer Type-Specific Performance**
 
@@ -172,7 +186,7 @@ To address limitations of the 158-sample training set, we conducted comprehensiv
 
 #### 3.8.1 Bootstrap Validation Results
 
-We performed stratified bootstrap sampling with 1000 iterations to simulate performance on larger datasets. Each bootstrap sample maintained the original class distribution while allowing for replacement sampling to simulate population variability.
+We performed stratified bootstrap sampling with 1000 iterations to simulate performance on larger datasets. Each bootstrap sample maintained the original class distribution while allowing for replacement sampling to simulate population variability. Bootstrap validation results are presented in Table 3A.
 
 **Table 3A: Bootstrap Validation Performance (1000 iterations)**
 
@@ -187,7 +201,7 @@ Bootstrap validation demonstrates robust performance consistency, with 95% of bo
 
 #### 3.8.2 Simulated Clinical Population Performance
 
-To estimate real-world clinical performance, we developed a Monte Carlo simulation incorporating realistic clinical population characteristics: (1) **Missing Data Simulation**: 15-25% missing data rates typical of clinical settings, (2) **Population Heterogeneity**: Varied ethnic backgrounds and comorbidity profiles, (3) **Platform Variability**: Simulated sequencing platform differences, (4) **Temporal Drift**: Evolving diagnostic criteria over time.
+To estimate real-world clinical performance, we developed a Monte Carlo simulation incorporating realistic clinical population characteristics: (1) **Missing Data Simulation**: 15-25% missing data rates typical of clinical settings, (2) **Population Heterogeneity**: Varied ethnic backgrounds and comorbidity profiles, (3) **Platform Variability**: Simulated sequencing platform differences, (4) **Temporal Drift**: Evolving diagnostic criteria over time. Simulated clinical performance results are presented in Table 3B.
 
 **Table 3B: Simulated Clinical Performance**
 
@@ -216,11 +230,12 @@ While performance decreases on the independent test set compared to cross-valida
 
 We conducted extensive benchmarking against published cancer classification studies, including both academic research and commercial diagnostic platforms. This comparison encompasses traditional machine learning approaches, deep learning methods, and industry-leading diagnostic systems.
 
-#### 3.8.1 Academic Research Benchmarking
+#### 3.9.1 Academic Research Benchmarking
 
-Comparison with published cancer classification studies revealed superior performance of Oncura across multiple evaluation metrics. Previous studies using TCGA data achieved balanced accuracies ranging from 76% to 88%, while Oncura achieved 95% accuracy.
+Comparison with published cancer classification studies revealed superior performance of Oncura across multiple evaluation metrics. Previous studies using TCGA data achieved balanced accuracies ranging from 76% to 88%, while Oncura achieved 95% accuracy. Detailed academic research benchmarking results are presented in Table 3 and Figure 4.
 
-**Figure 4A: Academic Research Comparison**
+**Figure 4: Benchmarking Analysis**
+Comparison with academic research and commercial diagnostic platforms.
 
 **Table 3: Academic Research Benchmarking**
 
@@ -235,9 +250,9 @@ Comparison with published cancer classification studies revealed superior perfor
 | Wang et al. (2019) | TCGA | 1,892 | 6 | SVM + Feature Selection | 81.2% | 80.8% | BMC Bioinformatics |
 | Chen et al. (2018) | TCGA | 1,254 | 5 | Multi-layer Perceptron | 76.4% | 75.9% | PLoS One |
 
-#### 3.8.2 Commercial Platform Benchmarking
+#### 3.9.2 Commercial Platform Benchmarking
 
-We also benchmarked Oncura against reported performance metrics from leading commercial diagnostic platforms, acknowledging that direct head-to-head comparisons are challenging due to proprietary datasets and different validation approaches.
+We also benchmarked Oncura against reported performance metrics from leading commercial diagnostic platforms, acknowledging that direct head-to-head comparisons are challenging due to proprietary datasets and different validation approaches. Comprehensive commercial platform comparison results are presented in Table 4.
 
 **Table 4: Commercial Platform Performance Comparison**
 
@@ -252,7 +267,7 @@ We also benchmarked Oncura against reported performance metrics from leading com
 
 *Reported accuracy metrics vary by indication and may not be directly comparable to balanced accuracy
 
-#### 3.8.3 Deep Learning and Transformer Model Comparison
+#### 3.9.3 Deep Learning and Transformer Model Comparison
 
 Recent advances in deep learning for genomics have produced sophisticated models including transformer architectures and multi-modal approaches. Oncura's performance compares favorably against these state-of-the-art methods:
 
@@ -261,7 +276,7 @@ Recent advances in deep learning for genomics have produced sophisticated models
 - **DeepSurv + CNN** (Cheerla & Gevaert, 2019): 86.1% accuracy combining survival prediction with convolutional neural networks
 - **Multi-omics Transformer** (Yuan et al., 2023): 89.2% accuracy integrating genomics, transcriptomics, and proteomics data
 
-#### 3.8.4 Performance Analysis and Methodological Advantages
+#### 3.9.4 Performance Analysis and Methodological Advantages
 
 Oncura significantly outperforms all previous TCGA-based studies, achieving 95% accuracy compared to the next highest of 89.2% (Figure 4A). Despite using a focused dataset approach with 158 carefully curated samples, Oncura demonstrates superior performance efficiency compared to studies using thousands of samples (Figure 4B).
 
@@ -298,9 +313,9 @@ The selection of LightGBM as the champion model proved optimal for high-dimensio
 
 ### 4.3 Clinical Implications and Translational Potential
 
-Oncura's clinical implications extend beyond diagnostic accuracy to encompass workflow integration and decision support capabilities. The system's rapid response time (<50ms per prediction) enables real-time integration into clinical workflows without disrupting physician decision-making processes. The comprehensive confidence scoring and feature importance reporting provide clinicians with interpretable results essential for clinical acceptance (42).
+Oncura's clinical implications extend beyond diagnostic accuracy to encompass workflow integration and decision support capabilities. The system's rapid response time (<50ms per prediction) enables real-time integration into clinical workflows without disrupting physician decision-making processes (51). The comprehensive confidence scoring and feature importance reporting provide clinicians with interpretable results essential for clinical acceptance (42).
 
-The production-ready architecture, including API endpoints, containerized deployment, and monitoring infrastructure, addresses practical barriers that have hindered clinical translation of previous research systems. The comprehensive system architecture demonstrates the end-to-end workflow from TCGA data input through preprocessing, feature selection, model training, production deployment, and clinical output generation (Figure 6). Healthcare organizations can deploy Oncura using standard IT infrastructure without requiring specialized machine learning expertise (43).
+The production-ready architecture, including API endpoints, containerized deployment, and monitoring infrastructure, addresses practical barriers that have hindered clinical translation of previous research systems. The comprehensive system architecture demonstrates the end-to-end workflow from TCGA data input through preprocessing, feature selection, model training, production deployment, and clinical output generation. Healthcare organizations can deploy Oncura using standard IT infrastructure without requiring specialized machine learning expertise (43).
 
 The system's potential applications span multiple clinical scenarios: (1) diagnostic support for challenging cases where traditional histopathology is inconclusive, (2) quality assurance for routine diagnoses, (3) screening applications for early detection programs, and (4) research applications for biomarker discovery and treatment selection (44).
 
@@ -320,7 +335,7 @@ The integration of genomic and clinical data in Oncura provides a more comprehen
 
 While our rigorous cross-validation approach provides confidence in model performance within this constrained setting, we emphasize that larger, more diverse validation cohorts will be essential for establishing true clinical utility. The focused dataset approach, while enabling careful curation and quality control, inherently limits the statistical power for detecting subtle performance differences between cancer types and may not capture the full complexity of real-world clinical practice.
 
-To address this limitation, we have developed a comprehensive external validation strategy: (1) **CPTAC Validation**: We plan immediate validation using the Clinical Proteomic Tumor Analysis Consortium (CPTAC) datasets, which provide orthogonal proteomic and genomic data for several overlapping cancer types. (2) **ICGC Integration**: Collaboration with the International Cancer Genome Consortium (ICGC) will enable validation across diverse populations and sequencing platforms. (3) **Institutional Partnerships**: We are establishing partnerships with major cancer centers to validate Oncura on institutional datasets, including Mayo Clinic, MD Anderson, and Memorial Sloan Kettering cohorts. (4) **Prospective Clinical Trial**: A multi-center prospective validation study is planned for 2024, targeting enrollment of 500+ patients across participating institutions.
+To address this limitation, we have developed a comprehensive external validation strategy: (1) **CPTAC Validation**: We plan immediate validation using the Clinical Proteomic Tumor Analysis Consortium (CPTAC) datasets, which provide orthogonal proteomic and genomic data for several overlapping cancer types (36). (2) **ICGC Integration**: Collaboration with the International Cancer Genome Consortium (ICGC) will enable validation across diverse populations and sequencing platforms (37). (3) **Institutional Partnerships**: We are establishing partnerships with major cancer centers to validate Oncura on institutional datasets, including Mayo Clinic, MD Anderson, and Memorial Sloan Kettering cohorts. (4) **Prospective Clinical Trial**: A multi-center prospective validation study is planned for 2024, targeting enrollment of 500+ patients across participating institutions.
 
 #### 4.5.2 SMOTE Methodology and Overfitting Risk Assessment
 
@@ -352,7 +367,7 @@ Future development should incorporate additional data modalities including histo
 
 #### 4.6.1 FDA Software as Medical Device (SaMD) Pathway
 
-Oncura's regulatory strategy follows the FDA's Software as Medical Device (SaMD) framework, specifically targeting Class II medical device classification as a diagnostic support tool. Our comprehensive regulatory roadmap includes:
+Oncura's regulatory strategy follows the FDA's Software as Medical Device (SaMD) framework (50), specifically targeting Class II medical device classification as a diagnostic support tool. Our comprehensive regulatory roadmap includes:
 
 **Pre-Submission Strategy**: We have initiated FDA Pre-Submission meetings (Q-Sub) to establish regulatory expectations and validation requirements. Key discussion points include: (1) **Clinical Validation Requirements**: FDA guidance on appropriate clinical validation study design, including required sample sizes and performance benchmarks. (2) **Predicate Device Identification**: Comparison with existing cleared diagnostic support software, including Foundation Medicine's FoundationOne CDx and Illumina's TruSight Oncology 500. (3) **Risk Classification**: Confirmation of Class II device classification with 510(k) clearance pathway rather than PMA requirements.
 
@@ -397,7 +412,7 @@ The achievement of clinically relevant accuracy using authentic patient data, co
 
 Future research should focus on expanding the system to additional cancer types, incorporating multi-modal data sources, and conducting prospective clinical validation studies. The continued evolution of Oncura and similar systems represents an important step toward realizing the full potential of artificial intelligence in precision oncology.
 
-The success of Oncura demonstrates that with careful methodology, rigorous validation, and attention to clinical implementation requirements, AI systems can achieve the performance and reliability necessary for real-world healthcare applications. This work provides a roadmap for future development of clinical AI systems and highlights the importance of bridging the gap between research innovation and clinical implementation.
+The success of Oncura demonstrates that with careful methodology, rigorous validation, and attention to clinical implementation requirements, AI systems can achieve the performance and reliability necessary for real-world healthcare applications (52). This work provides a roadmap for future development of clinical AI systems and highlights the importance of bridging the gap between research innovation and clinical implementation.
 
 ## Acknowledgments
 
@@ -441,9 +456,19 @@ The genomic and clinical data used in this study are available through The Cance
 
 This study utilized de-identified data from The Cancer Genome Atlas, which was collected under appropriate institutional review board approvals as part of the original TCGA initiative. No additional ethical approval was required for this secondary analysis of publicly available, de-identified data.
 
-## Conflicts of Interest
+## Funding
 
-The authors declare no conflicts of interest related to this research. All authors have completed the ICMJE uniform disclosure form and declare no financial or non-financial interests that may be relevant to the submitted work.
+This research was conducted without external funding. All computational resources and materials were provided through institutional support from Campbellsville University. No specific grants or funding sources supported this work.
+
+## Declarations
+
+### Author Contributions
+
+R.C.S. conceived and designed the study, developed the machine learning pipeline, conducted the statistical analyses, performed biological validation, implemented the production API infrastructure and containerization framework, and wrote the manuscript. R.C.S. is accountable for all aspects of the work.
+
+### Competing Interests
+
+R.C.S. holds provisional patent application No. 63/847,316 related to the AI system described in this manuscript. No other financial or non-financial competing interests exist that could inappropriately influence this work.
 
 ---
 

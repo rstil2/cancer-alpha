@@ -196,11 +196,12 @@ Oncura represents a paradigm shift in computational oncology, delivering:
 
 | **Data Modality** | **Features** | **Clinical Impact** |
 |:----------------:|:------------:|:------------------:|
-| 🧬 **RNA Expression** | Gene expression profiles | Pathway analysis & biomarkers |
-| 🔬 **DNA Methylation** | CpG methylation patterns | Epigenetic regulation insights |
-| 🏥 **Clinical Data** | Demographics & variables | Patient stratification |
-| 🧪 **Protein Expression** | Proteomic profiles | Functional validation |
-| 📊 **Genomic Features** | Mutations & copy numbers | Driver mutation identification |
+| 🔬 **DNA Methylation** (20) | CpG island patterns, DMRs | Epigenetic regulation insights |
+| 🧬 **Mutations** (25) | TMB, driver genes, MSI status | Driver mutation identification |
+| 📊 **Copy Number Alterations** (20) | Focal amp/del, aneuploidy | Chromosomal instability |
+| 🧪 **Fragmentomics** (15) | cfDNA fragment patterns | Liquid biopsy biomarkers |
+| 🏥 **Clinical** (10) | Age, sex, stage, grade | Patient stratification |
+| 🔗 **ICGC ARGO** (20) | RNA expression, immune signatures | Pathway activation levels |
 
 </div>
 
@@ -437,11 +438,11 @@ flowchart TD
 ```
 cancer-alpha/
 ├── 📚 docs/                          # Documentation and figures
-├── 📄 preprints/                     # Research papers (bioRxiv published)
+├── 📝 manuscripts/                   # Research manuscripts and revisions
+├── 📄 preprints/                     # Published preprints (bioRxiv)
 ├── 🎁 cancer_genomics_ai_demo_minimal/ # Self-contained demo package
+├── 🧠 models/                        # Trained model files
 ├── 🔧 scripts/                       # Utility scripts
-├── 📊 *.py                           # Demo server and startup scripts
-├── 📋 *.sh, *.bat                    # Cross-platform startup scripts
 ├── ⚖️ LICENSE, PATENTS.md            # Legal documentation
 └── 📖 README.md, CONTRIBUTING.md     # Project documentation
 ```
@@ -586,17 +587,17 @@ For information about clinical deployment capabilities:
 
 ### **What This Demo Shows**
 - **Interactive Web Interface**: User-friendly cancer classification tool
-- **Multi-Modal Data Integration**: Simulated genomic data processing
-- **AI Predictions**: Simplified cancer type classification
+- **Multi-Modal Data Integration**: Sample genomic data processing across 6 modalities
+- **AI Predictions**: Cancer type classification with confidence scoring
 - **SHAP Explainability**: Visual explanation of prediction factors
 - **Clinical Decision Support**: Demo of diagnostic assistance interface
 
-### **Real Technology Features** (Not in Demo)
-- Advanced transformer-based architectures
-- Real multi-omics data integration (genomic, transcriptomic, clinical)
-- Production-grade machine learning models
-- High-accuracy cancer classification
-- Research-validated biological insights
+### **Full System Features** (Beyond Demo)
+- Knowledge-guided multi-modal integration with pathway-constrained interactions
+- Real TCGA multi-omics data (1,200 balanced samples across 8 cancer types)
+- Production LightGBM achieving 96.5% ± 0.6% balanced accuracy
+- Biologically-validated interpretability (SHAP + pathway enrichment)
+- Complete hospital deployment infrastructure (API, Docker, EHR integration)
 
 ## 📊 **Demo vs Full System Comparison**
 
@@ -651,8 +652,8 @@ The full technology can be applied to:
 This technology is protected by provisional patent application and pending full patent applications. Unauthorized commercial use may result in legal action.
 
 ### **Data Privacy**
-- Demo uses only synthetic data
-- No real patient information is processed
+- Demo uses sample data for illustration purposes
+- No real patient information is processed in the demo
 - Full system includes HIPAA-compliant security measures
 
 ### **Disclaimer**
@@ -692,7 +693,7 @@ We welcome academic collaboration and research partnerships. For academic use an
 
 ---
 
-**© 2025 Dr. R. Craig Stillwell. All rights reserved.**  
+**© 2025–2026 Dr. R. Craig Stillwell. All rights reserved.**  
 **Patent Pending - Provisional Application No. 63/847,316**
 
 ---
@@ -744,7 +745,7 @@ If you use this work in your research, please cite:
 ```bibtex
 @article{oncura_2025,
     title={Oncura: Multi-Modal AI for Precision Oncology},
-    author={Stillwell, R. Craig and Oncura Research Team},
+    author={Stillwell, R. Craig},
     journal={bioRxiv},
     year={2025},
     doi={10.1101/2025.07.22.666135},
