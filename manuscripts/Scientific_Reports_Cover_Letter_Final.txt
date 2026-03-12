@@ -1,0 +1,32 @@
+Dear Editor,
+
+We submit our manuscript "Knowledge-Guided Multi-Modal Integration Improves Robustness and Accuracy in Multi-Cancer Genomic Classification" for consideration in Scientific Reports.
+
+This work addresses three fundamental challenges in genomic machine learning: multi-modal data integration, class imbalance handling, and biologically-validated interpretability. We developed a knowledge-guided framework that achieves 96.5% ± 0.6% balanced accuracy across 1,200 authentic TCGA samples spanning eight cancer types, representing a 7.3 percentage point improvement over transformer-based approaches in the moderate-sample-size regime typical of clinical genomics.
+
+Key contributions include:
+
+1. Novel knowledge-guided multi-modal integration incorporating biological pathway constraints during feature engineering, achieving superior performance compared to unconstrained deep learning while maintaining interpretability and data efficiency.
+
+2. Balanced experimental design using stratified sampling of authentic TCGA data, eliminating synthetic data augmentation while achieving perfect class balance (150 samples per cancer type).
+
+3. Comprehensive biological validation demonstrating that highly-ranked features match established cancer biology (68% pathway enrichment, 83% biomarker overlap with clinical guidelines).
+
+4. Rigorous robustness validation showing the model maintains 97.5% balanced accuracy under real-world class imbalance (natural TCGA prevalence: BRCA 30%, LIHC 3%), demonstrating that balanced design does not artificially inflate performance metrics.
+
+5. Complete reproducibility package (6 MB) containing all data, code, and documentation necessary to reproduce results.
+
+This work demonstrates that in moderate-sized multi-modal cancer genomics datasets (1,000-2,000 samples), knowledge-guided feature integration paired with efficient ensemble learning can achieve improved performance compared to deep learning approaches while preserving biological interpretability and computational feasibility. The methodological innovations are generalizable to other multi-modal biomedical learning problems where domain knowledge exists but sample sizes are limited.
+
+All authors have approved the manuscript and agree with its submission to Scientific Reports. The manuscript has not been published previously and is not under consideration elsewhere. We have filed a provisional patent (No. 63/847,316), but academic use is permitted with proper attribution.
+
+We believe this work will be of interest to Scientific Reports' broad readership given its contributions to AI methodology for genomic classification and potential clinical applications in precision oncology.
+
+Thank you for your consideration.
+
+Sincerely,
+
+R. Craig Stillwell, PhD
+Campbellsville University
+Campbellsville, KY, USA
+craig.stillwell@gmail.com

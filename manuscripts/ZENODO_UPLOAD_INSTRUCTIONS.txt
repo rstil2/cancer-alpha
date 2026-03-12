@@ -1,0 +1,131 @@
+═══════════════════════════════════════════════════════════════════
+  ONCURA ZENODO SUBMISSION - SINGLE ZIP FILE UPLOAD INSTRUCTIONS
+═══════════════════════════════════════════════════════════════════
+
+✅ YOUR ZIP FILE IS READY!
+
+Location: /Users/stillwell/projects/cancer-alpha/manuscripts/Oncura_Zenodo_Submission.zip
+Size: 607 KB
+
+Contents:
+  1. Oncura_Complete_Revised_Manuscript-THIS IS IT.pdf (696 KB)
+  2. .zenodo.json (metadata - auto-fills the form)
+  3. README.md (documentation)
+  4. CITATION.cff (citation metadata)
+
+═══════════════════════════════════════════════════════════════════
+  UPLOAD STEPS (10-15 MINUTES)
+═══════════════════════════════════════════════════════════════════
+
+1. GO TO ZENODO
+   → Visit: https://zenodo.org/
+   → Click "Sign Up" or "Log in"
+   → Recommended: Sign in with GitHub
+
+2. START NEW UPLOAD
+   → Click "Upload" in top menu
+   → Click "New upload" button
+
+3. UPLOAD YOUR ZIP FILE
+   → Drag and drop: Oncura_Zenodo_Submission.zip
+   → OR click "Choose files" and select it
+   → Wait for green checkmark (upload complete)
+
+4. EXTRACT FILES (IMPORTANT!)
+   → After upload, Zenodo will show the zip file
+   → You can either:
+     a) Upload the zip AS IS (users download and extract)
+     b) Extract locally first, then upload individual files
+   
+   RECOMMENDED: Extract locally first, then upload these 4 files:
+     - Oncura_Complete_Revised_Manuscript-THIS IS IT.pdf
+     - .zenodo.json
+     - README.md
+     - CITATION.cff
+
+5. VERIFY AUTO-FILLED METADATA
+   The .zenodo.json file should auto-fill:
+   ✓ Title (full manuscript title)
+   ✓ Author: R. Craig Stillwell
+   ✓ Affiliation: Campbellsville University
+   ✓ 15 keywords
+   ✓ Abstract/description
+   ✓ License: CC BY 4.0
+   ✓ Access: Open
+
+6. ADD THESE MANUALLY:
+
+   Related Identifiers:
+   → Click "Add related identifier"
+   → Identifier: https://github.com/cstillwell/oncura
+   → Relation: "is supplemented by this upload"
+   → Resource type: Software
+
+   Additional Notes:
+   → Add in notes field:
+   
+   Patent: US Provisional Application No. 63/847,316
+   Dataset: 1,200 authentic TCGA samples across 8 cancer types
+   Performance: 96.5% balanced accuracy
+   Contact: craig.stillwell@gmail.com
+   Academic use permitted with attribution
+   Commercial use requires licensing
+
+7. REVIEW & PUBLISH
+   → Click "Preview" to check everything
+   → Verify all information is correct
+   → Click "Publish" when ready
+   → ⚠️  DOI is permanent once published!
+
+8. SAVE YOUR DOI
+   → Zenodo assigns: 10.5281/zenodo.XXXXXXX
+   → Copy and save immediately
+   → Use for citations, GitHub, CV
+
+═══════════════════════════════════════════════════════════════════
+  KEY INFORMATION
+═══════════════════════════════════════════════════════════════════
+
+Title:
+Oncura: A Novel Multi-Modal AI Framework for Multi-Cancer 
+Classification Achieving 96.5% Accuracy Through Knowledge-Guided 
+Integration and Balanced Experimental Design
+
+Author: R. Craig Stillwell, PhD
+Affiliation: Campbellsville University
+Email: craig.stillwell@gmail.com
+
+License: CC BY 4.0 (Open Access)
+Patent: US Provisional 63/847,316
+
+Dataset: 1,200 authentic TCGA samples
+Cancer Types: BRCA, LUAD, COAD, PRAD, STAD, HNSC, LUSC, LIHC
+Performance: 96.5% ± 0.6% balanced accuracy
+
+═══════════════════════════════════════════════════════════════════
+  AFTER PUBLICATION
+═══════════════════════════════════════════════════════════════════
+
+1. Update GitHub repository with DOI badge:
+   [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.XXXXXXX.svg)]
+   (https://doi.org/10.5281/zenodo.XXXXXXX)
+
+2. Share the permanent link
+
+3. Add to your CV and academic profiles
+
+4. Include DOI in future manuscript submissions
+
+═══════════════════════════════════════════════════════════════════
+  SUPPORT
+═══════════════════════════════════════════════════════════════════
+
+Zenodo Help: https://help.zenodo.org/
+Email: craig.stillwell@gmail.com
+
+═══════════════════════════════════════════════════════════════════
+
+For detailed instructions, see the guide files in the zenodo/ folder:
+- QUICK_START.md
+- ZENODO_SUBMISSION_GUIDE.md
+- INDEX.md

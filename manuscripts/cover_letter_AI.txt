@@ -1,0 +1,23 @@
+
+R. Craig Stillwell, PhD
+craig.stillwell@gmail.com
+March 8, 2026
+
+Editorial Office
+Artificial Intelligence
+
+Dear Editors,
+
+I am pleased to submit the manuscript entitled “Multi-Modal Cancer Classification Using Integrated Gene Expression, DNA Methylation, and Somatic Mutation Features from The Cancer Genome Atlas” for consideration in Artificial Intelligence. This manuscript presents a novel, interpretable multi-modal machine learning framework for cancer classification, validated on authenticated TCGA data and benchmarked against current state-of-the-art methods.
+
+The work addresses key challenges in biomedical AI, including multi-modal integration, class imbalance, and biological interpretability, and offers generalizable methodological advances for the field.
+
+I would like to note that I do not have an institutional email address because I am currently unaffiliated with a university or research institution. My research is conducted independently, and all analyses were performed on personal hardware. Please direct all correspondence to my personal email address provided above.
+
+This manuscript is original, has not been published elsewhere, and is not under consideration by any other journal. All authors have approved the submission.
+
+Thank you for your consideration.
+
+Sincerely,
+
+R. Craig Stillwell, PhD

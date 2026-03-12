@@ -102,6 +102,49 @@ validation_results.json
 requirements_installed.flag
 *.log
 
+# === BINARY AND LARGE FILES ===
+# Zip archives (reproducibility packages, submissions, etc.)
+*.zip
+
+# Word documents (binary, use .md for version control)
+*.docx
+
+# PDF files
+*.pdf
+
+# Pickle model files (keep only demo models)
+*.pkl
+!cancer_genomics_ai_demo_minimal/models/*.pkl
+
+# Joblib model files
+*.joblib
+
+# PNG figures (generated output)
+*.png
+!manuscripts/figures/*.png
+
+# SVG files
+*.svg
+
+# TIFF figures
+*.tiff
+*.tif
+
+# Temporary Office lock files
+~$*
+
+# LaTeX auxiliary files
+*.aux
+*.bcf
+*.bbl
+*.blg
+*.out
+*.run.xml
+*.cut
+
+# R history
+.Rhistory
+
 # === HOUSEKEEPING CLEANUP ===
 # Cache and temporary files
 catboost_info/
@@ -111,6 +154,7 @@ catboost_info/
 *.temp
 temp/
 tmp/
+cache/
 
 # Archive directory (for old/duplicate files)
 archive/
@@ -125,6 +169,38 @@ manuscripts/create_interpretability_figures.py
 manuscripts/generate_word_manuscript.py
 manuscripts/generate_manuscript_figures.py
 manuscripts/simple_embed_figures.py
+
+# Results and output directories
+results/
+
+# Submission and packaging directories
+science/
+paper-repository/
+reproducibility_package/
+manuscripts/reproducibility_package/
+manuscripts/zenodo/
+manuscripts/media/
+
+# Model training output subdirectories
+models/advanced_genomic_optimization/
+models/hierarchical_optimization/
+models/oncura_transformer_real_tcga_balanced/
+models/ultra_advanced_comprehensive/
+
+# Data files at root
+*.csv
+
+# JSON output and assessment files
+*_test.json
+*_report.json
+*_report_summary.txt
+test_processing_results.json
+real_tcga_inventory.json
+gdc_manifest_locked.json
+
+# RTF and HTML generated files
+*.rtf
+*.html
 
 # Production deployment configs
 PRODUCTION_DEPLOYMENT.md

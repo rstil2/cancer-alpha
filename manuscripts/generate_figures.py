@@ -61,10 +61,11 @@ def figure1_model_performance():
                 f'{acc}%', ha='center', va='bottom', fontsize=10, fontweight='bold')
 
     plt.tight_layout()
-    path = os.path.join(OUT_DIR, 'Figure_1_Model_Performance.png')
-    fig.savefig(path)
+    for ext in ('png', 'pdf'):
+        path = os.path.join(OUT_DIR, f'Figure_1_Model_Performance.{ext}')
+        fig.savefig(path)
+        print(f'Saved: {path}')
     plt.close(fig)
-    print(f'Saved: {path}')
 
 
 def figure2_cancer_type_performance():
@@ -101,10 +102,11 @@ def figure2_cancer_type_performance():
                 f'{acc}', ha='center', va='bottom', fontsize=8, fontweight='bold')
 
     plt.tight_layout()
-    path = os.path.join(OUT_DIR, 'Figure_2_Cancer_Performance.png')
-    fig.savefig(path)
+    for ext in ('png', 'pdf'):
+        path = os.path.join(OUT_DIR, f'Figure_2_Cancer_Performance.{ext}')
+        fig.savefig(path)
+        print(f'Saved: {path}')
     plt.close(fig)
-    print(f'Saved: {path}')
 
 
 def figure3_benchmarking():
@@ -146,10 +148,11 @@ def figure3_benchmarking():
 
     ax.set_xlim(80, 105)
     plt.tight_layout()
-    path = os.path.join(OUT_DIR, 'Figure_3_Benchmarking.png')
-    fig.savefig(path)
+    for ext in ('png', 'pdf'):
+        path = os.path.join(OUT_DIR, f'Figure_3_Benchmarking.{ext}')
+        fig.savefig(path)
+        print(f'Saved: {path}')
     plt.close(fig)
-    print(f'Saved: {path}')
 
 
 def figure4_feature_importance():
@@ -214,10 +217,11 @@ def figure4_feature_importance():
 
     ax.set_xlim(0, 0.15)
     plt.tight_layout()
-    path = os.path.join(OUT_DIR, 'Figure_4_Feature_Importance.png')
-    fig.savefig(path)
+    for ext in ('png', 'pdf'):
+        path = os.path.join(OUT_DIR, f'Figure_4_Feature_Importance.{ext}')
+        fig.savefig(path)
+        print(f'Saved: {path}')
     plt.close(fig)
-    print(f'Saved: {path}')
 
 
 if __name__ == '__main__':

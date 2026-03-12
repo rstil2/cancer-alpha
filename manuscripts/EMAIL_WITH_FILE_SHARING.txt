@@ -1,0 +1,27 @@
+Dear Dr. Bultitude,
+
+Thank you again for inviting the resubmission of my manuscript. I have now submitted it to your system as a new submission per your instructions.
+
+Submission ID: 676329be-dcf5-4e3b-b4e2-296796004f19
+
+Manuscript Title: Knowledge-Guided Multi-Modal Integration Improves Robustness and Accuracy in Multi-Cancer Genomic Classification
+
+As requested, I included a comment in the cover letter explaining that this resubmission was invited by you, and I confirmed that the manuscript has not been submitted elsewhere.
+
+I did not see an option to upload supplementary materials during the submission process. The complete reproducibility package (13 MB, containing all source code, processed data, trained models, and documentation) is available via the following link:
+
+[INSERT YOUR DOWNLOAD LINK HERE]
+
+Alternatively, I can upload it to a location of your choice, or if Scientific Reports has a supplementary materials portal, please let me know the best way to provide it.
+
+Please let me know if you need any additional information or if there are any issues with the submission.
+
+Thank you for this opportunity.
+
+Best regards,
+Craig
+
+---
+R. Craig Stillwell, PhD
+Campbellsville University
+Email: craig.stillwell@gmail.com

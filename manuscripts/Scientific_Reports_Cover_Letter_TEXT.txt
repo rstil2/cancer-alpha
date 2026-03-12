@@ -1,0 +1,30 @@
+Dear Dr. Bultitude,
+
+Thank you for your email of January 27 inviting resubmission of our manuscript to Scientific Reports. I am pleased to confirm that this resubmission is made at your explicit invitation following reconsideration of our initial submission.
+
+I can confirm that the manuscript has not been submitted elsewhere during this time and remains exclusively available for consideration by Scientific Reports.
+
+We have carefully revised the manuscript to ensure it meets Scientific Reports' standards and have included our complete reproducibility package to facilitate peer review. The key contributions of this work are:
+
+Novel Methodological Framework: We introduce a knowledge-guided multi-modal integration approach for cancer genomic classification that achieves 96.5% ± 0.6% balanced accuracy across 1,200 authentic TCGA samples spanning eight cancer types, representing a 7.3 percentage point improvement over current transformer-based approaches.
+
+100% Authentic Data: Unlike previous studies relying on synthetic data augmentation (SMOTE), we achieve perfect class balance through intelligent stratified sampling, maintaining complete biological authenticity across all 1,200 patient samples.
+
+Rigorous Validation: Comprehensive ablation studies demonstrate that each methodological component contributes significantly (p < 0.001), with biological validation confirming 68% pathway enrichment and 83% literature biomarker overlap.
+
+Complete Reproducibility: We provide full source code, processed data, trained models, and documentation as supplementary materials, enabling complete reproduction of all results.
+
+Computational Efficiency: Our approach achieves superior performance with 6-15× lower computational cost than deep learning alternatives, enabling deployment in resource-constrained clinical settings.
+
+The manuscript advances AI methodology for genomic classification through generalizable contributions applicable beyond cancer classification to other multi-modal biomedical learning problems where biological authenticity and interpretability are essential.
+
+Once the manuscript has been uploaded to your system, I will promptly provide you with the new submission ID as requested.
+
+Thank you for your willingness to reconsider our work. We greatly appreciate this opportunity and look forward to your feedback.
+
+Sincerely,
+
+R. Craig Stillwell, PhD
+Campbellsville University
+Campbellsville, KY, USA
+Email: craig.stillwell@gmail.com
