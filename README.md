@@ -108,23 +108,23 @@
 
 ```mermaid
 flowchart TD
-    A[🧬 Real TCGA Genomic Data<br/>1,248 Samples, 8 Cancer Types<br/>156 per type — Balanced Design] --> B[📊 Multi-Modal Feature Extraction<br/>3 Genomic Modalities]
-    B --> B1[🧬 Gene Expression<br/>2,000 High-Variance Genes]
-    B --> B2[🔬 DNA Methylation<br/>2,000 High-Variance CpG Probes]
-    B --> B3[🧪 Somatic Mutations<br/>63 Mutation-Derived Variables]
-    B1 --> C[📈 4,063-Dimensional Feature Space<br/>Integrated Multi-Modal Features]
+    A["Real TCGA Genomic Data | 1,248 Samples, 8 Cancer Types | 156 per type"] --> B["Multi-Modal Feature Extraction | 3 Genomic Modalities"]
+    B --> B1["Gene Expression | 2,000 High-Variance Genes"]
+    B --> B2["DNA Methylation | 2,000 High-Variance CpG Probes"]
+    B --> B3["Somatic Mutations | 63 Mutation-Derived Variables"]
+    B1 --> C["4,063-Dimensional Feature Space | Integrated Multi-Modal Features"]
     B2 --> C
     B3 --> C
-    C --> D[⚙️ Bayesian Hyperparameter Optimization<br/>LightGBM Ensemble]
-    D --> E[✅ Stratified 5-Fold CV + Held-Out Test Set<br/>n=250 Test Samples]
-    E --> F[🏆 98.4% Balanced Accuracy<br/>4/8 Cancer Types at 100% Precision & Recall]
-    
-    G[🔑 Key Methodological Strengths] --> H[1. Multi-Modal Integration: Expression + Methylation + Mutations]
-    H --> I[2. Balanced Design: 156 Samples/Type, Zero Synthetic Data]
-    I --> J[3. Rigorous Validation: CV + Held-Out Test Set]
-    J --> K[4. SHAP Interpretability: Biologically Validated Biomarkers]
-    K --> L[5. Leak-Free Pipeline: Feature Selection on Training Folds Only]
-    
+    C --> D["Bayesian Hyperparameter Optimization | LightGBM Ensemble"]
+    D --> E["Stratified 5-Fold CV + Held-Out Test Set | n=250 Test Samples"]
+    E --> F["98.4% Balanced Accuracy | 4/8 Cancer Types at 100%"]
+
+    G["Key Methodological Strengths"] --> H["1. Multi-Modal Integration"]
+    H --> I["2. Balanced Design: 156/Type, Zero Synthetic"]
+    I --> J["3. Rigorous Validation: CV + Held-Out Test"]
+    J --> K["4. SHAP Interpretability"]
+    K --> L["5. Leak-Free Pipeline"]
+
     style F fill:#FFD700,stroke:#FF6B35,stroke-width:3px
     style A fill:#E3F2FD
     style C fill:#F3E5F5
@@ -366,35 +366,35 @@ Accuracy vs. Production Readiness Matrix:
 
 ```mermaid
 flowchart TD
-    subgraph "Data Layer"
-        A[🧬 Real TCGA Data<br/>1,248 Samples, 8 Cancer Types<br/>Balanced: 156/type]
-        B[📊 3 Genomic Modalities<br/>4,063 Features]
+    subgraph Data_Layer["Data Layer"]
+        A["Real TCGA Data | 1,248 Samples, 8 Cancer Types | 156/type"]
+        B["3 Genomic Modalities | 4,063 Features"]
     end
-    
-    subgraph "Processing Pipeline"
-        C[🔬 Multi-Modal Integration<br/>Expression + Methylation + Mutations]
-        D[📈 4,063-Dimensional Feature Space<br/>Leak-Free Feature Selection]
-        E[🌲 LightGBM Model<br/>Bayesian Hyperparameter Optimization]
+
+    subgraph Processing_Pipeline["Processing Pipeline"]
+        C["Multi-Modal Integration | Expression + Methylation + Mutations"]
+        D["4,063-Dimensional Feature Space | Leak-Free Feature Selection"]
+        E["LightGBM Model | Bayesian Hyperparameter Optimization"]
     end
-    
-    subgraph "Validation & Deployment"
-        F[✅ Stratified 5-Fold CV<br/>+ Held-Out Test (n=250)]
-        G[🏆 98.4% Balanced Accuracy<br/>4/8 Types at 100%]
-        H[📊 SHAP Interpretability<br/>Biomarker-Validated Features]
+
+    subgraph Validation["Validation & Deployment"]
+        F["Stratified 5-Fold CV + Held-Out Test n=250"]
+        G["98.4% Balanced Accuracy | 4/8 Types at 100%"]
+        H["SHAP Interpretability | Biomarker-Validated Features"]
     end
-    
-    subgraph "Application Layer"
-        I[📱 Streamlit Web App<br/>Interactive Interface]
-        J[🔌 REST API<br/>Clinical Integration]
-        K[⚙️ Model Serving<br/>< 50ms Predictions]
+
+    subgraph Application["Application Layer"]
+        I["Streamlit Web App | Interactive Interface"]
+        J["REST API | Clinical Integration"]
+        K["Model Serving | Under 50ms Predictions"]
     end
-    
-    subgraph "Infrastructure"
-        L[🐳 Docker Containers<br/>Reproducible Deployment]
-        M[☸️ Kubernetes<br/>Scalable Orchestration]
-        N[🏥 Hospital Systems<br/>Epic/Cerner/FHIR R4]
+
+    subgraph Infra["Infrastructure"]
+        L["Docker Containers | Reproducible Deployment"]
+        M["Kubernetes | Scalable Orchestration"]
+        N["Hospital Systems | Epic/Cerner/FHIR R4"]
     end
-    
+
     A --> B
     B --> C
     C --> D
@@ -410,7 +410,7 @@ flowchart TD
     K --> L
     L --> M
     M --> N
-    
+
     style G fill:#FFD700,stroke:#FF6B35,stroke-width:3px
     style E fill:#E8F5E8
     style C fill:#F3E5F5
