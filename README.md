@@ -6,14 +6,14 @@
 *Advanced AI system for multi-cancer classification using real clinical genomic data*
 
 <img src="https://img.shields.io/badge/🚀_Status-Research_Validated-brightgreen?style=for-the-badge" alt="Research Validated" />
-<img src="https://img.shields.io/badge/🎯_Accuracy-96.5%25_BREAKTHROUGH-gold?style=for-the-badge" alt="96.5% BREAKTHROUGH" />
+<img src="https://img.shields.io/badge/🎯_Accuracy-98.4%25_BREAKTHROUGH-gold?style=for-the-badge" alt="98.4% BREAKTHROUGH" />
 <img src="https://img.shields.io/badge/🧬_Data-Real_TCGA-blue?style=for-the-badge" alt="Real TCGA Data" />
 
 [![License: Academic](https://img.shields.io/badge/License-Academic%20Use%20Only-red.svg)](LICENSE)
 [![Patent Protected](https://img.shields.io/badge/Patent-Protected-blue.svg)](PATENTS.md)
 [![Python 3.8+](https://img.shields.io/badge/python-3.8+-blue.svg)](https://www.python.org/downloads/)
 
-**🎯 Vision**: *To achieve AlphaFold-level innovation in precision oncology through breakthrough multi-modal AI and balanced experimental design*
+**🎯 Vision**: *To achieve AlphaFold-level innovation in precision oncology through multi-modal AI on real clinical genomic data*
 
 [**📄 Research Papers**](#-research-papers) • [**🎁 Try Demo**](#-try-the-interactive-demo) • [**🚀 Quick Start**](#-quick-start) • [**📖 Documentation**](#-documentation) • [**🏥 Clinical Use**](#-clinical-deployment) • [**🤝 Contribute**](#-contributing) • [**📄 Citation**](#-citation)
 
@@ -108,33 +108,31 @@
 
 ```mermaid
 flowchart TD
-    A[🧬 Real TCGA Genomic Data<br/>1,200 Samples, 8 Cancer Types<br/>150 per type — Perfectly Balanced] --> B[📊 Multi-Modal Feature Extraction<br/>6 Genomic Modalities, 110 Base Features]
-    B --> C[🔬 Knowledge-Guided Integration<br/>Pathway-Constrained Interaction Engineering]
-    C --> D[📈 2,000-Dimensional Feature Space<br/>Biologically-Motivated Cross-Modal Features]
-    D --> E[⚙️ Bayesian Ensemble Optimization<br/>Genomic-Adapted Hyperparameters]
-    E --> F[🌲 LightGBM Gradient Boosting<br/>Optimized for High-Dimensional Genomics]
-    F --> G[✅ Stratified 5-Fold CV<br/>Perfect Balance Maintained per Fold]
-    G --> H[🏆 96.5% ± 0.6% Balanced Accuracy<br/>BREAKTHROUGH ACHIEVED]
+    A[🧬 Real TCGA Genomic Data<br/>1,248 Samples, 8 Cancer Types<br/>156 per type — Balanced Design] --> B[📊 Multi-Modal Feature Extraction<br/>3 Genomic Modalities]
+    B --> B1[🧬 Gene Expression<br/>2,000 High-Variance Genes]
+    B --> B2[🔬 DNA Methylation<br/>2,000 High-Variance CpG Probes]
+    B --> B3[🧪 Somatic Mutations<br/>63 Mutation-Derived Variables]
+    B1 --> C[📈 4,063-Dimensional Feature Space<br/>Integrated Multi-Modal Features]
+    B2 --> C
+    B3 --> C
+    C --> D[⚙️ Bayesian Hyperparameter Optimization<br/>LightGBM Ensemble]
+    D --> E[✅ Stratified 5-Fold CV + Held-Out Test Set<br/>n=250 Test Samples]
+    E --> F[🏆 98.4% Balanced Accuracy<br/>4/8 Cancer Types at 100% Precision & Recall]
     
-    I[🔑 Five Methodological Innovations] --> J[1. Knowledge-Guided Multi-Modal Integration]
-    J --> K[2. Balanced Design Without Synthetic Data]
-    K --> L[3. Genomic-Adapted Ensemble Optimization]
-    L --> M[4. Biologically-Validated Interpretability]
-    M --> N[5. Integrated Cross-Validation Strategy]
+    G[🔑 Key Methodological Strengths] --> H[1. Multi-Modal Integration: Expression + Methylation + Mutations]
+    H --> I[2. Balanced Design: 156 Samples/Type, Zero Synthetic Data]
+    I --> J[3. Rigorous Validation: CV + Held-Out Test Set]
+    J --> K[4. SHAP Interpretability: Biologically Validated Biomarkers]
+    K --> L[5. Leak-Free Pipeline: Feature Selection on Training Folds Only]
     
-    O[🎯 Ablation Study Results] --> P[+3.2pp Multi-Modal Integration]
-    O --> Q[+2.8pp Knowledge-Guided Features]
-    O --> R[+1.5pp Ensemble Optimization]
-    O --> S[+1.3pp Balanced Design]
-    
-    style H fill:#FFD700,stroke:#FF6B35,stroke-width:3px
+    style F fill:#FFD700,stroke:#FF6B35,stroke-width:3px
     style A fill:#E3F2FD
     style C fill:#F3E5F5
-    style F fill:#E8F5E8
-    style N fill:#FFE0B2
+    style D fill:#E8F5E8
+    style L fill:#FFE0B2
 ```
 
-*Figure 1: Oncura's knowledge-guided integration architecture achieving 96.5% ± 0.6% balanced accuracy on 1,200 real TCGA samples. The pipeline uses balanced experimental design (no synthetic data), pathway-constrained feature engineering, and Bayesian ensemble optimization — a 7.3 percentage point improvement over state-of-the-art transformers (89.2%).*
+*Figure 1: Oncura's multi-modal integration pipeline achieving 98.4% balanced accuracy on 1,248 real TCGA samples. The system integrates gene expression, DNA methylation, and somatic mutation data with balanced experimental design (no synthetic data) and Bayesian-optimized LightGBM — a 9.2 percentage point improvement over state-of-the-art transformers (89.2%).*
 
 </div>
 
@@ -148,20 +146,20 @@ Oncura represents a paradigm shift in computational oncology, delivering:
 <tr>
 <td width="50%">
 
-### 🧠 **Five Methodological Innovations**
-- **🔬 Knowledge-Guided Multi-Modal Integration**: Pathway-constrained feature engineering across 6 genomic modalities, expanding 110 base features into a 2,000-dimensional biologically-motivated feature space
-- **⚖️ Balanced Experimental Design**: Perfect class balance (150 samples/type) through intelligent curation — no synthetic augmentation
-- **⚙️ Bayesian Ensemble Optimization**: Genomic-adapted hyperparameter search with efficiency constraints
-- **🧬 Biologically-Validated Interpretability**: SHAP with pathway enrichment analysis, literature biomarker overlap, and cancer-type specificity validation
-- **📊 Integrated Cross-Validation**: Stratified 5-fold CV maintaining perfect balance across all folds
+### 🧠 **Key Methodological Strengths**
+- **🔬 Multi-Modal Genomic Integration**: Gene expression (2,000 genes), DNA methylation (2,000 CpG probes), and somatic mutations (63 variables) combined into a 4,063-dimensional feature space
+- **⚖️ Balanced Experimental Design**: Stratified sampling achieving class balance (156 samples/type) — no synthetic augmentation
+- **⚙️ Bayesian Hyperparameter Optimization**: Automated search for optimal LightGBM configuration
+- **🧬 SHAP-Based Biological Interpretability**: Top features validated against established cancer biomarkers (SFTPB, GATA3, KLK3, NKX2-1)
+- **🛡️ Leak-Free Pipeline**: Feature selection performed only on training folds to prevent data leakage
 
 ### 🎯 **Breakthrough Performance**
-- **🔥 96.5% ± 0.6% Balanced Accuracy**: LightGBM on real TCGA clinical data
-- **🏆 1,200 Real Patient Samples**: Perfectly balanced across 8 cancer types (150 per type)
-- **📊 7.3pp Improvement**: Over state-of-the-art transformers (89.2%), 53% error reduction
+- **🔥 98.4% Balanced Accuracy**: LightGBM (tied with Logistic Regression) on real TCGA clinical data
+- **🏆 1,248 Real Patient Samples**: Balanced across 8 cancer types (156 per type)
+- **📊 9.2pp Improvement**: Over state-of-the-art transformers (89.2%), 85% error reduction
 - **⚡ 6–15× Faster**: Computational efficiency advantage over deep learning alternatives
-- **🔬 Biological Validation**: V=0.87 concordance, 68% pathway enrichment
-- **✅ Robust Validation**: Stratified 5-fold CV with exceptional stability across folds
+- **🔬 4/8 Cancer Types at 100%**: Perfect precision and recall on held-out test set
+- **✅ Rigorous Validation**: Stratified 5-fold CV plus held-out test set (n=250)
 - **Zero Synthetic Data**: All validation on 100% authentic TCGA genomic data
 
 </td>
@@ -196,12 +194,11 @@ Oncura represents a paradigm shift in computational oncology, delivering:
 
 | **Data Modality** | **Features** | **Clinical Impact** |
 |:----------------:|:------------:|:------------------:|
-| 🔬 **DNA Methylation** (20) | CpG island patterns, DMRs | Epigenetic regulation insights |
-| 🧬 **Mutations** (25) | TMB, driver genes, MSI status | Driver mutation identification |
-| 📊 **Copy Number Alterations** (20) | Focal amp/del, aneuploidy | Chromosomal instability |
-| 🧪 **Fragmentomics** (15) | cfDNA fragment patterns | Liquid biopsy biomarkers |
-| 🏥 **Clinical** (10) | Age, sex, stage, grade | Patient stratification |
-| 🔗 **ICGC ARGO** (20) | RNA expression, immune signatures | Pathway activation levels |
+| 🧬 **Gene Expression** (2,000) | High-variance protein-coding genes | Transcriptomic cancer signatures |
+| 🔬 **DNA Methylation** (2,000) | High-variance CpG probes | Epigenetic regulation insights |
+| 🧪 **Somatic Mutations** (63) | TMB, driver gene status, variant classification | Driver mutation identification |
+
+**Total: 4,063 features per patient across 3 genomic modalities**
 
 </div>
 
@@ -211,19 +208,18 @@ Oncura represents a paradigm shift in computational oncology, delivering:
 
 ### **🎯 Current Model Architecture**
 
-Oncura achieves **96.5% ± 0.6% balanced accuracy on real TCGA clinical data** through:
-- **Knowledge-Guided Feature Integration**: Pathway-constrained cross-modal interactions across 6 genomic modalities
-- **Balanced Experimental Design**: 1,200 real samples (150/type), zero synthetic data
-- **Bayesian Ensemble Optimization**: Genomic-adapted hyperparameters for LightGBM
-- **Biologically-Validated Interpretability**: SHAP with pathway enrichment ensuring genuine cancer biology learning
+Oncura achieves **98.4% balanced accuracy on real TCGA clinical data** through:
+- **Multi-Modal Genomic Integration**: Gene expression, DNA methylation, and somatic mutation features (4,063 total)
+- **Balanced Experimental Design**: 1,248 real samples (156/type), zero synthetic data
+- **Bayesian Hyperparameter Optimization**: Automated search for optimal LightGBM configuration
+- **SHAP Interpretability**: Top features validated against known cancer biomarkers
+- **Leak-Free Validation**: Feature selection on training folds only, held-out test set (n=250)
 
 ### **📊 Model Performance Hierarchy**
-- **🥇 LightGBM (Champion)**: 96.5% ± 0.6% balanced accuracy
-- **🥈 XGBoost**: 96.2% ± 1.0%
-- **🥉 Random Forest**: 94.9% ± 1.2%
-- **Logistic Regression**: 94.8% ± 2.7%
-- **Gradient Boosting**: 92.7% ± 0.8%
-- **SVM**: 89.0% ± 1.9%
+- **🥇 LightGBM (Champion, tied)**: 98.4% balanced accuracy
+- **🥇 Logistic Regression (tied)**: 98.4% balanced accuracy
+- **🥉 XGBoost**: 98.0%
+- **Random Forest**: 97.2%
 
 ---
 
@@ -238,7 +234,7 @@ Oncura achieves **96.5% ± 0.6% balanced accuracy on real TCGA clinical data** t
 
 | Rank | System | **Accuracy** | **Samples** | **Status** | **Key Strengths** |
 |:----:|:-------|:------------:|:-----------:|:----------:|:-----------------:|
-| **🥇** | **Oncura** | **96.5%** | **1,200** | **Prod Ready** | **Accuracy + Interpretability + Zero Synthetic Data** |
+| **🥇** | **Oncura** | **98.4%** | **1,248** | **Prod Ready** | **Accuracy + Interpretability + Zero Synthetic Data** |
 | **🥈** | **FoundationOne CDx** | **94.6%** | **Proprietary** | **FDA Approved** | **Commercial Deployment** |
 | **🥉** | **Yuan et al. 2023** | **89.2%** | **4,127** | **Research** | **Large Sample Size** |
 | 4th | MSK-IMPACT | 89.7% | Proprietary | Clinical Use | Hospital Integration |
@@ -254,16 +250,16 @@ Oncura achieves **96.5% ± 0.6% balanced accuracy on real TCGA clinical data** t
 
 | **Metric** | **Oncura** | **Best Competitor** | **Advantage** |
 |:-----------|:----------------:|:-------------------:|:-------------:|
-| **🎯 Balanced Accuracy** | **96.5% ± 0.6%** | 94.6% (FoundationOne) | **+1.9pp** |
-| **🔬 Cross-Validation** | Stratified 5-fold, balanced | 5-fold (Yuan et al.) | **Perfect balance per fold** |
+| **🎯 Balanced Accuracy** | **98.4%** | 94.6% (FoundationOne) | **+3.8pp** |
+| **🔬 Validation** | Stratified 5-fold CV + held-out test (n=250) | 5-fold (Yuan et al.) | **Dual validation** |
 | **💎 Data Authenticity** | 100% real, zero synthetic | Mixed (SMOTE common) | **No synthetic contamination** |
-| **🧠 Interpretability** | SHAP + pathway enrichment + biomarker validation | Limited post-hoc | **Biologically validated** |
+| **🧠 Interpretability** | SHAP with biomarker validation | Limited post-hoc | **Biologically validated** |
 | **🚀 Production Ready** | Complete system (API, Docker, EHR) | Deployed (FoundationOne) | **Comparable** |
 | **📖 Reproducibility** | Full code, data, pipeline | Partial/proprietary | **Fully open** |
-| **📏 Sample Size** | 1,200 balanced samples | 4K–7K+ (imbalanced) | **Quality over quantity** |
+| **📏 Sample Size** | 1,248 balanced samples | 4K–7K+ (imbalanced) | **Quality over quantity** |
 | **⚡ Efficiency** | 6–15× faster than transformers | Hours of training | **Minutes of training** |
 
-**🏆 Oncura: 96.5% accuracy with 7.3pp improvement over state-of-the-art (89.2%)**
+**🏆 Oncura: 98.4% accuracy with 9.2pp improvement over state-of-the-art (89.2%)**
 
 </div>
 
@@ -273,11 +269,11 @@ Oncura achieves **96.5% ± 0.6% balanced accuracy on real TCGA clinical data** t
 
 | **🏅 Category Champion** | **Oncura's Achievement** | **Competitive Edge** |
 |:------------------------:|:------------------------------:|:--------------------:|
-| **🎯 Highest Accuracy** | **96.5% on real TCGA data** | 7.3pp over state-of-the-art |
-| **🔬 Best Validation** | **Stratified 5-fold CV, balanced** | Perfect balance maintained per fold |
-| **💎 Cleanest Data** | **1,200 real samples, zero synthetic** | Balanced design, not SMOTE |
-| **🧠 Validated Interpretability** | **SHAP + pathway enrichment** | Biologically validated (V=0.87) |
-| **🚀 Production Excellence** | **Complete deployment system** | <50ms latency, 99.97% uptime |
+| **🎯 Highest Accuracy** | **98.4% on real TCGA data** | 9.2pp over state-of-the-art |
+| **🔬 Rigorous Validation** | **5-fold CV + held-out test (n=250)** | Dual validation strategy |
+| **💎 Cleanest Data** | **1,248 real samples, zero synthetic** | Balanced design, not SMOTE |
+| **🧠 Validated Interpretability** | **SHAP with biomarker validation** | SFTPB, GATA3, KLK3, NKX2-1 confirmed |
+| **🚀 Production Excellence** | **Complete deployment system** | <50ms latency, API + Docker |
 | **📖 Perfect Transparency** | **Full reproducibility package** | Open science standard |
 
 </div>
@@ -290,7 +286,7 @@ Accuracy vs. Production Readiness Matrix:
     High Performance ↗️
         ┌───────────────────┐
         │     Oncura        │ ← DOMINANT POSITION
-        │ (96.5%, Complete) │   (Best of Both Worlds)
+        │ (98.4%, Complete) │   (Best of Both Worlds)
         ├───────────────────┤
         │ FoundationOne     │ ← Commercial Leader  
         │ (94.6%, Live)     │   (FDA Approved)
@@ -307,10 +303,10 @@ Accuracy vs. Production Readiness Matrix:
 
 | **Advantage Category** | **Oncura's Edge** | **Market Impact** |
 |:----------------------:|:------------------------:|:-----------------:|
-| **🎯 Performance Breakthrough** | 96.5% — 7.3pp over state-of-the-art | Sets new industry benchmark |
+| **🎯 Performance Breakthrough** | 98.4% — 9.2pp over state-of-the-art | Sets new industry benchmark |
 | **💎 Data Integrity** | Balanced design, zero synthetic data | Ethical AI leadership |
-| **🧠 Validated Interpretability** | SHAP + pathway enrichment (V=0.87) | Biologically grounded decisions |
-| **📖 Scientific Transparency** | Full code + 1,200 real samples | Academic credibility |
+| **🧠 Validated Interpretability** | SHAP-confirmed cancer biomarkers | Biologically grounded decisions |
+| **📖 Scientific Transparency** | Full code + 1,248 real samples | Academic credibility |
 | **🚀 Production Architecture** | <50ms latency, EHR-integrated | Clinical deployment ready |
 
 </div>
@@ -321,52 +317,44 @@ Accuracy vs. Production Readiness Matrix:
 
 <div align="center">
 
-### **🏆 96.5% ± 0.6% Balanced Accuracy on 1,200 Real TCGA Samples**
+### **🏆 98.4% Balanced Accuracy on 1,248 Real TCGA Samples**
 *LightGBM with balanced experimental design — zero synthetic data*
 
-| **Model** | **Balanced Accuracy** | **Std Dev** | **Precision** | **Recall** | **F1-Score** |
-|-----------|:--------------------:|:-----------:|:-------------:|:----------:|:------------:|
-| **🔥 LightGBM (Champion)** | **96.5%** | **±0.6%** | **96.4%** | **96.5%** | **96.4%** |
-| **🥈 XGBoost** | **96.2%** | **±1.0%** | **96.0%** | **96.2%** | **96.1%** |
-| **🥉 Random Forest** | **94.9%** | **±1.2%** | **94.7%** | **94.9%** | **94.8%** |
-| Logistic Regression | 94.8% | ±2.7% | 94.5% | 94.8% | 94.6% |
-| Gradient Boosting | 92.7% | ±0.8% | 92.5% | 92.7% | 92.6% |
-| SVM | 89.0% | ±1.9% | 88.7% | 89.0% | 88.8% |
+| **Model** | **Balanced Accuracy** | **Key Result** |
+|-----------|:--------------------:|:--------------:|
+| **🔥 LightGBM (Champion, tied)** | **98.4%** | **4/8 cancer types at 100% precision & recall** |
+| **🔥 Logistic Regression (tied)** | **98.4%** | **Matched LightGBM on held-out test** |
+| **🥉 XGBoost** | **98.0%** | Strong ensemble performance |
+| **Random Forest** | **97.2%** | Robust tree-based baseline |
 
 **🧬 Technical Specifications:**
-- **Champion Model**: LightGBM with Bayesian ensemble optimization
-- **Class Balance**: Perfectly balanced experimental design (150 samples/type) — no synthetic augmentation
-- **Feature Space**: 2,000-dimensional from 110 base features via knowledge-guided pathway-constrained interactions
-- **Validation**: Stratified 5-fold CV with perfect balance per fold (CV folds: 96.2%, 95.8%, 96.3%, 96.7%, 97.5%)
+- **Champion Model**: LightGBM with Bayesian hyperparameter optimization
+- **Class Balance**: Balanced experimental design (156 samples/type) — no synthetic augmentation
+- **Feature Space**: 4,063 features (2,000 gene expression + 2,000 methylation + 63 mutation variables)
+- **Validation**: Stratified 5-fold CV + held-out test set (n=250)
 - **Cancer Types**: 8 TCGA cancer types (BRCA, LUAD, COAD, PRAD, STAD, HNSC, LUSC, LIHC)
 - **Data Quality**: 100% verified real TCGA genomic and clinical data
-- **Biological Validation**: Cramér's V=0.87, 68% pathway enrichment, all p<0.001
+- **Top Biomarkers**: SFTPB, GATA3, KLK3, NKX2-1, methylation probes cg01805540, cg15520279, cg26511321
 - **Mutation Data**: Real cancer gene mutations (TP53, PIK3CA, KRAS, BRAF, EGFR, APC, etc.)
-
-**🔬 Ablation Study Results (each innovation's contribution):**
-- +3.2pp from multi-modal integration (p<0.001)
-- +2.8pp from knowledge-guided features (p<0.001)
-- +1.5pp from ensemble optimization (p<0.001)
-- +1.3pp from balanced experimental design (p<0.001)
 
 </div>
 
-### **🎯 Validated Cancer Types (150 Samples Each)**
+### **🎯 Validated Cancer Types (156 Samples Each)**
 
 <div align="center">
 
-| **Cancer Type** | **Samples** | **Per-Type Accuracy** | **Clinical Relevance** |
+| **Cancer Type** | **Samples** | **Test Set Result** | **Clinical Relevance** |
 |:---------------:|:-----------:|:---------------------:|:-----------------------------:|
-| 🧬 Breast (BRCA) | 150 | 97.8% | Leading cancer in women |
-| 🪁 Lung Adeno (LUAD) | 150 | 96.5% | Most common cancer worldwide |
-| 🪁 Lung Squamous (LUSC) | 150 | 96.1% | Second most common lung cancer |
-| 🪁 Head & Neck (HNSC) | 150 | 95.7% | HPV-related cancers |
-| 🧬 Colorectal (COAD) | 150 | 95.2% | Third most common cancer |
-| 🧬 Prostate (PRAD) | 150 | 94.8% | Leading cancer in men |
-| 🧬 Liver (LIHC) | 150 | 93.4% | Rising incidence globally |
-| 🧬 Stomach (STAD) | 150 | 91.2% | High incidence in Asia |
+| 🧬 Breast (BRCA) | 156 | ✅ 100% Precision & Recall | Leading cancer in women |
+| 🪁 Lung Adeno (LUAD) | 156 | ✅ High Performance | Most common cancer worldwide |
+| 🪁 Lung Squamous (LUSC) | 156 | ✅ High Performance | Second most common lung cancer |
+| 🪁 Head & Neck (HNSC) | 156 | ✅ High Performance | HPV-related cancers |
+| 🧬 Colorectal (COAD) | 156 | ✅ High Performance | Third most common cancer |
+| 🧬 Prostate (PRAD) | 156 | ✅ High Performance | Leading cancer in men |
+| 🧬 Liver (LIHC) | 156 | ✅ High Performance | Rising incidence globally |
+| 🧬 Stomach (STAD) | 156 | ✅ High Performance | High incidence in Asia |
 
-**Note**: All 8 cancer types exceed 91% balanced accuracy. Models validated exclusively on real TCGA clinical data with perfectly balanced experimental design (1,200 total samples).
+**Note**: 4 of 8 cancer types achieved 100% precision and recall on the held-out test set. Models validated exclusively on real TCGA clinical data with balanced experimental design (1,248 total samples, 156 per type).
 
 </div>
 
@@ -379,20 +367,20 @@ Accuracy vs. Production Readiness Matrix:
 ```mermaid
 flowchart TD
     subgraph "Data Layer"
-        A[🧬 Real TCGA Data<br/>1,200 Samples, 8 Cancer Types<br/>Perfectly Balanced: 150/type]
-        B[📊 6 Genomic Modalities<br/>110 Base Features]
+        A[🧬 Real TCGA Data<br/>1,248 Samples, 8 Cancer Types<br/>Balanced: 156/type]
+        B[📊 3 Genomic Modalities<br/>4,063 Features]
     end
     
     subgraph "Processing Pipeline"
-        C[🔬 Knowledge-Guided Integration<br/>Pathway-Constrained Interactions]
-        D[📈 2,000-Dimensional Feature Space<br/>Biologically-Motivated Features]
-        E[🌲 LightGBM Model<br/>Bayesian Ensemble Optimization]
+        C[🔬 Multi-Modal Integration<br/>Expression + Methylation + Mutations]
+        D[📈 4,063-Dimensional Feature Space<br/>Leak-Free Feature Selection]
+        E[🌲 LightGBM Model<br/>Bayesian Hyperparameter Optimization]
     end
     
     subgraph "Validation & Deployment"
-        F[✅ Stratified 5-Fold CV<br/>Perfect Balance per Fold]
-        G[🏆 96.5% ± 0.6% Accuracy<br/>Champion Model]
-        H[📊 SHAP + Pathway Enrichment<br/>Biologically-Validated Interpretability]
+        F[✅ Stratified 5-Fold CV<br/>+ Held-Out Test (n=250)]
+        G[🏆 98.4% Balanced Accuracy<br/>4/8 Types at 100%]
+        H[📊 SHAP Interpretability<br/>Biomarker-Validated Features]
     end
     
     subgraph "Application Layer"
@@ -429,7 +417,7 @@ flowchart TD
     style H fill:#E3F2FD
 ```
 
-*System Architecture: End-to-end Oncura pipeline from 1,200 real TCGA samples through knowledge-guided integration to clinical deployment, achieving 96.5% ± 0.6% balanced accuracy with biologically-validated interpretability.*
+*System Architecture: End-to-end Oncura pipeline from 1,248 real TCGA samples through multi-modal integration to clinical deployment, achieving 98.4% balanced accuracy with SHAP-validated interpretability.*
 
 </div>
 
@@ -462,25 +450,25 @@ cancer-alpha/
 
 <div align="center">
 
-### **🏆 Experience Oncura — 96.5% Accuracy Production Model!**
+### **🏆 Experience Oncura — 98.4% Accuracy Production Model!**
 
 [![Download Production Demo](https://img.shields.io/badge/⬇️_DOWNLOAD-Production_Demo_v2.0-FFD700?style=for-the-badge&logo=data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0id2hpdGUiPjxwYXRoIGQ9Ik0xOSA5aC00VjNIOXY2SDVsNyA3IDctN3pNNSAxOHYyaDE0di0yaDE0eiIvPjwvc3ZnPg==)](https://github.com/rstil2/cancer-alpha/raw/main/cancer_genomics_ai_demo_production_v2.0.zip)
 
-**Latest: Production LightGBM • 96.5% Accuracy • Balanced Design • Full SHAP Explanations**
+**Latest: Production LightGBM • 98.4% Accuracy • Balanced Design • Full SHAP Explanations**
 
 | **🏆 Production Demo Features** | **Breakthrough Technology** |
 |:-------------------------------:|:---------------------------:|
-| **🌟 Production LightGBM** | **96.5% accuracy** on real TCGA data |
-| **🔍 SHAP + Pathway Enrichment** | Biologically-validated interpretability |
+| **🌟 Production LightGBM** | **98.4% accuracy** on real TCGA data |
+| **🔍 SHAP Interpretability** | Biomarker-validated explanations |
 | **📊 Interactive Web Interface** | Professional Streamlit application |
-| **🧬 Multi-Modal Genomic Data** | 2,000 features from 6 genomic modalities |
+| **🧬 Multi-Modal Genomic Data** | 4,063 features from 3 genomic modalities |
 | **🎯 8 Cancer Types** | BRCA, LUAD, COAD, PRAD, STAD, HNSC, LUSC, LIHC |
 | **🚀 30-Second Setup** | Automated installation with `python setup.py` |
 | **🖥️ Cross-Platform** | Windows, Mac, Linux + Docker support |
 | **⚖️ Patent Protected** | Demonstration license included |
 
 **📁 What's Included:**
-- 🤖 **Production AI Model** (LightGBM with Bayesian optimization)
+- 🤖 **Production AI Model** (LightGBM with Bayesian hyperparameter optimization)
 - 📊 **Data Processing Pipeline** (Standard scaler + preprocessing)
 - 🔧 **Automated Setup** (`setup.py` + verification script)
 - 📚 **Complete Documentation** (README + Quick Start guide)
@@ -587,16 +575,16 @@ For information about clinical deployment capabilities:
 
 ### **What This Demo Shows**
 - **Interactive Web Interface**: User-friendly cancer classification tool
-- **Multi-Modal Data Integration**: Sample genomic data processing across 6 modalities
+- **Multi-Modal Data Integration**: Sample genomic data processing across 3 modalities
 - **AI Predictions**: Cancer type classification with confidence scoring
 - **SHAP Explainability**: Visual explanation of prediction factors
 - **Clinical Decision Support**: Demo of diagnostic assistance interface
 
 ### **Full System Features** (Beyond Demo)
-- Knowledge-guided multi-modal integration with pathway-constrained interactions
-- Real TCGA multi-omics data (1,200 balanced samples across 8 cancer types)
-- Production LightGBM achieving 96.5% ± 0.6% balanced accuracy
-- Biologically-validated interpretability (SHAP + pathway enrichment)
+- Multi-modal integration of gene expression, DNA methylation, and somatic mutations
+- Real TCGA multi-omics data (1,248 balanced samples across 8 cancer types)
+- Production LightGBM achieving 98.4% balanced accuracy
+- SHAP interpretability with biomarker-validated explanations
 - Complete hospital deployment infrastructure (API, Docker, EHR integration)
 
 ## 📊 **Demo vs Full System Comparison**
@@ -604,11 +592,11 @@ For information about clinical deployment capabilities:
 | Feature | Demo Version | Full System |
 |---------|-------------|-------------|
 | **Data Sources** | Sample data | Real TCGA genomic databases |
-| **Model Accuracy** | ~70% (simplified) | **96.5%** (real TCGA data) |
+| **Model Accuracy** | ~70% (simplified) | **98.4%** (real TCGA data) |
 | **Cancer Types** | 8 basic types | 8 cancer types (validated) |
 | **Processing Speed** | Limited | Real-time production (<50ms) |
-| **Explainability** | Basic SHAP | SHAP + pathway enrichment (biologically validated) |
-| **Sample Size** | Demo data | 1,200 real TCGA samples (perfectly balanced) |
+| **Explainability** | Basic SHAP | SHAP with biomarker validation |
+| **Sample Size** | Demo data | 1,248 real TCGA samples (balanced) |
 | **Mutations** | Sample data | Real cancer gene mutations (TP53, PIK3CA, KRAS, etc.) |
 
 ## 🏥 **Potential Applications**
@@ -719,16 +707,16 @@ For detailed instructions, see the [Master Installation Guide](docs/MASTER_INSTA
 4. **Phase 3**: 90% Accuracy Target ✅ **(EXCEEDED)**
 5. **Phase 4**: Systemization and Tool Deployment ✅
 6. **Phase 4.5**: Advanced System Features ✅ **(COMPLETE — Optimized Models Deployed)**
-7. **Phase 5**: Real Data Integration ✅ **(COMPLETE — 1,200 Balanced TCGA Samples)**
-8. **Phase 5.5**: Breakthrough Model Development ✅ **(🔥 96.5% ± 0.6% Balanced Accuracy)**
+7. **Phase 5**: Real Data Integration ✅ **(COMPLETE — 1,248 Balanced TCGA Samples)**
+8. **Phase 5.5**: Breakthrough Model Development ✅ **(🔥 98.4% Balanced Accuracy)**
 9. **Phase 6**: Publication & Peer Review 🔄 **(bioRxiv published, AIM under review)**
 10. **Phase 7**: Clinical Deployment & Commercialization 📝 **(UPCOMING)**
 
-**🔥 BREAKTHROUGH ACHIEVED:** 96.5% ± 0.6% balanced accuracy on 1,200 real TCGA samples with zero synthetic data.
+**🔥 BREAKTHROUGH ACHIEVED:** 98.4% balanced accuracy on 1,248 real TCGA samples with zero synthetic data.
 
 **Current Strategic Focus:**
-- ✅ LightGBM with knowledge-guided integration deployed as champion model
-- ✅ 96.5% balanced accuracy validated on 1,200 authentic TCGA samples
+- ✅ LightGBM with Bayesian optimization deployed as champion model
+- ✅ 98.4% balanced accuracy validated on 1,248 authentic TCGA samples
 - ✅ Balanced experimental design — no synthetic data augmentation
 - ✅ Main paper published on bioRxiv (DOI: 10.1101/2025.07.22.666135)
 - 🔄 Revised manuscript under review at *Artificial Intelligence in Medicine*
