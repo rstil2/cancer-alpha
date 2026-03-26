@@ -202,6 +202,19 @@ gdc_manifest_locked.json
 *.rtf
 *.html
 
+# Temporary manuscript working files
+manuscripts/convert_status.txt
+manuscripts/cup_linecount.txt
+manuscripts/cup_output.txt
+manuscripts/cup_progress.txt
+manuscripts/terminal_test.txt
+
+# Experiment output files (keep scripts, ignore generated output)
+experiments/results/
+experiments/cup_results/
+experiments/subtype_results/
+experiments/*_output.txt
+
 # Production deployment configs
 PRODUCTION_DEPLOYMENT.md
 serve_demo.py
