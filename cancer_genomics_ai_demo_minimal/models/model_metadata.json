@@ -1,37 +1,32 @@
 {
-  "model_date": "2025-08-22",
-  "optimization": "Multi-Omics TCGA + SMOTE Integration",
-  "champion_model": "LightGBM",
-  "accuracies": {
-    "lightgbm": "44.9%",
-    "xgboost": "44.7%", 
-    "random_forest": "42.0%",
-    "gradient_boosting": "43.1%",
-    "logistic_regression": "39.9%"
+  "demo_description": "Simplified demo models from the minimal-data setting",
+  "demo_models": {
+    "logistic_regression": {
+      "file": "multimodal_real_tcga_logistic_regression.pkl",
+      "n_features": 80,
+      "note": "Uses SelectKBest feature selection from 110 features"
+    },
+    "random_forest": {
+      "file": "multimodal_real_tcga_random_forest.pkl",
+      "n_features": 110
+    }
   },
-  "cross_validation": {
-    "lightgbm_cv_mean": "42.4%",
-    "lightgbm_cv_std": "1.0%",
-    "auc": "85.5%"
+  "demo_cancer_types": ["BRCA", "LUAD", "COAD", "PRAD", "STAD", "KIRC", "HNSC", "LIHC"],
+  "demo_training_samples": 158,
+  "demo_features": {
+    "total": 110,
+    "modalities": ["methylation", "mutations", "copy_number", "fragmentomics", "clinical", "icgc_argo"]
   },
-  "cancer_types": [
-    "BRCA",
-    "LUAD", 
-    "COAD",
-    "PRAD",
-    "STAD",
-    "KIRC",
-    "HNSC",
-    "LIHC",
-    "THCA",
-    "LGG"
-  ],
-  "features": {
-    "total": 16506,
-    "selected_for_training": 1000,
-    "feature_types": ["mutations", "copy_number", "protein", "interaction_features"]
+  "full_system_performance": {
+    "champion_model": "LightGBM",
+    "balanced_accuracy": "98.4%",
+    "samples": 1248,
+    "features": 4063,
+    "modalities": ["gene_expression", "dna_methylation", "somatic_mutations"],
+    "cancer_types": ["BRCA", "LUAD", "COAD", "PRAD", "STAD", "HNSC", "LUSC", "LIHC"],
+    "cup_validation_accuracy": "97.6%"
   },
-  "training_samples": 8000,
-  "data_source": "Real TCGA genomics data",
-  "patent": "Provisional Application No. 63/847,316"
+  "data_source": "Real TCGA genomics data (GDC portal)",
+  "patent": "Provisional Application No. 63/847,316",
+  "last_updated": "2026-03-30"
 }

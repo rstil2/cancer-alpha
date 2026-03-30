@@ -1,122 +1,92 @@
-# Oncura - Production-Ready Multi-Modal AI for Cancer Genomics
+# Oncura — Cancer Genomics AI Classifier (Demo)
 
-**🧬 Complete Clinical AI Ecosystem - Tested, Validated, and Ready for Deployment**
+**Interactive demo of the Oncura multi-modal cancer classification system**
 
-[![System Status](https://img.shields.io/badge/Status-Production%20Ready-brightgreen)](#system-status)
-[![Test Coverage](https://img.shields.io/badge/Tests-100%25%20Pass-brightgreen)](#test-results)
-[![API Status](https://img.shields.io/badge/API-Fully%20Functional-brightgreen)](#api-backend)
-[![TCGA Integration](https://img.shields.io/badge/TCGA-Integrated-blue)](#real-data-integration)
+[![Patent Protected](https://img.shields.io/badge/Patent-Protected-blue.svg)](../PATENTS.md)
+[![Python 3.8+](https://img.shields.io/badge/python-3.8+-blue.svg)](https://www.python.org/downloads/)
 
-Oncura represents a breakthrough in clinical AI - not just another machine learning model, but a **complete production ecosystem** integrating multi-modal genomic data through our advanced transformer architecture (see Figure 1) for accurate, interpretable cancer predictions ready for deployment.
+## Full System Performance
 
-## 🎯 **What Makes Oncura Truly Special**
+The complete Oncura system achieves the following on real TCGA clinical data:
 
-### **🔬 Multi-Modal Transformer Innovation**
-- **Novel Architecture**: First-of-its-kind multi-modal transformer with cross-modal attention for genomic studies
-- **Validated Modalities**: Utilizes real mutations and clinical data from authentic TCGA patient samples
-- **Innovative Learning**: Beyond simple concatenation - models true biological interactions and complexities
-- **Real Dataset Results**:
-  - **Logistic Regression**: Achieved 97.6% accuracy (±1.6%)
-  - **Random Forest**: Achieved 88.6% accuracy (±4.5%)
-  - Evaluated over **254 Real Patient Samples**: Processing 383 mutations, 99 clinical features, devoid of synthetic augmentation
+| Setting | Samples | Features | Modalities | Best Accuracy |
+|---------|---------|----------|------------|---------------|
+| **Full cohort** | 1,248 (156/type) | 4,063 | Gene expression, DNA methylation, somatic mutations | **98.4%** (LightGBM) |
+| **Minimal data** | 158 (imbalanced) | 110 | Methylation, mutations, CNA, fragmentomics, clinical, ICGC ARGO | **95.0%** (LightGBM+SMOTE) |
+| **CUP validation** | 2,500 predictions | 4,063 | 3 modalities | **97.6%** balanced accuracy |
 
-### **🏥 Production-Ready Hospital Integration**
-- **"Plug and Play" Deployment**: One-command Docker setup for hospitals
-- **Epic/Cerner Integration**: Direct EMR connectivity with FHIR R4 compliance
-- **Hospital Authentication**: SSO, LDAP/Active Directory, and role-based access
-- **Clinical Workflow API**: Complete order-to-result automation
-- **HIPAA Compliance**: Built-in audit logging and regulatory frameworks
-- **24/7 Production Support**: Enterprise-grade monitoring and maintenance
+**Full-cohort model rankings (held-out test, n=250):**
+- LightGBM: **98.4%** — 4/8 cancer types at 100% precision & recall
+- Logistic Regression: **98.4%**
+- XGBoost: **98.0%**
+- Random Forest: **97.2%**
 
-### **✅ Comprehensive Validation (100% Test Pass Rate)**
-- **Model Validation**: 6/6 comprehensive tests passed including extreme values, NaN handling, batch consistency
-- **API Testing**: 7/7 production API tests passed with full authentication and performance validation
-- **Data Integration**: 6/6 TCGA pipeline tests passed with real data access and processing
-- **System Integration**: All components tested and verified functional
+**Cancer types**: BRCA, LUAD, COAD, PRAD, STAD, HNSC, LUSC, LIHC
 
-## 📊 **Real Data Performance Metrics**
+For full details, see the [main project README](../README.md) and published manuscript on [bioRxiv](https://www.biorxiv.org/content/10.1101/2025.07.22.666135v1).
 
-### **Dataset Specifications**
-- **Source**: Real TCGA files from GDC (800 files downloaded)
-- **Patient Samples**: 254 authentic patient records
-- **Mutation Data**: 383 real genomic mutations processed
-- **Clinical Features**: 99 clinical variables
-- **Cancer Type Clusters**: 8 distinct cancer classifications
-- **Data Verification**: 100% real data - zero synthetic augmentation
+## What This Demo Includes
 
-### **Model Performance on Real TCGA Data**
-| Model | Validation Method | Mean Accuracy | Confidence Interval |
-|-------|------------------|---------------|--------------------|
-| **Logistic Regression** | 5-fold Cross-Validation | **97.6%** | ±1.6% |
-| **Random Forest** | 5-fold Cross-Validation | **88.6%** | ±4.5% |
+This demo provides a **simplified interactive interface** using models trained on the minimal-data setting (158 TCGA samples, 110 features). It demonstrates the classification workflow and SHAP explainability.
 
-### **Data Processing Pipeline**
-- **Mutation Files Processed**: 158 real MAF files
-- **Clinical Files Processed**: 154 patient records
-- **Multi-Modal Integration**: Mutations + Clinical data
-- **Quality Assurance**: Real data validation at every step
+**Demo models:**
+- Logistic Regression (80 selected features)
+- Random Forest (110 features)
 
-## 🚀 **Quick Start**
+**Demo cancer types**: BRCA, LUAD, COAD, PRAD, STAD, KIRC, HNSC, LIHC
 
-### **For Researchers & Developers**
+**Demo features:**
+- Interactive Streamlit web interface
+- Cancer type classification with confidence scoring
+- SHAP-based feature importance explanations
+- Modality-level importance breakdown
+- Sample data generation for testing
+
+## Quick Start
+
 ```bash
-# Clone and setup demo
-git clone https://github.com/your-repo/cancer-alpha
-cd cancer-alpha/cancer_genomics_ai_demo_minimal
-pip install -r requirements.txt
+# Install dependencies
+pip install -r requirements_streamlit.txt
 
-# Run Streamlit demo
+# Run the demo
 streamlit run streamlit_app.py
-
-# Or start API server
-cd api && uvicorn main:app --reload
 ```
 
-### **🏥 For Hospital Deployment**
+Access the demo at **http://localhost:8501**
+
+### Alternative: One-Command Setup
 ```bash
-# One-command hospital deployment
-cp .env.example .env.hospital
-# Edit .env.hospital with your hospital configuration
-docker-compose --env-file .env.hospital up -d
-
-# Verify deployment
-curl http://localhost:8000/health
+python setup.py && ./start_demo.sh
 ```
 
-📖 **Complete Hospital Setup Guide**: See [`HOSPITAL_DEPLOYMENT_GUIDE.md`](HOSPITAL_DEPLOYMENT_GUIDE.md) for full instructions including:
-- Epic/Cerner EMR integration
-- LDAP/SSO authentication setup  
-- FHIR R4 compliance configuration
-- Clinical workflow automation
-- HIPAA compliance and audit logging
+## Demo vs Full System
 
-## 🏗️ **Architecture Overview**
+| Feature | This Demo | Full System |
+|---------|-----------|-------------|
+| **Samples** | 158 (imbalanced) | 1,248 (balanced, 156/type) |
+| **Features** | 110 (6 modalities) | 4,063 (3 modalities) |
+| **Models** | LR, Random Forest | LightGBM, LR, XGBoost, RF |
+| **Accuracy** | Demo-level | 98.4% balanced accuracy |
+| **Validation** | Cross-validation | 5-fold CV + held-out test (n=250) |
+| **CUP validation** | Not included | 97.6% (2,500 predictions) |
+| **Subtype prediction** | Not included | 80–92% across 3 cancer types |
+| **Explainability** | SHAP feature importance | SHAP + biomarker validation |
 
-Our multi-modal transformer architecture (Figure 1) processes real genomic data through:
+## Requirements
 
-1. **Modality-Specific Encoders**: Separate processing for mutations and clinical data
-2. **Cross-Modal Attention**: Biological interaction modeling between data types
-3. **Global Classification**: Unified cancer type prediction with confidence scoring
-4. **Interpretability Layer**: SHAP explanations and attention weight visualization
+- Python 3.8+
+- 4GB RAM minimum
+- Dependencies listed in `requirements_streamlit.txt`
 
-## 📈 **Clinical Validation Status**
+## Patent Notice
 
-- ✅ **Real Data Validation**: Tested on authentic TCGA patient samples
-- ✅ **Cross-Validation**: Rigorous 5-fold validation methodology
-- ✅ **Performance Consistency**: Stable results across multiple runs
-- ✅ **Regulatory Readiness**: Explainable AI components integrated
-- ✅ **Production Infrastructure**: Complete API and deployment framework
+This repository contains a demonstration of patent-protected technology.
 
-## 📄 **License**
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-## 📞 **Contact**
-
-For questions, collaborations, or commercial licensing:
-- **Email**: craig.stillwell@gmail.com
-- **Project**: Oncura Genomics AI Classifier
+- **Patent**: Provisional Application No. 63/847,316
+- **Patent Holder**: Dr. R. Craig Stillwell
+- **Commercial Use**: Requires separate patent license
+- **Contact**: craig.stillwell@gmail.com
 
 ---
 
-**🧬 Ready for Clinical Deployment - Validated on Real Patient Data**
+**© 2025–2026 Dr. R. Craig Stillwell. All rights reserved.**
