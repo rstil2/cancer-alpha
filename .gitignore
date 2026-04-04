@@ -172,6 +172,7 @@ manuscripts/simple_embed_figures.py
 
 # Results and output directories
 results/
+pipeline_output/
 
 # Submission and packaging directories
 science/
