@@ -21,46 +21,6 @@
 
 ---
 
-## 🚀 **Deploy in Hours, Integrate in Days**
-
-<div align="center">
-
-### **🏥 True "Plug-and-Play" Hospital Deployment**
-
-*Oncura's breakthrough architecture enables rapid deployment with our one-command Docker setup getting you operational in hours. With pre-built Epic and Cerner connectors, complete FHIR R4 integration, and hospital-ready authentication systems, most institutions can achieve full EMR integration within 1-2 days - not months.*
-
-</div>
-
-**Key Deployment Differentiators:**
-
-✅ **⚡ One-Command Deployment** - `docker-compose up` gets you running  
-✅ **🏥 Pre-Built EMR Connectors** - Epic/Cerner integration ready out-of-box  
-✅ **🔗 FHIR R4 Native** - No custom integration development needed  
-✅ **🔐 Hospital Auth Ready** - LDAP, SSO, role-based access included  
-✅ **🛡️ Production Hardened** - HIPAA compliance, audit logging built-in  
-✅ **📊 Clinical Dashboard** - Complete workflow automation included  
-
-**Compared to competitors who require:**
-- ❌ Months of custom integration work
-- ❌ Expensive consulting engagements ($100K+)
-- ❌ Custom EMR connector development
-- ❌ Separate authentication system setup
-- ❌ Manual compliance framework implementation
-
-<div align="center">
-
-### **🎯 Deployment Timeline**
-
-| **Phase** | **Timeline** | **What's Included** |
-|:---------:|:------------:|:-------------------:|
-| **⚡ Technical Setup** | **2-4 Hours** | Docker deployment, API operational, basic configuration |
-| **🔗 EMR Integration** | **1-2 Days** | Epic/Cerner connectors, FHIR endpoints, patient data flow |
-| **🛡️ Production Ready** | **1-2 Weeks** | Security review, compliance validation, full clinical workflow |
-
-[![Hospital Deployment Guide](https://img.shields.io/badge/📖_Read-Complete_Deployment_Guide-green?style=for-the-badge)](cancer_genomics_ai_demo_minimal/HOSPITAL_DEPLOYMENT_GUIDE.md)
-
-</div>
-
 ---
 
 ## 📄 **Research Papers**
@@ -165,12 +125,10 @@ Oncura represents a paradigm shift in computational oncology, delivering:
 </td>
 <td width="50%">
 
-### 🏥 **Production-Ready Platform**
+### 🏥 **Available Infrastructure**
 - **Streamlit Web App**: Interactive cancer classification with SHAP explainability
-- **React Web Application**: Advanced clinical interface with genomic data exploration
-- **REST API**: Enterprise-grade backend service with comprehensive endpoints
-- **Docker & Kubernetes**: Scalable deployment with health monitoring
-- **Hospital Integration**: Standards-compliant design for clinical environments
+- **REST API**: Backend service with prediction endpoints
+- **Docker Support**: Containerized deployment with docker-compose
 
 ### 🔍 **Clinical Explainability**
 - **Per-Case Confidence**: Prediction confidence with uncertainty metrics
@@ -234,7 +192,7 @@ Oncura achieves **98.4% balanced accuracy on real TCGA clinical data** through:
 
 | Rank | System | **Accuracy** | **Samples** | **Status** | **Key Strengths** |
 |:----:|:-------|:------------:|:-----------:|:----------:|:-----------------:|
-| **🥇** | **Oncura** | **98.4%** | **1,248** | **Prod Ready** | **Accuracy + Interpretability + Zero Synthetic Data** |
+| **🥇** | **Oncura** | **98.4%** | **1,248** | **Research** | **Accuracy + Interpretability + Zero Synthetic Data** |
 | **🥈** | **FoundationOne CDx** | **94.6%** | **Proprietary** | **FDA Approved** | **Commercial Deployment** |
 | **🥉** | **Yuan et al. 2023** | **89.2%** | **4,127** | **Research** | **Large Sample Size** |
 | 4th | MSK-IMPACT | 89.7% | Proprietary | Clinical Use | Hospital Integration |
@@ -254,7 +212,7 @@ Oncura achieves **98.4% balanced accuracy on real TCGA clinical data** through:
 | **🔬 Validation** | Stratified 5-fold CV + held-out test (n=250) | 5-fold (Yuan et al.) | **Dual validation** |
 | **💎 Data Authenticity** | 100% real, zero synthetic | Mixed (SMOTE common) | **No synthetic contamination** |
 | **🧠 Interpretability** | SHAP with biomarker validation | Limited post-hoc | **Biologically validated** |
-| **🚀 Production Ready** | Complete system (API, Docker, EHR) | Deployed (FoundationOne) | **Comparable** |
+| **🚀 Deployment** | API + Docker + Streamlit demo | Deployed (FoundationOne) | **Research stage** |
 | **📖 Reproducibility** | Full code, data, pipeline | Partial/proprietary | **Fully open** |
 | **📏 Sample Size** | 1,248 balanced samples | 4K–7K+ (imbalanced) | **Quality over quantity** |
 | **⚡ Efficiency** | 6–15× faster than transformers | Hours of training | **Minutes of training** |
@@ -273,7 +231,7 @@ Oncura achieves **98.4% balanced accuracy on real TCGA clinical data** through:
 | **🔬 Rigorous Validation** | **5-fold CV + held-out test (n=250)** | Dual validation strategy |
 | **💎 Cleanest Data** | **1,248 real samples, zero synthetic** | Balanced design, not SMOTE |
 | **🧠 Validated Interpretability** | **SHAP with biomarker validation** | SFTPB, GATA3, KLK3, NKX2-1 confirmed |
-| **🚀 Production Excellence** | **Complete deployment system** | <50ms latency, API + Docker |
+| **🚀 Deployment** | **API + Docker + Streamlit** | Research-stage infrastructure |
 | **📖 Perfect Transparency** | **Full reproducibility package** | Open science standard |
 
 </div>
@@ -307,7 +265,7 @@ Accuracy vs. Production Readiness Matrix:
 | **💎 Data Integrity** | Balanced design, zero synthetic data | Ethical AI leadership |
 | **🧠 Validated Interpretability** | SHAP-confirmed cancer biomarkers | Biologically grounded decisions |
 | **📖 Scientific Transparency** | Full code + 1,248 real samples | Academic credibility |
-| **🚀 Production Architecture** | <50ms latency, EHR-integrated | Clinical deployment ready |
+| **🚀 Open Architecture** | API + Docker + Streamlit demo | Research-stage deployment |
 
 </div>
 
@@ -385,14 +343,11 @@ flowchart TD
 
     subgraph Application["Application Layer"]
         I["Streamlit Web App | Interactive Interface"]
-        J["REST API | Clinical Integration"]
-        K["Model Serving | Under 50ms Predictions"]
+        J["REST API | Prediction Endpoints"]
     end
 
     subgraph Infra["Infrastructure"]
         L["Docker Containers | Reproducible Deployment"]
-        M["Kubernetes | Scalable Orchestration"]
-        N["Hospital Systems | Epic/Cerner/FHIR R4"]
     end
 
     A --> B
@@ -404,12 +359,8 @@ flowchart TD
     G --> H
     H --> I
     H --> J
-    J --> K
     I --> L
     J --> L
-    K --> L
-    L --> M
-    M --> N
 
     style G fill:#FFD700,stroke:#FF6B35,stroke-width:3px
     style E fill:#E8F5E8
@@ -551,19 +502,6 @@ start_streamlit.bat
 
 **Note**: This runs a demo version of the Streamlit interface with patent protection notices.
 
-### 🏥 **Option 3: Production System Information**
-For information about clinical deployment capabilities:
-
-```bash
-# Get API backend information
-./start_api.sh
-
-# Get React frontend information  
-./start_react_app.sh
-```
-
-**Note**: These scripts provide information about licensing requirements for production deployment. The full production system with API backend and React frontend requires a separate patent license for commercial use.
-
 **System Requirements:**
 - Python 3.8+ (required for Streamlit demo)
 - 4GB RAM minimum
@@ -580,12 +518,11 @@ For information about clinical deployment capabilities:
 - **SHAP Explainability**: Visual explanation of prediction factors
 - **Clinical Decision Support**: Demo of diagnostic assistance interface
 
-### **Full System Features** (Beyond Demo)
+### **Full System Capabilities** (Beyond Demo)
 - Multi-modal integration of gene expression, DNA methylation, and somatic mutations
 - Real TCGA multi-omics data (1,248 balanced samples across 8 cancer types)
-- Production LightGBM achieving 98.4% balanced accuracy
+- LightGBM achieving 98.4% balanced accuracy
 - SHAP interpretability with biomarker-validated explanations
-- Complete hospital deployment infrastructure (API, Docker, EHR integration)
 
 ## 📊 **Demo vs Full System Comparison**
 
@@ -642,7 +579,6 @@ This technology is protected by provisional patent application and pending full 
 ### **Data Privacy**
 - Demo uses sample data for illustration purposes
 - No real patient information is processed in the demo
-- Full system includes HIPAA-compliant security measures
 
 ### **Disclaimer**
 This demo is for illustration purposes only. It should not be used for actual medical diagnosis or treatment decisions.
@@ -686,15 +622,15 @@ We welcome academic collaboration and research partnerships. For academic use an
 
 ---
 
-## 🏥 Clinical Deployment
+## 🏥 Deployment
 
-Oncura is designed for seamless integration into clinical and research environments.
+Oncura provides basic deployment infrastructure for research and evaluation:
 
-- **Hospital IT Ready**: Can be deployed by hospital IT teams using the provided guides.
-- **Scalable**: Docker and Kubernetes manifests are included for robust, scalable deployments.
-- **Secure**: Follows best practices for security and patient data privacy.
+- **Docker Support**: `docker-compose up` to run the API and Redis cache
+- **Streamlit Demo**: Interactive web interface for classification and explainability
+- **REST API**: Prediction endpoints for programmatic access
 
-For detailed instructions, see the [Master Installation Guide](docs/MASTER_INSTALLATION_GUIDE.md).
+Clinical deployment features (EMR integration, HIPAA compliance, hospital authentication) are on the roadmap but not yet implemented.
 
 ---
 
