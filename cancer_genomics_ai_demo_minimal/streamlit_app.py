@@ -43,13 +43,16 @@ import joblib
 import pickle
 from pathlib import Path
 import matplotlib.pyplot as plt
-import seaborn as sns
-import shap
 import plotly.express as px
-import plotly.graph_objects as go
-from plotly.subplots import make_subplots
 import warnings
 warnings.filterwarnings('ignore')
+
+# SHAP is optional — graceful fallback if unavailable
+try:
+    import shap
+    SHAP_AVAILABLE = True
+except ImportError:
+    SHAP_AVAILABLE = False
 
 # Import usage tracker for demo monitoring
 try:
@@ -224,25 +227,33 @@ class CancerClassifierApp:
         
         return data
     
+    # Modality slices for per-modality scaling (matches training pipeline)
+    MODALITY_SLICES = [
+        ('methylation', 0, 20),
+        ('mutation', 20, 45),
+        ('cna', 45, 65),
+        ('fragmentomics', 65, 80),
+        ('clinical', 80, 90),
+        ('icgc', 90, 110),
+    ]
+
     def preprocess_input(self, input_data, model_name=None):
         """Preprocess input data for model prediction"""
-        # Convert to numpy array if it's a list
         if isinstance(input_data, list):
             input_data = np.array(input_data)
-        
-        # Reshape to 2D array for scaler
         if len(input_data.shape) == 1:
             input_data = input_data.reshape(1, -1)
         
-        # Use appropriate scaler based on model
-        if model_name and 'Real TCGA' in model_name and 'real_tcga' in self.scalers:
-            scaled_data = self.scalers['real_tcga'].transform(input_data)
-        elif 'enhanced' in self.scalers:
-            scaled_data = self.scalers['enhanced'].transform(input_data)
-        elif 'main' in self.scalers:
-            scaled_data = self.scalers['main'].transform(input_data)
+        # Apply per-modality scaling
+        if self.scalers:
+            scaled_parts = []
+            for key, start, end in self.MODALITY_SLICES:
+                if key in self.scalers:
+                    scaled_parts.append(self.scalers[key].transform(input_data[:, start:end]))
+                else:
+                    scaled_parts.append(input_data[:, start:end])
+            scaled_data = np.hstack(scaled_parts)
         else:
-            # No scaling if no scaler available
             scaled_data = input_data
         
         # Apply feature selection for logistic regression
@@ -259,151 +270,49 @@ class CancerClassifierApp:
     
     def predict_with_confidence(self, model, input_data):
         """Make prediction with confidence scores for multi-class cancer classification"""
-        # Check if this is a transformer model
-        if hasattr(model, 'forward') and hasattr(model, 'eval'):
-            return self.predict_transformer(model, input_data)
-        else:
-            # Traditional sklearn models
-            prediction = model.predict(input_data)[0]
-            probabilities = model.predict_proba(input_data)[0]
-            
-            confidence_score = max(probabilities)
-            predicted_cancer_type = self.cancer_types[prediction]
-            
-            return {
-                'prediction': int(prediction),
-                'predicted_cancer_type': predicted_cancer_type,
-                'confidence_score': float(confidence_score),
-                'class_probabilities': probabilities.tolist(),
-                'cancer_types': self.cancer_types
-            }
-    
-    def predict_transformer(self, model, input_data):
-        """Make prediction with PyTorch transformer model"""
-        import torch
-        import torch.nn.functional as F
+        prediction = model.predict(input_data)[0]
+        probabilities = model.predict_proba(input_data)[0]
         
-        # Convert to tensor
-        if isinstance(input_data, np.ndarray):
-            input_tensor = torch.FloatTensor(input_data)
-        else:
-            input_tensor = torch.FloatTensor(np.array(input_data))
+        # Normalize probabilities (handles sklearn cross-version compat issues)
+        prob_sum = probabilities.sum()
+        if prob_sum > 0 and abs(prob_sum - 1.0) > 0.01:
+            probabilities = probabilities / prob_sum
         
-        # Make prediction
-        with torch.no_grad():
-            logits = model(input_tensor)
-            probabilities = F.softmax(logits, dim=1)
-            prediction = torch.argmax(probabilities, dim=1)
-        
-        # Convert back to numpy
-        probabilities_np = probabilities.cpu().numpy()[0]
-        prediction_int = prediction.cpu().numpy()[0]
-        
-        confidence_score = float(np.max(probabilities_np))
-        predicted_cancer_type = self.cancer_types[prediction_int]
+        confidence_score = max(probabilities)
+        predicted_cancer_type = self.cancer_types[prediction]
         
         return {
-            'prediction': int(prediction_int),
+            'prediction': int(prediction),
             'predicted_cancer_type': predicted_cancer_type,
-            'confidence_score': confidence_score,
-            'class_probabilities': probabilities_np.tolist(),
+            'confidence_score': float(confidence_score),
+            'class_probabilities': probabilities.tolist(),
             'cancer_types': self.cancer_types
         }
     
     def generate_shap_explanation(self, model, input_data, model_name):
         """Generate SHAP explanations for the prediction"""
+        if not SHAP_AVAILABLE:
+            return None
         try:
-            # Handle different model types for SHAP
-            if "LightGBM" in model_name or "SMOTE" in model_name:
-                # Check if this is an imblearn pipeline
-                if hasattr(model, 'named_steps') or str(type(model)).find('Pipeline') != -1:
-                    # This is a pipeline - try to extract the classifier
-                    if hasattr(model, 'named_steps'):
-                        # sklearn/imblearn pipeline
-                        classifier = None
-                        for step_name, step_model in model.named_steps.items():
-                            if hasattr(step_model, 'predict_proba') and hasattr(step_model, 'predict'):
-                                classifier = step_model
-                                break
-                        if classifier is not None:
-                            try:
-                                # Try TreeExplainer on the extracted classifier
-                                explainer = shap.TreeExplainer(classifier)
-                                shap_values = explainer.shap_values(input_data)
-                                # For multi-class, take the values for the predicted class
-                                if isinstance(shap_values, list) and len(shap_values) > 1:
-                                    predicted_class = model.predict(input_data)[0]
-                                    shap_values = shap_values[predicted_class]
-                                return shap_values
-                            except:
-                                # Fall back to Explainer with pipeline predict_proba
-                                explainer = shap.Explainer(model.predict_proba, input_data)
-                                shap_values = explainer(input_data)
-                                return shap_values
-                    else:
-                        # Fall back to Explainer with pipeline predict_proba
-                        explainer = shap.Explainer(model.predict_proba, input_data)
-                        shap_values = explainer(input_data)
-                        return shap_values
-                else:
-                    # Direct LightGBM model
-                    explainer = shap.TreeExplainer(model)
-                    shap_values = explainer.shap_values(input_data)
-                    # For multi-class, take the values for the predicted class
-                    if isinstance(shap_values, list) and len(shap_values) > 1:
-                        predicted_class = model.predict(input_data)[0]
-                        shap_values = shap_values[predicted_class]
-                    return shap_values
-            elif "Random Forest" in model_name or "Gradient Boosting" in model_name:
-                # For tree-based models
+            if "Random Forest" in model_name:
                 explainer = shap.TreeExplainer(model)
                 shap_values = explainer.shap_values(input_data)
-                # For multi-class, take the values for the predicted class
                 if isinstance(shap_values, list) and len(shap_values) > 1:
                     predicted_class = model.predict(input_data)[0]
                     shap_values = shap_values[predicted_class]
                 return shap_values
-            elif "Neural Network" in model_name or "Ensemble" in model_name:
-                # For neural networks, use a simpler explainer
-                explainer = shap.Explainer(model.predict_proba, input_data)
-                shap_values = explainer(input_data)
-                return shap_values
             elif "Logistic Regression" in model_name:
-                # For linear models, use LinearExplainer
                 explainer = shap.LinearExplainer(model, input_data)
                 shap_values = explainer.shap_values(input_data)
-                # For multi-class, take the values for the predicted class
                 if isinstance(shap_values, list) and len(shap_values) > 1:
                     predicted_class = model.predict(input_data)[0]
                     shap_values = shap_values[predicted_class]
                 return shap_values
             else:
-                # Default: try TreeExplainer first, then fallback to generic Explainer
-                try:
-                    explainer = shap.TreeExplainer(model)
-                    shap_values = explainer.shap_values(input_data)
-                    if isinstance(shap_values, list) and len(shap_values) > 1:
-                        predicted_class = model.predict(input_data)[0]
-                        shap_values = shap_values[predicted_class]
-                    return shap_values
-                except:
-                    explainer = shap.Explainer(model.predict_proba, input_data)
-                    shap_values = explainer(input_data)
-                    return shap_values
-            
+                explainer = shap.Explainer(model.predict_proba, input_data)
+                return explainer(input_data)
         except Exception as e:
-            st.warning(f"Could not generate SHAP explanations for {model_name}: {str(e)}")
-            return None
-    
-    def plot_shap_waterfall(self, shap_values, input_data):
-        """Create SHAP waterfall plot"""
-        try:
-            fig, ax = plt.subplots(figsize=(10, 8))
-            shap.plots.waterfall(shap_values[0], show=False)
-            plt.tight_layout()
-            return fig
-        except Exception as e:
-            st.warning(f"Could not create waterfall plot: {str(e)}")
+            st.warning(f"Could not generate SHAP explanations: {str(e)}")
             return None
     
     def plot_feature_importance(self, shap_values):
@@ -717,48 +626,51 @@ def main():
             st.plotly_chart(fig_prob, use_container_width=True)
             
             # SHAP Explanations
-            st.header("🔍 Model Explanations (SHAP)")
+            if SHAP_AVAILABLE:
+                st.header("🔍 Model Explanations (SHAP)")
+            else:
+                st.header("🔍 Model Explanations")
+                st.warning("SHAP library not available. Install with: `pip install 'shap>=0.42' 'numpy<2.3'`")
             
-            with st.spinner("Generating SHAP explanations..."):
-                shap_values = app.generate_shap_explanation(model, processed_data, selected_model)
-                
-                if shap_values is not None:
-                    # Feature importance plot
-                    fig_importance = app.plot_feature_importance(shap_values)
-                    if fig_importance:
-                        st.plotly_chart(fig_importance, use_container_width=True)
+            if SHAP_AVAILABLE:
+                with st.spinner("Generating SHAP explanations..."):
+                    shap_values = app.generate_shap_explanation(model, processed_data, selected_model)
                     
-                    # Modality importance
-                    fig_modality, modality_scores = app.plot_modality_importance(shap_values)
-                    if fig_modality:
-                        st.plotly_chart(fig_modality, use_container_width=True)
-                    
-                    # Biological insights
-                    st.header("🧪 Biological Insights")
-                    
-                    if modality_scores:
-                        top_modality = max(modality_scores, key=modality_scores.get)
+                    if shap_values is not None:
+                        # Feature importance plot
+                        fig_importance = app.plot_feature_importance(shap_values)
+                        if fig_importance:
+                            st.plotly_chart(fig_importance, use_container_width=True)
                         
-                        insights = []
-                        if modality_scores.get('Methylation', 0) > 0.3:
-                            insights.append("🔬 **Methylation patterns** show significant contribution - suggests epigenetic alterations characteristic of cancer")
+                        # Modality importance
+                        fig_modality, modality_scores = app.plot_modality_importance(shap_values)
+                        if fig_modality:
+                            st.plotly_chart(fig_modality, use_container_width=True)
                         
-                        if modality_scores.get('Fragmentomics', 0) > 0.25:
-                            insights.append("🧬 **Fragmentomics profile** indicates altered nucleosome positioning - potential for non-invasive liquid biopsy")
+                        # Biological insights
+                        st.header("🧪 Biological Insights")
                         
-                        if modality_scores.get('CNA', 0) > 0.3:
-                            insights.append("📊 **Copy number alterations** suggest genomic instability - correlates with tumor progression")
-                        
-                        if prediction_result['confidence_score'] > 0.7:
-                            insights.append(f"⚠️ **High confidence {predicted_type} prediction** - recommend further clinical evaluation")
-                        
-                        for insight in insights:
-                            st.markdown(insight)
-                        
-                        if not insights:
-                            st.info("Model prediction is based on subtle pattern combinations across multiple genomic modalities.")
-                else:
-                    st.warning("SHAP explanations not available for this prediction.")
+                        if modality_scores:
+                            insights = []
+                            if modality_scores.get('Methylation', 0) > 0.3:
+                                insights.append("🔬 **Methylation patterns** show significant contribution - suggests epigenetic alterations")
+                            
+                            if modality_scores.get('Fragmentomics', 0) > 0.25:
+                                insights.append("🧬 **Fragmentomics profile** indicates altered nucleosome positioning")
+                            
+                            if modality_scores.get('CNA', 0) > 0.3:
+                                insights.append("📊 **Copy number alterations** suggest genomic instability")
+                            
+                            if prediction_result['confidence_score'] > 0.7:
+                                insights.append(f"⚠️ **High confidence {predicted_type} prediction**")
+                            
+                            for insight in insights:
+                                st.markdown(insight)
+                            
+                            if not insights:
+                                st.info("Prediction based on subtle pattern combinations across multiple genomic modalities.")
+                    else:
+                        st.warning("SHAP explanations not available for this prediction.")
                     
         except Exception as e:
             st.error(f"❌ Error making prediction: {str(e)}")
