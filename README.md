@@ -35,33 +35,7 @@
 
 **Focus:** Demonstrates that experimental design — balanced sampling, leakage control, and multi-modal feature integration — dominates model architecture. Gradient boosting reaches 98.4% balanced accuracy on 1,248 real balanced TCGA samples while deep learning underperforms at every scale tested, with VC-dimension analysis explaining why.
 
-<table>
-<tr>
-<td width="50%" align="center">
-
-#### 📊 **Oncura: Multi-Modal AI for Precision Oncology** 🌐 **PUBLISHED ON bioRxiv**
-*Comprehensive study on AI-driven cancer classification*
-
-[![Download PDF](https://img.shields.io/badge/📄_Download-Main_Paper-red?style=for-the-badge&logo=adobe-acrobat-reader)](preprints/cancer_alpha_main_paper.pdf)
-[![bioRxiv](https://img.shields.io/badge/bioRxiv-10.1101%2F2025.07.22.666135v1-B31B1B?style=for-the-badge&logo=biorxiv)](https://www.biorxiv.org/content/10.1101/2025.07.22.666135v1)
-
-**Focus:** Clinical validation, performance metrics, and real-world applications of our multi-modal AI system for cancer detection and classification.
-
-</td>
-<td width="50%" align="center">
-
-#### 🤖 **Multi-Modal Transformer Architecture for Genomic Data**
-*Technical methodology and innovation paper*
-
-[![Download PDF](https://img.shields.io/badge/📄_Download-Architecture_Paper-blue?style=for-the-badge&logo=adobe-acrobat-reader)](preprints/multimodal_transformer_architecture_corrected.pdf)
-
-**Focus:** Novel transformer architecture design, attention mechanisms, and technical innovations for multi-modal genomic data integration.
-
-</td>
-</tr>
-</table>
-
-**📋 Publication Status:** Main paper published on bioRxiv • Revised manuscript under review at *Journal of Biomedical Informatics* • Architecture paper under review • Citation welcome • Community feedback encouraged
+**📋 Publication Status:** Main paper published on bioRxiv • Revised manuscript under review at *Journal of Biomedical Informatics* • Citation welcome • Community feedback encouraged
 
 </div>
 
