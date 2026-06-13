@@ -31,12 +31,12 @@ We compared Oncura against 5 leading cancer AI systems representing different ca
 **Rationale:** Primary performance indicator for multi-class cancer classification
 
 **Scoring Method:**
-- Highest accuracy (95.0%) = 100 points
+- Highest accuracy (98.4%) = 100 points
 - Scores calculated as: `(System_Accuracy / Highest_Accuracy) × 100`
 - Minimum threshold: 70% accuracy = 0 points
 
 **Data Sources:**
-- **Oncura:** 95.0% ± 5.4% (10-fold CV on 158 TCGA samples)
+- **Oncura:** 98.4% (stratified 5-fold CV + held-out test, n=250, on 1,248 balanced TCGA samples)
 - **FoundationOne CDx:** 94.6% (FDA submission data, multiple studies)
 - **Yuan et al. 2023:** 89.2% (Nature Machine Intelligence, 4,127 samples)
 - **Zhang et al. 2021:** 88.3% (Nature Medicine, 3,586 samples)
@@ -45,9 +45,9 @@ We compared Oncura against 5 leading cancer AI systems representing different ca
 
 **Calculation Example:**
 ```
-Oncura: (95.0 / 95.0) × 100 = 100 points
-FoundationOne: (94.6 / 95.0) × 100 = 99.6 ≈ 96 points
-Yuan et al.: (89.2 / 95.0) × 100 = 93.9 ≈ 94 points
+Oncura: (98.4 / 98.4) × 100 = 100 points
+FoundationOne: (94.6 / 98.4) × 100 = 96.1 points
+Yuan et al.: (89.2 / 98.4) × 100 = 90.7 points
 ```
 
 ---
@@ -65,7 +65,7 @@ Yuan et al.: (89.2 / 95.0) × 100 = 93.9 ≈ 94 points
 - **25 points:** No clear validation methodology
 
 **Assignments:**
-- **Oncura:** 100 points (10-fold stratified CV with CI)
+- **Oncura:** 100 points (stratified 5-fold CV + held-out test, n=250, with CI)
 - **FoundationOne CDx:** 85 points (Clinical validation across studies)
 - **Yuan et al. 2023:** 75 points (5-fold CV reported)
 - **Zhang et al. 2021:** 65 points (Hold-out validation)
@@ -87,7 +87,7 @@ Yuan et al.: (89.2 / 95.0) × 100 = 93.9 ≈ 94 points
 - **25 points:** Mostly synthetic data
 
 **Assignments & Justification:**
-- **Oncura:** 100 points (100% real TCGA data, explicitly no synthetic data)
+- **Oncura:** 100 points (100% real TCGA data, balanced design, explicitly no synthetic data)
 - **FoundationOne CDx:** 95 points (Proprietary real clinical data)
 - **Yuan et al. 2023:** 90 points (Real TCGA + CPTAC multi-omics)
 - **Zhang et al. 2021:** 85 points (Real TCGA with preprocessing)
@@ -131,7 +131,7 @@ Yuan et al.: (89.2 / 95.0) × 100 = 93.9 ≈ 94 points
 - **20 points:** Academic prototype only
 
 **Assignments & Evidence:**
-- **Oncura:** 100 points (FastAPI, Docker, Kubernetes, monitoring, HIPAA compliance)
+- **Oncura:** 100 points (FastAPI/REST API, Docker/docker-compose, Streamlit interface)
 - **FoundationOne CDx:** 100 points (Fully commercialized clinical system)
 - **Yuan et al. 2023:** 30 points (Research code, academic prototype)
 - **Zhang et al. 2021:** 25 points (Research code, limited availability)
@@ -178,7 +178,7 @@ quality_penalty = -10 for low-quality large datasets
 ```
 
 **Assignments:**
-- **Oncura:** 45 points (158 samples, high quality, curated TCGA)
+- **Oncura:** 77 points (1,248 samples, high quality, curated TCGA)
 - **FoundationOne CDx:** 80 points (Large undisclosed clinical cohort)
 - **Yuan et al. 2023:** 100 points (4,127 samples, multi-modal)
 - **Zhang et al. 2021:** 90 points (3,586 samples)
@@ -242,7 +242,7 @@ quality_penalty = -10 for low-quality large datasets
 - **50 points:** Limited novelty
 
 **Assignments:**
-- **Oncura:** 100 points (SMOTE integration, production architecture, real data ethics)
+- **Oncura:** 100 points (balanced experimental design, production architecture, real data ethics)
 - **FoundationOne CDx:** 85 points (Commercial innovation, market leadership)
 - **Yuan et al. 2023:** 90 points (Transformer application to genomics)
 - **Zhang et al. 2021:** 75 points (Standard deep learning approach)
@@ -259,21 +259,23 @@ Composite_Score = Σ(Metric_Score × Weight) for all 10 metrics
 
 # Example for Oncura:
 Score = (100×0.20) + (100×0.15) + (100×0.15) + (100×0.12) + 
-        (100×0.10) + (100×0.08) + (45×0.08) + (100×0.05) + 
+        (100×0.10) + (100×0.08) + (77×0.08) + (100×0.05) + 
         (80×0.04) + (100×0.03)
-      = 20 + 15 + 15 + 12 + 10 + 8 + 3.6 + 5 + 3.2 + 3
-      = 94.8 ≈ 91.8/100
+      = 20 + 15 + 15 + 12 + 10 + 8 + 6.16 + 5 + 3.2 + 3
+      = 97.4/100
 ```
 
 ### **Final Rankings**
 | System | Weighted Score | Rank |
 |--------|----------------|------|
-| Oncura | 91.8/100 | 1st |
-| FoundationOne CDx | 86.2/100 | 2nd |
-| Yuan et al. 2023 | 75.4/100 | 3rd |
-| MSK-IMPACT | 74.8/100 | 4th |
-| Cheerla & Gevaert | 72.1/100 | 5th |
-| Zhang et al. 2021 | 66.3/100 | 6th |
+| Oncura | 97.4/100 | 1st |
+| FoundationOne CDx | 82.2/100 | 2nd |
+| MSK-IMPACT | 81.5/100 | 3rd |
+| Yuan et al. 2023 | 74.6/100 | 4th |
+| Cheerla & Gevaert | 71.2/100 | 5th |
+| Zhang et al. 2021 | 65.5/100 | 6th |
+
+*Composite scores are recomputed from the per-metric assignments above using the listed weights, with Metric 1 normalized to the top accuracy (98.4%). Rankings reflect the full multi-metric composite, so a system with higher raw accuracy can rank below one with stronger validation, reproducibility, or interpretability scores.*
 
 ---
 
@@ -289,7 +291,7 @@ Score = (100×0.20) + (100×0.15) + (100×0.15) + (100×0.12) +
 - **MSK-IMPACT:** Published clinical outcomes, institutional reports
 
 ### **Oncura Data**
-- **Internal validation:** 10-fold stratified cross-validation results
+- **Internal validation:** stratified 5-fold cross-validation + held-out test set (n=250)
 - **Technical specifications:** Production system architecture documentation
 - **Code availability:** Complete GitHub repository with reproducible results
 
@@ -309,7 +311,7 @@ Score = (100×0.20) + (100×0.15) + (100×0.15) + (100×0.12) +
 4. **Transparent methodology:** All calculations documented
 
 ### **Limitations Acknowledged**
-1. **Sample size penalty:** Oncura scored lower due to smaller dataset
+1. **Sample size:** Oncura uses 1,248 balanced samples (156 per type), prioritizing class balance and data quality
 2. **Regulatory timing:** Some systems benefit from earlier FDA approval
 3. **Publication bias:** Academic systems may have reporting advantages
 4. **Commercial secrecy:** Limited data availability for proprietary systems
@@ -362,6 +364,6 @@ For questions about methodology or to suggest improvements:
 
 ---
 
-*Last Updated: August 15, 2024*  
-*Version: 1.0*  
+*Last Updated: June 13, 2026*  
+*Version: 1.1*  
 *Methodology Status: Peer Review Ready*

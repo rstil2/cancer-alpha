@@ -55,7 +55,7 @@
 </tr>
 </table>
 
-**📋 Publication Status:** Main paper published on bioRxiv • Revised manuscript under review at *Artificial Intelligence in Medicine* • Architecture paper under review • Citation welcome • Community feedback encouraged
+**📋 Publication Status:** Main paper published on bioRxiv • Revised manuscript under review at *Journal of Biomedical Informatics* • Architecture paper under review • Citation welcome • Community feedback encouraged
 
 </div>
 
@@ -110,14 +110,14 @@ Oncura represents a paradigm shift in computational oncology, delivering:
 - **🔬 Multi-Modal Genomic Integration**: Gene expression (2,000 genes), DNA methylation (2,000 CpG probes), and somatic mutations (63 variables) combined into a 4,063-dimensional feature space
 - **⚖️ Balanced Experimental Design**: Stratified sampling achieving class balance (156 samples/type) — no synthetic augmentation
 - **⚙️ Bayesian Hyperparameter Optimization**: Automated search for optimal LightGBM configuration
-- **🧬 SHAP-Based Biological Interpretability**: Top features validated against established cancer biomarkers (SFTPB, GATA3, KLK3, NKX2-1)
+- **🧬 SHAP-Based Biological Interpretability**: Top features validated against established cancer biomarkers (SFTPB, GATA3, KLK3, GKN1, SLC2A2, KRT14)
 - **🛡️ Leak-Free Pipeline**: Feature selection performed only on training folds to prevent data leakage
 
 ### 🎯 **Breakthrough Performance**
 - **🔥 98.4% Balanced Accuracy**: LightGBM (tied with Logistic Regression) on real TCGA clinical data
 - **🏆 1,248 Real Patient Samples**: Balanced across 8 cancer types (156 per type)
 - **📊 9.2pp Improvement**: Over state-of-the-art transformers (89.2%), 85% error reduction
-- **⚡ 6–15× Faster**: Computational efficiency advantage over deep learning alternatives
+- **⚡ 15–60× Faster**: Computational efficiency advantage over deep learning alternatives
 - **🔬 4/8 Cancer Types at 100%**: Perfect precision and recall on held-out test set
 - **✅ Rigorous Validation**: Stratified 5-fold CV plus held-out test set (n=250)
 - **Zero Synthetic Data**: All validation on 100% authentic TCGA genomic data
@@ -186,7 +186,7 @@ Oncura achieves **98.4% balanced accuracy on real TCGA clinical data** through:
 <div align="center">
 
 ### **🥇 CANCER AI SYSTEMS LEADERBOARD**
-*Objective multi-metric evaluation across 10 key performance dimensions*
+*Ranked by balanced accuracy; full 10-metric composite scoring in the linked methodology*
 
 [![View Full Methodology](https://img.shields.io/badge/📊_View_Full-Scoring_Methodology-blue?style=for-the-badge)](docs/Competitive_Analysis_Methodology.md)
 
@@ -194,11 +194,10 @@ Oncura achieves **98.4% balanced accuracy on real TCGA clinical data** through:
 |:----:|:-------|:------------:|:-----------:|:----------:|:-----------------:|
 | **🥇** | **Oncura** | **98.4%** | **1,248** | **Research** | **Accuracy + Interpretability + Zero Synthetic Data** |
 | **🥈** | **FoundationOne CDx** | **94.6%** | **Proprietary** | **FDA Approved** | **Commercial Deployment** |
-| **🥉** | **Yuan et al. 2023** | **89.2%** | **4,127** | **Research** | **Large Sample Size** |
-| 4th | MSK-IMPACT | 89.7% | Proprietary | Clinical Use | Hospital Integration |
+| **🥉** | **MSK-IMPACT** | **89.7%** | **Proprietary** | **Clinical Use** | **Hospital Integration** |
+| 4th | Yuan et al. 2023 | 89.2% | 4,127 | Research | Large Sample Size |
 | 5th | Zhang et al. 2021 | 88.3% | 3,586 | Academic | Deep Learning |
 | 6th | Cheerla & Gevaert | 86.1% | 5,314 | Academic | Multi-modal CNN |
-| 7th | Poirion et al. 2021 | 83.9% | 7,742 | Academic | Pan-Cancer BERT |
 
 </div>
 
@@ -215,7 +214,7 @@ Oncura achieves **98.4% balanced accuracy on real TCGA clinical data** through:
 | **🚀 Deployment** | API + Docker + Streamlit demo | Deployed (FoundationOne) | **Research stage** |
 | **📖 Reproducibility** | Full code, data, pipeline | Partial/proprietary | **Fully open** |
 | **📏 Sample Size** | 1,248 balanced samples | 4K–7K+ (imbalanced) | **Quality over quantity** |
-| **⚡ Efficiency** | 6–15× faster than transformers | Hours of training | **Minutes of training** |
+| **⚡ Efficiency** | 15–60× faster than deep learning | Hours of training | **Minutes of training** |
 
 **🏆 Oncura: 98.4% accuracy with 9.2pp improvement over state-of-the-art (89.2%)**
 
@@ -230,7 +229,7 @@ Oncura achieves **98.4% balanced accuracy on real TCGA clinical data** through:
 | **🎯 Highest Accuracy** | **98.4% on real TCGA data** | 9.2pp over state-of-the-art |
 | **🔬 Rigorous Validation** | **5-fold CV + held-out test (n=250)** | Dual validation strategy |
 | **💎 Cleanest Data** | **1,248 real samples, zero synthetic** | Balanced design, not SMOTE |
-| **🧠 Validated Interpretability** | **SHAP with biomarker validation** | SFTPB, GATA3, KLK3, NKX2-1 confirmed |
+| **🧠 Validated Interpretability** | **SHAP with biomarker validation** | SFTPB, GATA3, KLK3, GKN1 confirmed |
 | **🚀 Deployment** | **API + Docker + Streamlit** | Research-stage infrastructure |
 | **📖 Perfect Transparency** | **Full reproducibility package** | Open science standard |
 
@@ -292,7 +291,7 @@ Accuracy vs. Production Readiness Matrix:
 - **Validation**: Stratified 5-fold CV + held-out test set (n=250)
 - **Cancer Types**: 8 TCGA cancer types (BRCA, LUAD, COAD, PRAD, STAD, HNSC, LUSC, LIHC)
 - **Data Quality**: 100% verified real TCGA genomic and clinical data
-- **Top Biomarkers**: SFTPB, GATA3, KLK3, NKX2-1, methylation probes cg01805540, cg15520279, cg26511321
+- **Top Biomarkers**: SFTPB/SFTPC (lung), GATA3/TRPS1 (breast), KLK3 (prostate), GKN1 (gastric), SLC2A2/GC (liver), KRT14/SERPINB13 (squamous); methylation probes contribute at SHAP ranks 20–24
 - **Mutation Data**: Real cancer gene mutations (TP53, PIK3CA, KRAS, BRAF, EGFR, APC, etc.)
 
 </div>
@@ -307,12 +306,12 @@ Accuracy vs. Production Readiness Matrix:
 | 🪁 Lung Adeno (LUAD) | 156 | ✅ High Performance | Most common cancer worldwide |
 | 🪁 Lung Squamous (LUSC) | 156 | ✅ High Performance | Second most common lung cancer |
 | 🪁 Head & Neck (HNSC) | 156 | ✅ High Performance | HPV-related cancers |
-| 🧬 Colorectal (COAD) | 156 | ✅ High Performance | Third most common cancer |
-| 🧬 Prostate (PRAD) | 156 | ✅ High Performance | Leading cancer in men |
+| 🧬 Colorectal (COAD) | 156 | ✅ 100% Precision & Recall | Third most common cancer |
+| 🧬 Prostate (PRAD) | 156 | ✅ 100% Precision & Recall | Leading cancer in men |
 | 🧬 Liver (LIHC) | 156 | ✅ High Performance | Rising incidence globally |
-| 🧬 Stomach (STAD) | 156 | ✅ High Performance | High incidence in Asia |
+| 🧬 Stomach (STAD) | 156 | ✅ 100% Precision & Recall | High incidence in Asia |
 
-**Note**: 4 of 8 cancer types achieved 100% precision and recall on the held-out test set. Models validated exclusively on real TCGA clinical data with balanced experimental design (1,248 total samples, 156 per type).
+**Note**: Four of 8 cancer types (BRCA, COAD, PRAD, STAD) achieved 100% precision and recall on the held-out test set. Models validated exclusively on real TCGA clinical data with balanced experimental design (1,248 total samples, 156 per type).
 
 </div>
 
@@ -645,7 +644,7 @@ Clinical deployment features (EMR integration, HIPAA compliance, hospital authen
 6. **Phase 4.5**: Advanced System Features ✅ **(COMPLETE — Optimized Models Deployed)**
 7. **Phase 5**: Real Data Integration ✅ **(COMPLETE — 1,248 Balanced TCGA Samples)**
 8. **Phase 5.5**: Breakthrough Model Development ✅ **(🔥 98.4% Balanced Accuracy)**
-9. **Phase 6**: Publication & Peer Review 🔄 **(bioRxiv published, AIM under review)**
+9. **Phase 6**: Publication & Peer Review 🔄 **(bioRxiv published, JBI under review)**
 10. **Phase 7**: Clinical Deployment & Commercialization 📝 **(UPCOMING)**
 
 **🔥 BREAKTHROUGH ACHIEVED:** 98.4% balanced accuracy on 1,248 real TCGA samples with zero synthetic data.
@@ -655,7 +654,7 @@ Clinical deployment features (EMR integration, HIPAA compliance, hospital authen
 - ✅ 98.4% balanced accuracy validated on 1,248 authentic TCGA samples
 - ✅ Balanced experimental design — no synthetic data augmentation
 - ✅ Main paper published on bioRxiv (DOI: 10.1101/2025.07.22.666135)
-- 🔄 Revised manuscript under review at *Artificial Intelligence in Medicine*
+- 🔄 Revised manuscript under review at *Journal of Biomedical Informatics*
 - 📝 Regulatory pathway planning (FDA 510k) with explainable AI framework
 - 🏥 Clinical partnership development leveraging proven TCGA validation
 
