@@ -10,7 +10,6 @@
 <img src="https://img.shields.io/badge/🧬_Data-Real_TCGA-blue?style=for-the-badge" alt="Real TCGA Data" />
 
 [![License: Academic](https://img.shields.io/badge/License-Academic%20Use%20Only-red.svg)](LICENSE)
-[![Patent Protected](https://img.shields.io/badge/Patent-Protected-blue.svg)](PATENTS.md)
 [![Python 3.8+](https://img.shields.io/badge/python-3.8+-blue.svg)](https://www.python.org/downloads/)
 
 **🎯 Vision**: *To achieve AlphaFold-level innovation in precision oncology through multi-modal AI on real clinical genomic data*
@@ -28,6 +27,13 @@
 <div align="center">
 
 ### 🔬 **Download Preprints**
+
+#### 🆕 **Experimental Design Dominates Model Architecture in Multi-Modal Cancer Classification** 📰 **UNDER REVIEW — *Journal of Biomedical Informatics***
+*Two-study translational bioinformatics analysis across small-n and large-n data regimes*
+
+[![Download PDF](https://img.shields.io/badge/📄_Download-JBI_Manuscript-red?style=for-the-badge&logo=adobe-acrobat-reader)](science/jbi_submission/Combined_Manuscript_JBI.pdf)
+
+**Focus:** Demonstrates that experimental design — balanced sampling, leakage control, and multi-modal feature integration — dominates model architecture. Gradient boosting reaches 98.4% balanced accuracy on 1,248 real balanced TCGA samples while deep learning underperforms at every scale tested, with VC-dimension analysis explaining why.
 
 <table>
 <tr>
@@ -415,7 +421,7 @@ cancer-alpha/
 | **🎯 8 Cancer Types** | BRCA, LUAD, COAD, PRAD, STAD, HNSC, LUSC, LIHC |
 | **🚀 30-Second Setup** | Automated installation with `python setup.py` |
 | **🖥️ Cross-Platform** | Windows, Mac, Linux + Docker support |
-| **⚖️ Patent Protected** | Demonstration license included |
+| **⚖️ Academic License** | Research-use demonstration included |
 
 **📁 What's Included:**
 - 🤖 **Production AI Model** (LightGBM with Bayesian hyperparameter optimization)
@@ -499,7 +505,7 @@ start_streamlit.bat
 
 **Access at**: http://localhost:8501
 
-**Note**: This runs a demo version of the Streamlit interface with patent protection notices.
+**Note**: This runs a demo version of the Streamlit interface.
 
 **System Requirements:**
 - Python 3.8+ (required for Streamlit demo)
@@ -544,16 +550,16 @@ The full technology can be applied to:
 - **Drug Development**: Target identification and validation
 - **Population Health**: Large-scale screening programs
 
-## ⚠️ **PATENT PROTECTED TECHNOLOGY** ⚠️
+## 📄 **Intellectual Property & Licensing**
 
-**This repository contains a limited demonstration of patent-protected technology.**
+**This repository is released for academic and non-commercial research use under copyright.**
 
-- **Patent**: Provisional Application No. 63/847,316
-- **Title**: Systems and Methods for Cancer Classification Using Multi-Modal Transformer-Based Architectures
-- **Patent Holder**: Dr. R. Craig Stillwell
-- **Commercial Use**: Requires separate patent license
+- **Patent Status**: A provisional application (No. 63/847,316) was filed in 2024 but was not converted to a non-provisional application and has lapsed — no patent is currently in force
+- **Copyright Holder**: Dr. R. Craig Stillwell
+- **Academic Use**: Permitted under the [LICENSE](LICENSE) (non-commercial research and education)
+- **Commercial Use**: Requires a separate commercial license agreement with the author
 
-## 📝 **Patent Licensing**
+## 📝 **Licensing**
 
 ### **Academic Use**
 - **Permitted**: Non-commercial research and education
@@ -561,19 +567,19 @@ The full technology can be applied to:
 - **Restrictions**: No redistribution or commercial use
 
 ### **Commercial Use**
-- **Status**: Prohibited without patent license
-- **Licensing**: Available through patent holder
+- **Status**: Requires a separate commercial license agreement
+- **Licensing**: Available through the copyright holder
 - **Applications**: Clinical deployment, commercial products, services
 
 ### **Contact for Licensing**
 - **Email**: craig.stillwell@gmail.com
-- **Subject**: "Oncura Patent License Inquiry"
+- **Subject**: "Oncura Commercial License Inquiry"
 - **Include**: Intended use case and organization details
 
 ## 🔒 **Legal Notices**
 
-### **Patent Protection**
-This technology is protected by provisional patent application and pending full patent applications. Unauthorized commercial use may result in legal action.
+### **Intellectual Property**
+This software is provided under copyright and the terms of the [LICENSE](LICENSE) (academic use). The previously filed provisional patent application has lapsed and is no longer in force.
 
 ### **Data Privacy**
 - Demo uses sample data for illustration purposes
@@ -585,7 +591,7 @@ This demo is for illustration purposes only. It should not be used for actual me
 ## 📱 **Additional Resources**
 
 - [`DEMO_USAGE.md`](docs/demo_usage.md) - Detailed demo instructions
-- [`PATENTS.md`](PATENTS.md) - Patent protection information
+- [`PATENTS.md`](PATENTS.md) - Intellectual property & licensing notice
 - [`LICENSE`](LICENSE) - Academic use license
 
 ## 🤝 **Academic Collaboration**
@@ -610,14 +616,13 @@ We welcome academic collaboration and research partnerships. For academic use an
 
 ---
 
-## ⚖️ **Legal Warning**
+## ⚖️ **Legal Notice**
 
-**Unauthorized commercial use of this patent-protected technology may result in patent infringement litigation and substantial monetary damages. Contact the patent holder before any commercial use.**
+**This software is licensed for academic and non-commercial research use only. Commercial use without a separate license agreement may infringe the author's copyright. Contact the copyright holder before any commercial use.**
 
 ---
 
-**© 2025–2026 Dr. R. Craig Stillwell. All rights reserved.**  
-**Patent Pending - Provisional Application No. 63/847,316**
+**© 2025–2026 Dr. R. Craig Stillwell. All rights reserved.**
 
 ---
 
@@ -680,13 +685,13 @@ If you use this work in your research, please cite:
 
 We welcome contributions! Please see our [Contributing Guide](CONTRIBUTING.md) for details.
 
-## ⚖️ License & Patents
-
-**🔒 Patent Protected Technology**  
-This software implements technology covered by one or more patents. See [PATENTS.md](PATENTS.md) for details.
+## ⚖️ License
 
 **📚 Academic Use License**  
 Academic and research institutions may use this software under the Academic and Research License - see the [LICENSE](LICENSE) file for details.
 
 **💼 Commercial Use**  
-Commercial use requires separate patent licensing. Contact craig.stillwell@gmail.com for commercial licensing inquiries.
+Commercial use requires a separate commercial license agreement. Contact craig.stillwell@gmail.com for commercial licensing inquiries.
+
+**ℹ️ Patent Status**  
+A provisional patent application (No. 63/847,316) was filed in 2024 but was not pursued and has lapsed; no patent is in force. See [PATENTS.md](PATENTS.md) for details.
