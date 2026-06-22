@@ -175,7 +175,9 @@ results/
 pipeline_output/
 
 # Submission and packaging directories
-science/
+science/*
+!science/jbi_revision/
+science/jbi_revision/**/.DS_Store
 paper-repository/
 reproducibility_package/
 manuscripts/reproducibility_package/

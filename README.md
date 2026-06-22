@@ -1,671 +1,262 @@
 <div align="center">
 
-# 🧬 Oncura
-### Next-Generation AI for Precision Oncology
+# Oncura
 
-*Advanced AI system for multi-cancer classification using real clinical genomic data*
+**Multi-modal cancer classification from TCGA genomics**
 
-<img src="https://img.shields.io/badge/🚀_Status-Research_Validated-brightgreen?style=for-the-badge" alt="Research Validated" />
-<img src="https://img.shields.io/badge/🎯_Accuracy-98.4%25_BREAKTHROUGH-gold?style=for-the-badge" alt="98.4% BREAKTHROUGH" />
-<img src="https://img.shields.io/badge/🧬_Data-Real_TCGA-blue?style=for-the-badge" alt="Real TCGA Data" />
+*Research codebase and interactive demo for translational bioinformatics*
 
-[![License: Academic](https://img.shields.io/badge/License-Academic%20Use%20Only-red.svg)](LICENSE)
+[![bioRxiv](https://img.shields.io/badge/bioRxiv-10.1101%2F2025.07.22.666135-blue)](https://www.biorxiv.org/content/10.1101/2025.07.22.666135v1)
+[![Manuscript](https://img.shields.io/badge/JBI-under%20review-orange)](science/Combined_Manuscript_JBI.pdf)
 [![Python 3.8+](https://img.shields.io/badge/python-3.8+-blue.svg)](https://www.python.org/downloads/)
+[![License: Academic](https://img.shields.io/badge/License-Academic%20Use%20Only-red.svg)](LICENSE)
 
-**🎯 Vision**: *To achieve AlphaFold-level innovation in precision oncology through multi-modal AI on real clinical genomic data*
-
-[**📄 Research Papers**](#-research-papers) • [**🎁 Try Demo**](#-try-the-interactive-demo) • [**🚀 Quick Start**](#-quick-start) • [**📖 Documentation**](#-documentation) • [**🏥 Clinical Use**](#-clinical-deployment) • [**🤝 Contribute**](#-contributing) • [**📄 Citation**](#-citation)
-
-</div>
-
----
-
----
-
-## 📄 **Research Papers**
-
-<div align="center">
-
-### 🔬 **Download Preprints**
-
-#### 🆕 **Experimental Design Dominates Model Architecture in Multi-Modal Cancer Classification** 📰 **UNDER REVIEW — *Journal of Biomedical Informatics***
-*Two-study translational bioinformatics analysis across small-n and large-n data regimes*
-
-[![Download PDF](https://img.shields.io/badge/📄_Download-JBI_Manuscript-red?style=for-the-badge&logo=adobe-acrobat-reader)](science/jbi_submission/Combined_Manuscript_JBI.pdf)
-
-**Focus:** Demonstrates that experimental design — balanced sampling, leakage control, and multi-modal feature integration — dominates model architecture. Gradient boosting reaches 98.4% balanced accuracy on 1,248 real balanced TCGA samples while deep learning underperforms at every scale tested, with VC-dimension analysis explaining why.
-
-**📋 Publication Status:** Main paper published on bioRxiv • Revised manuscript under review at *Journal of Biomedical Informatics* • Citation welcome • Community feedback encouraged
+[**Paper**](#research) · [**Results**](#results) · [**Reproduce**](#reproduce-the-paper) · [**Demo**](#interactive-demo) · [**Docs**](#documentation) · [**Cite**](#citation)
 
 </div>
 
 ---
 
+## At a glance
 
-## 🏗️ **Breakthrough Architecture: Knowledge-Guided Integration**
+**Oncura** is an open research project asking a practical question for precision oncology ML: *when sample sizes are small and data are multi-modal, does experimental design matter more than model architecture?*
 
-<div align="center">
+Across two complementary TCGA studies, the answer is **yes** — balanced sampling, leakage control, and integrative feature construction consistently outperform architectural complexity. Gradient boosting reaches **98.4%** held-out balanced accuracy on 1,248 real balanced samples (Study 2); with only **158** imbalanced samples, LightGBM + SMOTE still reaches **95.0%**, ahead of transformers by 11.8 pp (Study 1).
+
+> **Research only.** This software is not a medical device and must not be used for diagnosis or treatment decisions. Study 2 results are on an internal TCGA held-out split; external clinical validation remains future work.
+
+**Author:** [R. Craig Stillwell, PhD](mailto:craig.stillwell@gmail.com)
+
+---
+
+## Research
+
+### Manuscript (under review)
+
+**[*Experimental Design Dominates Model Architecture in Multi-Modal Cancer Classification*](science/Combined_Manuscript_JBI.pdf)**  
+*Journal of Biomedical Informatics* — submitted June 2026
+
+| Resource | Link |
+|----------|------|
+| Submitted PDF | [`science/Combined_Manuscript_JBI.pdf`](science/Combined_Manuscript_JBI.pdf) |
+| Revision workspace (reviewer prep) | [`science/jbi_revision/`](science/jbi_revision/) |
+| Canonical numbers | [`science/jbi_revision/supplementary/CANONICAL_RESULTS.md`](science/jbi_revision/supplementary/CANONICAL_RESULTS.md) |
+| Reproduction guide | [`science/jbi_revision/supplementary/REPRODUCTION_GUIDE.md`](science/jbi_revision/supplementary/REPRODUCTION_GUIDE.md) |
+
+### Preprint
+
+Stillwell RC. *Oncura: Multi-Modal AI for Precision Oncology.* bioRxiv 2025.  
+DOI: [10.1101/2025.07.22.666135](https://www.biorxiv.org/content/10.1101/2025.07.22.666135v1)
+
+The JBI manuscript extends the preprint with a unified two-study design, expanded limitations, and VC-dimension framing. Cite the preprint for now; update when JBI publishes.
+
+---
+
+## Two complementary studies
+
+The paper evaluates the **same 8-cancer classification task** under contrasting data regimes:
+
+| | **Study 1 — small-n** | **Study 2 — large balanced** |
+|---|------------------------|------------------------------|
+| **Samples** | 158 real TCGA | 1,248 real TCGA (156/class) |
+| **Features** | 110 (6 modalities) | 4,063 (expression + methylation + mutations) |
+| **Balance** | Natural imbalance + **SMOTE** | Stratified subsampling, **no synthetic data** |
+| **Cancer types** | BRCA, LUAD, COAD, PRAD, STAD, HNSC, **KIRC**, LIHC | Same panel except **LUSC** replaces KIRC |
+| **Architectures** | 12 (logistic regression → transformers) | 6 (+ MLP, TabTransformer baselines) |
+| **Best model** | LightGBM + SMOTE | LightGBM (tied with logistic regression) |
+| **Balanced accuracy** | **95.0% ± 5.4%** | **98.4%** (held-out test, n=250) |
+| **External validation** | ICGC ARGO (n=76): **92.1%** | Internal TCGA split only |
+| **Key insight** | Inverse complexity–accuracy (R² = 0.78) | Classical models converge within 1.2 pp; deep learning lags 4.8–6.8 pp |
+
+Study 1 shows what works when data are scarce; Study 2 shows what happens when adequate real data are curated with rigorous design. They are **complementary regimes**, not one longitudinal cohort.
+
+---
+
+## Results
+
+### Study 2 — held-out test set (canonical pipeline)
+
+Reproduced by [`src/pipeline/step4_train_evaluate.py`](src/pipeline/step4_train_evaluate.py) → [`data/real_model_results/model_results.json`](data/real_model_results/model_results.json)
+
+| Model | CV balanced accuracy | Test balanced accuracy |
+|-------|---------------------:|-----------------------:|
+| LightGBM | 97.8% ± 0.5% | **98.4%** |
+| Logistic regression | 97.0% ± 1.0% | **98.4%** |
+| XGBoost | 96.8% ± 0.7% | 98.0% |
+| Random forest | 96.0% ± 0.3% | 97.2% |
+| MLP (6-layer) | 92.8% ± 2.1% | 93.6% |
+| TabTransformer | 90.4% ± 2.8% | 91.6% |
+
+Four cancer types (BRCA, COAD, PRAD, STAD) reached 100% precision and recall on the held-out test set. Remaining errors cluster in squamous subtypes (LUSC/HNSC) with known molecular overlap.
+
+### Study 1 — small-n with external check
+
+| Result | Value |
+|--------|------:|
+| LightGBM + SMOTE | 95.0% ± 5.4% |
+| Multi-modal transformer | 83.2% ± 6.8% |
+| ICGC ARGO (no retraining) | 92.1% ± 6.8% |
+
+---
+
+## Pipeline
 
 ```mermaid
-flowchart TD
-    A["Real TCGA Genomic Data | 1,248 Samples, 8 Cancer Types | 156 per type"] --> B["Multi-Modal Feature Extraction | 3 Genomic Modalities"]
-    B --> B1["Gene Expression | 2,000 High-Variance Genes"]
-    B --> B2["DNA Methylation | 2,000 High-Variance CpG Probes"]
-    B --> B3["Somatic Mutations | 63 Mutation-Derived Variables"]
-    B1 --> C["4,063-Dimensional Feature Space | Integrated Multi-Modal Features"]
-    B2 --> C
-    B3 --> C
-    C --> D["Bayesian Hyperparameter Optimization | LightGBM Ensemble"]
-    D --> E["Stratified 5-Fold CV + Held-Out Test Set | n=250 Test Samples"]
-    E --> F["98.4% Balanced Accuracy | 4/8 Cancer Types at 100%"]
-
-    G["Key Methodological Strengths"] --> H["1. Multi-Modal Integration"]
-    H --> I["2. Balanced Design: 156/Type, Zero Synthetic"]
-    I --> J["3. Rigorous Validation: CV + Held-Out Test"]
-    J --> K["4. SHAP Interpretability"]
-    K --> L["5. Leak-Free Pipeline"]
-
-    style F fill:#FFD700,stroke:#FF6B35,stroke-width:3px
-    style A fill:#E3F2FD
-    style C fill:#F3E5F5
-    style D fill:#E8F5E8
-    style L fill:#FFE0B2
+flowchart LR
+    subgraph Input
+        TCGA["TCGA via GDC"]
+    end
+    subgraph Features
+        E["Expression · 2,000 genes"]
+        M["Methylation · 2,000 CpGs"]
+        S["Mutations · 63 vars"]
+    end
+    subgraph Study2["Study 2 design"]
+        B["Balance · 156/class · n=1,248"]
+        L["Leak-free selection · train folds only"]
+        V["5-fold CV + held-out test · n=250"]
+    end
+    subgraph Models
+        GB["LightGBM · Optuna"]
+        BL["Baselines · LR, XGB, RF, MLP, TabTransformer"]
+    end
+    TCGA --> E & M & S
+    E & M & S --> B --> L --> V
+    V --> GB & BL
 ```
 
-*Figure 1: Oncura's multi-modal integration pipeline achieving 98.4% balanced accuracy on 1,248 real TCGA samples. The system integrates gene expression, DNA methylation, and somatic mutation data with balanced experimental design (no synthetic data) and Bayesian-optimized LightGBM — a 9.2 percentage point improvement over state-of-the-art transformers (89.2%).*
+**Modalities (Study 2):** gene expression (log2-TPM+1), DNA methylation (beta values), somatic mutations (TMB, COSMIC drivers, variant classes).
 
-</div>
-
----
-
-## 🌟 What Makes Oncura Special?
-
-Oncura represents a paradigm shift in computational oncology, delivering:
-
-<table>
-<tr>
-<td width="50%">
-
-### 🧠 **Key Methodological Strengths**
-- **🔬 Multi-Modal Genomic Integration**: Gene expression (2,000 genes), DNA methylation (2,000 CpG probes), and somatic mutations (63 variables) combined into a 4,063-dimensional feature space
-- **⚖️ Balanced Experimental Design**: Stratified sampling achieving class balance (156 samples/type) — no synthetic augmentation
-- **⚙️ Bayesian Hyperparameter Optimization**: Automated search for optimal LightGBM configuration
-- **🧬 SHAP-Based Biological Interpretability**: Top features validated against established cancer biomarkers (SFTPB, GATA3, KLK3, GKN1, SLC2A2, KRT14)
-- **🛡️ Leak-Free Pipeline**: Feature selection performed only on training folds to prevent data leakage
-
-### 🎯 **Breakthrough Performance**
-- **🔥 98.4% Balanced Accuracy**: LightGBM (tied with Logistic Regression) on real TCGA clinical data
-- **🏆 1,248 Real Patient Samples**: Balanced across 8 cancer types (156 per type)
-- **📊 9.2pp Improvement**: Over state-of-the-art transformers (89.2%), 85% error reduction
-- **⚡ 15–60× Faster**: Computational efficiency advantage over deep learning alternatives
-- **🔬 4/8 Cancer Types at 100%**: Perfect precision and recall on held-out test set
-- **✅ Rigorous Validation**: Stratified 5-fold CV plus held-out test set (n=250)
-- **Zero Synthetic Data**: All validation on 100% authentic TCGA genomic data
-
-</td>
-<td width="50%">
-
-### 🏥 **Available Infrastructure**
-- **Streamlit Web App**: Interactive cancer classification with SHAP explainability
-- **REST API**: Backend service with prediction endpoints
-- **Docker Support**: Containerized deployment with docker-compose
-
-### 🔍 **Clinical Explainability**
-- **Per-Case Confidence**: Prediction confidence with uncertainty metrics
-- **SHAP Explanations**: Feature-level contributions for every prediction
-- **Trust Scoring**: High/Medium/Low confidence levels for clinical decisions
-- **Transparent AI**: Full interpretability for regulatory compliance
-
-### 🔬 **Scientific Rigor**
-- **Peer-Reviewed Methods**: Published research foundation
-- **Reproducible Results**: Standardized workflows
-- **Open Science**: Transparent methodology
-- **Clinical Validation**: Real-world performance metrics
-
-</td>
-</tr>
-</table>
-
-## 🧬 **Multi-Modal Data Integration**
-
-<div align="center">
-
-| **Data Modality** | **Features** | **Clinical Impact** |
-|:----------------:|:------------:|:------------------:|
-| 🧬 **Gene Expression** (2,000) | High-variance protein-coding genes | Transcriptomic cancer signatures |
-| 🔬 **DNA Methylation** (2,000) | High-variance CpG probes | Epigenetic regulation insights |
-| 🧪 **Somatic Mutations** (63) | TMB, driver gene status, variant classification | Driver mutation identification |
-
-**Total: 4,063 features per patient across 3 genomic modalities**
-
-</div>
+**Interpretability:** SHAP analysis; top features align with known markers (SFTPB/SFTPC, GATA3/TRPS1, KLK3, GKN1, KRT14).
 
 ---
 
-## 🤖 **AI Architecture**
+## Reproduce the paper
 
-### **🎯 Current Model Architecture**
+Study 2 results come from the **canonical pipeline** only. Legacy root-level scripts and the public demo are **not** used for manuscript numbers.
 
-Oncura achieves **98.4% balanced accuracy on real TCGA clinical data** through:
-- **Multi-Modal Genomic Integration**: Gene expression, DNA methylation, and somatic mutation features (4,063 total)
-- **Balanced Experimental Design**: 1,248 real samples (156/type), zero synthetic data
-- **Bayesian Hyperparameter Optimization**: Automated search for optimal LightGBM configuration
-- **SHAP Interpretability**: Top features validated against known cancer biomarkers
-- **Leak-Free Validation**: Feature selection on training folds only, held-out test set (n=250)
+```bash
+git clone https://github.com/rstil2/cancer-alpha.git
+cd cancer-alpha
+python -m venv .venv && source .venv/bin/activate
+pip install -r requirements.txt
 
-### **📊 Model Performance Hierarchy**
-- **🥇 LightGBM (Champion, tied)**: 98.4% balanced accuracy
-- **🥇 Logistic Regression (tied)**: 98.4% balanced accuracy
-- **🥉 XGBoost**: 98.0%
-- **Random Forest**: 97.2%
+# If feature pickles exist in data/real_model_results/:
+python src/pipeline/step4_train_evaluate.py
 
----
-
-## 🏆 **Competitive Analysis: Oncura vs. The World's Best**
-
-<div align="center">
-
-### **🥇 CANCER AI SYSTEMS LEADERBOARD**
-*Ranked by balanced accuracy; full 10-metric composite scoring in the linked methodology*
-
-[![View Full Methodology](https://img.shields.io/badge/📊_View_Full-Scoring_Methodology-blue?style=for-the-badge)](docs/Competitive_Analysis_Methodology.md)
-
-| Rank | System | **Accuracy** | **Samples** | **Status** | **Key Strengths** |
-|:----:|:-------|:------------:|:-----------:|:----------:|:-----------------:|
-| **🥇** | **Oncura** | **98.4%** | **1,248** | **Research** | **Accuracy + Interpretability + Zero Synthetic Data** |
-| **🥈** | **FoundationOne CDx** | **94.6%** | **Proprietary** | **FDA Approved** | **Commercial Deployment** |
-| **🥉** | **MSK-IMPACT** | **89.7%** | **Proprietary** | **Clinical Use** | **Hospital Integration** |
-| 4th | Yuan et al. 2023 | 89.2% | 4,127 | Research | Large Sample Size |
-| 5th | Zhang et al. 2021 | 88.3% | 3,586 | Academic | Deep Learning |
-| 6th | Cheerla & Gevaert | 86.1% | 5,314 | Academic | Multi-modal CNN |
-
-</div>
-
-### **📊 Performance Breakdown by Category**
-
-<div align="center">
-
-| **Metric** | **Oncura** | **Best Competitor** | **Advantage** |
-|:-----------|:----------------:|:-------------------:|:-------------:|
-| **🎯 Balanced Accuracy** | **98.4%** | 94.6% (FoundationOne) | **+3.8pp** |
-| **🔬 Validation** | Stratified 5-fold CV + held-out test (n=250) | 5-fold (Yuan et al.) | **Dual validation** |
-| **💎 Data Authenticity** | 100% real, zero synthetic | Mixed (SMOTE common) | **No synthetic contamination** |
-| **🧠 Interpretability** | SHAP with biomarker validation | Limited post-hoc | **Biologically validated** |
-| **🚀 Deployment** | API + Docker + Streamlit demo | Deployed (FoundationOne) | **Research stage** |
-| **📖 Reproducibility** | Full code, data, pipeline | Partial/proprietary | **Fully open** |
-| **📏 Sample Size** | 1,248 balanced samples | 4K–7K+ (imbalanced) | **Quality over quantity** |
-| **⚡ Efficiency** | 15–60× faster than deep learning | Hours of training | **Minutes of training** |
-
-**🏆 Oncura: 98.4% accuracy with 9.2pp improvement over state-of-the-art (89.2%)**
-
-</div>
-
-### **🎦 What Makes Oncura #1**
-
-<div align="center">
-
-| **🏅 Category Champion** | **Oncura's Achievement** | **Competitive Edge** |
-|:------------------------:|:------------------------------:|:--------------------:|
-| **🎯 Highest Accuracy** | **98.4% on real TCGA data** | 9.2pp over state-of-the-art |
-| **🔬 Rigorous Validation** | **5-fold CV + held-out test (n=250)** | Dual validation strategy |
-| **💎 Cleanest Data** | **1,248 real samples, zero synthetic** | Balanced design, not SMOTE |
-| **🧠 Validated Interpretability** | **SHAP with biomarker validation** | SFTPB, GATA3, KLK3, GKN1 confirmed |
-| **🚀 Deployment** | **API + Docker + Streamlit** | Research-stage infrastructure |
-| **📖 Perfect Transparency** | **Full reproducibility package** | Open science standard |
-
-</div>
-
-### **📈 Competitive Positioning**
-
-```
-Accuracy vs. Production Readiness Matrix:
-                    
-    High Performance ↗️
-        ┌───────────────────┐
-        │     Oncura        │ ← DOMINANT POSITION
-        │ (98.4%, Complete) │   (Best of Both Worlds)
-        ├───────────────────┤
-        │ FoundationOne     │ ← Commercial Leader  
-        │ (94.6%, Live)     │   (FDA Approved)
-        ├───────────────────┤
-        │ Academic Systems  │ ← High Research Value
-        │ (≤89.2%)          │   (Not Production Ready)
-        └───────────────────┘
-    Research Only ↙️
+# Full pipeline from GDC-mapped files:
+python src/pipeline/step1_file_mapping.py
+python src/pipeline/step2_expression_features.py
+python src/pipeline/step2b_methylation_features.py
+python src/pipeline/step3_mutation_features.py
+python src/pipeline/step4_train_evaluate.py
 ```
 
-### **🚀 Strategic Advantages**
-
-<div align="center">
-
-| **Advantage Category** | **Oncura's Edge** | **Market Impact** |
-|:----------------------:|:------------------------:|:-----------------:|
-| **🎯 Performance Breakthrough** | 98.4% — 9.2pp over state-of-the-art | Sets new industry benchmark |
-| **💎 Data Integrity** | Balanced design, zero synthetic data | Ethical AI leadership |
-| **🧠 Validated Interpretability** | SHAP-confirmed cancer biomarkers | Biologically grounded decisions |
-| **📖 Scientific Transparency** | Full code + 1,248 real samples | Academic credibility |
-| **🚀 Open Architecture** | API + Docker + Streamlit demo | Research-stage deployment |
-
-</div>
+Expected LightGBM test balanced accuracy: **~98.4%**. See the [reproduction guide](science/jbi_revision/supplementary/REPRODUCTION_GUIDE.md) for details.
 
 ---
 
-## 🔥 **Breakthrough Performance Results**
+## Interactive demo
 
-<div align="center">
+The demo is a **separate, lightweight Streamlit app** for exploring the interface — it uses sample data and does **not** reproduce the 98.4% research result.
 
-### **🏆 98.4% Balanced Accuracy on 1,248 Real TCGA Samples**
-*LightGBM with balanced experimental design — zero synthetic data*
+| | Research pipeline | Interactive demo |
+|---|-------------------|------------------|
+| Data | Real TCGA (GDC) | Sample / illustrative data |
+| Accuracy | 98.4% (Study 2) | ~70% (simplified) |
+| Purpose | Paper reproduction | UI exploration |
 
-| **Model** | **Balanced Accuracy** | **Key Result** |
-|-----------|:--------------------:|:--------------:|
-| **🔥 LightGBM (Champion, tied)** | **98.4%** | **4/8 cancer types at 100% precision & recall** |
-| **🔥 Logistic Regression (tied)** | **98.4%** | **Matched LightGBM on held-out test** |
-| **🥉 XGBoost** | **98.0%** | Strong ensemble performance |
-| **Random Forest** | **97.2%** | Robust tree-based baseline |
+### Quick start
 
-**🧬 Technical Specifications:**
-- **Champion Model**: LightGBM with Bayesian hyperparameter optimization
-- **Class Balance**: Balanced experimental design (156 samples/type) — no synthetic augmentation
-- **Feature Space**: 4,063 features (2,000 gene expression + 2,000 methylation + 63 mutation variables)
-- **Validation**: Stratified 5-fold CV + held-out test set (n=250)
-- **Cancer Types**: 8 TCGA cancer types (BRCA, LUAD, COAD, PRAD, STAD, HNSC, LUSC, LIHC)
-- **Data Quality**: 100% verified real TCGA genomic and clinical data
-- **Top Biomarkers**: SFTPB/SFTPC (lung), GATA3/TRPS1 (breast), KLK3 (prostate), GKN1 (gastric), SLC2A2/GC (liver), KRT14/SERPINB13 (squamous); methylation probes contribute at SHAP ranks 20–24
-- **Mutation Data**: Real cancer gene mutations (TP53, PIK3CA, KRAS, BRAF, EGFR, APC, etc.)
-
-</div>
-
-### **🎯 Validated Cancer Types (156 Samples Each)**
-
-<div align="center">
-
-| **Cancer Type** | **Samples** | **Test Set Result** | **Clinical Relevance** |
-|:---------------:|:-----------:|:---------------------:|:-----------------------------:|
-| 🧬 Breast (BRCA) | 156 | ✅ 100% Precision & Recall | Leading cancer in women |
-| 🪁 Lung Adeno (LUAD) | 156 | ✅ High Performance | Most common cancer worldwide |
-| 🪁 Lung Squamous (LUSC) | 156 | ✅ High Performance | Second most common lung cancer |
-| 🪁 Head & Neck (HNSC) | 156 | ✅ High Performance | HPV-related cancers |
-| 🧬 Colorectal (COAD) | 156 | ✅ 100% Precision & Recall | Third most common cancer |
-| 🧬 Prostate (PRAD) | 156 | ✅ 100% Precision & Recall | Leading cancer in men |
-| 🧬 Liver (LIHC) | 156 | ✅ High Performance | Rising incidence globally |
-| 🧬 Stomach (STAD) | 156 | ✅ 100% Precision & Recall | High incidence in Asia |
-
-**Note**: Four of 8 cancer types (BRCA, COAD, PRAD, STAD) achieved 100% precision and recall on the held-out test set. Models validated exclusively on real TCGA clinical data with balanced experimental design (1,248 total samples, 156 per type).
-
-</div>
-
----
-
-## 🛠️ **System Architecture**
-
-<div align="center">
-
-```mermaid
-flowchart TD
-    subgraph Data_Layer["Data Layer"]
-        A["Real TCGA Data | 1,248 Samples, 8 Cancer Types | 156/type"]
-        B["3 Genomic Modalities | 4,063 Features"]
-    end
-
-    subgraph Processing_Pipeline["Processing Pipeline"]
-        C["Multi-Modal Integration | Expression + Methylation + Mutations"]
-        D["4,063-Dimensional Feature Space | Leak-Free Feature Selection"]
-        E["LightGBM Model | Bayesian Hyperparameter Optimization"]
-    end
-
-    subgraph Validation["Validation & Deployment"]
-        F["Stratified 5-Fold CV + Held-Out Test n=250"]
-        G["98.4% Balanced Accuracy | 4/8 Types at 100%"]
-        H["SHAP Interpretability | Biomarker-Validated Features"]
-    end
-
-    subgraph Application["Application Layer"]
-        I["Streamlit Web App | Interactive Interface"]
-        J["REST API | Prediction Endpoints"]
-    end
-
-    subgraph Infra["Infrastructure"]
-        L["Docker Containers | Reproducible Deployment"]
-    end
-
-    A --> B
-    B --> C
-    C --> D
-    D --> E
-    E --> F
-    F --> G
-    G --> H
-    H --> I
-    H --> J
-    I --> L
-    J --> L
-
-    style G fill:#FFD700,stroke:#FF6B35,stroke-width:3px
-    style E fill:#E8F5E8
-    style C fill:#F3E5F5
-    style H fill:#E3F2FD
+```bash
+git clone https://github.com/rstil2/cancer-alpha.git
+cd cancer-alpha/cancer_genomics_ai_demo_minimal
+python setup.py
+./start_demo.sh          # macOS / Linux
+# start_demo.bat         # Windows
 ```
 
-*System Architecture: End-to-end Oncura pipeline from 1,248 real TCGA samples through multi-modal integration to clinical deployment, achieving 98.4% balanced accuracy with SHAP-validated interpretability.*
+Open **http://localhost:8501**
 
-</div>
+Or download the packaged demo: [`cancer_genomics_ai_demo_production_v2.0.zip`](https://github.com/rstil2/cancer-alpha/raw/main/cancer_genomics_ai_demo_production_v2.0.zip)
 
-### **📁 Project Structure**
+Docker (API + cache): `docker-compose up` from the demo directory.
+
+---
+
+## Project layout
 
 ```
 cancer-alpha/
-├── 📚 docs/                          # Documentation and figures
-├── 📝 manuscripts/                   # Research manuscripts and revisions
-├── 📄 preprints/                     # Published preprints (bioRxiv)
-├── 🎁 cancer_genomics_ai_demo_minimal/ # Self-contained demo package
-├── 🧠 models/                        # Trained model files
-├── 🔧 scripts/                       # Utility scripts
-├── ⚖️ LICENSE, PATENTS.md            # Legal documentation
-└── 📖 README.md, CONTRIBUTING.md     # Project documentation
+├── src/pipeline/              # Canonical Study 2 reproduction (paper)
+├── data/real_model_results/   # Pipeline outputs & model_results.json
+├── science/                   # Manuscripts & jbi_revision workspace
+├── cancer_genomics_ai_demo_minimal/  # Streamlit demo (not paper data)
+├── docs/                      # Installation & usage guides
+├── manuscripts/               # Submission history & reviewer responses
+├── preprints/                 # bioRxiv materials
+├── models/                    # Saved model artifacts
+└── README.md                  # This file
 ```
 
-## 📖 **Documentation**
+---
 
-- [Master Installation Guide](docs/MASTER_INSTALLATION_GUIDE.md) - Complete installation and usage guide
-- [Demo Usage Guide](docs/demo_usage.md) - Detailed demo instructions
-- [Competitive Analysis Methodology](docs/Competitive_Analysis_Methodology.md) - Complete scoring methodology and calculations
-- [Changelog](CHANGELOG.md) - Complete project history and version updates
-- [Contributing Guide](CONTRIBUTING.md) - Guidelines for contributing to the project
+## Documentation
 
+- [Master Installation Guide](docs/MASTER_INSTALLATION_GUIDE.md)
+- [Demo Usage](docs/demo_usage.md)
+- [Canonical Results](science/jbi_revision/supplementary/CANONICAL_RESULTS.md)
+- [Changelog](CHANGELOG.md)
+- [Contributing](CONTRIBUTING.md)
+- [Patents & licensing](PATENTS.md)
 
 ---
 
-## 🎁 **Try the Interactive Demo!**
-
-<div align="center">
-
-### **🏆 Experience Oncura — 98.4% Accuracy Production Model!**
-
-[![Download Production Demo](https://img.shields.io/badge/⬇️_DOWNLOAD-Production_Demo_v2.0-FFD700?style=for-the-badge&logo=data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0id2hpdGUiPjxwYXRoIGQ9Ik0xOSA5aC00VjNIOXY2SDVsNyA3IDctN3pNNSAxOHYyaDE0di0yaDE0eiIvPjwvc3ZnPg==)](https://github.com/rstil2/cancer-alpha/raw/main/cancer_genomics_ai_demo_production_v2.0.zip)
-
-**Latest: Production LightGBM • 98.4% Accuracy • Balanced Design • Full SHAP Explanations**
-
-| **🏆 Production Demo Features** | **Breakthrough Technology** |
-|:-------------------------------:|:---------------------------:|
-| **🌟 Production LightGBM** | **98.4% accuracy** on real TCGA data |
-| **🔍 SHAP Interpretability** | Biomarker-validated explanations |
-| **📊 Interactive Web Interface** | Professional Streamlit application |
-| **🧬 Multi-Modal Genomic Data** | 4,063 features from 3 genomic modalities |
-| **🎯 8 Cancer Types** | BRCA, LUAD, COAD, PRAD, STAD, HNSC, LUSC, LIHC |
-| **🚀 30-Second Setup** | Automated installation with `python setup.py` |
-| **🖥️ Cross-Platform** | Windows, Mac, Linux + Docker support |
-| **⚖️ Academic License** | Research-use demonstration included |
-
-**📁 What's Included:**
-- 🤖 **Production AI Model** (LightGBM with Bayesian hyperparameter optimization)
-- 📊 **Data Processing Pipeline** (Standard scaler + preprocessing)
-- 🔧 **Automated Setup** (`setup.py` + verification script)
-- 📚 **Complete Documentation** (README + Quick Start guide)
-- 🐳 **Docker Support** (Dockerfile + docker-compose)
-- 🖥️ **Platform Scripts** (Unix/Windows launchers)
-
-</div>
-
-### **🚀 Quick Start Instructions**
-
-#### **Option 1: Download ZIP (Fastest)**
-```bash
-# Download and extract the 563KB ZIP file
-wget https://github.com/rstil2/cancer-alpha/raw/main/cancer_genomics_ai_demo_production_v2.0.zip
-unzip cancer_genomics_ai_demo_production_v2.0.zip
-cd cancer_genomics_ai_demo_production
-
-# One-command setup and launch
-python setup.py
-
-# Start the demo
-./start_demo.sh        # Mac/Linux
-# OR
-start_demo.bat         # Windows
-```
-
-#### **Option 2: Clone Repository**
-```bash
-# Clone repository and navigate to demo
-git clone https://github.com/rstil2/cancer-alpha.git
-cd cancer-alpha/cancer_genomics_ai_demo_minimal
-
-# One-command setup and launch
-python setup.py && ./start_demo.sh
-```
-
-#### **Option 3: Verify Before Running**
-```bash
-# For either option above, verify first
-python verify_installation.py
-
-# Then setup and launch
-python setup.py && ./start_demo.sh
-```
-
-**🌐 Access**: http://localhost:8501  
-**📦 ZIP Size**: 563KB (includes 1.5MB LightGBM model)  
-**📋 Requirements**: Python 3.8+, 4GB RAM, Internet connection  
-**⚡ Total Time**: 30 seconds from download to running demo!
-
----
-
-## 🚀 **Get Started**
-
-Oncura provides multiple ways to interact with the AI system:
-
-### 🎯 **Option 1: Download Demo (Recommended)**
-The demo download above is perfect for first-time users and quick testing.
-
-### 🔬 **Option 2: Research Interface**
-For researchers and data scientists who want the full interactive experience:
-
-**Unix/Mac/Linux:**
-```bash
-# Clone and run Streamlit interface
-git clone https://github.com/rstil2/cancer-alpha.git
-cd cancer-alpha
-./start_streamlit.sh
-```
-
-**Windows:**
-```cmd
-REM Clone and run Streamlit interface
-git clone https://github.com/rstil2/cancer-alpha.git
-cd cancer-alpha
-start_streamlit.bat
-```
-
-**Access at**: http://localhost:8501
-
-**Note**: This runs a demo version of the Streamlit interface.
-
-**System Requirements:**
-- Python 3.8+ (required for Streamlit demo)
-- 4GB RAM minimum
-- Internet connection (for initial package installation)
-
----
-
-## 🧬 **Technology Overview**
-
-### **What This Demo Shows**
-- **Interactive Web Interface**: User-friendly cancer classification tool
-- **Multi-Modal Data Integration**: Sample genomic data processing across 3 modalities
-- **AI Predictions**: Cancer type classification with confidence scoring
-- **SHAP Explainability**: Visual explanation of prediction factors
-- **Clinical Decision Support**: Demo of diagnostic assistance interface
-
-### **Full System Capabilities** (Beyond Demo)
-- Multi-modal integration of gene expression, DNA methylation, and somatic mutations
-- Real TCGA multi-omics data (1,248 balanced samples across 8 cancer types)
-- LightGBM achieving 98.4% balanced accuracy
-- SHAP interpretability with biomarker-validated explanations
-
-## 📊 **Demo vs Full System Comparison**
-
-| Feature | Demo Version | Full System |
-|---------|-------------|-------------|
-| **Data Sources** | Sample data | Real TCGA genomic databases |
-| **Model Accuracy** | ~70% (simplified) | **98.4%** (real TCGA data) |
-| **Cancer Types** | 8 basic types | 8 cancer types (validated) |
-| **Processing Speed** | Limited | Real-time production (<50ms) |
-| **Explainability** | Basic SHAP | SHAP with biomarker validation |
-| **Sample Size** | Demo data | 1,248 real TCGA samples (balanced) |
-| **Mutations** | Sample data | Real cancer gene mutations (TP53, PIK3CA, KRAS, etc.) |
-
-## 🏥 **Potential Applications**
-
-The full technology can be applied to:
-- **Clinical Diagnostics**: Rapid cancer classification
-- **Precision Medicine**: Personalized treatment recommendations
-- **Research**: Biomarker discovery and validation
-- **Drug Development**: Target identification and validation
-- **Population Health**: Large-scale screening programs
-
-## 📄 **Intellectual Property & Licensing**
-
-**This repository is released for academic and non-commercial research use under copyright.**
-
-- **Patent Status**: A provisional application (No. 63/847,316) was filed in 2024 but was not converted to a non-provisional application and has lapsed — no patent is currently in force
-- **Copyright Holder**: Dr. R. Craig Stillwell
-- **Academic Use**: Permitted under the [LICENSE](LICENSE) (non-commercial research and education)
-- **Commercial Use**: Requires a separate commercial license agreement with the author
-
-## 📝 **Licensing**
-
-### **Academic Use**
-- **Permitted**: Non-commercial research and education
-- **Requirements**: Proper citation and attribution
-- **Restrictions**: No redistribution or commercial use
-
-### **Commercial Use**
-- **Status**: Requires a separate commercial license agreement
-- **Licensing**: Available through the copyright holder
-- **Applications**: Clinical deployment, commercial products, services
-
-### **Contact for Licensing**
-- **Email**: craig.stillwell@gmail.com
-- **Subject**: "Oncura Commercial License Inquiry"
-- **Include**: Intended use case and organization details
-
-## 🔒 **Legal Notices**
-
-### **Intellectual Property**
-This software is provided under copyright and the terms of the [LICENSE](LICENSE) (academic use). The previously filed provisional patent application has lapsed and is no longer in force.
-
-### **Data Privacy**
-- Demo uses sample data for illustration purposes
-- No real patient information is processed in the demo
-
-### **Disclaimer**
-This demo is for illustration purposes only. It should not be used for actual medical diagnosis or treatment decisions.
-
-## 📱 **Additional Resources**
-
-- [`DEMO_USAGE.md`](docs/demo_usage.md) - Detailed demo instructions
-- [`PATENTS.md`](PATENTS.md) - Intellectual property & licensing notice
-- [`LICENSE`](LICENSE) - Academic use license
-
-## 🤝 **Academic Collaboration**
-
-We welcome academic collaboration and research partnerships. For academic use and collaboration opportunities:
-
-- **Email**: craig.stillwell@gmail.com
-- **Subject**: "Oncura Academic Collaboration"
-- **Include**: Research proposal and institutional affiliation
-
-## 🛠️ **Technical Support**
-
-### **Demo Issues**
-- Check the installation requirements
-- Ensure all dependencies are installed
-- Try running in a fresh Python environment
-
-### **Licensing Questions**
-- Contact craig.stillwell@gmail.com
-- Include specific use case details
-- Allow 3-5 business days for response
-
----
-
-## ⚖️ **Legal Notice**
-
-**This software is licensed for academic and non-commercial research use only. Commercial use without a separate license agreement may infringe the author's copyright. Contact the copyright holder before any commercial use.**
-
----
-
-**© 2025–2026 Dr. R. Craig Stillwell. All rights reserved.**
-
----
-
-## 🏥 Deployment
-
-Oncura provides basic deployment infrastructure for research and evaluation:
-
-- **Docker Support**: `docker-compose up` to run the API and Redis cache
-- **Streamlit Demo**: Interactive web interface for classification and explainability
-- **REST API**: Prediction endpoints for programmatic access
-
-Clinical deployment features (EMR integration, HIPAA compliance, hospital authentication) are on the roadmap but not yet implemented.
-
----
-
-## 🗺️ Project Roadmap
-
-**Current Phase Status:**
-1. **Phase 1**: Reframe the Scientific Problem ✅
-2. **Phase 2**: Technical and Model Innovation ✅ 
-3. **Phase 2.5**: Model Enhancement & Validation ✅ **(COMPLETE — SHAP Explainability Added)**
-4. **Phase 3**: 90% Accuracy Target ✅ **(EXCEEDED)**
-5. **Phase 4**: Systemization and Tool Deployment ✅
-6. **Phase 4.5**: Advanced System Features ✅ **(COMPLETE — Optimized Models Deployed)**
-7. **Phase 5**: Real Data Integration ✅ **(COMPLETE — 1,248 Balanced TCGA Samples)**
-8. **Phase 5.5**: Breakthrough Model Development ✅ **(🔥 98.4% Balanced Accuracy)**
-9. **Phase 6**: Publication & Peer Review 🔄 **(bioRxiv published, JBI under review)**
-10. **Phase 7**: Clinical Deployment & Commercialization 📝 **(UPCOMING)**
-
-**🔥 BREAKTHROUGH ACHIEVED:** 98.4% balanced accuracy on 1,248 real TCGA samples with zero synthetic data.
-
-**Current Strategic Focus:**
-- ✅ LightGBM with Bayesian optimization deployed as champion model
-- ✅ 98.4% balanced accuracy validated on 1,248 authentic TCGA samples
-- ✅ Balanced experimental design — no synthetic data augmentation
-- ✅ Main paper published on bioRxiv (DOI: 10.1101/2025.07.22.666135)
-- 🔄 Revised manuscript under review at *Journal of Biomedical Informatics*
-- 📝 Regulatory pathway planning (FDA 510k) with explainable AI framework
-- 🏥 Clinical partnership development leveraging proven TCGA validation
-
-
-
-
-## 📄 Citation
-
-If you use this work in your research, please cite:
+## Citation
 
 ```bibtex
-@article{oncura_2025,
-    title={Oncura: Multi-Modal AI for Precision Oncology},
-    author={Stillwell, R. Craig},
-    journal={bioRxiv},
-    year={2025},
-    doi={10.1101/2025.07.22.666135},
-    url={https://www.biorxiv.org/content/10.1101/2025.07.22.666135v1}
+@article{stillwell2025oncura,
+  title   = {Oncura: Multi-Modal AI for Precision Oncology},
+  author  = {Stillwell, R. Craig},
+  journal = {bioRxiv},
+  year    = {2025},
+  doi     = {10.1101/2025.07.22.666135},
+  url     = {https://www.biorxiv.org/content/10.1101/2025.07.22.666135v1}
 }
 ```
 
-## 🤝 Contributing
+When the JBI manuscript is published, cite:
 
-We welcome contributions! Please see our [Contributing Guide](CONTRIBUTING.md) for details.
+```bibtex
+@article{stillwell2026experimental,
+  title   = {Experimental Design Dominates Model Architecture in Multi-Modal Cancer Classification: A Translational Bioinformatics Analysis Across Small-n and Large-n Regimes},
+  author  = {Stillwell, R. Craig},
+  journal = {Journal of Biomedical Informatics},
+  year    = {2026},
+  note    = {Under review}
+}
+```
 
-## ⚖️ License
+---
 
-**📚 Academic Use License**  
-Academic and research institutions may use this software under the Academic and Research License - see the [LICENSE](LICENSE) file for details.
+## License & contact
 
-**💼 Commercial Use**  
-Commercial use requires a separate commercial license agreement. Contact craig.stillwell@gmail.com for commercial licensing inquiries.
+Academic and non-commercial research use permitted under the [LICENSE](LICENSE). Commercial use requires a separate agreement — contact **craig.stillwell@gmail.com**.
 
-**ℹ️ Patent Status**  
-A provisional patent application (No. 63/847,316) was filed in 2024 but was not pursued and has lapsed; no patent is in force. See [PATENTS.md](PATENTS.md) for details.
+A provisional patent (No. 63/847,316) was filed in 2024 and has **lapsed**; no patent is in force. See [PATENTS.md](PATENTS.md).
+
+---
+
+## Contributing
+
+Issues and pull requests welcome for reproducibility, documentation, and robustness analyses. See [CONTRIBUTING.md](CONTRIBUTING.md).
+
+---
+
+<div align="center">
+
+**© 2025–2026 Dr. R. Craig Stillwell**
+
+*Research software for multi-modal cancer genomics — not for clinical use.*
+
+</div>
