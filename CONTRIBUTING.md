@@ -1,58 +1,32 @@
 # Contributing to Oncura
 
-Thank you for your interest in contributing to Oncura! This project is patent-protected technology with specific licensing requirements.
+Thank you for contributing. Start with [RESEARCH.md](RESEARCH.md) and [docs/CANONICAL.md](docs/CANONICAL.md) before changing numbers or claims.
 
-## 🔒 **Legal Requirements**
+## Legal
 
-**IMPORTANT**: This project contains patent-protected technology (Provisional Patent No. 63/847,316). All contributions are subject to these legal requirements.
+- **Academic use:** permitted under [LICENSE](LICENSE)
+- **Patent:** provisional 63/847,316 filed 2024, **lapsed** — no patent in force ([PATENTS.md](PATENTS.md))
+- **Commercial use:** contact craig.stillwell@gmail.com
 
-### For Contributors
-- All contributions must be original work
-- Contributors grant rights to incorporate their work into the patent-protected system
-- Commercial use requires separate patent licensing
+## High-value contributions
 
-## 📋 **How to Contribute**
+- Reproducibility fixes for `src/pipeline/` and Study 1 (`src/pipeline_study1/`)
+- Robustness experiments under `experiments/`
+- Documentation aligned with the JBI manuscript
+- Bug fixes in `cancer_genomics_ai_demo_minimal/` (demo only)
 
-### Academic Contributions
-- **Research collaborations**: Contact craig.stillwell@gmail.com
-- **Bug reports**: Create issues with detailed descriptions
-- **Documentation improvements**: Submit pull requests
-- **Educational use cases**: Share your experiences
+## Please avoid
 
-### What We Welcome
-- 🐛 Bug reports and fixes
-- 📚 Documentation improvements
-- 🧪 Test cases and validation
-- 💡 Research insights and feedback
-- 🏥 Clinical use case studies
+- Reintroducing legacy metrics (96.5%, 97.6% CUP, competitive leaderboard claims)
+- Marketing language in README or demo UI
+- Editing frozen manuscript files in `science/jbi_revision/submitted_snapshot/`
 
-### What Requires Special Permission
-- 🔬 Core algorithm modifications
-- 🤖 New model implementations
-- 🏭 Production deployment guidance
-- 💼 Commercial applications
+## Pull requests
 
-## 📝 **Contribution Process**
+1. Cross-check metrics against `docs/CANONICAL.md`
+2. Note whether changes affect demo vs research pipeline
+3. Manuscript reference validation runs on pre-commit for `manuscripts/*.md`
 
-1. **Contact First**: For significant contributions, email craig.stillwell@gmail.com
-2. **Fork & Branch**: Create a feature branch from main
-3. **Test**: Ensure your changes don't break existing functionality
-4. **Document**: Update relevant documentation
-5. **Submit**: Create a pull request with clear description
+## Contact
 
-## ⚖️ **Legal Disclaimer**
-
-By contributing to this project, you acknowledge:
-- The patent-protected nature of this technology
-- Your contributions may be incorporated into commercial licenses
-- Academic use only unless otherwise licensed
-
-## 📧 **Contact**
-
-- **General Questions**: Create a GitHub issue
-- **Research Collaboration**: craig.stillwell@gmail.com
-- **Commercial Licensing**: craig.stillwell@gmail.com
-
----
-
-**© 2025 Dr. R. Craig Stillwell. Patent Pending - Provisional Application No. 63/847,316**
+craig.stillwell@gmail.com — subject "Oncura Academic Collaboration"

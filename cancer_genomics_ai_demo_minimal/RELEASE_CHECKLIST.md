@@ -12,10 +12,11 @@
 - [x] `verify_installation.py` - Installation verification
 
 ### ✅ Documentation Complete
-- [x] `README_GITHUB.md` - Main GitHub README
-- [x] `QUICKSTART.md` - 30-second setup guide
-- [x] `.gitignore` - Clean repository
-- [x] Patent information clearly displayed
+- [x] `README.md` — demo quick start (points to main [RESEARCH.md](../RESEARCH.md))
+- [x] `README_GITHUB.md` — short GitHub pointer
+- [x] `QUICKSTART.md` — 30-second setup guide
+- [x] `.gitignore` — Clean repository
+- [x] Patent status: provisional lapsed — see [PATENTS.md](../PATENTS.md)
 
 ### ✅ Platform Compatibility
 - [x] `start_demo.sh` - Unix/macOS launcher

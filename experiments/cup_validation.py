@@ -1,15 +1,12 @@
 #!/usr/bin/env python3
-"""CUP (Cancer of Unknown Primary) Validation Experiment.
+"""HISTORICAL — Scientific Reports era CUP simulation (not JBI public claims).
 
-Simulates the real clinical CUP scenario:
-  - Train classifier on known cancer samples (8 types)
-  - Classify held-out "unknown" samples and predict their primary type
-  - Evaluate accuracy, confidence calibration, and per-type performance
-  - Repeat with 10 random train/test splits for robustness
+Simulates held-out TCGA splits only; NOT independent CUP biopsy cohorts.
+The 97.6% figure must not appear in README or public materials.
+See docs/CANONICAL.md and docs/MANUSCRIPT_ARCHIVE.md.
 
-This demonstrates the classifier's utility for CUP diagnosis:
-given a tumor sample of unknown origin, how accurately can we
-identify the cancer type using multi-modal molecular features?
+Original docstring:
+CUP (Cancer of Unknown Primary) Validation Experiment.
 """
 
 import json

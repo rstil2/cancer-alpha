@@ -1,13 +1,9 @@
 #!/usr/bin/env python3
-"""Cancer of Unknown Primary (CUP) Simulation via Leave-One-Cancer-Out.
+"""HISTORICAL — SciReports-era CUP leave-one-out simulation. Not a JBI public claim.
 
-Simulates the clinical CUP scenario: for each cancer type, train a classifier
-on the remaining 7 types and evaluate whether held-out samples are correctly
-identified. Reports top-1 accuracy, top-3 accuracy, confidence scores, and
-misclassification patterns.
+See docs/MANUSCRIPT_ARCHIVE.md. Do not cite 97.6% CUP in README or demos.
 
-Uses the same multi-modal feature matrices (expression + methylation + mutation)
-and LightGBM classifier from the main pipeline.
+Original: Cancer of Unknown Primary (CUP) Simulation via Leave-One-Cancer-Out.
 """
 
 import json

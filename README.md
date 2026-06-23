@@ -211,6 +211,8 @@ cancer-alpha/
 - [Demo Usage](docs/demo_usage.md)
 - [Changelog](CHANGELOG.md)
 - [Contributing](CONTRIBUTING.md)
+- [Manuscript archive index](docs/MANUSCRIPT_ARCHIVE.md)
+- [Legacy root scripts](LEGACY_SCRIPTS.md)
 - [Patents & licensing](PATENTS.md)
 
 ---

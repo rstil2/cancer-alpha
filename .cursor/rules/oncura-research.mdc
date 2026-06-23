@@ -1,0 +1,39 @@
+---
+description: Oncura research repo — canonical numbers and manuscript alignment
+globs:
+  - "**/*"
+alwaysApply: true
+---
+
+# Oncura research conventions
+
+## Canonical sources (cite these)
+
+- Numbers: `docs/CANONICAL.md` and `science/jbi_revision/supplementary/CANONICAL_RESULTS.md`
+- Entry point: `RESEARCH.md`
+- Study 2 reproduction: `src/pipeline/step1` through `step4`
+- Study 1 map: `src/pipeline_study1/README.md`
+- JBI revision (under review): `science/jbi_revision/` only — do not edit `science/Combined_Manuscript_JBI.docx` in place
+
+## Official results
+
+- Study 2: LightGBM **98.4%** test balanced accuracy, n=1,248, 4,063 features, internal TCGA held-out only
+- Study 1: LightGBM+SMOTE **95.0% ± 5.4%**, n=158, SMOTE used; ICGC n=76 → 92.1%
+- Imbalance robustness: **0.7 pp** balanced-accuracy drop (balanced → natural prevalence test)
+
+## Never reintroduce in public docs
+
+- 96.5%, 97.6% CUP, 4,913 samples, "clinical-grade" without qualification
+- Competitive leaderboard vs FoundationOne as research claims
+- "Patent protected" (provisional 63/847,316 **lapsed**)
+- Demo accuracy (~~70%) as paper result
+
+## Repository zones
+
+- `cancer_genomics_ai_demo_minimal/` — UI demo, synthetic sample data, not paper pipeline
+- `archive/` — legacy business and scaling scripts
+- `manuscripts/` — historical drafts; check `docs/MANUSCRIPT_ARCHIVE.md` before editing
+
+## Tone
+
+Measured academic language. Experimental design dominates architecture — not "breakthrough" or "#1 in world."

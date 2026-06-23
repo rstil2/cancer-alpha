@@ -12,6 +12,8 @@ These documents describe commercialization, hospital integration (Epic/Cerner), 
 | `PATH_TO_NUMBER_ONE.md` | Competitive positioning |
 | `PRODUCTION_DEPLOYMENT.md` | Hospital deployment claims |
 | `COMPREHENSIVE_MODEL_RESULTS_SUMMARY.md` | 16.55% on 9,660-sample experiment |
+| `docs/FULL_PROJECT_ASSESSMENT.md` | 9.2/10 marketing assessment |
+| `docs/COMPETITIVE_ASSESSMENT.md` | Historical competitive write-up |
 | `docs/Competitive_Analysis_Methodology.md` | Leaderboard vs FoundationOne |
 
 For official results see [docs/CANONICAL.md](../../docs/CANONICAL.md).
