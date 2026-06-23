@@ -23,7 +23,8 @@ import random
 
 def load_data():
     """Load balanced TCGA data"""
-    data_path = Path('/Users/stillwell/projects/cancer-alpha/data/real_tcga_large')
+    project_root = Path(__file__).resolve().parents[1]
+    data_path = project_root / "data" / "real_tcga_large"
     
     X = pd.read_csv(data_path / 'real_tcga_features_cleaned.csv')
     y = pd.read_csv(data_path / 'real_tcga_labels.csv')['cancer_type']
@@ -271,7 +272,8 @@ def main():
     print("="*80)
     
     # Create output directory
-    output_dir = Path('/Users/stillwell/projects/cancer-alpha/experiments/results')
+    project_root = Path(__file__).resolve().parents[1]
+    output_dir = project_root / "experiments" / "results"
     output_dir.mkdir(parents=True, exist_ok=True)
     
     # Load data

@@ -1,39 +1,20 @@
 #!/usr/bin/env python3
 """
-⚠️  PATENT PROTECTED DEMO SOFTWARE ⚠️
-
 Oncura Cancer Genomics AI Classifier — DEMONSTRATION VERSION
 ============================================================
 
-This is a LIMITED DEMONSTRATION of patent-protected technology.
-Commercial use requires separate patent licensing.
+Research demo only. Not for clinical diagnosis or treatment decisions.
 
-PATENT INFORMATION:
-- Patent: Provisional Application No. 63/847,316
-- Title: Systems and Methods for Cancer Classification Using
-  Multi-Modal Transformer-Based Architectures
-- Patent Holder: Dr. R. Craig Stillwell
-- Contact: craig.stillwell@gmail.com
+FULL SYSTEM (Study 2, separate pipeline — not this demo):
+- 98.4% balanced accuracy on held-out TCGA test (LightGBM, n=1,248)
+- Reproduce via src/pipeline/ — see RESEARCH.md
 
-FULL SYSTEM PERFORMANCE (not included in this demo):
-- 98.4% balanced accuracy on 1,248 real TCGA samples (LightGBM)
-- 4,063 features across 3 genomic modalities
-- 4/8 cancer types at 100% precision & recall
-- CUP validation: 97.6% balanced accuracy
-
-DEMO MODELS (included in this package):
-- Logistic Regression and Random Forest trained on 158 TCGA samples
-- 110 multi-modal features across 6 modalities
-- Demonstrates the classification interface and SHAP explainability
-
-FOR COMMERCIAL USE:
-Contact craig.stillwell@gmail.com for patent licensing.
+THIS DEMO:
+- Logistic Regression and Random Forest on 158 TCGA samples, 110 features
+- Sample/illustrative data in UI (~70% accuracy on demo inputs)
 
 Author: Dr. R. Craig Stillwell
-Date: March 2026
-
-⚠️  This software is for demonstration purposes only and should not be used
-for actual medical diagnosis or treatment decisions. ⚠️
+License: Academic use — see LICENSE
 """
 
 import streamlit as st
@@ -438,11 +419,10 @@ def main():
     
     # Full system metrics
     st.success("""
-    **Full Oncura System** (not included in this demo):
-    - **98.4% balanced accuracy** — LightGBM on 1,248 real TCGA samples
-    - **4,063 features** across 3 genomic modalities (gene expression, DNA methylation, somatic mutations)
-    - **4/8 cancer types at 100%** precision & recall on held-out test set
-    - **CUP validation: 97.6%** balanced accuracy across 2,500 predictions
+    **Full research pipeline** (not included in this demo — see [RESEARCH.md](../RESEARCH.md)):
+    - **98.4%** held-out test balanced accuracy (LightGBM, Study 2, n=1,248)
+    - **95.0%** with LightGBM+SMOTE (Study 1, n=158)
+    - Reproduce Study 2: `python src/pipeline/step4_train_evaluate.py`
     """)
     
     st.info("""

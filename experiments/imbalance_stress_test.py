@@ -36,8 +36,9 @@ NATURAL_PREVALENCE = {
 }
 
 def load_balanced_data():
-    """Load the existing balanced dataset"""
-    data_path = Path('/Users/stillwell/projects/cancer-alpha/data/real_tcga_large')
+    """Load the existing balanced dataset."""
+    project_root = Path(__file__).resolve().parents[1]
+    data_path = project_root / "data" / "real_tcga_large"
     
     X = pd.read_csv(data_path / 'real_tcga_features_cleaned.csv')
     y = pd.read_csv(data_path / 'real_tcga_labels.csv')['cancer_type']
@@ -259,9 +260,11 @@ def main():
     print("Training on balanced data, testing on natural prevalence distribution")
     print("="*80)
     
-    # Create output directory
-    output_dir = Path('/Users/stillwell/projects/cancer-alpha/experiments/results')
+    project_root = Path(__file__).resolve().parents[1]
+    output_dir = project_root / "experiments" / "results"
+    supplementary_dir = project_root / "science" / "jbi_revision" / "supplementary"
     output_dir.mkdir(parents=True, exist_ok=True)
+    supplementary_dir.mkdir(parents=True, exist_ok=True)
     
     # Load data
     X, y = load_balanced_data()
@@ -285,10 +288,14 @@ def main():
     # Save results
     with open(output_dir / 'imbalance_stress_test_results.json', 'w') as f:
         json.dump(results, f, indent=2)
+    with open(supplementary_dir / 'imbalance_stress_test_results.json', 'w') as f:
+        json.dump(results, f, indent=2)
     
     # Generate manuscript text
     manuscript_text = generate_manuscript_text(results)
     with open(output_dir / 'imbalance_stress_test_manuscript_text.txt', 'w') as f:
+        f.write(manuscript_text)
+    with open(supplementary_dir / 'imbalance_stress_test_manuscript_text.txt', 'w') as f:
         f.write(manuscript_text)
     
     print(f"\n{'='*80}")

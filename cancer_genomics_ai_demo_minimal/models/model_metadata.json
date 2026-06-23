@@ -1,10 +1,10 @@
 {
-  "demo_description": "Simplified demo models from the minimal-data setting",
+  "demo_description": "Simplified demo models from Study 1 minimal-data setting (UI only)",
   "demo_models": {
     "logistic_regression": {
       "file": "multimodal_real_tcga_logistic_regression.pkl",
       "n_features": 80,
-      "note": "Uses SelectKBest feature selection from 110 features"
+      "note": "SelectKBest from 110 features"
     },
     "random_forest": {
       "file": "multimodal_real_tcga_random_forest.pkl",
@@ -17,16 +17,21 @@
     "total": 110,
     "modalities": ["methylation", "mutations", "copy_number", "fragmentomics", "clinical", "icgc_argo"]
   },
-  "full_system_performance": {
+  "research_pipeline_study2": {
     "champion_model": "LightGBM",
-    "balanced_accuracy": "98.4%",
+    "test_balanced_accuracy": "98.4%",
     "samples": 1248,
     "features": 4063,
-    "modalities": ["gene_expression", "dna_methylation", "somatic_mutations"],
-    "cancer_types": ["BRCA", "LUAD", "COAD", "PRAD", "STAD", "HNSC", "LUSC", "LIHC"],
-    "cup_validation_accuracy": "97.6%"
+    "reproduce": "src/pipeline/step4_train_evaluate.py",
+    "note": "Internal TCGA held-out test only; not reproduced by this demo"
   },
-  "data_source": "Real TCGA genomics data (GDC portal)",
-  "patent": "Provisional Application No. 63/847,316",
-  "last_updated": "2026-03-30"
+  "research_pipeline_study1": {
+    "champion_model": "LightGBM+SMOTE",
+    "balanced_accuracy": "95.0%",
+    "samples": 158,
+    "external_validation": "ICGC ARGO n=76, 92.1%"
+  },
+  "data_source": "Real TCGA (research); demo UI uses sample data for illustration",
+  "patent_status": "Provisional 63/847,316 lapsed — no patent in force",
+  "last_updated": "2026-06-22"
 }

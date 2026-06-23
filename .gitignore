@@ -71,7 +71,11 @@ models_large_scale/
 
 # Data processing pipelines
 data/
-src/
+src/*
+!src/pipeline/
+!src/pipeline/**
+!src/pipeline_study1/
+!src/pipeline_study1/**
 scripts/
 
 # Development directories with IP
@@ -156,8 +160,13 @@ temp/
 tmp/
 cache/
 
-# Archive directory (for old/duplicate files)
-archive/
+# Archive directory (legacy scripts — tracked READMEs + moved files)
+archive/*
+!archive/README.md
+!archive/experiments/
+!archive/experiments/**
+!archive/business/
+!archive/business/**
 
 # Empty directories
 **/logs/

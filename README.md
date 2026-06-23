@@ -4,7 +4,7 @@
 
 **Multi-modal cancer classification from TCGA genomics**
 
-*Research codebase and interactive demo for translational bioinformatics*
+*Research codebase and interactive demo — [RESEARCH.md](RESEARCH.md) is the entry point for reproduction and canonical numbers.*
 
 [![bioRxiv](https://img.shields.io/badge/bioRxiv-10.1101%2F2025.07.22.666135-blue)](https://www.biorxiv.org/content/10.1101/2025.07.22.666135v1)
 [![Manuscript](https://img.shields.io/badge/JBI-under%20review-orange)](science/Combined_Manuscript_JBI.pdf)
@@ -189,8 +189,9 @@ Docker (API + cache): `docker-compose up` from the demo directory.
 ```
 cancer-alpha/
 ├── src/pipeline/              # Canonical Study 2 reproduction (paper)
-├── data/real_model_results/   # Pipeline outputs & model_results.json
-├── science/                   # Manuscripts & jbi_revision workspace
+├── src/pipeline_study1/       # Study 1 reproduction map
+├── experiments/               # Robustness tests (imbalance stress, etc.)
+├── archive/                   # Legacy scripts & business docs (not for papers)
 ├── cancer_genomics_ai_demo_minimal/  # Streamlit demo (not paper data)
 ├── docs/                      # Installation & usage guides
 ├── manuscripts/               # Submission history & reviewer responses
@@ -203,9 +204,11 @@ cancer-alpha/
 
 ## Documentation
 
+- [Research entry point](RESEARCH.md)
+- [Canonical results](docs/CANONICAL.md)
+- [Data access & reproduction](docs/DATA_ACCESS.md)
 - [Master Installation Guide](docs/MASTER_INSTALLATION_GUIDE.md)
 - [Demo Usage](docs/demo_usage.md)
-- [Canonical Results](science/jbi_revision/supplementary/CANONICAL_RESULTS.md)
 - [Changelog](CHANGELOG.md)
 - [Contributing](CONTRIBUTING.md)
 - [Patents & licensing](PATENTS.md)
