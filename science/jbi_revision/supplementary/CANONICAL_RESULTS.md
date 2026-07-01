@@ -132,4 +132,4 @@ Study 1 has **two rows** in the canonical record. Only one should appear in a gi
 | Imbalance robustness | `experiments/imbalance_stress_test.py` |
 | Frozen submitted PDF | `science/jbi_revision/submitted_snapshot/Combined_Manuscript_JBI.pdf` |
 | Editable revision draft | `science/jbi_revision/working/Combined_Manuscript_JBI_REVISED.docx` |
-| Demo (NOT manuscript data) | `cancer_genomics_ai_demo_minimal/` |
+| Demo (NOT manuscript data) | `demo/` |

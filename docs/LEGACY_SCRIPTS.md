@@ -19,6 +19,6 @@ Scripts in [`archive/legacy_root/scripts/`](../archive/legacy_root/scripts/) are
 | `create_*package*.py`, `convert_*word*.py`, `generate_figures.py` | Manuscript / packaging utilities |
 | `inventory_real_tcga.py`, `tcga_dataset_assessment.py`, `audit_datasets.py` | Data inventory |
 | `run_full_pipeline.py` | Older orchestration — superseded by `src/pipeline/` |
-| `serve_demo.py`, `test_updated_demo.py` | Demo helpers (use `cancer_genomics_ai_demo_minimal/` instead) |
+| `serve_demo.py`, `test_updated_demo.py` | Demo helpers (use `demo/` instead) |
 
 Scaling experiments (`*_50k_*`, `ultra_*`) are in [`archive/experiments/legacy_scaling/`](../archive/experiments/legacy_scaling/).

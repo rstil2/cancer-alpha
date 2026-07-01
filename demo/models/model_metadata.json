@@ -1,0 +1,17 @@
+{
+  "purpose": "Streamlit workflow demo — not manuscript reproduction",
+  "workflow": ["input", "classify", "explain"],
+  "demo_models": {
+    "logistic_regression": "multimodal_real_tcga_logistic_regression.pkl",
+    "random_forest": "multimodal_real_tcga_random_forest.pkl"
+  },
+  "demo_cancer_types": ["BRCA", "LUAD", "COAD", "PRAD", "STAD", "KIRC", "HNSC", "LIHC"],
+  "demo_training_samples": 158,
+  "demo_features": 110,
+  "research_study2": {
+    "model": "LightGBM",
+    "test_balanced_accuracy": "98.4%",
+    "pipeline": "src/pipeline/step4_train_evaluate.py"
+  },
+  "note": "Demo uses illustrative sample data for UI exploration; research numbers in docs/CANONICAL.md"
+}

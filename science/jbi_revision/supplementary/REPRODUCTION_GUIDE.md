@@ -89,7 +89,7 @@ print('CV mean:', round(lgb['cv_mean']*100, 2), '% ±', round(lgb['cv_std']*100,
 
 | Path | Reason |
 |------|--------|
-| `cancer_genomics_ai_demo_minimal/` | Demo uses sample/synthetic data (~70% accuracy) |
+| `demo/` | Demo uses sample/synthetic data (~70% accuracy) |
 | `train_transformer_real_tcga_balanced.py` | Deep learning comparison; separate experiment |
 | Root `*_50k_*`, `ultra_massive_*` scripts | Exploratory scaling experiments (poor feature engineering in some runs) |
 | `COMPREHENSIVE_MODEL_RESULTS_SUMMARY.md` | 9,660-sample experiment with ~16% accuracy — not manuscript |

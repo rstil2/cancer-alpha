@@ -13,7 +13,7 @@ Thank you for contributing. Start with [RESEARCH.md](RESEARCH.md) and [docs/CANO
 - Reproducibility fixes for `src/pipeline/` and Study 1 (`src/pipeline_study1/`)
 - Robustness experiments under `experiments/`
 - Documentation aligned with the JBI manuscript
-- Bug fixes in `cancer_genomics_ai_demo_minimal/` (demo only)
+- Bug fixes in `demo/` (demo only)
 
 ## Please avoid
 

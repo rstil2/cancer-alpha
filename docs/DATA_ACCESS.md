@@ -51,7 +51,7 @@ Processed Study 1-style features (when present locally):
 |------|-------|
 | `data/production_tcga/` | Early real TCGA processing |
 | `data/raw_tcga/` | Raw downloads |
-| Demo package models | 158-sample LR/RF in `cancer_genomics_ai_demo_minimal/models/` |
+| Demo package models | 158-sample LR/RF in `demo/models/` |
 
 See [src/pipeline_study1/README.md](../src/pipeline_study1/README.md).
 
@@ -71,7 +71,7 @@ python experiments/imbalance_stress_test.py
 
 | Path | Status |
 |------|--------|
-| `cancer_genomics_ai_demo_minimal/enhanced_data_generator.py` | Synthetic demo data |
+| `demo/streamlit_app.py` | Streamlit workflow demo (sample data in UI) |
 | `data/processed_50k/`, `data/advanced_multi_omics/` | Archive experiments |
 | `archive/experiments/` | Legacy scripts |
 

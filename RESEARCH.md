@@ -11,7 +11,7 @@ The public [README](README.md) leads with **Study 2** (98.4%, reproducible). Thi
 | How do I reproduce Study 2 (98.4%)? | [src/pipeline/](src/pipeline/) → [docs/DATA_ACCESS.md](docs/DATA_ACCESS.md) |
 | How do I reproduce Study 1? | `python src/pipeline_study1/run_all.py` → `data/study1_results/` |
 | JBI revision prep (under review) | [science/jbi_revision/](science/jbi_revision/) |
-| Interactive UI demo (not paper data) | [cancer_genomics_ai_demo_minimal/](cancer_genomics_ai_demo_minimal/) |
+| Interactive UI demo (not paper data) | [demo/](demo/) |
 
 ## Two studies — do not merge
 
@@ -29,7 +29,7 @@ The public [README](README.md) leads with **Study 2** (98.4%, reproducible). Thi
 src/pipeline/           ← canonical Study 2 (paper)
 src/pipeline_study1/    ← Study 1 script map
 experiments/            ← robustness tests (imbalance, etc.)
-cancer_genomics_ai_demo_minimal/  ← UI demo (~70%), NOT manuscript reproduction
+demo/  ← UI demo (~70% on sample inputs), NOT manuscript reproduction
 archive/experiments/    ← legacy scaling/download scripts (ignore for papers)
 archive/business/       ← historical commercial docs (not research claims)
 docs/MANUSCRIPT_ARCHIVE.md  ← which manuscript files are historical

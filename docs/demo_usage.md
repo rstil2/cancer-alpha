@@ -5,7 +5,7 @@ This guide explains how to use the Oncura interactive demo for cancer genomics c
 ## Getting Started
 
 ### Download and Setup
-1. From the repository root: `cd cancer_genomics_ai_demo_minimal`
+1. From the repository root: `cd demo` or `./start_demo.sh`
 2. Run setup: `python setup.py`
 3. Start the demo:
    - **Windows**: `start_demo.bat`

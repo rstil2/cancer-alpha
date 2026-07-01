@@ -1,0 +1,9 @@
+services:
+  oncura-demo:
+    build: .
+    ports:
+      - "8501:8501"
+    volumes:
+      - ./models:/app/models:ro
+    environment:
+      - PYTHONUNBUFFERED=1
