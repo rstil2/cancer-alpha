@@ -1,4 +1,11 @@
-# Reproduction Guide — Study 2 (JBI Manuscript)
+# Reproduction Guide — JBI Manuscript Studies
+
+Study 2 reproduces the **98.4%** held-out test balanced accuracy.  
+Study 1 reproduces the **small-n** pipeline; expect **~82% CV**, not the submitted **95.0%** (see [CANONICAL_RESULTS.md](CANONICAL_RESULTS.md)).
+
+---
+
+# Study 2
 
 Reproduces the **98.4% held-out test balanced accuracy** reported in Study 2.
 
@@ -98,3 +105,43 @@ Point reviewers to:
 3. Frozen submitted PDF: `science/jbi_revision/submitted_snapshot/Combined_Manuscript_JBI.pdf`
 
 Legacy scripts remain in the repository for development history but are explicitly excluded from manuscript claims in the revised Data Availability statement.
+
+---
+
+# Study 1
+
+Reproduces the **110-feature, n=158** cohort from real TCGA files in `data/production_tcga/`.
+
+**Expected (2026-06-23 run):** LightGBM+SMOTE **~82.4% ± 2.6%** CV — **not** the submitted manuscript **95.0%**.
+
+```bash
+cd /path/to/cancer-alpha
+pip install -r requirements.txt imbalanced-learn xgboost xenaPython
+
+# Full Study 1 chain (step 0 trace → train → optional ICGC fetch → external validation)
+python src/pipeline_study1/run_all.py
+
+# Or minimal path if step2 pickles already exist:
+python src/pipeline_study1/step3_build_cohort.py
+python src/pipeline_study1/step4_train_evaluate.py
+ICGC_SKIP_CN=1 python src/pipeline_study1/step2b_icgc_fetch_features.py
+python src/pipeline_study1/step5_external_validation.py
+```
+
+**Verify:**
+
+```bash
+python -c "
+import json
+from pathlib import Path
+r = json.loads(Path('data/study1_results/model_results.json').read_text())
+print('Study 1 CV:', r['cv_mean_pct'], '% ±', r['cv_std_pct'], '%')
+e = json.loads(Path('data/study1_results/external_validation_results.json').read_text())
+for run in e['validation_runs']:
+    print(run['cohort'], run.get('balanced_accuracy_pct'), '% n=', run.get('n_samples'))
+"
+```
+
+**Cohort provenance:** `data/study1_results/cohort_lineage_report.json`, `canonical_patient_manifest.json`
+
+**Do not edit** `science/jbi_revision/submitted_snapshot/` when reconciling numbers — update `working/` only when JBI invites revision.

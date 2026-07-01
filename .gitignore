@@ -167,6 +167,12 @@ archive/*
 !archive/experiments/**
 !archive/business/
 !archive/business/**
+!archive/legacy_root/
+!archive/legacy_root/**
+!archive/internal/
+!archive/internal/**
+!archive/artifacts/
+!archive/artifacts/**
 
 # Empty directories
 **/logs/

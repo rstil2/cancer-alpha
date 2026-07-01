@@ -1,7 +1,7 @@
 theme: jekyll-theme-cayman
 
 title: "Oncura"
-description: "Next-Generation AI for Precision Oncology — 95.0% Accuracy on Real TCGA Clinical Data"
+description: "Multi-modal TCGA cancer classification — reproducible research code (Study 2: 98.4% balanced accuracy, n=1,248)"
 url: "https://rstil2.github.io"
 baseurl: "/cancer-alpha"
 
@@ -23,11 +23,10 @@ exclude:
   - src/
   - data/
   - notebooks/
-  - business/
+  - archive/
   - requirements.txt
   - Dockerfile
   - docker-compose.yml
   - setup.py
-  - WARP.md
   - Gemfile
   - Gemfile.lock

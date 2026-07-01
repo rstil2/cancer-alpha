@@ -1,73 +1,78 @@
-# Study 1 reproduction map (small-n, n=158)
+# Study 1 reproduction pipeline (small-n, n≈158, 110 features)
 
-Study 1 is **not** a single end-to-end script like Study 2. This document maps manuscript claims to the closest repository artifacts.
+Rebuilds the Study 1 cohort from **real TCGA files** in `data/production_tcga/` using the **KIRC panel** (not LUSC).
 
-## Manuscript claims (Study 1)
-
-| Claim | Value |
-|-------|-------|
-| Samples | 158 authenticated TCGA |
-| Features | 110 across 6 modalities |
-| Architectures | 12 (logistic regression → transformers) |
-| Champion | LightGBM + SMOTE |
-| Balanced accuracy | 95.0% ± 5.4% |
-| Transformer | 83.2% ± 6.8% |
-| External validation | ICGC ARGO n=76 → 92.1% (no retraining) |
-
-Cancer types: BRCA, LUAD, COAD, PRAD, STAD, HNSC, **KIRC**, LIHC (note: Study 2 uses LUSC instead of KIRC).
-
----
-
-## Closest reproduction paths
-
-### 1. Demo models (158 samples, partial)
-
-The Streamlit demo ships models trained on the minimal-data setting:
+## Quick start
 
 ```bash
-cd cancer_genomics_ai_demo_minimal
-python setup.py
-# Models: models/multimodal_real_tcga_*.pkl (158 samples, 110 features)
+cd /path/to/cancer-alpha
+python src/pipeline_study1/run_all.py
 ```
 
-This demonstrates the **workflow**, not the full 12-architecture comparison or 95.0% LightGBM+SMOTE benchmark.
-
-### 2. Model comparison on real TCGA CSV (related, n≈1,200)
+Or step by step:
 
 ```bash
-python compare_models_real_data.py
+python src/pipeline_study1/step1_file_mapping.py   # GDC map + KIRC (needs network)
+python src/pipeline_study1/step2_extract_features.py
+python src/pipeline_study1/step3_build_cohort.py
+python src/pipeline_study1/step4_train_evaluate.py
 ```
 
-Uses `data/real_tcga_large/real_tcga_features_cleaned.csv` (1,200 balanced samples, 2,000 features) with SMOTE — **different cohort size/features** than Study 1 but same methodology family.
+## Outputs (`data/study1_results/`)
 
-### 3. Notebooks
-
-Check `notebooks/` for interactive Study 1-era analyses (preprocessing, SMOTE, architecture comparison).
-
-### 4. ICGC external validation
-
-- Data: [ICGC ARGO platform](https://platform.icgc-argo.org/)
-- Manuscript: 76 held-out samples, LightGBM+SMOTE without retraining
-- **No standalone reproduction script is pinned in this repo yet** — priority for a future `src/pipeline_study1/run_external_validation.py`
-
----
-
-## Data locations (local only, gitignored)
-
-| Path | Description |
+| File | Description |
 |------|-------------|
-| `data/production_tcga/` | Processed real TCGA for early experiments |
-| `data/raw_tcga/` | Raw GDC downloads |
-| `real_tcga_inventory.json` | Sample inventory audit (Aug 2025) |
+| `features_110.pkl` | Final feature matrix (n≈158 × 110) |
+| `labels.csv` | Cancer type per patient |
+| `dataset_info.json` | Cohort summary and class counts |
+| `model_results.json` | LightGBM+SMOTE CV scores |
+| `lightgbm_smote_study1.pkl` | Trained pipeline |
 
----
+## Feature layout (110)
 
-## Planned consolidation
+| Modality | n | Source |
+|----------|---|--------|
+| Methylation | 20 | Top variable CpGs (frozen in `methylation_probe_panel.json`) |
+| Mutation | 25 | TMB summaries + 22 driver genes |
+| Copy number | 20 | Segment statistics + chromosome means |
+| Fragmentomics | 15 | **Proxies** from CN segment length/amp profiles |
+| Clinical | 10 | TCGA clinical XML (`data_integration/tcga_large_cache/clinical/`) |
+| ICGC proxy | 20 | log2(TPM+1) of 20 pan-cancer genes from expression |
 
-A unified `src/pipeline_study1/` script chain is planned to match Study 2's reproducibility standard. Until then, cite Study 1 numbers from the [canonical results](../../docs/CANONICAL.md) and manuscript PDF only.
+## Cohort selection
 
----
+Patients must have **methylation + mutation + copy number + expression** (for ICGC proxy).  
+Per-class counts are subsampled to manuscript targets in `config.TARGET_CLASS_COUNTS` (sum = 158).
 
-## SMOTE note
+## Not yet implemented
 
-Study 1 uses SMOTE (k=4). Study 2 does **not**. Do not describe the project globally as "zero synthetic data" — specify per study.
+- **ICGC ARGO controlled tier** — DACO approval required; step2b uses open **ICGC Xena hub** data instead
+- **True TabTransformer / 58M transformer** — step4b uses MLP proxies for deep rows
+
+## ICGC external validation (step 2b)
+
+```bash
+pip install xenaPython
+ICGC_SKIP_CN=1 python src/pipeline_study1/step2b_icgc_fetch_features.py  # CN fetch is slow
+```
+
+Outputs land in `data/icgc_argo/`; step5 scores them automatically.
+
+## Cohort pinning (step 0 + 3)
+
+- `step0_trace_cohort_lineage.py` documents whether a legacy 158-barcode list exists
+- Step 3 uses **deterministic** selection by modality completeness (not random seed)
+- Pinned IDs: `data/study1_results/canonical_patient_manifest.json`
+
+## Steps
+
+| Step | Script |
+|------|--------|
+| 4b | `step4b_benchmark_architectures.py` — 12 models, complexity–accuracy R² |
+| 5 | `step5_external_validation.py` — frozen LightGBM+SMOTE on held-out TCGA (n=76, 4 types) |
+| 3b | `step3b_build_external_cohort.py` — builds external feature matrix |
+
+## Manuscript comparison
+
+Official historical numbers: **95.0% ± 5.4%** (10 runs × 5-fold CV).  
+After running step4, compare `model_results.json` to `docs/CANONICAL.md`.

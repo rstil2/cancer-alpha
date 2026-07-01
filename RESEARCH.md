@@ -7,7 +7,7 @@
 | What is the paper about? | Experimental design dominates model architecture in multi-modal TCGA cancer classification ([JBI manuscript PDF](science/Combined_Manuscript_JBI.pdf)) |
 | What numbers are official? | [docs/CANONICAL.md](docs/CANONICAL.md) |
 | How do I reproduce Study 2 (98.4%)? | [src/pipeline/](src/pipeline/) → [docs/DATA_ACCESS.md](docs/DATA_ACCESS.md) |
-| How do I reproduce Study 1 (95.0%)? | [src/pipeline_study1/](src/pipeline_study1/) |
+| How do I reproduce Study 1? | `python src/pipeline_study1/run_all.py` → `data/study1_results/` |
 | JBI revision prep (under review) | [science/jbi_revision/](science/jbi_revision/) |
 | Interactive UI demo (not paper data) | [cancer_genomics_ai_demo_minimal/](cancer_genomics_ai_demo_minimal/) |
 
@@ -18,8 +18,8 @@
 | n | 158 | 1,248 |
 | Features | 110 | 4,063 |
 | Balance | SMOTE | Real subsampling |
-| Best | LightGBM+SMOTE 95.0% | LightGBM 98.4% (test) |
-| External val | ICGC ARGO n=76 | TCGA held-out only |
+| Best | LightGBM+SMOTE **82.4%** CV reproduced ([MS submitted: 95.0%](docs/CANONICAL.md)) | LightGBM 98.4% (test) |
+| External val | ICGC n=76 **25%** partial reproduced ([MS: 92.1%](docs/CANONICAL.md)) | TCGA held-out only |
 
 ## Repository zones
 

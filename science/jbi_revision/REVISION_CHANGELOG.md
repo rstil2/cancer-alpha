@@ -43,10 +43,22 @@ The submitted files in `science/` and `submitted_snapshot/` are unchanged.
 ## Not changed in this revision pass (await reviewer letter)
 
 - Figure files (unchanged from submission)
-- Study 1 numerical results (95.0%, 92.1% ICGC)
+- Study 1 numerical results **in submitted PDF** (95.0%, 92.1% ICGC) — frozen in `submitted_snapshot/`
 - Reference list
 - Deep learning baseline numbers (MLP 93.6%, TabTransformer 91.6%)
 - VC dimension theoretical section (may soften further if reviewers challenge)
+
+---
+
+## Supplementary / docs updated (2026-06-23, no MS file edits)
+
+| File | Change |
+|------|--------|
+| `docs/CANONICAL.md` | Submitted vs reproduced Study 1 table; ICGC 25% partial |
+| `supplementary/CANONICAL_RESULTS.md` | Section A (frozen MS) vs B (pipeline); revision guidance |
+| `supplementary/REPRODUCTION_GUIDE.md` | Study 1 reproduction section added |
+
+`submitted_snapshot/` and `science/Combined_Manuscript_JBI.docx` (if present at repo root) remain untouched.
 
 ---
 
@@ -54,8 +66,10 @@ The submitted files in `science/` and `submitted_snapshot/` are unchanged.
 
 - [ ] Run `imbalance_stress_test.py` and insert actual results into §3.8 / new Results subsection
 - [ ] Add supplementary table with TCGA sample UUIDs for Study 2
+- [ ] **Update `working/Combined_Manuscript_JBI_REVISED.docx`** Study 1 numbers to reproduced values (or explicit limitation paragraph) — use `supplementary/CANONICAL_RESULTS.md` section B
+- [ ] Re-run `step4b_benchmark_architectures.py` and refresh complexity–accuracy R² in revision
 - [ ] Point-by-point response mapped to reviewer comments
-- [ ] Optional: tone-down README.md to match manuscript (after acceptance or if desk-rejected)
+- [ ] Optional: tone-down README.md to match canonical docs (after acceptance or if desk-rejected)
 
 ---
 

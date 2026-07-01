@@ -19,22 +19,20 @@ This guide provides instructions for installing and setting up the Oncura system
 
 2. **Install Python Dependencies**
    ```bash
-   pip install -r DEMO_PACKAGE/cancer_genomics_ai_demo/requirements_streamlit.txt
+   pip install -r requirements.txt
+   cd cancer_genomics_ai_demo_minimal && pip install -r requirements_streamlit.txt
    ```
 
-3. **Build Docker Images (Optional)**
+3. **Run Streamlit Demo**
    ```bash
-   docker build -t cancer-alpha:latest .
+   cd cancer_genomics_ai_demo_minimal
+   python setup.py
+   ./start_demo.sh
    ```
 
-4. **Run Streamlit Demo**
+4. **Build Docker Images (Optional)**
    ```bash
-   ./start_streamlit.sh
-   ```
-
-5. **Run Demo Server**
-   ```bash
-   python3 serve_demo.py
+   cd cancer_genomics_ai_demo_minimal && docker-compose up
    ```
 
 ## Troubleshooting
