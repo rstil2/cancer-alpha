@@ -73,8 +73,10 @@ def build() -> Path:
         str(DEMO_DIR),
         "--add-data",
         f"{DEMO_DIR / 'models'}{';models' if platform.system() == 'Windows' else ':models'}",
-        str(DEMO_DIR / "native_app.py"),
     ]
+    if platform.system() == "Windows":
+        cmd.append("--onefile")
+    cmd.append(str(DEMO_DIR / "native_app.py"))
     if icon:
         cmd.extend(["--icon", str(icon)])
 
