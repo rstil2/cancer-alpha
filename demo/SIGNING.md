@@ -15,16 +15,27 @@ Use this when you want **double-click launch without “unidentified developer�
 
 ## Local sign + notarize (recommended)
 
+**You must be in the git repository**, not inside the downloaded `Oncura Demo.app`.
+
 ```bash
-cd demo
+# 1. Clone if you have not already
+git clone https://github.com/rstil2/cancer-alpha.git
+cd cancer-alpha/demo          # ← "demo" is inside the repo, not in Downloads
+
+# 2. Build the .app
 python3 -m venv .build-venv && .build-venv/bin/pip install -r requirements_build.txt
 .build-venv/bin/python build_native.py
 
+# 3. Sign (set your Apple ID / team / app-specific password)
 export APPLE_ID="your@email.com"
 export APPLE_TEAM_ID="XXXXXXXXXX"
 export APPLE_APP_PASSWORD="xxxx-xxxx-xxxx-xxxx"
 ./sign_mac_app.sh --auto-identity
 ```
+
+**Downloaded the release ZIP instead?** That file only contains `Oncura Demo.app` — double-click it to run. Signing requires the full repo clone above.
+
+**Check you're in the right place:** `ls` should show `build_native.py`, `native_app.py`, `sign_mac_app.sh`.
 
 Output: `dist/Oncura-Demo-mac-signed.zip` with a **stapled, notarized** `Oncura Demo.app`.
 

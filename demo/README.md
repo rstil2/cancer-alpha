@@ -26,8 +26,11 @@ No Python or Terminal required when using the packaged app.
 
 ## Build from source
 
+From the **cloned repository** (not the downloaded app ZIP):
+
 ```bash
-cd demo
+git clone https://github.com/rstil2/cancer-alpha.git
+cd cancer-alpha/demo
 python3 -m venv .build-venv
 .build-venv/bin/pip install -r requirements_build.txt
 .build-venv/bin/python build_native.py
