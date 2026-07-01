@@ -27,8 +27,11 @@ One ZIP works on **Windows, macOS, and Linux** (Python 3.8+ required).
 [![Linux](https://img.shields.io/badge/Linux-start__demo.sh-FCC624?style=flat-square&logo=linux&logoColor=black)](https://github.com/rstil2/cancer-alpha/releases/download/demo/Oncura-Demo.zip)
 
 1. Download and unzip **Oncura-Demo.zip**
-2. **Windows:** run `start_demo.bat` · **Mac/Linux:** `chmod +x start_demo.sh && ./start_demo.sh`
-3. Open **http://localhost:8501**
+2. Install [Python 3.8+](https://www.python.org/downloads/) if needed (one-time; Windows: check **Add Python to PATH**)
+3. **Windows:** double-click `Start Oncura Demo.bat` · **Mac:** double-click `Start Oncura Demo.command` · **Linux:** `./start_demo.sh`
+4. Browser opens at **http://localhost:8501**
+
+Not a standalone `.exe` / `.app` — Python is required. Launchers install dependencies on first run (~1–2 min).
 
 [All demo releases](https://github.com/rstil2/cancer-alpha/releases/tag/demo) · [Releases page](https://github.com/rstil2/cancer-alpha/releases)
 

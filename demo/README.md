@@ -14,12 +14,13 @@ Streamlit prototype for a **multi-modal cancer classification workflow**:
 
 Cross-platform ZIP (~same file for Windows, macOS, Linux). Requires [Python 3.8+](https://www.python.org/downloads/).
 
-| OS | After unzipping |
-|----|-----------------|
-| **Windows** | Double-click `start_demo.bat` |
-| **macOS / Linux** | `chmod +x start_demo.sh && ./start_demo.sh` |
+| OS | Double-click this file |
+|----|------------------------|
+| **Windows** | `Start Oncura Demo.bat` |
+| **macOS** | `Start Oncura Demo.command` (opens Terminal) |
+| **Linux** | Run `./start_demo.sh` in Terminal |
 
-Then open **http://localhost:8501**. See `INSTALL.txt` inside the ZIP.
+Requires [Python 3.8+](https://www.python.org/downloads/) installed first. See `INSTALL.txt` in the ZIP for Gatekeeper / Unblock tips.
 
 Rebuild ZIP locally: `python build_package.py` → `../dist/Oncura-Demo.zip`
 

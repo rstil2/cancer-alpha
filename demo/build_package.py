@@ -4,6 +4,7 @@
 from __future__ import annotations
 
 import argparse
+import stat
 import zipfile
 from pathlib import Path
 
@@ -21,6 +22,8 @@ INCLUDE = [
     "setup.py",
     "start_demo.sh",
     "start_demo.bat",
+    "Start Oncura Demo.bat",
+    "Start Oncura Demo.command",
     "models/feature_selector.pkl",
     "models/label_encoder.pkl",
     "models/model_metadata.json",
@@ -28,6 +31,8 @@ INCLUDE = [
     "models/multimodal_real_tcga_random_forest.pkl",
     "models/scalers.pkl",
 ]
+
+EXECUTABLE_SUFFIXES = {".sh", ".command"}
 
 
 def build(out_path: Path) -> Path:
@@ -41,7 +46,12 @@ def build(out_path: Path) -> Path:
         for rel in INCLUDE:
             src = DEMO_DIR / rel
             arcname = f"{prefix}/{rel.replace(chr(92), '/')}"
-            zf.write(src, arcname)
+            info = zipfile.ZipInfo(arcname)
+            info.external_attr = (stat.S_IRUSR | stat.S_IWUSR) << 16
+            if Path(rel).suffix in EXECUTABLE_SUFFIXES:
+                info.external_attr |= (stat.S_IXUSR | stat.S_IXGRP | stat.S_IXOTH) << 16
+            with src.open("rb") as fh:
+                zf.writestr(info, fh.read())
 
     size_mb = out_path.stat().st_size / (1024 * 1024)
     print(f"Wrote {out_path} ({size_mb:.2f} MB, {len(INCLUDE)} files)")

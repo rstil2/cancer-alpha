@@ -1,24 +1,46 @@
-Oncura Demo — install in under 2 minutes
-======================================
+Oncura Demo — quick install
+===========================
 
-Requires: Python 3.8 or newer (https://www.python.org/downloads/)
-          On Windows, check "Add Python to PATH" during install.
+WHAT YOU NEED
+  Python 3.8 or newer (free): https://www.python.org/downloads/
+  Windows: during install, check "Add Python to PATH".
 
-1. Unzip this folder anywhere.
+This download is NOT a standalone .exe / .app — Python must be installed once.
 
-2. Start the demo:
 
-   Windows (double-click or Command Prompt):
-     start_demo.bat
+WINDOWS — double-click
+  1. Unzip Oncura-Demo.zip
+  2. Open the Oncura-Demo folder
+  3. Double-click:  Start Oncura Demo.bat
+  4. Browser opens to http://localhost:8501
 
-   macOS / Linux (Terminal):
-     chmod +x start_demo.sh
-     ./start_demo.sh
+  If Windows blocks the file: right-click the .bat → Properties → Unblock → OK,
+  then double-click again.
 
-3. Open your browser: http://localhost:8501
+  First run installs Python packages (1–2 minutes).
 
-4. In the app: Sidebar -> Sample Data -> Cancer Sample -> Generate Sample Data
 
-Research pipeline (98.4% Study 2): https://github.com/rstil2/cancer-alpha
+macOS — double-click
+  1. Unzip Oncura-Demo.zip
+  2. Open the Oncura-Demo folder
+  3. Double-click:  Start Oncura Demo.command
+     (Terminal opens and starts the demo)
+  4. Browser opens to http://localhost:8501
 
+  First time only: if macOS says the file is from the internet,
+  right-click → Open → Open (not double-click the first time).
+
+  Alternative: Terminal → cd to this folder → ./start_demo.sh
+
+
+LINUX
+  Unzip, then in Terminal:
+    chmod +x start_demo.sh
+    ./start_demo.sh
+
+
+IN THE APP
+  Sidebar → Sample Data → Cancer Sample → Generate Sample Data
+
+Research pipeline (98.4%): https://github.com/rstil2/cancer-alpha
 Not for clinical use.
