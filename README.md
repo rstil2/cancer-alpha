@@ -17,20 +17,25 @@ Multi-modal cancer classification from TCGA genomics — research codebase and i
 
 ## Summary
 
-Oncura evaluates whether **experimental design** (cohort curation, leakage control, class balance) matters more than **model architecture** for multi-modal TCGA cancer classification.
+Oncura asks whether **experimental design** (cohort curation, leakage control, class balance) matters more than **model architecture** for multi-modal TCGA cancer classification.
 
-The repository contains two complementary studies on the same 8-type task under different sample regimes. **Study 2** is the primary reproducible result; **Study 1** is a small-n sensitivity analysis with a documented gap between submitted manuscript numbers and the current pipeline.
+The **reproducible headline result** is **Study 2**: LightGBM reaches **98.4%** held-out balanced accuracy on 1,248 balanced TCGA samples (4,063 features, 8 cancer types). Classical models converge within ~1 pp; deep baselines lag by several points on the same split.
 
-| | Study 2 (primary) | Study 1 (small-n) |
-|---|-------------------|-------------------|
-| Samples | 1,248 balanced TCGA | 158 imbalanced TCGA |
-| Features | 4,063 | 110 (6 modalities) |
-| Best model | LightGBM | LightGBM + SMOTE |
-| **Reproduced result** | **98.4%** test balanced accuracy | **82.4% ± 2.6%** CV |
-| Validation | Internal TCGA held-out (n=250) | TCGA ext. 83.7%; ICGC partial 25.0% |
-| Pipeline | [`src/pipeline/`](src/pipeline/) | [`src/pipeline_study1/`](src/pipeline_study1/) |
+The submitted JBI manuscript also reports a **small-n sensitivity analysis** (Study 1, n=158). That regime is documented in [RESEARCH.md](RESEARCH.md) with **submitted vs reproduced** numbers — the current pipeline does **not** reproduce the manuscript's 95% / 92.1% ICGC claims.
 
-Study 1 **submitted manuscript** values (frozen PDF, not reproduced here): 95.0% ± 5.4% CV, 92.1% ICGC. See [docs/CANONICAL.md](docs/CANONICAL.md) for the full submitted vs reproduced table.
+---
+
+## Primary result (Study 2)
+
+| Item | Value |
+|------|-------|
+| Samples | 1,248 (156/class, real TCGA) |
+| Features | 4,063 (expression + methylation + mutations) |
+| Train / test | 998 / 250 (held-out) |
+| Champion | LightGBM **98.4%** test balanced accuracy (logistic regression tied) |
+| Deep baselines | MLP 93.6%, TabTransformer 91.6% |
+| Validation | Internal TCGA held-out split only |
+| Pipeline | [`src/pipeline/`](src/pipeline/) |
 
 ---
 
@@ -45,12 +50,13 @@ Study 1 **submitted manuscript** values (frozen PDF, not reproduced here): 95.0%
 | Revision workspace | [`science/jbi_revision/`](science/jbi_revision/) |
 | Canonical numbers | [`docs/CANONICAL.md`](docs/CANONICAL.md) |
 | Reproduction guide | [`science/jbi_revision/supplementary/REPRODUCTION_GUIDE.md`](science/jbi_revision/supplementary/REPRODUCTION_GUIDE.md) |
+| Study 1 (small-n) detail | [RESEARCH.md](RESEARCH.md) |
 
 Preprint: [bioRxiv 10.1101/2025.07.22.666135](https://www.biorxiv.org/content/10.1101/2025.07.22.666135v1)
 
 ---
 
-## Reproduce Study 2
+## Reproduce
 
 ```bash
 git clone https://github.com/rstil2/cancer-alpha.git
@@ -58,10 +64,10 @@ cd cancer-alpha
 python -m venv .venv && source .venv/bin/activate
 pip install -r requirements.txt
 
-# If feature pickles already exist:
+# Study 2 — if feature pickles already exist:
 python src/pipeline/step4_train_evaluate.py
 
-# Full pipeline from GDC-mapped files:
+# Study 2 — full pipeline from GDC-mapped files:
 python src/pipeline/step1_file_mapping.py
 python src/pipeline/step2_expression_features.py
 python src/pipeline/step2b_methylation_features.py
@@ -71,7 +77,7 @@ python src/pipeline/step4_train_evaluate.py
 
 Expected LightGBM test balanced accuracy: **~98.4%** (`data/real_model_results/model_results.json`).
 
-Study 1: `python src/pipeline_study1/run_all.py` → `data/study1_results/`
+Study 1 (exploratory): `python src/pipeline_study1/run_all.py` → see [RESEARCH.md](RESEARCH.md) for expected scores.
 
 ---
 
@@ -92,31 +98,22 @@ python setup.py
 ```
 cancer-alpha/
 ├── src/pipeline/              # Study 2 — canonical reproduction
-├── src/pipeline_study1/       # Study 1 — small-n pipeline
+├── src/pipeline_study1/       # Study 1 — small-n pipeline (see RESEARCH.md)
 ├── experiments/               # Robustness tests (imbalance stress, etc.)
 ├── science/                   # Manuscript and JBI revision workspace
 ├── docs/                      # Installation, data access, canonical results
 ├── cancer_genomics_ai_demo_minimal/  # Streamlit demo (not paper data)
-├── archive/                   # Legacy scripts, internal notes, old artifacts
-│   ├── legacy_root/scripts/ # Former root-level Python utilities
-│   ├── experiments/         # Scaling / download experiments (50k era)
-│   └── business/              # Historical commercial docs (not research claims)
-├── models/                    # Saved model artifacts
-└── data/                      # Local data (not in git; see DATA_ACCESS.md)
+└── archive/                   # Legacy scripts and internal notes
 ```
-
-Historical root scripts and internal working documents live under [`archive/`](archive/). Do not use them for manuscript reproduction.
 
 ---
 
 ## Documentation
 
-- [Research entry point](RESEARCH.md)
+- [Research entry point (both studies)](RESEARCH.md)
 - [Canonical results](docs/CANONICAL.md)
 - [Data access](docs/DATA_ACCESS.md)
-- [Legacy scripts index](docs/LEGACY_SCRIPTS.md)
 - [Contributing](CONTRIBUTING.md)
-- [Changelog](CHANGELOG.md)
 
 ---
 

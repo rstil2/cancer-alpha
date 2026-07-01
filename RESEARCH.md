@@ -2,6 +2,8 @@
 
 **Start here** for manuscript-aligned numbers, reproduction, and what *not* to cite from this repo.
 
+The public [README](README.md) leads with **Study 2** (98.4%, reproducible). This page holds the full two-study picture for the JBI manuscript.
+
 | Question | Answer |
 |----------|--------|
 | What is the paper about? | Experimental design dominates model architecture in multi-modal TCGA cancer classification ([JBI manuscript PDF](science/Combined_Manuscript_JBI.pdf)) |

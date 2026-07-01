@@ -7,23 +7,18 @@
 
 ## What this is
 
-A **Streamlit front-end** to explore classification and SHAP explainability. It uses:
-
-- Demo models: Logistic Regression & Random Forest
-- Training context: **158 TCGA samples**, **110 features** (Study 1 scale)
-- UI sample data: illustrative (~70% accuracy on generated inputs)
+A **Streamlit front-end** to explore classification and SHAP explainability. It uses demo models and illustrative sample data (~70% accuracy on generated inputs).
 
 For **98.4% Study 2 results**, run [`src/pipeline/`](../src/pipeline/) — see [RESEARCH.md](../RESEARCH.md).
 
-## Research results (from manuscript — not this demo)
+## Research results (not this demo)
 
-| Study | Setting | Best result |
-|-------|---------|-------------|
-| **Study 2** | 1,248 balanced, 4,063 features | LightGBM **98.4%** (held-out TCGA test) |
-| **Study 1** | 158 imbalanced + SMOTE, 110 features | LightGBM+SMOTE **95.0%** |
-| **Study 1 external** | ICGC ARGO n=76 | **92.1%** (no retraining) |
+| Setting | Best reproduced result | Pipeline |
+|---------|------------------------|----------|
+| 1,248 balanced TCGA, 4,063 features | LightGBM **98.4%** (held-out test) | [`src/pipeline/`](../src/pipeline/) |
+| 158 imbalanced + SMOTE, 110 features | **82.4% ± 2.6%** CV | [`src/pipeline_study1/`](../src/pipeline_study1/) |
 
-Full-cohort rankings (Study 2 test): LightGBM & LR **98.4%**, XGBoost 98.0%, RF 97.2%.
+Submitted manuscript Study 1 values (95.0%, 92.1% ICGC) are **not reproduced** by the current pipeline. See [docs/CANONICAL.md](../docs/CANONICAL.md).
 
 Paper: [bioRxiv](https://www.biorxiv.org/content/10.1101/2025.07.22.666135v1) · [Main README](../README.md)
 
