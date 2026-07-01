@@ -32,7 +32,7 @@ jobs:
             gh release create demo \
               --repo "${{ github.repository }}" \
               --title "Oncura Demo" \
-              --notes "## Mac\n1. Download **Oncura-Demo-mac.zip**\n2. Unzip\n3. Double-click **Oncura Demo**\n4. If Mac blocks it the first time only: right-click the app → **Open** → **Open**\n\n## Windows\n1. Download **Oncura-Demo-Windows.exe**\n2. Double-click to run\n\nNo Python. No Terminal. Research demo only — not for clinical use."
+              --notes-file demo/INSTALL.txt
           gh release upload demo dist/Oncura-Demo-mac.zip \
             --repo "${{ github.repository }}" \
             --clobber
@@ -51,14 +51,15 @@ jobs:
           pip install -r requirements_build.txt
           python build_native.py
       - name: Upload Windows exe
+        shell: bash
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
           gh release view demo --repo "${{ github.repository }}" >/dev/null 2>&1 || \
             gh release create demo \
               --repo "${{ github.repository }}" \
-              --title "Oncura Demo Download" \
-              --notes "Native desktop apps — see Mac/Windows assets."
+              --title "Oncura Demo" \
+              --notes-file demo/INSTALL.txt
           gh release upload demo dist/Oncura-Demo-Windows.exe \
             --repo "${{ github.repository }}" \
             --clobber

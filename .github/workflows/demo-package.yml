@@ -1,38 +1,12 @@
-name: Package demo ZIP
-
+# Disable legacy Streamlit ZIP — native app workflow handles releases.
 on:
-  push:
-    branches: [main]
-    paths:
-      - "demo/**"
-      - ".github/workflows/demo-package.yml"
   workflow_dispatch:
 
 permissions:
   contents: write
 
 jobs:
-  package:
+  noop:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-
-      - uses: actions/setup-python@v5
-        with:
-          python-version: "3.11"
-
-      - name: Build Oncura-Demo.zip
-        run: python demo/build_package.py
-
-      - name: Publish demo release asset
-        env:
-          GH_TOKEN: ${{ github.token }}
-        run: |
-          gh release view demo --repo "${{ github.repository }}" >/dev/null 2>&1 || \
-            gh release create demo \
-              --repo "${{ github.repository }}" \
-              --title "Oncura Interactive Demo" \
-              --notes "Cross-platform Streamlit demo (Windows, macOS, Linux). Unzip, install Python 3.8+, run start_demo.bat or start_demo.sh. Open http://localhost:8501"
-          gh release upload demo dist/Oncura-Demo.zip \
-            --repo "${{ github.repository }}" \
-            --clobber
+      - run: echo "Use demo-native.yml for releases"
