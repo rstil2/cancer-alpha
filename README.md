@@ -17,14 +17,29 @@ Multi-modal TCGA cancer classification — interactive demo and reproducible res
 
 Streamlit app for the **upload → classify → explain** workflow: multi-modal genomic input, cancer-type prediction, confidence scores, and SHAP feature attribution.
 
+### Download (no git required)
+
+One ZIP works on **Windows, macOS, and Linux** (Python 3.8+ required).
+
+[![Download Demo ZIP](https://img.shields.io/badge/Download-Demo%20ZIP-2563eb?style=for-the-badge&logo=zip&logoColor=white)](https://github.com/rstil2/cancer-alpha/releases/download/demo/Oncura-Demo.zip)
+[![Windows](https://img.shields.io/badge/Windows-start__demo.bat-0078d4?style=flat-square&logo=windows&logoColor=white)](https://github.com/rstil2/cancer-alpha/releases/download/demo/Oncura-Demo.zip)
+[![macOS](https://img.shields.io/badge/macOS-start__demo.sh-555555?style=flat-square&logo=apple&logoColor=white)](https://github.com/rstil2/cancer-alpha/releases/download/demo/Oncura-Demo.zip)
+[![Linux](https://img.shields.io/badge/Linux-start__demo.sh-FCC624?style=flat-square&logo=linux&logoColor=black)](https://github.com/rstil2/cancer-alpha/releases/download/demo/Oncura-Demo.zip)
+
+1. Download and unzip **Oncura-Demo.zip**
+2. **Windows:** run `start_demo.bat` · **Mac/Linux:** `chmod +x start_demo.sh && ./start_demo.sh`
+3. Open **http://localhost:8501**
+
+[All demo releases](https://github.com/rstil2/cancer-alpha/releases/tag/demo) · [Releases page](https://github.com/rstil2/cancer-alpha/releases)
+
+### From git
+
 ```bash
 git clone https://github.com/rstil2/cancer-alpha.git
 cd cancer-alpha/demo
 pip install -r requirements_streamlit.txt
 ./start_demo.sh
 ```
-
-Open **http://localhost:8501**
 
 | | Demo | Research pipeline |
 |---|------|-------------------|

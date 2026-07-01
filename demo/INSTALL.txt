@@ -1,0 +1,24 @@
+Oncura Demo — install in under 2 minutes
+======================================
+
+Requires: Python 3.8 or newer (https://www.python.org/downloads/)
+          On Windows, check "Add Python to PATH" during install.
+
+1. Unzip this folder anywhere.
+
+2. Start the demo:
+
+   Windows (double-click or Command Prompt):
+     start_demo.bat
+
+   macOS / Linux (Terminal):
+     chmod +x start_demo.sh
+     ./start_demo.sh
+
+3. Open your browser: http://localhost:8501
+
+4. In the app: Sidebar -> Sample Data -> Cancer Sample -> Generate Sample Data
+
+Research pipeline (98.4% Study 2): https://github.com/rstil2/cancer-alpha
+
+Not for clinical use.

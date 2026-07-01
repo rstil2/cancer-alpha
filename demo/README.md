@@ -6,11 +6,28 @@ Streamlit prototype for a **multi-modal cancer classification workflow**:
 2. **Classify** — predict one of 8 TCGA cancer types with confidence scores
 3. **Explain** — SHAP attribution by feature and modality
 
-This is a **workflow demonstration**, not the manuscript reproduction pipeline. For **98.4%** Study 2 results, use [`../src/pipeline/`](../src/pipeline/).
+---
+
+## Download (recommended)
+
+[![Download Demo ZIP](https://img.shields.io/badge/Download-Oncura--Demo.zip-2563eb?style=for-the-badge)](https://github.com/rstil2/cancer-alpha/releases/download/demo/Oncura-Demo.zip)
+
+Cross-platform ZIP (~same file for Windows, macOS, Linux). Requires [Python 3.8+](https://www.python.org/downloads/).
+
+| OS | After unzipping |
+|----|-----------------|
+| **Windows** | Double-click `start_demo.bat` |
+| **macOS / Linux** | `chmod +x start_demo.sh && ./start_demo.sh` |
+
+Then open **http://localhost:8501**. See `INSTALL.txt` inside the ZIP.
+
+Rebuild ZIP locally: `python build_package.py` → `../dist/Oncura-Demo.zip`
+
+This is a **workflow demonstration**, not the manuscript reproduction pipeline. Study 2 (**98.4%**) lives in [`../src/pipeline/`](../src/pipeline/).
 
 ---
 
-## Quick start
+## Quick start (from git clone)
 
 ```bash
 cd demo
@@ -18,9 +35,7 @@ pip install -r requirements_streamlit.txt
 ./start_demo.sh
 ```
 
-Browser: **http://localhost:8501**
-
-From repo root: `./start_demo.sh`
+Browser: **http://localhost:8501** · From repo root: `./start_demo.sh`
 
 ### First run in the UI
 
