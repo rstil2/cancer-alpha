@@ -36,6 +36,8 @@ python3 -m venv .build-venv
 
 Developer Streamlit version (needs Python): `./start_demo.sh`
 
+**Mac Gatekeeper:** unsigned CI builds need right-click → Open once. With an Apple Developer account, sign + notarize — see [SIGNING.md](SIGNING.md).
+
 ---
 
 ## Disclaimer

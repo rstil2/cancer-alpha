@@ -24,6 +24,30 @@ jobs:
           cd demo
           pip install -r requirements_build.txt
           python build_native.py
+      - name: Sign and notarize Mac app (optional)
+        if: ${{ secrets.APPLE_CERTIFICATE_P12_BASE64 != '' }}
+        env:
+          APPLE_CERTIFICATE_P12_BASE64: ${{ secrets.APPLE_CERTIFICATE_P12_BASE64 }}
+          APPLE_CERTIFICATE_PASSWORD: ${{ secrets.APPLE_CERTIFICATE_PASSWORD }}
+          APPLE_ID: ${{ secrets.APPLE_ID }}
+          APPLE_TEAM_ID: ${{ secrets.APPLE_TEAM_ID }}
+          APPLE_APP_PASSWORD: ${{ secrets.APPLE_APP_PASSWORD }}
+          KEYCHAIN_PASSWORD: ${{ secrets.KEYCHAIN_PASSWORD }}
+        run: |
+          CERT_PATH="$RUNNER_TEMP/cert.p12"
+          KEYCHAIN_PATH="$RUNNER_TEMP/app-signing.keychain-db"
+          echo -n "$APPLE_CERTIFICATE_P12_BASE64" | base64 --decode > "$CERT_PATH"
+          security create-keychain -p "$KEYCHAIN_PASSWORD" "$KEYCHAIN_PATH"
+          security set-keychain-settings -lut 21600 "$KEYCHAIN_PATH"
+          security unlock-keychain -p "$KEYCHAIN_PASSWORD" "$KEYCHAIN_PATH"
+          security import "$CERT_PATH" -P "$APPLE_CERTIFICATE_PASSWORD" -A -t cert -f pkcs12 -k "$KEYCHAIN_PATH"
+          security list-keychain -d user -s "$KEYCHAIN_PATH"
+          security set-key-partition-list -S apple-tool:,apple:,codesign: -s -k "$KEYCHAIN_PASSWORD" "$KEYCHAIN_PATH"
+          cd demo
+          chmod +x sign_mac_app.sh
+          export APPLE_SIGNING_IDENTITY="$(security find-identity -v -p codesigning "$KEYCHAIN_PATH" | grep 'Developer ID Application' | head -1 | sed 's/.*"\(.*\)"/\1/')"
+          ./sign_mac_app.sh
+          cp ../dist/Oncura-Demo-mac-signed.zip ../dist/Oncura-Demo-mac.zip
       - name: Upload Mac app
         env:
           GH_TOKEN: ${{ github.token }}
@@ -32,7 +56,7 @@ jobs:
             gh release create demo \
               --repo "${{ github.repository }}" \
               --title "Oncura Demo Download" \
-              --notes "Native desktop apps — double-click the Oncura icon. Mac: unzip and open Oncura Demo.app. Windows: run Oncura-Demo-Windows.exe. First launch on Mac may require right-click → Open."
+              --notes "Native desktop apps — double-click the Oncura icon. Mac: unzip and open Oncura Demo.app (signed builds open without right-click → Open). Windows: run Oncura-Demo-Windows.exe."
           gh release upload demo dist/Oncura-Demo-mac.zip \
             --repo "${{ github.repository }}" \
             --clobber
