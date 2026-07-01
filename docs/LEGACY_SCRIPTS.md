@@ -21,4 +21,4 @@ Scripts in [`archive/legacy_root/scripts/`](../archive/legacy_root/scripts/) are
 | `run_full_pipeline.py` | Older orchestration — superseded by `src/pipeline/` |
 | `serve_demo.py`, `test_updated_demo.py` | Demo helpers (use `cancer_genomics_ai_demo_minimal/` instead) |
 
-Scaling experiments (`*_50k_*`, `ultra_*`) are in [`archive/experiments/`](../archive/experiments/).
+Scaling experiments (`*_50k_*`, `ultra_*`) are in [`archive/experiments/legacy_scaling/`](../archive/experiments/legacy_scaling/).

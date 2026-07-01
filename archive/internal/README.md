@@ -1,5 +1,5 @@
-# Internal working documents
+# Internal working notes
 
-Historical notes from development sessions (Warp agent logs, housekeeping, IP drafts, deployment plans). **Not part of the public research narrative.** Kept for provenance only.
+Agent session logs and housekeeping files were **removed from the public repository** (2026-06). They are not part of the research record.
 
-Do not cite for manuscript numbers. Use [docs/CANONICAL.md](../../docs/CANONICAL.md).
+For reproduction and numbers see [docs/CANONICAL.md](../../docs/CANONICAL.md).
