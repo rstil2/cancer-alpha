@@ -1,88 +1,43 @@
-# Oncura interactive demo
+# Oncura Demo — native desktop app
 
-Streamlit prototype for a **multi-modal cancer classification workflow**:
+Double-click **Oncura Demo** to open a self-contained classification workflow:
 
-1. **Input** — sample data, manual features, or CSV upload (110 genomic features, 6 modalities)
-2. **Classify** — predict one of 8 TCGA cancer types with confidence scores
-3. **Explain** — SHAP attribution by feature and modality
+1. **Load sample** (cancer-like or control-like genomic features)
+2. **Classify** → predicted cancer type + confidence
+3. **Chart** → per-type probabilities
 
----
-
-## Download (recommended)
-
-[![Download Demo ZIP](https://img.shields.io/badge/Download-Oncura--Demo.zip-2563eb?style=for-the-badge)](https://github.com/rstil2/cancer-alpha/releases/download/demo/Oncura-Demo.zip)
-
-Cross-platform ZIP (~same file for Windows, macOS, Linux). Requires [Python 3.8+](https://www.python.org/downloads/).
-
-| OS | Double-click this file |
-|----|------------------------|
-| **Windows** | `Start Oncura Demo.bat` |
-| **macOS** | `Start Oncura Demo.command` (opens Terminal) |
-| **Linux** | Run `./start_demo.sh` in Terminal |
-
-Requires [Python 3.8+](https://www.python.org/downloads/) installed first. See `INSTALL.txt` in the ZIP for Gatekeeper / Unblock tips.
-
-Rebuild ZIP locally: `python build_package.py` → `../dist/Oncura-Demo.zip`
-
-This is a **workflow demonstration**, not the manuscript reproduction pipeline. Study 2 (**98.4%**) lives in [`../src/pipeline/`](../src/pipeline/).
+No Python or Terminal required when using the packaged app.
 
 ---
 
-## Quick start (from git clone)
+## Download
+
+[![Mac app](https://img.shields.io/badge/Mac-Oncura--Demo.app-555555?style=for-the-badge&logo=apple)](https://github.com/rstil2/cancer-alpha/releases/download/demo/Oncura-Demo-mac.zip)
+[![Windows exe](https://img.shields.io/badge/Windows-Oncura--Demo.exe-0078d4?style=for-the-badge&logo=windows)](https://github.com/rstil2/cancer-alpha/releases/download/demo/Oncura-Demo-Windows.exe)
+
+| Platform | File | How to run |
+|----------|------|------------|
+| **macOS** | `Oncura-Demo-mac.zip` | Unzip → double-click **Oncura Demo.app** |
+| **Windows** | `Oncura-Demo-Windows.exe` | Double-click the `.exe` |
+
+**macOS first launch:** right-click the app → **Open** → **Open** (unsigned developer).
+
+---
+
+## Build from source
 
 ```bash
 cd demo
-pip install -r requirements_streamlit.txt
-./start_demo.sh
+python3 -m venv .build-venv
+.build-venv/bin/pip install -r requirements_build.txt
+.build-venv/bin/python build_native.py
+# → ../dist/Oncura-Demo-mac.zip or Oncura-Demo-Windows.exe
 ```
 
-Browser: **http://localhost:8501** · From repo root: `./start_demo.sh`
-
-### First run in the UI
-
-1. Sidebar → **Sample Data**
-2. Choose **Cancer Sample** → **Generate Sample Data**
-3. Review prediction, class probabilities, and SHAP plots
-
----
-
-## What's under the hood
-
-| Component | Detail |
-|-----------|--------|
-| Models | Logistic Regression & Random Forest trained on 158 real TCGA samples |
-| Features | 110 (methylation, mutation, CNA, fragmentomics, clinical, expression proxies) |
-| Classes | BRCA, LUAD, COAD, PRAD, STAD, KIRC, HNSC, LIHC |
-| Sample data | Synthetic patterns for demo inputs (~70% accuracy on generated samples) |
-
-Research pipeline comparison: [docs/CANONICAL.md](../docs/CANONICAL.md)
-
----
-
-## Docker
-
-```bash
-cd demo
-docker compose up --build
-```
-
-Streamlit at **http://localhost:8501**
-
----
-
-## Files
-
-| File | Role |
-|------|------|
-| `streamlit_app.py` | UI and inference |
-| `models/` | Pre-trained demo classifiers + scalers |
-| `requirements_streamlit.txt` | Python dependencies |
-| `start_demo.sh` / `start_demo.bat` | Launch scripts |
-
-Optional: `pip install shap` for full explanation plots.
+Developer Streamlit version (needs Python): `./start_demo.sh`
 
 ---
 
 ## Disclaimer
 
-Research and demonstration software only. **Not for clinical use.**
+Research demonstration only. **Not for clinical use.**

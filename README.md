@@ -4,7 +4,6 @@ Multi-modal TCGA cancer classification — interactive demo and reproducible res
 
 [![bioRxiv](https://img.shields.io/badge/bioRxiv-10.1101%2F2025.07.22.666135-blue)](https://www.biorxiv.org/content/10.1101/2025.07.22.666135v1)
 [![Manuscript](https://img.shields.io/badge/JBI-under%20review-orange)](science/Combined_Manuscript_JBI.pdf)
-[![Python 3.8+](https://img.shields.io/badge/python-3.8+-blue.svg)](https://www.python.org/downloads/)
 [![License: Academic](https://img.shields.io/badge/License-Academic%20Use%20Only-red.svg)](LICENSE)
 
 **Author:** [R. Craig Stillwell, PhD](mailto:craig.stillwell@gmail.com)
@@ -13,47 +12,23 @@ Multi-modal TCGA cancer classification — interactive demo and reproducible res
 
 ---
 
-## Try the demo (2 minutes)
+## Download the demo app
 
-Streamlit app for the **upload → classify → explain** workflow: multi-modal genomic input, cancer-type prediction, confidence scores, and SHAP feature attribution.
+Native desktop app — **double-click the Oncura icon**. No Python install required.
 
-### Download (no git required)
+[![Download for Mac](https://img.shields.io/badge/Download-Mac%20(.app)-555555?style=for-the-badge&logo=apple&logoColor=white)](https://github.com/rstil2/cancer-alpha/releases/download/demo/Oncura-Demo-mac.zip)
+[![Download for Windows](https://img.shields.io/badge/Download-Windows%20(.exe)-0078d4?style=for-the-badge&logo=windows&logoColor=white)](https://github.com/rstil2/cancer-alpha/releases/download/demo/Oncura-Demo-Windows.exe)
 
-One ZIP works on **Windows, macOS, and Linux** (Python 3.8+ required).
+| Platform | Steps |
+|----------|--------|
+| **macOS** | Download `Oncura-Demo-mac.zip` → unzip → double-click **Oncura Demo.app** |
+| **Windows** | Download `Oncura-Demo-Windows.exe` → double-click to run |
 
-[![Download Demo ZIP](https://img.shields.io/badge/Download-Demo%20ZIP-2563eb?style=for-the-badge&logo=zip&logoColor=white)](https://github.com/rstil2/cancer-alpha/releases/download/demo/Oncura-Demo.zip)
-[![Windows](https://img.shields.io/badge/Windows-start__demo.bat-0078d4?style=flat-square&logo=windows&logoColor=white)](https://github.com/rstil2/cancer-alpha/releases/download/demo/Oncura-Demo.zip)
-[![macOS](https://img.shields.io/badge/macOS-start__demo.sh-555555?style=flat-square&logo=apple&logoColor=white)](https://github.com/rstil2/cancer-alpha/releases/download/demo/Oncura-Demo.zip)
-[![Linux](https://img.shields.io/badge/Linux-start__demo.sh-FCC624?style=flat-square&logo=linux&logoColor=black)](https://github.com/rstil2/cancer-alpha/releases/download/demo/Oncura-Demo.zip)
+**First launch (Mac):** if macOS blocks the app, right-click **Oncura Demo.app** → **Open** → **Open** once.
 
-1. Download and unzip **Oncura-Demo.zip**
-2. Install [Python 3.8+](https://www.python.org/downloads/) if needed (one-time; Windows: check **Add Python to PATH**)
-3. **Windows:** double-click `Start Oncura Demo.bat` · **Mac:** double-click `Start Oncura Demo.command` · **Linux:** `./start_demo.sh`
-4. Browser opens at **http://localhost:8501**
+**Workflow in the app:** Load sample → Classify → view cancer type, confidence, and probability chart.
 
-Not a standalone `.exe` / `.app` — Python is required. Launchers install dependencies on first run (~1–2 min).
-
-[All demo releases](https://github.com/rstil2/cancer-alpha/releases/tag/demo) · [Releases page](https://github.com/rstil2/cancer-alpha/releases)
-
-### From git
-
-```bash
-git clone https://github.com/rstil2/cancer-alpha.git
-cd cancer-alpha/demo
-pip install -r requirements_streamlit.txt
-./start_demo.sh
-```
-
-| | Demo | Research pipeline |
-|---|------|-------------------|
-| Purpose | Interactive workflow prototype | Paper reproduction |
-| Models | LR & Random Forest (158-sample training set) | LightGBM **98.4%** on Study 2 |
-| Data | Built-in sample generator or CSV upload | Real TCGA via GDC |
-| Run | `demo/start_demo.sh` | `src/pipeline/step4_train_evaluate.py` |
-
-Docker: `cd demo && docker compose up` (Streamlit on port 8501).
-
-Full demo docs: [`demo/README.md`](demo/README.md)
+[All demo downloads](https://github.com/rstil2/cancer-alpha/releases/tag/demo)
 
 ---
 
@@ -61,11 +36,9 @@ Full demo docs: [`demo/README.md`](demo/README.md)
 
 Oncura tests whether **experimental design** matters more than **model architecture** for multi-modal TCGA classification.
 
-**Study 2** (primary, reproducible): LightGBM **98.4%** held-out balanced accuracy, n=1,248, 4,063 features → [`src/pipeline/`](src/pipeline/)
+**Study 2** (primary, reproducible): LightGBM **98.4%** held-out balanced accuracy, n=1,248 → [`src/pipeline/`](src/pipeline/)
 
-**Study 1** (small-n sensitivity analysis): documented in [RESEARCH.md](RESEARCH.md) with submitted vs reproduced numbers.
-
-Canonical metrics: [docs/CANONICAL.md](docs/CANONICAL.md)
+Canonical metrics: [docs/CANONICAL.md](docs/CANONICAL.md) · Full detail: [RESEARCH.md](RESEARCH.md)
 
 ---
 
@@ -80,13 +53,14 @@ Preprint: [bioRxiv 10.1101/2025.07.22.666135](https://www.biorxiv.org/content/10
 ## Reproduce Study 2
 
 ```bash
+git clone https://github.com/rstil2/cancer-alpha.git
 cd cancer-alpha
 python -m venv .venv && source .venv/bin/activate
 pip install -r requirements.txt
-python src/pipeline/step4_train_evaluate.py   # expects feature pickles in data/
+python src/pipeline/step4_train_evaluate.py
 ```
 
-Expected: **~98.4%** test balanced accuracy. Guide: [science/jbi_revision/supplementary/REPRODUCTION_GUIDE.md](science/jbi_revision/supplementary/REPRODUCTION_GUIDE.md)
+Expected: **~98.4%** test balanced accuracy.
 
 ---
 
@@ -94,27 +68,13 @@ Expected: **~98.4%** test balanced accuracy. Guide: [science/jbi_revision/supple
 
 ```
 cancer-alpha/
-├── demo/                  # Streamlit workflow demo (start here for interviews)
+├── demo/                  # Native desktop demo + source
 ├── src/pipeline/          # Study 2 reproduction
-├── src/pipeline_study1/   # Study 1 small-n pipeline
-├── science/               # Manuscript & revision workspace
-├── docs/                  # Canonical results, data access
-└── archive/               # Legacy scripts (not for papers)
+├── science/               # Manuscript
+└── docs/                  # Canonical results
 ```
 
 ---
-
-## Citation
-
-```bibtex
-@article{stillwell2025oncura,
-  title   = {Oncura: Multi-Modal AI for Precision Oncology},
-  author  = {Stillwell, R. Craig},
-  journal = {bioRxiv},
-  year    = {2025},
-  doi     = {10.1101/2025.07.22.666135}
-}
-```
 
 ## License
 

@@ -1,46 +1,21 @@
-Oncura Demo — quick install
-===========================
+Oncura Demo — native app install
+=================================
 
-WHAT YOU NEED
-  Python 3.8 or newer (free): https://www.python.org/downloads/
-  Windows: during install, check "Add Python to PATH".
+MAC
+  1. Download Oncura-Demo-mac.zip from GitHub Releases
+  2. Unzip
+  3. Double-click "Oncura Demo.app"
+  4. If blocked: right-click the app -> Open -> Open (once only)
 
-This download is NOT a standalone .exe / .app — Python must be installed once.
-
-
-WINDOWS — double-click
-  1. Unzip Oncura-Demo.zip
-  2. Open the Oncura-Demo folder
-  3. Double-click:  Start Oncura Demo.bat
-  4. Browser opens to http://localhost:8501
-
-  If Windows blocks the file: right-click the .bat → Properties → Unblock → OK,
-  then double-click again.
-
-  First run installs Python packages (1–2 minutes).
-
-
-macOS — double-click
-  1. Unzip Oncura-Demo.zip
-  2. Open the Oncura-Demo folder
-  3. Double-click:  Start Oncura Demo.command
-     (Terminal opens and starts the demo)
-  4. Browser opens to http://localhost:8501
-
-  First time only: if macOS says the file is from the internet,
-  right-click → Open → Open (not double-click the first time).
-
-  Alternative: Terminal → cd to this folder → ./start_demo.sh
-
-
-LINUX
-  Unzip, then in Terminal:
-    chmod +x start_demo.sh
-    ./start_demo.sh
-
+WINDOWS
+  1. Download Oncura-Demo-Windows.exe
+  2. Double-click to run
+  3. If SmartScreen warns: More info -> Run anyway
 
 IN THE APP
-  Sidebar → Sample Data → Cancer Sample → Generate Sample Data
+  Load sample -> Classify -> read prediction and chart
 
-Research pipeline (98.4%): https://github.com/rstil2/cancer-alpha
+No Python install required for these downloads.
+
+Research pipeline: https://github.com/rstil2/cancer-alpha
 Not for clinical use.
